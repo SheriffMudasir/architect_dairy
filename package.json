@@ -1,0 +1,47 @@
+{
+  "name": "architect-diary",
+  "version": "1.0.0",
+  "description": "My Remotion video",
+  "repository": {},
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "private": true,
+  "dependencies": {
+    "@google/genai": "^3.6.1",
+    "@remotion/captions": "4.0.545",
+    "@remotion/cli": "4.0.545",
+    "@remotion/fonts": "4.0.545",
+    "@remotion/google-fonts": "4.0.545",
+    "@remotion/install-whisper-cpp": "4.0.545",
+    "@remotion/media": "4.0.545",
+    "@remotion/transitions": "4.0.545",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.545"
+  },
+  "devDependencies": {
+    "@fontsource/instrument-sans": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@remotion/eslint-config-flat": "4.0.545",
+    "@types/react": "19.3.0",
+    "@types/web": "0.0.166",
+    "eslint": "10.12.0",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc",
+    "voice": "node --experimental-strip-types --no-warnings scripts/voice.mjs",
+    "render": "remotion render Ep01TokyoStadium out/ep01.mp4 --codec=h264 --crf=18",
+    "stills": "node scripts/stills.mjs"
+  },
+  "allowScripts": {
+    "esbuild": false
+  },
+  "type": "module"
+}
