@@ -41,6 +41,9 @@ export REMOTION_BROWSER=/opt/pw-browsers/chromium_headless_shell-1243/chrome-hea
 - Remotion cannot download its own Chrome here (remotion.media blocked) and Google
   Fonts are blocked: fonts are vendored in `public/fonts`, and `REMOTION_BROWSER`
   points at the preinstalled headless shell (find it with `find /opt/pw-browsers -name "chrome-headless-shell"` if the path changed).
+- Allowed extra hosts on the environment: `generativelanguage.googleapis.com`,
+  `ai.google.dev` (docs redirect to aistudio.google.com, which is blocked — read the
+  `@google/genai` npm package's `.d.ts` files for API shapes instead).
 - huggingface CDN is blocked, so there is no Whisper; `scripts/voice.mjs` has its own
   pause-anchored aligner (good enough for 2–4 word caption pages).
 
@@ -157,6 +160,33 @@ npm run render -- epNN           # out/epNN.mp4, prints integrated loudness (aim
   costs API calls and isn't deterministic). Push to the session's branch.
 - Tell the user: length, what to listen for (music level, voice, caption sync —
   you can't hear it), and every ⚠ fact.
+
+## The 3D engine (know its limits when modelling)
+
+`src/iso/engine.ts` projects 3D points (metres, z up) with a fixed 2:1 isometric
+camera (no perspective) into SVG paths, shades each face from its normal against a
+fixed light (tops light, sides darker), and draws back-to-front (painter's sort on
+face centroids). Consequences:
+- Keep faces small and low-poly (rings of ~44 segments). Large or intersecting faces
+  can sort wrongly; nudge with `bias` (positive = drawn later/on top) or split faces.
+- Flat ground things (site plates, roads, park lawns) go in the ground layer
+  (`ground: true`) so they never cover buildings.
+- Thin elements seen edge-on read badly (ep01's arches looked like vertical sticks at
+  yaw ≈ 0.6): check orbit angles in stills and pick yaws where the signature element
+  reads in profile.
+- Smooth "solid" forms: give faces a faint seam stroke (near the fill colour) and draw
+  a few ink contour lines (rims, ridges) — per-face ink strokes look like ribs.
+- No shadows, textures or real lighting. If an episode truly needs that for a hero
+  shot, use `@remotion/three` for that shot only and keep this engine elsewhere.
+
+## Look & feel rules
+
+- The channel look is our own (warm paper, ink, vermilion, timber; Instrument Sans +
+  JetBrains Mono). It was inspired by isometric explainer videos — never copy another
+  creator's palette, typography, label style or layouts.
+- Frame the subject big: stadium-scale models want `scale` ≈ 1.5–2.4; the scene area
+  is between the headline (~y 360) and the caption (~y 1500).
+- One idea per beat: the viewer should know where to look within half a second.
 
 ## Pitfalls already hit
 
