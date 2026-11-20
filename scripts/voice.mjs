@@ -11,7 +11,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
-import { BEATS, DELIVERY, VOICE_DESIGN } from "../src/ep01/script.ts";
+import { BEATS, VOICE_DESIGN } from "../src/ep01/script.ts";
 
 const API = "https://generativelanguage.googleapis.com/v1beta";
 const TTS_MODEL = process.env.TTS_MODEL ?? "gemini-3.8-flash-tts";
@@ -61,7 +61,9 @@ const getVoice = async () => {
   const id = res.id ?? res.name?.replace(/^voices\//, "") ?? res.key;
   if (!id) throw new Error("No voice id in response: " + JSON.stringify(res).slice(0, 500));
   fs.mkdirSync(path.dirname(VOICE_FILE), { recursive: true });
-  const saved = { id, display_name: v.display_name, prompt: v.prompt, created: new Date().toISOString(), raw: res };
+  const { sample_audio, ...meta } = res;
+  if (sample_audio?.data) fs.writeFileSync(path.join(path.dirname(VOICE_FILE), "narrator-sample.wav"), Buffer.from(sample_audio.data, "base64"));
+  const saved = { id, display_name: v.display_name, prompt: v.prompt, created: new Date().toISOString(), raw: meta };
   fs.writeFileSync(VOICE_FILE, JSON.stringify(saved, null, 2));
   console.log("  voice:", id);
   return saved;
@@ -70,7 +72,7 @@ const getVoice = async () => {
 // ---------------------------------------------------------------- synthesis
 const synth = async (voiceId, beat) => {
   const body = {
-    contents: [{ role: "user", parts: [{ text: `${DELIVERY}\n\n${beat.text}` }] }],
+    contents: [{ role: "user", parts: [{ text: beat.text }] }],
     generationConfig: {
       responseModalities: ["AUDIO"],
       speechConfig: { voiceConfig: { voice: voiceId } },
@@ -142,20 +144,25 @@ const alignBeat = (text, dur, gaps) => {
   const total = phrases.reduce((a, p) => a + weight(p), 0);
   // expected boundary times
   const internal = gaps.filter((g) => g.s > 0.15 && g.e < dur - 0.1);
+  // Place each phrase break relative to the previous one, so times only move
+  // forward: expected = prevEnd + share of the remaining time by syllable weight.
   const bounds = [];
-  let acc = 0;
+  let prevEnd = 0;
+  let remaining = total;
   for (let i = 0; i < phrases.length - 1; i++) {
-    acc += weight(phrases[i]);
-    const expected = (acc / total) * dur;
-    // nearest unused pause within a tolerance
+    const w = weight(phrases[i]);
+    const span = dur - prevEnd;
+    const expected = prevEnd + (w / remaining) * span;
     let best = null;
     for (const g of internal) {
-      if (bounds.some((b) => b.g === g)) continue;
-      if (bounds.length && g.s <= bounds[bounds.length - 1].e) continue;
+      if (g.s <= prevEnd + 0.15) continue; // need room for at least one word
       const d = Math.abs((g.s + g.e) / 2 - expected);
-      if (d < dur * 0.18 && (!best || d < best.d)) best = { g, d };
+      if (d < Math.max(0.35, span * 0.2) && (!best || d < best.d)) best = { g, d };
     }
-    bounds.push(best ? { s: best.g.s, e: best.g.e, g: best.g } : { s: expected, e: expected, g: null });
+    const b = best ? { s: best.g.s, e: best.g.e } : { s: expected, e: expected };
+    bounds.push(b);
+    prevEnd = b.e;
+    remaining -= w;
   }
   const out = [];
   let t0 = 0;
@@ -188,7 +195,8 @@ const buildTimeline = () => {
     beats.push({ id: b.id, start: +t.toFixed(3), end: +(t + dur).toFixed(3), audio: `ep01/audio/${b.id}.wav` });
     t += dur + GAP;
   }
-  const tl = { beats, words, total: +(t - GAP + TAIL).toFixed(3) };
+  const prev = fs.existsSync("public/ep01/timeline.json") ? JSON.parse(fs.readFileSync("public/ep01/timeline.json", "utf8")) : {};
+  const tl = { beats, words, total: +(t - GAP + TAIL).toFixed(3), ...(prev.music ? { music: prev.music } : {}) };
   fs.writeFileSync("public/ep01/timeline.json", JSON.stringify(tl, null, 1));
   console.log(`timeline: ${tl.total.toFixed(1)}s, ${beats.length} beats, ${words.length} words`);
 };

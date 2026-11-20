@@ -1,0 +1,23 @@
+Instrumental underscore for a 103-second architecture documentary about Zaha Hadid's unbuilt Tokyo Olympic stadium. No vocals. It sits under a spoken voiceover, so keep it sparse, mid-low register, nothing busy in the speech frequencies.
+
+Instruments: felt piano, warm analog synth pads, soft sub pulse, a little koto or shakuhachi colour used sparingly, light ticking percussion. Key: D minor. Tempo around 84 BPM.
+
+Structure (timestamps):
+- 0s–19s: curious and elegant. Sparse piano motif over a soft pad; at 13s a gentle lift as the stadium rises.
+- 19s–49s: tension grows. A steady ticking pulse enters and slowly builds, low strings swell as costs climb.
+- 50s: an abrupt stop: one deep, soft low hit, then near silence with a lingering pad.
+- 57s–62s: hollow and uncertain, single piano notes.
+- 63s–76s: warmer, wooden: koto plucks and a calm pulse, a quiet new beginning.
+- 77s–82s: almost nothing: a single sustained pad and one soft piano chord. Reverent.
+- 83s–94s: a slow, bittersweet build with ticking percussion, echoing and empty.
+- 94s–102s: resolve on the opening piano motif, fading out cleanly by the end.
+
+--- model notes ---
+[[A0]]
+[[B1]]
+[[C2]]
+[[B3]]
+[[D4]]
+[[E5]]
+[[B6]]
+[[F7]]

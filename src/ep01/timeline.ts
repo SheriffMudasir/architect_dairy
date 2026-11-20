@@ -3,7 +3,7 @@ import { BEATS } from "./script";
 
 export type Word = { text: string; startMs: number; endMs: number };
 export type TBeat = { id: string; start: number; end: number; audio?: string };
-export type Timeline = { beats: TBeat[]; words: Word[]; total: number; estimated?: boolean };
+export type Timeline = { beats: TBeat[]; words: Word[]; total: number; music?: string; estimated?: boolean };
 
 const GAP = 0.45; // seconds of air between beats
 const LEAD = 0.4; // silence before the first beat

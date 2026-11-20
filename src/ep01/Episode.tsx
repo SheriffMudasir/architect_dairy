@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
-import { AbsoluteFill, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { Audio } from "@remotion/media";
+import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
 import { MONO, SANS } from "../fonts";
 import { compile, ease, project } from "../iso/engine";
 import { C } from "../theme";
@@ -8,6 +7,7 @@ import { BEATS, HEADLINES } from "./script";
 import { beatIndexAt, Timeline } from "./timeline";
 import { camAt, worldAt } from "./world";
 import { Captions } from "./Captions";
+import { Soundtrack } from "./Soundtrack";
 
 
 export type EpisodeProps = { timeline: Timeline | null };
@@ -83,8 +83,11 @@ export const Episode: React.FC<EpisodeProps> = ({ timeline }) => {
         if (op <= 0.01) return null;
         const [px, y] = project(tag.at, cam);
         // keep tags inside the frame
-        const half = (tag.text.length * 15.6 + 40) / 2;
-        const x = Math.max(48 + half, Math.min(width - 48 - half, px));
+        const w = tag.text.length * 15.6 + 40;
+        const half = w / 2;
+        // anchor: centred above the point, or beside it (left/right aligned)
+        const cx = tag.align === "left" ? px + 14 + half : tag.align === "right" ? px - 14 - half : px;
+        const x = Math.max(48 + half, Math.min(width - 48 - half, cx));
         const bg = tag.tone === "paper" ? C.massTop : C.ink;
         const fg = tag.tone === "accent" ? "#FF8A6E" : tag.tone === "paper" ? C.ink : C.massTop;
         return (
@@ -94,7 +97,7 @@ export const Episode: React.FC<EpisodeProps> = ({ timeline }) => {
               position: "absolute",
               left: x,
               top: y + (tag.dy ?? 0),
-              translate: `-50% ${-100 + (1 - op) * 30}%`,
+              translate: `-50% ${(tag.align ? -50 : -100) + (1 - op) * 30}%`,
               opacity: op,
               fontFamily: MONO,
               fontSize: 25,
@@ -160,13 +163,7 @@ export const Episode: React.FC<EpisodeProps> = ({ timeline }) => {
         ARCHITECT DIARY · EP 01
       </div>
 
-      {tl.beats.map((b) =>
-        b.audio ? (
-          <Sequence key={b.id} from={Math.round(b.start * fps)} layout="none">
-            <Audio src={staticFile(b.audio)} />
-          </Sequence>
-        ) : null,
-      )}
+      <Soundtrack tl={tl} />
     </AbsoluteFill>
   );
 };

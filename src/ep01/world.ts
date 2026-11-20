@@ -5,7 +5,7 @@ import { bar, bowl, city, entries, kuma, park, people, seatPoints, sitePlate, za
 import { C } from "../theme";
 import { Timeline } from "./timeline";
 
-export type Tag = { key: string; text: string; at: V3; opacity: number; tone?: "ink" | "accent" | "paper"; dy?: number };
+export type Tag = { key: string; text: string; at: V3; opacity: number; tone?: "ink" | "accent" | "paper"; dy?: number; align?: "left" | "right" };
 
 type Shot = { yaw: number; scale: number; target: V3; drift?: number; zoom?: number };
 
@@ -143,15 +143,16 @@ export const worldAt = (tl: Timeline, t: number) => {
     const s = 0.55; // metres per billion yen
     items.push(...bar(150, 125, 163 * s * k1, C.inkSoft, fade));
     items.push(...bar(232, 125, lerp(163, 252, k2) * s * Math.min(1, k1 * 3), C.accent, fade));
-    tags.push({ key: "y14", text: `2014 · ¥${Math.round(163 * k1)}BN`, at: [163, 138, 163 * s * k1 + 8], opacity: k1 > 0.02 ? fade : 0 });
+    tags.push({ key: "y14", text: `2014 · ¥${Math.round(163 * k1)}BN`, at: [150, 125, 163 * s * k1], opacity: k1 > 0.02 ? fade : 0, align: "right" });
     tags.push({
       key: "y15",
       text: `2015 · ¥${Math.round(lerp(163, 252, k2))}BN`,
-      at: [245, 138, lerp(163, 252, k2) * s + 8],
+      at: [258, 151, lerp(163, 252, k2) * s],
       opacity: k2 > 0.02 ? fade : 0,
       tone: "accent",
+      align: "left",
     });
-    tags.push({ key: "usd", text: "≈ US$2 BILLION", at: [245, 138, 252 * s * k2 + 34], opacity: fr("cost", 0.85, 0.95) * fade });
+    tags.push({ key: "usd", text: "≈ US$2 BILLION", at: [258, 151, 252 * s * k2 + 40], opacity: fr("cost", 0.85, 0.95) * fade, align: "left" });
   }
   if (since("blame") && !since("scrapped")) {
     tags.push({ key: "b1", text: "OFFICIALS: “THE ARCHES”", at: [-60, -40, 88], opacity: fr("blame", 0.05, 0.15) - fr("blame", 0.9, 1), tone: "accent" });

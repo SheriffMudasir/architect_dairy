@@ -1,0 +1,46 @@
+{
+  "id": "voice_u8950yt7chgw",
+  "display_name": "Architect Diary Narrator",
+  "prompt": "A woman in her mid-thirties with a warm, low-mid, slightly husky voice. Intelligent and quietly confident, like an architecture critic telling a friend a story she finds fascinating. Clear, softly British, internationally neutral diction. Calm, unhurried pace with natural pauses; a hint of dry wit on ironic lines; never theatrical, never salesy, no announcer tone.",
+  "created": "2026-11-20T08:32:20.469Z",
+  "raw": {
+    "id": "voice_u8950yt7chgw",
+    "model": "models/gemini-3.8-flash-tts",
+    "type": "prompted",
+    "expire_time": "2027-11-20T08:32:19.621179771Z",
+    "display_name": "Architect Diary Narrator",
+    "prompted": {
+      "input": "<366 chars>"
+    },
+    "language_code": "en-GB",
+    "accent": "Neutral British, softly international",
+    "persona": "Documentary narrator",
+    "context": "Short-form architecture documentary",
+    "gender": "female",
+    "usage": {
+      "total_tokens": 1325,
+      "total_input_tokens": 251,
+      "input_tokens_by_modality": [
+        {
+          "modality": "text",
+          "tokens": 101
+        }
+      ],
+      "total_cached_tokens": 0,
+      "total_output_tokens": 1074,
+      "output_tokens_by_modality": [
+        {
+          "modality": "audio",
+          "tokens": 1074
+        }
+      ],
+      "total_tool_use_tokens": 0,
+      "total_thought_tokens": 103,
+      "initial_input_tokens": 251
+    },
+    "sample_audio": {
+      "mime_type": "audio/wav",
+      "data": "<2759720 chars>"
+    }
+  }
+}

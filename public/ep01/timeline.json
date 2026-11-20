@@ -1,0 +1,1217 @@
+{
+ "beats": [
+  {
+   "id": "hook",
+   "start": 0.5,
+   "end": 7.072,
+   "audio": "ep01/audio/hook.wav"
+  },
+  {
+   "id": "competition",
+   "start": 7.572,
+   "end": 12.349,
+   "audio": "ep01/audio/competition.wav"
+  },
+  {
+   "id": "design",
+   "start": 12.849,
+   "end": 18.968,
+   "audio": "ep01/audio/design.wav"
+  },
+  {
+   "id": "site",
+   "start": 19.468,
+   "end": 31.048,
+   "audio": "ep01/audio/site.wav"
+  },
+  {
+   "id": "cost",
+   "start": 31.548,
+   "end": 43.235,
+   "audio": "ep01/audio/cost.wav"
+  },
+  {
+   "id": "blame",
+   "start": 43.735,
+   "end": 49.047,
+   "audio": "ep01/audio/blame.wav"
+  },
+  {
+   "id": "scrapped",
+   "start": 49.547,
+   "end": 56.549,
+   "audio": "ep01/audio/scrapped.wav"
+  },
+  {
+   "id": "withdraw",
+   "start": 57.049,
+   "end": 62.156,
+   "audio": "ep01/audio/withdraw.wav"
+  },
+  {
+   "id": "kuma",
+   "start": 62.656,
+   "end": 71.353,
+   "audio": "ep01/audio/kuma.wav"
+  },
+  {
+   "id": "familiar",
+   "start": 71.853,
+   "end": 76.017,
+   "audio": "ep01/audio/familiar.wav"
+  },
+  {
+   "id": "death",
+   "start": 76.517,
+   "end": 82.214,
+   "audio": "ep01/audio/death.wav"
+  },
+  {
+   "id": "rugby",
+   "start": 82.714,
+   "end": 86.053,
+   "audio": "ep01/audio/rugby.wav"
+  },
+  {
+   "id": "empty",
+   "start": 86.553,
+   "end": 93.71,
+   "audio": "ep01/audio/empty.wav"
+  },
+  {
+   "id": "outro",
+   "start": 94.21,
+   "end": 99.43,
+   "audio": "ep01/audio/outro.wav"
+  }
+ ],
+ "words": [
+  {
+   "text": "In",
+   "startMs": 500,
+   "endMs": 756
+  },
+  {
+   "text": " 2012,",
+   "startMs": 756,
+   "endMs": 1970
+  },
+  {
+   "text": " Japan",
+   "startMs": 1970,
+   "endMs": 2369
+  },
+  {
+   "text": " picked",
+   "startMs": 2369,
+   "endMs": 2767
+  },
+  {
+   "text": " Zaha",
+   "startMs": 2767,
+   "endMs": 3166
+  },
+  {
+   "text": " Hadid",
+   "startMs": 3166,
+   "endMs": 3565
+  },
+  {
+   "text": " to",
+   "startMs": 3565,
+   "endMs": 3794
+  },
+  {
+   "text": " build",
+   "startMs": 3794,
+   "endMs": 4023
+  },
+  {
+   "text": " its",
+   "startMs": 4023,
+   "endMs": 4252
+  },
+  {
+   "text": " new",
+   "startMs": 4252,
+   "endMs": 4481
+  },
+  {
+   "text": " National",
+   "startMs": 4481,
+   "endMs": 5049
+  },
+  {
+   "text": " Stadium.",
+   "startMs": 5049,
+   "endMs": 5448
+  },
+  {
+   "text": " It",
+   "startMs": 5988,
+   "endMs": 6217
+  },
+  {
+   "text": " was",
+   "startMs": 6217,
+   "endMs": 6445
+  },
+  {
+   "text": " never",
+   "startMs": 6445,
+   "endMs": 6843
+  },
+  {
+   "text": " built.",
+   "startMs": 6843,
+   "endMs": 7072
+  },
+  {
+   "text": " Forty-six",
+   "startMs": 7572,
+   "endMs": 8257
+  },
+  {
+   "text": " designs",
+   "startMs": 8257,
+   "endMs": 8738
+  },
+  {
+   "text": " entered.",
+   "startMs": 8738,
+   "endMs": 9424
+  },
+  {
+   "text": " A",
+   "startMs": 9786,
+   "endMs": 10030
+  },
+  {
+   "text": " jury",
+   "startMs": 10030,
+   "endMs": 10454
+  },
+  {
+   "text": " led",
+   "startMs": 10454,
+   "endMs": 10698
+  },
+  {
+   "text": " by",
+   "startMs": 10698,
+   "endMs": 10942
+  },
+  {
+   "text": " Tadao",
+   "startMs": 10942,
+   "endMs": 11366
+  },
+  {
+   "text": " Ando",
+   "startMs": 11366,
+   "endMs": 11790
+  },
+  {
+   "text": " chose",
+   "startMs": 11790,
+   "endMs": 12106
+  },
+  {
+   "text": " hers.",
+   "startMs": 12106,
+   "endMs": 12349
+  },
+  {
+   "text": " Two",
+   "startMs": 12849,
+   "endMs": 13345
+  },
+  {
+   "text": " giant",
+   "startMs": 13345,
+   "endMs": 13841
+  },
+  {
+   "text": " arches,",
+   "startMs": 13841,
+   "endMs": 14704
+  },
+  {
+   "text": " like",
+   "startMs": 14987,
+   "endMs": 15368
+  },
+  {
+   "text": " a",
+   "startMs": 15368,
+   "endMs": 15661
+  },
+  {
+   "text": " spine,",
+   "startMs": 15661,
+   "endMs": 16042
+  },
+  {
+   "text": " carrying",
+   "startMs": 16042,
+   "endMs": 16553
+  },
+  {
+   "text": " a",
+   "startMs": 16553,
+   "endMs": 16847
+  },
+  {
+   "text": " roof",
+   "startMs": 16847,
+   "endMs": 17140
+  },
+  {
+   "text": " over",
+   "startMs": 17140,
+   "endMs": 17652
+  },
+  {
+   "text": " eighty",
+   "startMs": 17652,
+   "endMs": 18163
+  },
+  {
+   "text": " thousand",
+   "startMs": 18163,
+   "endMs": 18674
+  },
+  {
+   "text": " seats.",
+   "startMs": 18674,
+   "endMs": 18968
+  },
+  {
+   "text": " But",
+   "startMs": 19468,
+   "endMs": 19726
+  },
+  {
+   "text": " it",
+   "startMs": 19726,
+   "endMs": 19985
+  },
+  {
+   "text": " would",
+   "startMs": 19985,
+   "endMs": 20243
+  },
+  {
+   "text": " sit",
+   "startMs": 20243,
+   "endMs": 20502
+  },
+  {
+   "text": " beside",
+   "startMs": 20502,
+   "endMs": 21029
+  },
+  {
+   "text": " one",
+   "startMs": 21029,
+   "endMs": 21364
+  },
+  {
+   "text": " of",
+   "startMs": 21364,
+   "endMs": 21623
+  },
+  {
+   "text": " Tokyo's",
+   "startMs": 21623,
+   "endMs": 22073
+  },
+  {
+   "text": " most",
+   "startMs": 22073,
+   "endMs": 22331
+  },
+  {
+   "text": " loved",
+   "startMs": 22331,
+   "endMs": 22782
+  },
+  {
+   "text": " parks.",
+   "startMs": 22782,
+   "endMs": 23040
+  },
+  {
+   "text": " Fumihiko",
+   "startMs": 23262,
+   "endMs": 24106
+  },
+  {
+   "text": " Maki",
+   "startMs": 24106,
+   "endMs": 24562
+  },
+  {
+   "text": " and",
+   "startMs": 24562,
+   "endMs": 24824
+  },
+  {
+   "text": " Toyo",
+   "startMs": 24824,
+   "endMs": 25086
+  },
+  {
+   "text": " Ito,",
+   "startMs": 25086,
+   "endMs": 25542
+  },
+  {
+   "text": " both",
+   "startMs": 25719,
+   "endMs": 26000
+  },
+  {
+   "text": " Pritzker",
+   "startMs": 26000,
+   "endMs": 26488
+  },
+  {
+   "text": " winners,",
+   "startMs": 26488,
+   "endMs": 26976
+  },
+  {
+   "text": " said",
+   "startMs": 26976,
+   "endMs": 27271
+  },
+  {
+   "text": " it",
+   "startMs": 27271,
+   "endMs": 27566
+  },
+  {
+   "text": " was",
+   "startMs": 27566,
+   "endMs": 27861
+  },
+  {
+   "text": " far",
+   "startMs": 27861,
+   "endMs": 28155
+  },
+  {
+   "text": " too",
+   "startMs": 28155,
+   "endMs": 28450
+  },
+  {
+   "text": " big.",
+   "startMs": 28450,
+   "endMs": 28745
+  },
+  {
+   "text": " Critics",
+   "startMs": 29063,
+   "endMs": 29468
+  },
+  {
+   "text": " called",
+   "startMs": 29468,
+   "endMs": 29874
+  },
+  {
+   "text": " it",
+   "startMs": 29874,
+   "endMs": 30107
+  },
+  {
+   "text": " a",
+   "startMs": 30107,
+   "endMs": 30340
+  },
+  {
+   "text": " bike",
+   "startMs": 30340,
+   "endMs": 30643
+  },
+  {
+   "text": " helmet.",
+   "startMs": 30643,
+   "endMs": 31048
+  },
+  {
+   "text": " Then",
+   "startMs": 31548,
+   "endMs": 31790
+  },
+  {
+   "text": " came",
+   "startMs": 31790,
+   "endMs": 32103
+  },
+  {
+   "text": " the",
+   "startMs": 32103,
+   "endMs": 32344
+  },
+  {
+   "text": " bill.",
+   "startMs": 32344,
+   "endMs": 32586
+  },
+  {
+   "text": " In",
+   "startMs": 33106,
+   "endMs": 33380
+  },
+  {
+   "text": " 2014,",
+   "startMs": 33380,
+   "endMs": 34679
+  },
+  {
+   "text": " the",
+   "startMs": 34679,
+   "endMs": 34901
+  },
+  {
+   "text": " estimate",
+   "startMs": 34901,
+   "endMs": 35517
+  },
+  {
+   "text": " was",
+   "startMs": 35517,
+   "endMs": 35739
+  },
+  {
+   "text": " a",
+   "startMs": 35739,
+   "endMs": 35961
+  },
+  {
+   "text": " hundred",
+   "startMs": 35961,
+   "endMs": 36347
+  },
+  {
+   "text": " and",
+   "startMs": 36347,
+   "endMs": 36569
+  },
+  {
+   "text": " sixty-three",
+   "startMs": 36569,
+   "endMs": 37021
+  },
+  {
+   "text": " billion",
+   "startMs": 37021,
+   "endMs": 37407
+  },
+  {
+   "text": " yen.",
+   "startMs": 37407,
+   "endMs": 37629
+  },
+  {
+   "text": " A",
+   "startMs": 38059,
+   "endMs": 38272
+  },
+  {
+   "text": " year",
+   "startMs": 38272,
+   "endMs": 38485
+  },
+  {
+   "text": " later:",
+   "startMs": 38485,
+   "endMs": 38856
+  },
+  {
+   "text": " two",
+   "startMs": 39155,
+   "endMs": 39414
+  },
+  {
+   "text": " hundred",
+   "startMs": 39414,
+   "endMs": 39866
+  },
+  {
+   "text": " and",
+   "startMs": 39866,
+   "endMs": 40125
+  },
+  {
+   "text": " fifty-two",
+   "startMs": 40125,
+   "endMs": 40768
+  },
+  {
+   "text": " billion.",
+   "startMs": 40768,
+   "endMs": 41220
+  },
+  {
+   "text": " About",
+   "startMs": 41541,
+   "endMs": 42015
+  },
+  {
+   "text": " two",
+   "startMs": 42015,
+   "endMs": 42287
+  },
+  {
+   "text": " billion",
+   "startMs": 42287,
+   "endMs": 42761
+  },
+  {
+   "text": " dollars.",
+   "startMs": 42761,
+   "endMs": 43235
+  },
+  {
+   "text": " Officials",
+   "startMs": 43735,
+   "endMs": 44427
+  },
+  {
+   "text": " blamed",
+   "startMs": 44427,
+   "endMs": 44912
+  },
+  {
+   "text": " the",
+   "startMs": 44912,
+   "endMs": 45190
+  },
+  {
+   "text": " arches.",
+   "startMs": 45190,
+   "endMs": 45675
+  },
+  {
+   "text": " Her",
+   "startMs": 46131,
+   "endMs": 46403
+  },
+  {
+   "text": " office",
+   "startMs": 46403,
+   "endMs": 46956
+  },
+  {
+   "text": " blamed",
+   "startMs": 46956,
+   "endMs": 47428
+  },
+  {
+   "text": " soaring",
+   "startMs": 47428,
+   "endMs": 47901
+  },
+  {
+   "text": " construction",
+   "startMs": 47901,
+   "endMs": 48575
+  },
+  {
+   "text": " prices.",
+   "startMs": 48575,
+   "endMs": 49047
+  },
+  {
+   "text": " On",
+   "startMs": 49547,
+   "endMs": 49975
+  },
+  {
+   "text": " July",
+   "startMs": 49975,
+   "endMs": 50718
+  },
+  {
+   "text": " seventeenth,",
+   "startMs": 50718,
+   "endMs": 51778
+  },
+  {
+   "text": " 2015,",
+   "startMs": 51956,
+   "endMs": 52882
+  },
+  {
+   "text": " Prime",
+   "startMs": 52882,
+   "endMs": 53128
+  },
+  {
+   "text": " Minister",
+   "startMs": 53128,
+   "endMs": 53599
+  },
+  {
+   "text": " Shinzo",
+   "startMs": 53599,
+   "endMs": 53930
+  },
+  {
+   "text": " Abe",
+   "startMs": 53930,
+   "endMs": 54176
+  },
+  {
+   "text": " scrapped",
+   "startMs": 54176,
+   "endMs": 54507
+  },
+  {
+   "text": " it.",
+   "startMs": 54507,
+   "endMs": 54697
+  },
+  {
+   "text": " Just",
+   "startMs": 54892,
+   "endMs": 55072
+  },
+  {
+   "text": " days",
+   "startMs": 55072,
+   "endMs": 55251
+  },
+  {
+   "text": " after",
+   "startMs": 55251,
+   "endMs": 55564
+  },
+  {
+   "text": " it",
+   "startMs": 55564,
+   "endMs": 55744
+  },
+  {
+   "text": " had",
+   "startMs": 55744,
+   "endMs": 55923
+  },
+  {
+   "text": " been",
+   "startMs": 55923,
+   "endMs": 56103
+  },
+  {
+   "text": " approved.",
+   "startMs": 56103,
+   "endMs": 56549
+  },
+  {
+   "text": " Her",
+   "startMs": 57049,
+   "endMs": 57302
+  },
+  {
+   "text": " team",
+   "startMs": 57302,
+   "endMs": 57555
+  },
+  {
+   "text": " tried",
+   "startMs": 57555,
+   "endMs": 57808
+  },
+  {
+   "text": " to",
+   "startMs": 57808,
+   "endMs": 58062
+  },
+  {
+   "text": " enter",
+   "startMs": 58062,
+   "endMs": 58502
+  },
+  {
+   "text": " the",
+   "startMs": 58502,
+   "endMs": 58756
+  },
+  {
+   "text": " new",
+   "startMs": 58756,
+   "endMs": 59009
+  },
+  {
+   "text": " competition.",
+   "startMs": 59009,
+   "endMs": 59825
+  },
+  {
+   "text": " But",
+   "startMs": 60044,
+   "endMs": 60256
+  },
+  {
+   "text": " no",
+   "startMs": 60256,
+   "endMs": 60468
+  },
+  {
+   "text": " construction",
+   "startMs": 60468,
+   "endMs": 60994
+  },
+  {
+   "text": " company",
+   "startMs": 60994,
+   "endMs": 61520
+  },
+  {
+   "text": " would",
+   "startMs": 61520,
+   "endMs": 61732
+  },
+  {
+   "text": " join",
+   "startMs": 61732,
+   "endMs": 61944
+  },
+  {
+   "text": " them.",
+   "startMs": 61944,
+   "endMs": 62156
+  },
+  {
+   "text": " In",
+   "startMs": 62656,
+   "endMs": 62880
+  },
+  {
+   "text": " December,",
+   "startMs": 62880,
+   "endMs": 63434
+  },
+  {
+   "text": " the",
+   "startMs": 63759,
+   "endMs": 63985
+  },
+  {
+   "text": " job",
+   "startMs": 63985,
+   "endMs": 64210
+  },
+  {
+   "text": " went",
+   "startMs": 64210,
+   "endMs": 64436
+  },
+  {
+   "text": " to",
+   "startMs": 64436,
+   "endMs": 64661
+  },
+  {
+   "text": " Kengo",
+   "startMs": 64661,
+   "endMs": 65054
+  },
+  {
+   "text": " Kuma.",
+   "startMs": 65054,
+   "endMs": 65446
+  },
+  {
+   "text": " A",
+   "startMs": 65966,
+   "endMs": 66227
+  },
+  {
+   "text": " low",
+   "startMs": 66227,
+   "endMs": 66488
+  },
+  {
+   "text": " bowl",
+   "startMs": 66488,
+   "endMs": 66748
+  },
+  {
+   "text": " of",
+   "startMs": 66748,
+   "endMs": 67009
+  },
+  {
+   "text": " timber",
+   "startMs": 67009,
+   "endMs": 67463
+  },
+  {
+   "text": " eaves,",
+   "startMs": 67463,
+   "endMs": 67916
+  },
+  {
+   "text": " with",
+   "startMs": 67916,
+   "endMs": 68177
+  },
+  {
+   "text": " wood",
+   "startMs": 68177,
+   "endMs": 68438
+  },
+  {
+   "text": " from",
+   "startMs": 68438,
+   "endMs": 68698
+  },
+  {
+   "text": " all",
+   "startMs": 68698,
+   "endMs": 68959
+  },
+  {
+   "text": " forty-seven",
+   "startMs": 68959,
+   "endMs": 69799
+  },
+  {
+   "text": " prefectures",
+   "startMs": 69799,
+   "endMs": 70639
+  },
+  {
+   "text": " of",
+   "startMs": 70639,
+   "endMs": 70899
+  },
+  {
+   "text": " Japan.",
+   "startMs": 70899,
+   "endMs": 71353
+  },
+  {
+   "text": " Her",
+   "startMs": 71853,
+   "endMs": 72085
+  },
+  {
+   "text": " office",
+   "startMs": 72085,
+   "endMs": 72557
+  },
+  {
+   "text": " pointed",
+   "startMs": 72557,
+   "endMs": 72960
+  },
+  {
+   "text": " out",
+   "startMs": 72960,
+   "endMs": 73192
+  },
+  {
+   "text": " that",
+   "startMs": 73192,
+   "endMs": 73424
+  },
+  {
+   "text": " the",
+   "startMs": 73424,
+   "endMs": 73656
+  },
+  {
+   "text": " seating",
+   "startMs": 73656,
+   "endMs": 74059
+  },
+  {
+   "text": " bowl",
+   "startMs": 74059,
+   "endMs": 74291
+  },
+  {
+   "text": " looked",
+   "startMs": 74291,
+   "endMs": 74695
+  },
+  {
+   "text": " remarkably",
+   "startMs": 74695,
+   "endMs": 75442
+  },
+  {
+   "text": " familiar.",
+   "startMs": 75442,
+   "endMs": 76017
+  },
+  {
+   "text": " Three",
+   "startMs": 76517,
+   "endMs": 76893
+  },
+  {
+   "text": " months",
+   "startMs": 76893,
+   "endMs": 77268
+  },
+  {
+   "text": " later,",
+   "startMs": 77268,
+   "endMs": 77922
+  },
+  {
+   "text": " Zaha",
+   "startMs": 78676,
+   "endMs": 79312
+  },
+  {
+   "text": " Hadid",
+   "startMs": 79312,
+   "endMs": 79948
+  },
+  {
+   "text": " died.",
+   "startMs": 79948,
+   "endMs": 80314
+  },
+  {
+   "text": " She",
+   "startMs": 81020,
+   "endMs": 81270
+  },
+  {
+   "text": " was",
+   "startMs": 81270,
+   "endMs": 81520
+  },
+  {
+   "text": " sixty-five.",
+   "startMs": 81520,
+   "endMs": 82214
+  },
+  {
+   "text": " The",
+   "startMs": 82714,
+   "endMs": 82934
+  },
+  {
+   "text": " new",
+   "startMs": 82934,
+   "endMs": 83153
+  },
+  {
+   "text": " stadium",
+   "startMs": 83153,
+   "endMs": 83535
+  },
+  {
+   "text": " missed",
+   "startMs": 83535,
+   "endMs": 83917
+  },
+  {
+   "text": " the",
+   "startMs": 83917,
+   "endMs": 84136
+  },
+  {
+   "text": " Rugby",
+   "startMs": 84136,
+   "endMs": 84518
+  },
+  {
+   "text": " World",
+   "startMs": 84518,
+   "endMs": 84737
+  },
+  {
+   "text": " Cup",
+   "startMs": 84737,
+   "endMs": 84956
+  },
+  {
+   "text": " it",
+   "startMs": 84956,
+   "endMs": 85176
+  },
+  {
+   "text": " was",
+   "startMs": 85176,
+   "endMs": 85395
+  },
+  {
+   "text": " meant",
+   "startMs": 85395,
+   "endMs": 85614
+  },
+  {
+   "text": " to",
+   "startMs": 85614,
+   "endMs": 85834
+  },
+  {
+   "text": " host.",
+   "startMs": 85834,
+   "endMs": 86053
+  },
+  {
+   "text": " And",
+   "startMs": 86553,
+   "endMs": 86828
+  },
+  {
+   "text": " when",
+   "startMs": 86828,
+   "endMs": 87104
+  },
+  {
+   "text": " the",
+   "startMs": 87104,
+   "endMs": 87379
+  },
+  {
+   "text": " Olympics",
+   "startMs": 87379,
+   "endMs": 88063
+  },
+  {
+   "text": " finally",
+   "startMs": 88063,
+   "endMs": 88747
+  },
+  {
+   "text": " came,",
+   "startMs": 88747,
+   "endMs": 89104
+  },
+  {
+   "text": " in",
+   "startMs": 89372,
+   "endMs": 89616
+  },
+  {
+   "text": " 2021,",
+   "startMs": 89616,
+   "endMs": 90774
+  },
+  {
+   "text": " the",
+   "startMs": 91100,
+   "endMs": 91369
+  },
+  {
+   "text": " pandemic",
+   "startMs": 91369,
+   "endMs": 92037
+  },
+  {
+   "text": " kept",
+   "startMs": 92037,
+   "endMs": 92306
+  },
+  {
+   "text": " every",
+   "startMs": 92306,
+   "endMs": 92973
+  },
+  {
+   "text": " seat",
+   "startMs": 92973,
+   "endMs": 93242
+  },
+  {
+   "text": " empty.",
+   "startMs": 93242,
+   "endMs": 93710
+  },
+  {
+   "text": " One",
+   "startMs": 94210,
+   "endMs": 94528
+  },
+  {
+   "text": " stadium",
+   "startMs": 94528,
+   "endMs": 94956
+  },
+  {
+   "text": " was",
+   "startMs": 94956,
+   "endMs": 95201
+  },
+  {
+   "text": " never",
+   "startMs": 95201,
+   "endMs": 95628
+  },
+  {
+   "text": " built.",
+   "startMs": 95628,
+   "endMs": 95874
+  },
+  {
+   "text": " The",
+   "startMs": 96301,
+   "endMs": 96572
+  },
+  {
+   "text": " other",
+   "startMs": 96572,
+   "endMs": 97045
+  },
+  {
+   "text": " was",
+   "startMs": 97045,
+   "endMs": 97316
+  },
+  {
+   "text": " built,",
+   "startMs": 97316,
+   "endMs": 97588
+  },
+  {
+   "text": " and",
+   "startMs": 97839,
+   "endMs": 98037
+  },
+  {
+   "text": " almost",
+   "startMs": 98037,
+   "endMs": 98382
+  },
+  {
+   "text": " no",
+   "startMs": 98382,
+   "endMs": 98579
+  },
+  {
+   "text": " one",
+   "startMs": 98579,
+   "endMs": 98836
+  },
+  {
+   "text": " got",
+   "startMs": 98836,
+   "endMs": 99034
+  },
+  {
+   "text": " to",
+   "startMs": 99034,
+   "endMs": 99232
+  },
+  {
+   "text": " watch.",
+   "startMs": 99232,
+   "endMs": 99430
+  }
+ ],
+ "total": 102.03,
+ "music": "ep01/music.wav"
+}

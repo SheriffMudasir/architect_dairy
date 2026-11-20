@@ -38,7 +38,9 @@
     "lint": "eslint src && tsc",
     "voice": "node --experimental-strip-types --no-warnings scripts/voice.mjs",
     "render": "remotion render Ep01TokyoStadium out/ep01.mp4 --codec=h264 --crf=18",
-    "stills": "node scripts/stills.mjs"
+    "stills": "node scripts/stills.mjs",
+    "music": "node scripts/music.mjs",
+    "sfx": "bash scripts/sfx.sh"
   },
   "allowScripts": {
     "esbuild": false

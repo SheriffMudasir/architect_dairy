@@ -118,7 +118,3 @@ export const VOICE_DESIGN = {
   prompt:
     "A woman in her mid-thirties with a warm, low-mid, slightly husky voice. Intelligent and quietly confident, like an architecture critic telling a friend a story she finds fascinating. Clear, softly British, internationally neutral diction. Calm, unhurried pace with natural pauses; a hint of dry wit on ironic lines; never theatrical, never salesy, no announcer tone.",
 };
-
-// Per-request delivery direction prepended to every TTS call.
-export const DELIVERY =
-  "Narrate as a short documentary for architecture lovers. Intimate and close to the microphone, measured pace, crisp consonants. Let the last sentence of each line land with a small pause before it. Read the following:";
