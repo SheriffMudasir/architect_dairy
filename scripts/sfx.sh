@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Synthesised, license-free sound effects (FFmpeg only).
 set -euo pipefail
-D=public/ep01/sfx
+D=public/sfx
 mkdir -p "$D"
 # soft airy whoosh for camera moves
 ffmpeg -v error -y -f lavfi -i "anoisesrc=d=1.1:c=pink:a=0.5" \

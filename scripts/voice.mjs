@@ -1,44 +1,26 @@
-// Generate the episode voiceover with Gemini TTS + a designed (prompted) voice,
-// then build public/ep01/timeline.json (beat timings + per-word timings).
+// Generate an episode's voiceover with Gemini TTS + the channel's designed
+// (prompted) voice, then build public/<ep>/timeline.json (beat + word timings).
 //
-//   node --experimental-strip-types scripts/voice.mjs            # all beats
-//   node --experimental-strip-types scripts/voice.mjs hook cost  # redo some beats
-//   node --experimental-strip-types scripts/voice.mjs --timeline # only rebuild timeline
+//   npm run voice -- ep02              # synthesize missing beats + timeline
+//   npm run voice -- ep02 hook cost    # redo specific beats
+//   npm run voice -- ep02 --force      # redo every beat
+//   npm run voice -- ep02 --timeline   # only rebuild the timeline
 //
-// The API key is NOT read here: the sandbox proxy injects the x-goog-api-key
-// header for generativelanguage.googleapis.com. Outside the sandbox, set
-// GEMINI_API_KEY (or Gemini_API_key) and it is sent instead.
+// The API key is never read here (see scripts/lib.mjs).
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
-import { BEATS, VOICE_DESIGN } from "../src/ep01/script.ts";
+import { VOICE_DESIGN } from "../src/channel.ts";
+import { API, gemini as call, loadScript, parseArgs, readTimeline, timelinePath, writeTimeline } from "./lib.mjs";
 
-const API = "https://generativelanguage.googleapis.com/v1beta";
+const { ep, rest: args } = parseArgs();
+const { beats: BEATS } = await loadScript(ep);
 const TTS_MODEL = process.env.TTS_MODEL ?? "gemini-3.8-flash-tts";
-const OUT = "public/ep01/audio";
+const OUT = `public/${ep}/audio`;
 const VOICE_FILE = "voice/narrator.json";
 const LEAD = 0.5;
 const GAP = 0.5;
 const TAIL = 2.6;
-
-const headers = {
-  "content-type": "application/json",
-  "x-goog-api-key": process.env.GEMINI_API_KEY ?? process.env.Gemini_API_key ?? "injected-by-proxy",
-};
-
-const call = async (url, body, method = "POST") => {
-  for (let attempt = 1; attempt <= 4; attempt++) {
-    const res = await fetch(url, { method, headers, body: body ? JSON.stringify(body) : undefined });
-    const text = await res.text();
-    if (res.ok) return JSON.parse(text);
-    if (attempt < 4 && (res.status === 429 || res.status >= 500)) {
-      console.warn(`  ${res.status}, retrying…`);
-      await new Promise((r) => setTimeout(r, 2000 * attempt));
-      continue;
-    }
-    throw new Error(`${method} ${url} -> ${res.status}: ${text.slice(0, 800)}`);
-  }
-};
 
 // ---------------------------------------------------------------- voice design
 const getVoice = async () => {
@@ -192,18 +174,17 @@ const buildTimeline = () => {
     ws.forEach((w, i) =>
       words.push({ text: words.length ? " " + w.text : w.text, startMs: Math.round((t + w.start) * 1000), endMs: Math.round((t + w.end) * 1000) }),
     );
-    beats.push({ id: b.id, start: +t.toFixed(3), end: +(t + dur).toFixed(3), audio: `ep01/audio/${b.id}.wav` });
+    beats.push({ id: b.id, start: +t.toFixed(3), end: +(t + dur).toFixed(3), audio: `${ep}/audio/${b.id}.wav` });
     t += dur + GAP;
   }
-  const prev = fs.existsSync("public/ep01/timeline.json") ? JSON.parse(fs.readFileSync("public/ep01/timeline.json", "utf8")) : {};
+  const prev = fs.existsSync(timelinePath(ep)) ? readTimeline(ep) : {};
   const tl = { beats, words, total: +(t - GAP + TAIL).toFixed(3), ...(prev.music ? { music: prev.music } : {}) };
-  fs.writeFileSync("public/ep01/timeline.json", JSON.stringify(tl, null, 1));
+  writeTimeline(ep, tl);
   console.log(`timeline: ${tl.total.toFixed(1)}s, ${beats.length} beats, ${words.length} words`);
 };
 
 // ---------------------------------------------------------------- main
 fs.mkdirSync(OUT, { recursive: true });
-const args = process.argv.slice(2);
 if (!args.includes("--timeline")) {
   const voice = await getVoice();
   const only = args.filter((a) => !a.startsWith("--"));

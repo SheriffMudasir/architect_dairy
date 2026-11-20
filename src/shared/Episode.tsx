@@ -3,33 +3,33 @@ import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
 import { MONO, SANS } from "../fonts";
 import { compile, ease, project } from "../iso/engine";
 import { C } from "../theme";
-import { BEATS, HEADLINES } from "./script";
+import { CHANNEL_NAME } from "../channel";
+import { EPISODES } from "../episodes";
 import { beatIndexAt, Timeline } from "./timeline";
-import { camAt, worldAt } from "./world";
 import { Captions } from "./Captions";
 import { Soundtrack } from "./Soundtrack";
 
-
-export type EpisodeProps = { timeline: Timeline | null };
+export type EpisodeProps = { episodeId: string; timeline: Timeline | null };
 
 const SCENE_CX = 540;
 const SCENE_CY = 1010;
 
-export const Episode: React.FC<EpisodeProps> = ({ timeline }) => {
+export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline }) => {
+  const ep = EPISODES.find((e) => e.id === episodeId)!;
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const tl = timeline!;
   const t = frame / fps;
 
-  const cam = camAt(tl, t, SCENE_CX, SCENE_CY);
-  const { items, tags } = useMemo(() => worldAt(tl, t), [tl, t]);
+  const cam = ep.camAt(tl, t, SCENE_CX, SCENE_CY);
+  const { items, tags } = useMemo(() => ep.worldAt(tl, t), [ep, tl, t]);
   const drawables = compile(items, cam);
 
   const bi = beatIndexAt(tl, t);
-  const beat = BEATS[bi];
-  const head = HEADLINES[beat.act];
+  const beat = ep.beats[bi];
+  const head = ep.headlines[beat.act];
   // headline cross-fade when the act changes
-  const actStart = tl.beats.find((b, i) => BEATS[i].act === beat.act)!.start;
+  const actStart = tl.beats.find((b, i) => ep.beats[i].act === beat.act)!.start;
   const headIn = ease((t - actStart + 0.2) / 0.6);
 
   return (
@@ -160,10 +160,10 @@ export const Episode: React.FC<EpisodeProps> = ({ timeline }) => {
           color: C.inkSoft,
         }}
       >
-        ARCHITECT DIARY · EP 01
+        {CHANNEL_NAME} · EP {String(ep.number).padStart(2, "0")}
       </div>
 
-      <Soundtrack tl={tl} />
+      <Soundtrack tl={tl} ep={ep} />
     </AbsoluteFill>
   );
 };

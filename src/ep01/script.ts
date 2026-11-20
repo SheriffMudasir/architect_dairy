@@ -1,26 +1,9 @@
 // Episode 01 — "The Stadium Tokyo Threw Away"
 // Zaha Hadid's New National Stadium (2012–2015) and Kengo Kuma's replacement.
-// Every beat is one TTS clip. Beat lengths come from the generated audio
-// (public/ep01/timeline.json); before audio exists they are estimated.
+// Node-safe data file: read by Remotion AND by scripts/voice.mjs + scripts/music.mjs.
+import type { Beat, EpisodeScript } from "../shared/types";
 
-export type Act = "zaha" | "kuma" | "end";
-
-export type Beat = {
-  id: string;
-  act: Act;
-  /** Mono label under the headline: YEAR · PLACE */
-  label: string;
-  /** Exactly what the narrator says. */
-  text: string;
-};
-
-export const HEADLINES: Record<Act, { lead: string; accent: string }> = {
-  zaha: { lead: "Japan chose Zaha Hadid's stadium.", accent: "It was never built." },
-  kuma: { lead: "Then the job went to", accent: "Kengo Kuma." },
-  end: { lead: "One was never built.", accent: "One was never watched." },
-};
-
-export const BEATS: Beat[] = [
+const beats: Beat[] = [
   {
     id: "hook",
     act: "zaha",
@@ -107,14 +90,35 @@ export const BEATS: Beat[] = [
   },
 ];
 
-// The Gemini voice-design prompt for the channel narrator.
-export const VOICE_DESIGN = {
-  display_name: "Architect Diary Narrator",
-  gender: "female",
-  language_code: "en-GB",
-  accent: "Neutral British, softly international",
-  persona: "Documentary narrator",
-  context: "Short-form architecture documentary",
-  prompt:
-    "A woman in her mid-thirties with a warm, low-mid, slightly husky voice. Intelligent and quietly confident, like an architecture critic telling a friend a story she finds fascinating. Clear, softly British, internationally neutral diction. Calm, unhurried pace with natural pauses; a hint of dry wit on ironic lines; never theatrical, never salesy, no announcer tone.",
+export const SCRIPT: EpisodeScript = {
+  id: "ep01",
+  number: 1,
+  title: "The Stadium Tokyo Threw Away",
+  beats,
+  headlines: {
+    zaha: { lead: "Japan chose Zaha Hadid's stadium.", accent: "It was never built." },
+    kuma: { lead: "Then the job went to", accent: "Kengo Kuma." },
+    end: { lead: "One was never built.", accent: "One was never watched." },
+  },
+  music: {
+    style:
+      "Instruments: felt piano, warm analog synth pads, soft sub pulse, a little koto or shakuhachi colour used sparingly, light ticking percussion. Key: D minor. Tempo around 84 BPM.",
+    sections: [
+      { from: "hook", to: "design", mood: "curious and elegant; sparse piano motif over a soft pad, a gentle lift as the stadium rises" },
+      { from: "site", to: "blame", mood: "tension grows; a steady ticking pulse enters and builds, low strings swell as costs climb" },
+      { from: "scrapped", mood: "an abrupt stop: one deep, soft low hit, then near silence with a lingering pad" },
+      { from: "withdraw", mood: "hollow and uncertain, single piano notes" },
+      { from: "kuma", to: "familiar", mood: "warmer, wooden: koto plucks and a calm pulse, a quiet new beginning" },
+      { from: "death", mood: "almost nothing: a single sustained pad and one soft piano chord. Reverent." },
+      { from: "rugby", to: "empty", mood: "a slow, bittersweet build with ticking percussion, echoing and empty" },
+      { from: "outro", mood: "resolve on the opening piano motif, fading out cleanly by the end" },
+    ],
+    dips: ["death"],
+  },
+  sfx: [
+    { sfx: "swell", beat: "hook", offset: 0.2, volume: 0.28 },
+    { sfx: "swell", beat: "design", offset: -0.3, volume: 0.28 },
+    { sfx: "thud", beat: "scrapped", offset: 0.55, volume: 0.75 },
+    { sfx: "swell", beat: "kuma", offset: 0, volume: 0.24 },
+  ],
 };

@@ -37,10 +37,12 @@
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
     "voice": "node --experimental-strip-types --no-warnings scripts/voice.mjs",
-    "render": "remotion render Ep01TokyoStadium out/ep01.mp4 --codec=h264 --crf=18",
+    "render": "node --experimental-strip-types --no-warnings scripts/render.mjs",
     "stills": "node scripts/stills.mjs",
-    "music": "node scripts/music.mjs",
-    "sfx": "bash scripts/sfx.sh"
+    "music": "node --experimental-strip-types --no-warnings scripts/music.mjs",
+    "sfx": "bash scripts/sfx.sh",
+    "check-voice": "node --experimental-strip-types --no-warnings scripts/check-voice.mjs",
+    "new-episode": "node scripts/new-episode.mjs"
   },
   "allowScripts": {
     "esbuild": false

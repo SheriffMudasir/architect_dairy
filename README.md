@@ -13,22 +13,28 @@ Short vertical architecture documentaries, made with code.
 
 Zaha Hadid's New National Stadium (2012–2015) and Kengo Kuma's replacement.
 
-- Script, labels, voice prompt: `src/ep01/script.ts`
+- Script, labels, music plan: `src/ep01/script.ts` (narrator voice: `src/channel.ts`)
 - Storyboard / animation per beat: `src/ep01/world.ts`
 - Models (Zaha, Kuma, seating bowl, city, park): `src/iso/models.ts`
 - Research notes and sources: `docs/ep01-research.md`
 
 ## Workflow
 
+The full playbook is a project skill: `.claude/skills/architect-diary-episode/SKILL.md`
+(Claude loads it automatically in this repo — just ask for the next episode).
+
 ```bash
 npm i
-npm run dev                 # Remotion Studio preview
-npm run voice               # design voice (once) + synthesize all beats + timeline
-npm run voice -- cost hook  # re-generate specific beats
-npm run render              # out/ep01.mp4
+npm run new-episode -- ep03 "Title"   # scaffold src/ep03, docs/ep03-research.md
+npm run dev                           # Remotion Studio preview
+npm run stills -- ep03 /tmp/s beats   # preview stills per beat
+npm run voice -- ep03                 # designed narrator voice -> clips + timeline
+npm run check-voice -- ep03           # transcribe clips, diff against script
+npm run music -- ep03                 # Lyria score shaped to the timeline
+npm run render -- ep03                # out/ep03.mp4 (+ loudness report)
 ```
 
-Without `public/ep01/timeline.json` the episode uses an estimated timeline
+Without `public/<ep>/timeline.json` an episode uses an estimated timeline
 (silent), so the animation can be previewed before the voice exists.
 
 ### Keys

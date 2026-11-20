@@ -1,13 +1,12 @@
 // The whole episode is one persistent world. Everything is a pure function
 // of time t (seconds) and the beat timeline, so it re-times itself to the voice.
-import { Cam, clamp01, ease, easeOut, Item, lerp, V3 } from "../iso/engine";
+import { ease, easeOut, Item, lerp, V3 } from "../iso/engine";
 import { bar, bowl, city, entries, kuma, park, people, seatPoints, sitePlate, zaha } from "../iso/models";
 import { C } from "../theme";
-import { Timeline } from "./timeline";
+import { beatClock, makeCamAt, Shot } from "../shared/camera";
+import { Timeline } from "../shared/timeline";
+import { Tag, World } from "../shared/types";
 
-export type Tag = { key: string; text: string; at: V3; opacity: number; tone?: "ink" | "accent" | "paper"; dy?: number; align?: "left" | "right" };
-
-type Shot = { yaw: number; scale: number; target: V3; drift?: number; zoom?: number };
 
 const SHOTS: Record<string, Shot> = {
   hook: { yaw: 0.05, scale: 1.24, target: [20, -20, 20], drift: -0.012, zoom: 0.012 },
@@ -26,46 +25,10 @@ const SHOTS: Record<string, Shot> = {
   outro: { yaw: 0.2, scale: 1.47, target: [0, 0, 70], drift: 0.03, zoom: -0.008 },
 };
 
-const shotAt = (id: string, u: number, sx: number, sy: number): Cam => {
-  const s = SHOTS[id];
-  return {
-    yaw: s.yaw + (s.drift ?? 0) * u,
-    scale: s.scale * (1 + (s.zoom ?? 0) * u),
-    target: s.target,
-    sx,
-    sy,
-  };
-};
+export const camAt = makeCamAt(SHOTS);
 
-const blendCam = (a: Cam, b: Cam, k: number): Cam => ({
-  yaw: lerp(a.yaw, b.yaw, k),
-  scale: Math.exp(lerp(Math.log(a.scale), Math.log(b.scale), k)),
-  target: [lerp(a.target[0], b.target[0], k), lerp(a.target[1], b.target[1], k), lerp(a.target[2], b.target[2], k)],
-  sx: a.sx,
-  sy: a.sy,
-});
-
-export const camAt = (tl: Timeline, t: number, sx: number, sy: number): Cam => {
-  const bs = tl.beats;
-  let i = 0;
-  for (let k = 0; k < bs.length; k++) if (t >= bs[k].start - 0.35) i = k;
-  const b = bs[i];
-  const u = t - b.start;
-  const cur = shotAt(b.id, Math.max(u, 0), sx, sy);
-  if (i === 0) return cur;
-  const p = bs[i - 1];
-  const prev = shotAt(p.id, p.end - p.start + 0.8, sx, sy);
-  return blendCam(prev, cur, ease((u + 0.35) / 1.5));
-};
-
-export const worldAt = (tl: Timeline, t: number) => {
-  const T: Record<string, { s: number; e: number; d: number }> = {};
-  for (const b of tl.beats) T[b.id] = { s: b.start, e: b.end, d: b.end - b.start };
-  /** 0..1 progress between (beat start + a) and (beat start + b) seconds. */
-  const at = (id: string, a: number, b: number) => clamp01((t - (T[id].s + a)) / (b - a));
-  /** progress as fraction of the beat's duration */
-  const fr = (id: string, a: number, b: number) => at(id, a * T[id].d, b * T[id].d);
-  const since = (id: string) => t >= T[id].s - 0.2;
+export const worldAt = (tl: Timeline, t: number): World => {
+  const { T, at, fr, since } = beatClock(tl, t);
 
   const items: Item[] = [];
   const tags: Tag[] = [];
