@@ -7,7 +7,7 @@
 //
 // The API key is NOT read here: the sandbox proxy injects the x-goog-api-key
 // header for generativelanguage.googleapis.com. Outside the sandbox, set
-// GEMINI_API_KEY and it is sent instead.
+// GEMINI_API_KEY (or Gemini_API_key) and it is sent instead.
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
@@ -23,7 +23,7 @@ const TAIL = 2.6;
 
 const headers = {
   "content-type": "application/json",
-  "x-goog-api-key": process.env.GEMINI_API_KEY ?? "injected-by-proxy",
+  "x-goog-api-key": process.env.GEMINI_API_KEY ?? process.env.Gemini_API_key ?? "injected-by-proxy",
 };
 
 const call = async (url, body, method = "POST") => {
