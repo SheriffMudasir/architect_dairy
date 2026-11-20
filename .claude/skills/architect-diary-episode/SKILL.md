@@ -44,6 +44,14 @@ export REMOTION_BROWSER=/opt/pw-browsers/chromium_headless_shell-1243/chrome-hea
 - Allowed extra hosts on the environment: `generativelanguage.googleapis.com`,
   `ai.google.dev` (docs redirect to aistudio.google.com, which is blocked — read the
   `@google/genai` npm package's `.d.ts` files for API shapes instead).
+- Stock media hosts allowed: `api.openverse.org` (search), `live.staticflickr.com`
+  (downloads). Wikimedia (`upload.wikimedia.org`) rate-limits this shared IP (429) —
+  pick Flickr-hosted results. Pexels stopped issuing API keys. Pixabay needs its key in
+  the URL, so it can't be a network secret: it would have to be an environment
+  variable `PIXABAY_API_KEY` (read on session start) plus hosts `pixabay.com`,
+  `cdn.pixabay.com` — not set up yet; ask the user before relying on stock video.
+- Node's `fetch` ignores the proxy unless `NODE_USE_ENV_PROXY=1` (already in every
+  npm script — always run scripts via `npm run`, or you'll get ENOTFOUND).
 - huggingface CDN is blocked, so there is no Whisper; `scripts/voice.mjs` has its own
   pause-anchored aligner (good enough for 2–4 word caption pages).
 
@@ -65,6 +73,32 @@ the next number, fill it in instead of creating another one. To rename, change
   on a figure, leave it out of the script.
 - Avoid quoted insults or attributions you can't source; prefer "critics called it…".
 
+## 2b. Stock photos (`npm run media`)
+
+```bash
+npm run media -- epNN search "Japan National Stadium" 20   # Openverse, CC0/BY/BY-SA only
+npm run media -- epNN get <openverse-id> <short-name>       # -> public/epNN/media/<name>.jpg + credits.json
+```
+
+- Plan 6–10 photos: the real building(s), the people (portraits), the place (street,
+  park, skyline), the aftermath. Our 3D model stays the hero for anything unbuilt.
+- **Licence hygiene:** only CC0 / PDM / CC BY / CC BY-SA (we crop, tint, animate, so
+  no ND; commercial use, so no NC). Skip uploads that look like re-posted professional
+  work (e.g. "Portrait by <famous photographer>" uploaded by an aggregator account,
+  news-agency photos like REUTERS/AP) — the CC label is probably invalid.
+  Prefer prolific original photographers (e.g. Dick Thomas Johnson on Flickr) and
+  government public-domain photos.
+- **Look before you use:** build a labelled contact sheet and inspect it — titles
+  lie (ep01's "Shinzo Abe" photos showed only an honour guard).
+  ```bash
+  S=/tmp/…/scratchpad/m; mkdir -p $S; i=0; for f in public/epNN/media/*.jpg; do ffmpeg -v error -y -i $f -vf "scale=300:300:force_original_aspect_ratio=decrease,pad=300:300:(ow-iw)/2:(oh-ih)/2:white,drawtext=text='$i':x=4:y=4:fontsize=18:fontcolor=red" $S/$(printf %02d $i).png; i=$((i+1)); done; ffmpeg -v error -y -pattern_type glob -i "$S/*.png" -vf tile=6x2 $S/sheet.jpg
+  ```
+- People without a usable photo get a type-only name card (initials monogram) — fine.
+- Delete unused downloads and their `credits.json` entries. Credits shown in-video
+  (each photo's credit line + the end card) are generated from `credits.json`, so
+  CC BY attribution is automatic; also paste `npm run media -- epNN credits` into the
+  video description.
+
 ## 3. Script (`src/epNN/script.ts`)
 
 Story shape that works (ep01): **hook with the twist** → competition/commission →
@@ -81,7 +115,11 @@ Rules:
 - `label` = mono line under the headline: `YEAR · PLACE` style, uppercase.
 - `act` switches the big headline (2–3 acts). Headlines: `lead` (ink) + `accent` (vermilion).
 - `music.sections` reference beat ids; `music.dips` = beats where music nearly vanishes.
-- `sfx`: `swell` when a building rises, `thud` on the big break; whooshes are automatic.
+- `sfx`: `swell` when a building rises. Whooshes (beat changes), thuds (stamps) and
+  ticks (cards/numbers) are added automatically from the inserts.
+- `year` on every beat drives the running year bar (`years: [start, end]` on the script).
+- `em: [...]` per beat = caption words to highlight (names, numbers, the twist word).
+  2–4 per beat; multi-word entries are fine ("Tadao Ando").
 
 Show the user the script (beats as a numbered list) before voicing if they want to
 review; otherwise proceed — they can request changes after the animatic.
@@ -105,6 +143,24 @@ review; otherwise proceed — they can request changes after the animatic.
     default ink for facts. Use `align: "left" | "right"` when two tags sit close.
 - Context: `city()`, `park()`, `sitePlate()`, `people()` give scale and place.
 
+## 4b. Inserts — the motion-graphics layer (`inserts` in script.ts)
+
+The 3D world alone gets repetitive. **Rule: something new on screen every 2–3 s.**
+Alternate 3D shots with inserts; each beat should have at most two inserts. Vocabulary
+(see `src/shared/Inserts.tsx`, timing = fractions of a beat, `untilBeat` to span):
+
+| kind | use for | notes |
+|---|---|---|
+| `photo` `layout:"full"` | establishing the real place/building, emotional beats | blends into the paper top/bottom; `grade:"mono"` for tributes; `focus` = zoom origin |
+| `photo` `layout:"card"` | details, "here's the real thing" | tilted print sliding in from `side`; caption + automatic credit |
+| `person` | first mention of a person | lower-third; `photo` optional (else initials); simultaneous cards stack |
+| `number` | the hard numbers | counts up, lands with a bump; `accent:true` for the shocking one; `format:"plain"` for small numbers |
+| `stamp` | the break ("SCRAPPED", "CANCELLED", "DEMOLISHED") | slams in with camera shake + thud |
+| `quote` | a critic's line / nickname | big type, only sourced quotes |
+
+The world dims behind cards/numbers/quotes automatically, and in-world tags fade.
+Keep the 3D build moments (a building rising, a ghost dropping) free of cards.
+
 ## 5. Preview silently (cheap; do this before spending on audio)
 
 ```bash
@@ -127,6 +183,12 @@ npm run voice -- epNN cost hook  # redo bad beats; then check again
 
 - Model `gemini-3.8-flash-tts`; voice = the id in `voice/narrator.json` (designed via
   `POST /v1beta/voices` with `type: "prompted"`, `store: true`).
+- Clips are normalised to **−14 LUFS** (louder than ep01 v1, which the user found too
+  low); music sits at 0.15 under speech.
+- To try a different narrator: `npm run voice-audition -- <name> "<description>"`
+  renders the same three lines (also `voice-audition -- current`); send the wavs to
+  the user, then `npm run voice-audition -- use <name>` and re-run `voice --force`,
+  `check-voice`, `music`.
 - Expect ~2.4 words/s. If a 10-word beat produces >8 s, something was read aloud
   that shouldn't have been — check-voice will show it.
 - After any voice change, re-run music (its timestamps come from the timeline).

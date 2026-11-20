@@ -1,0 +1,14 @@
+{
+  "bright": {
+    "id": "voice_m7fk323vchsy",
+    "name": "bright",
+    "prompt": "A woman in her early thirties with a clear, bright, mid-pitched voice that sits forward and projects well. Warm and engaging, smiling slightly, with real curiosity and momentum, like a top documentary YouTuber telling a gripping story. Crisp British-international diction, lively but controlled pace, natural emphasis on key words, short dramatic pauses before reveals. Never breathy, never sleepy, never announcer-like.",
+    "created": "2026-11-20T20:21:12.678Z"
+  },
+  "punchy": {
+    "id": "voice_s07h1c0x5h7i",
+    "name": "punchy",
+    "prompt": "A confident woman in her thirties with a rich, resonant, medium-pitched voice and strong presence. Energetic and assured documentary storyteller: punchy delivery, clear projection, tight pacing that keeps viewers hooked, emphasising numbers and names, a touch of wry irony on twists. Neutral international English with a light British polish. Warm, articulate, never shouty or salesy.",
+    "created": "2026-11-20T20:21:38.785Z"
+  }
+}

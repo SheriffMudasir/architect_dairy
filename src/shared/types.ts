@@ -12,11 +12,38 @@ export type Beat = {
   label: string;
   /** Exactly what the narrator says. Plain text only: no stage directions (TTS reads them aloud). */
   text: string;
+  /** Year shown on the running year bar. */
+  year?: number;
+  /** Caption words to highlight in the accent colour (case-insensitive, punctuation ignored). */
+  em?: string[];
 };
+
+/** Timing of an insert inside a beat: fractions of the beat's duration. `untilBeat` lets it run into a later beat. */
+type InsertTiming = { beat: string; from?: number; to?: number; untilBeat?: string };
+
+export type Insert = InsertTiming &
+  (
+    | {
+        kind: "photo";
+        /** media name in public/<ep>/media (without .jpg); credit comes from credits.json */
+        src: string;
+        /** card = tilted print over the scene; full = full-bleed, blended into the paper */
+        layout: "card" | "full";
+        caption?: string;
+        tilt?: number; // degrees, card only
+        side?: "left" | "right"; // card slides in from
+        grade?: "warm" | "mono"; // colour treatment
+        focus?: [number, number]; // ken-burns zoom origin, 0..1
+      }
+    | { kind: "person"; name: string; role: string; photo?: string }
+    | { kind: "number"; value: number; prefix?: string; suffix?: string; label: string; sub?: string; accent?: boolean; format?: "full" | "plain" }
+    | { kind: "stamp"; text: string; sub?: string }
+    | { kind: "quote"; text: string; by: string }
+  );
 
 export type Headline = { lead: string; accent: string };
 
-export type SfxName = "whoosh" | "thud" | "swell";
+export type SfxName = "whoosh" | "thud" | "swell" | "tick";
 export type SfxCue = { sfx: SfxName; beat: string; offset?: number; volume?: number };
 
 export type MusicPlan = {
@@ -36,6 +63,10 @@ export type EpisodeScript = {
   headlines: Record<string, Headline>;
   music: MusicPlan;
   sfx: SfxCue[];
+  /** Photos, name cards, numbers, stamps, quotes layered over the 3D world. */
+  inserts?: Insert[];
+  /** Range of the running year bar. Omit to hide it. */
+  years?: [number, number];
 };
 
 export type Tag = {

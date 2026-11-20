@@ -15,7 +15,7 @@ export const Soundtrack: React.FC<{ tl: Timeline; ep: EpisodeScript }> = ({ tl, 
   const musicVolume = (f: number) => {
     const t = f / fps;
     const speaking = tl.beats.some((b) => t > b.start - 0.15 && t < b.end + 0.1);
-    let v = speaking ? 0.2 : 0.3;
+    let v = speaking ? 0.15 : 0.28;
     if (dips.some((d) => t > d.start - 0.5 && t < d.end + 0.3)) v = 0.1;
     const fade = interpolate(t, [0, 0.8, total - 2.5, total], [0, 1, 1, 0], {
       extrapolateLeft: "clamp",
@@ -27,6 +27,17 @@ export const Soundtrack: React.FC<{ tl: Timeline; ep: EpisodeScript }> = ({ tl, 
   const cues = [
     // a soft whoosh into every new beat (camera move)
     ...tl.beats.slice(1).map((b) => ({ src: "sfx/whoosh.wav", at: b.start - 0.45, volume: 0.16 })),
+    // inserts bring their own sounds: thud on stamps, a soft tick on cards and numbers
+    ...(ep.inserts ?? []).flatMap((ins) => {
+      const b = beat(ins.beat);
+      if (!b) return [];
+      const at = b.start + (ins.from ?? 0) * (b.end - b.start);
+      if (ins.kind === "stamp") return [{ src: "sfx/thud.wav", at: at + 0.12, volume: 0.8 }];
+      if (ins.kind === "number" || ins.kind === "person" || ins.kind === "quote" || (ins.kind === "photo" && ins.layout === "card"))
+        return [{ src: "sfx/tick.wav", at, volume: 0.35 }];
+      if (ins.kind === "photo") return [{ src: "sfx/whoosh.wav", at: at - 0.1, volume: 0.12 }];
+      return [];
+    }),
     ...ep.sfx
       .filter((c) => beat(c.beat))
       .map((c) => ({ src: `sfx/${c.sfx}.wav`, at: beat(c.beat)!.start + (c.offset ?? 0), volume: c.volume ?? 0.3 })),

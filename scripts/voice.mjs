@@ -20,7 +20,7 @@ const OUT = `public/${ep}/audio`;
 const VOICE_FILE = "voice/narrator.json";
 const LEAD = 0.5;
 const GAP = 0.5;
-const TAIL = 2.6;
+const TAIL = 5.5; // room for the credits card
 
 // ---------------------------------------------------------------- voice design
 const getVoice = async () => {
@@ -75,7 +75,7 @@ const synth = async (voiceId, beat) => {
     ...(isWav ? [] : ["-f", "s16le", "-ar", String(rate), "-ac", "1"]),
     "-i", raw,
     "-af",
-    "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.12,areverse,loudnorm=I=-16:TP=-1.5:LRA=7",
+    "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05,areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.12,areverse,loudnorm=I=-14:TP=-1.2:LRA=7",
     "-ar", "48000", "-ac", "1", wav,
   ]);
   fs.unlinkSync(raw);

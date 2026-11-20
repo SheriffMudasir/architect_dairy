@@ -36,13 +36,15 @@
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
-    "voice": "node --experimental-strip-types --no-warnings scripts/voice.mjs",
-    "render": "node --experimental-strip-types --no-warnings scripts/render.mjs",
-    "stills": "node scripts/stills.mjs",
-    "music": "node --experimental-strip-types --no-warnings scripts/music.mjs",
+    "voice": "NODE_USE_ENV_PROXY=1 node --experimental-strip-types --no-warnings scripts/voice.mjs",
+    "render": "NODE_USE_ENV_PROXY=1 node --experimental-strip-types --no-warnings scripts/render.mjs",
+    "stills": "NODE_USE_ENV_PROXY=1 node scripts/stills.mjs",
+    "music": "NODE_USE_ENV_PROXY=1 node --experimental-strip-types --no-warnings scripts/music.mjs",
     "sfx": "bash scripts/sfx.sh",
-    "check-voice": "node --experimental-strip-types --no-warnings scripts/check-voice.mjs",
-    "new-episode": "node scripts/new-episode.mjs"
+    "check-voice": "NODE_USE_ENV_PROXY=1 node --experimental-strip-types --no-warnings scripts/check-voice.mjs",
+    "new-episode": "NODE_USE_ENV_PROXY=1 node scripts/new-episode.mjs",
+    "media": "NODE_USE_ENV_PROXY=1 node --experimental-strip-types --no-warnings scripts/media.mjs",
+    "voice-audition": "NODE_USE_ENV_PROXY=1 node --experimental-strip-types --no-warnings scripts/voice-audition.mjs"
   },
   "allowScripts": {
     "esbuild": false

@@ -7,21 +7,28 @@ import { CHANNEL_NAME } from "../channel";
 import { EPISODES } from "../episodes";
 import { beatIndexAt, Timeline } from "./timeline";
 import { Captions } from "./Captions";
+import { activeInserts, Credit, CreditsCard, FullBleed, Overlays, shakeAt, veilAt, YearBar } from "./Inserts";
 import { Soundtrack } from "./Soundtrack";
 
-export type EpisodeProps = { episodeId: string; timeline: Timeline | null };
+export type EpisodeProps = { episodeId: string; timeline: Timeline | null; credits?: Credit[] };
 
 const SCENE_CX = 540;
 const SCENE_CY = 1010;
 
-export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline }) => {
+export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits = [] }) => {
   const ep = EPISODES.find((e) => e.id === episodeId)!;
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const tl = timeline!;
   const t = frame / fps;
 
-  const cam = ep.camAt(tl, t, SCENE_CX, SCENE_CY);
+  const baseCam = ep.camAt(tl, t, SCENE_CX, SCENE_CY);
+  // punch-in: a small zoom kick at every beat change keeps the cut energetic
+  const sinceBeat = Math.min(...tl.beats.map((b) => (t >= b.start - 0.35 ? t - b.start + 0.35 : Infinity)));
+  const cam = { ...baseCam, scale: baseCam.scale * (1 + 0.05 * Math.exp(-Math.max(0, sinceBeat) * 5)) };
+  const actives = activeInserts(ep.inserts, tl, t);
+  const shake = shakeAt(actives);
+  const veil = veilAt(actives, t);
   const { items, tags } = useMemo(() => ep.worldAt(tl, t), [ep, tl, t]);
   const drawables = compile(items, cam);
 
@@ -31,9 +38,12 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline }) => {
   // headline cross-fade when the act changes
   const actStart = tl.beats.find((b, i) => ep.beats[i].act === beat.act)!.start;
   const headIn = ease((t - actStart + 0.2) / 0.6);
+  const prevYear = ep.beats[Math.max(0, bi - 1)].year ?? beat.year ?? 0;
+  const lastEnd = tl.beats[tl.beats.length - 1].end;
 
   return (
     <AbsoluteFill style={{ backgroundColor: C.paper, fontFamily: SANS }}>
+      <AbsoluteFill style={{ translate: `${shake.x}px ${shake.y}px` }}>
       {/* soft vignette */}
       <AbsoluteFill
         style={{
@@ -70,6 +80,8 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline }) => {
         )}
       </svg>
 
+      <FullBleed actives={actives} t={t} ep={ep.id} />
+
       {/* paper fade at top and bottom so text sits on calm ground */}
       <AbsoluteFill
         style={{
@@ -77,9 +89,12 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline }) => {
         }}
       />
 
+      {/* veil under cards and numbers */}
+      <AbsoluteFill style={{ background: C.paper, opacity: veil }} />
+
       {/* in-world tags */}
       {tags.map((tag) => {
-        const op = Math.max(0, Math.min(1, tag.opacity));
+        const op = Math.max(0, Math.min(1, tag.opacity)) * (1 - veil);
         if (op <= 0.01) return null;
         const [px, y] = project(tag.at, cam);
         // keep tags inside the frame
@@ -117,6 +132,9 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline }) => {
         );
       })}
 
+      <Overlays actives={actives} t={t} ep={ep.id} credits={credits} />
+      </AbsoluteFill>
+
       {/* headline + label */}
       <div style={{ position: "absolute", left: 84, right: 84, top: 150 }}>
         <div
@@ -145,7 +163,9 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline }) => {
         </div>
       </div>
 
-      <Captions words={tl.words} t={t} font={SANS} />
+      {ep.years && beat.year ? <YearBar years={ep.years} year={beat.year} prevYear={prevYear} t={t} beatStart={tl.beats[bi].start} /> : null}
+
+      <Captions words={tl.words} t={t} font={SANS} tl={tl} beats={ep.beats} />
 
       {/* channel mark */}
       <div
@@ -162,6 +182,8 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline }) => {
       >
         {CHANNEL_NAME} · EP {String(ep.number).padStart(2, "0")}
       </div>
+
+      <CreditsCard credits={credits} t={t} start={lastEnd + 1.2} />
 
       <Soundtrack tl={tl} ep={ep} />
     </AbsoluteFill>
