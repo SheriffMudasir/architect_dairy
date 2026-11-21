@@ -1,0 +1,68 @@
+{
+  "ai-hook-key": {
+    "hash": "784715ec988e",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "Low aerial drone view at morning, the tower centred, slight upward angle, facade glinting\n\nSubject (keep exactly consistent): 30 St Mary Axe ('the Gherkin') in the City of London: a 180 m bullet-shaped glass tower, widest about a third of the way up, tapering to a rounded tip capped by a dark glass lens dome; a dense diagonal steel diagrid of diamond-shaped flat glass panes; six dark-tinted glass bands spiralling up the facade; surrounded by older stone buildings and other City towers\n\nStyle: photorealistic architectural visualisation, soft natural daylight, gentle haze, cool blue-grey palette with warm highlights, subtle film grain, 35mm lens, calm cinematic composition\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1577,
+    "at": "2026-11-21T20:14:25.550Z"
+  },
+  "ai-glass-bend": {
+    "hash": "e02264d5d00d",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "A large sheet of glass being slowly bent over a steel mould in a glass factory, warm industrial light, shallow depth of field\n\nStyle: photorealistic architectural visualisation, soft natural daylight, gentle haze, cool blue-grey palette with warm highlights, subtle film grain, 35mm lens, calm cinematic composition\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1551,
+    "at": "2026-11-21T20:14:33.649Z"
+  },
+  "ai-diagrid": {
+    "hash": "e08e895f7929",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "Extreme close-up looking up along the facade: dark steel diagonal members crossing in diamonds, flat glass panes reflecting sky\n\nSubject (keep exactly consistent): 30 St Mary Axe ('the Gherkin') in the City of London: a 180 m bullet-shaped glass tower, widest about a third of the way up, tapering to a rounded tip capped by a dark glass lens dome; a dense diagonal steel diagrid of diamond-shaped flat glass panes; six dark-tinted glass bands spiralling up the facade; surrounded by older stone buildings and other City towers\n\nStyle: photorealistic architectural visualisation, soft natural daylight, gentle haze, cool blue-grey palette with warm highlights, subtle film grain, 35mm lens, calm cinematic composition\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1481,
+    "at": "2026-11-21T20:14:41.187Z"
+  },
+  "ai-lens": {
+    "hash": "8bd50862d2bd",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "Close aerial view of the very top of the tower: the rounded dark glass lens cap above the faceted facade, London below in haze\n\nSubject (keep exactly consistent): 30 St Mary Axe ('the Gherkin') in the City of London: a 180 m bullet-shaped glass tower, widest about a third of the way up, tapering to a rounded tip capped by a dark glass lens dome; a dense diagonal steel diagrid of diamond-shaped flat glass panes; six dark-tinted glass bands spiralling up the facade; surrounded by older stone buildings and other City towers\n\nStyle: photorealistic architectural visualisation, soft natural daylight, gentle haze, cool blue-grey palette with warm highlights, subtle film grain, 35mm lens, calm cinematic composition\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1478,
+    "at": "2026-11-21T20:14:49.047Z"
+  },
+  "ai-lightwell": {
+    "hash": "248b8dbb1a88",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "Interior view looking up a spiralling atrium light well inside the tower, daylight pouring down through angled glass, office floors at the edges\n\nSubject (keep exactly consistent): 30 St Mary Axe ('the Gherkin') in the City of London: a 180 m bullet-shaped glass tower, widest about a third of the way up, tapering to a rounded tip capped by a dark glass lens dome; a dense diagonal steel diagrid of diamond-shaped flat glass panes; six dark-tinted glass bands spiralling up the facade; surrounded by older stone buildings and other City towers\n\nStyle: photorealistic architectural visualisation, soft natural daylight, gentle haze, cool blue-grey palette with warm highlights, subtle film grain, 35mm lens, calm cinematic composition\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1578,
+    "at": "2026-11-21T20:14:58.679Z"
+  },
+  "ai-sunset-key": {
+    "hash": "ab0c5ecdaa43",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "Golden-hour wide view of the tower among City towers, warm sunset light on the faceted glass, long shadows\n\nSubject (keep exactly consistent): 30 St Mary Axe ('the Gherkin') in the City of London: a 180 m bullet-shaped glass tower, widest about a third of the way up, tapering to a rounded tip capped by a dark glass lens dome; a dense diagonal steel diagrid of diamond-shaped flat glass panes; six dark-tinted glass bands spiralling up the facade; surrounded by older stone buildings and other City towers\n\nStyle: photorealistic architectural visualisation, soft natural daylight, gentle haze, cool blue-grey palette with warm highlights, subtle film grain, 35mm lens, calm cinematic composition\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1503,
+    "at": "2026-11-21T20:15:06.421Z"
+  },
+  "ai-hook-clip": {
+    "hash": "6e66bbd17ec9",
+    "kind": "video",
+    "model": "gemini-omni:gemini-omni-1.2-flash",
+    "prompt": "Slow, smooth drone push-in toward the tower; sunlight glints travel across the faceted glass\n\nSubject (keep exactly consistent): 30 St Mary Axe ('the Gherkin') in the City of London: a 180 m bullet-shaped glass tower, widest about a third of the way up, tapering to a rounded tip capped by a dark glass lens dome; a dense diagonal steel diagrid of diamond-shaped flat glass panes; six dark-tinted glass bands spiralling up the facade; surrounded by older stone buildings and other City towers\n\nStyle: photorealistic architectural visualisation, soft natural daylight, gentle haze, cool blue-grey palette with warm highlights, subtle film grain, 35mm lens, calm cinematic composition\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "from": "ai-hook-key",
+    "tokens": 34752,
+    "at": "2026-11-21T20:15:56.903Z"
+  },
+  "ai-climax-clip": {
+    "hash": "51a041cca89a",
+    "kind": "video",
+    "model": "gemini-omni:gemini-omni-1.2-flash",
+    "prompt": "Slow orbiting drone shot around the tower at golden hour, the faceted glass flickering with light\n\nSubject (keep exactly consistent): 30 St Mary Axe ('the Gherkin') in the City of London: a 180 m bullet-shaped glass tower, widest about a third of the way up, tapering to a rounded tip capped by a dark glass lens dome; a dense diagonal steel diagrid of diamond-shaped flat glass panes; six dark-tinted glass bands spiralling up the facade; surrounded by older stone buildings and other City towers\n\nStyle: photorealistic architectural visualisation, soft natural daylight, gentle haze, cool blue-grey palette with warm highlights, subtle film grain, 35mm lens, calm cinematic composition\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "from": "ai-sunset-key",
+    "tokens": 34752,
+    "at": "2026-11-21T20:16:30.971Z"
+  }
+}

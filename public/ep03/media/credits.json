@@ -1,0 +1,104 @@
+[
+  {
+    "name": "gherkin-street",
+    "file": "ep03/media/gherkin-street.jpg",
+    "provider": "openverse",
+    "title": "30 St Mary Axe",
+    "creator": "aur\u00e9lien.",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "source": "https://www.flickr.com/photos/28536568@N00/5251184780"
+  },
+  {
+    "name": "gherkin-pettitt",
+    "file": "ep03/media/gherkin-pettitt.jpg",
+    "provider": "openverse",
+    "title": "Swiss RE, 'The Gherkin', London 26-5-2015",
+    "creator": "Martin Pettitt",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/95012874@N00/20245468334"
+  },
+  {
+    "name": "gherkin-dokkum",
+    "file": "ep03/media/gherkin-dokkum.jpg",
+    "provider": "openverse",
+    "title": "30 St Mary Axe / Gherkin",
+    "creator": "Remko van Dokkum",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/24034951@N00/3695063942"
+  },
+  {
+    "name": "ai-hook-key",
+    "file": "ep03/media/ai-hook-key.jpg",
+    "provider": "ai",
+    "title": "Low aerial drone view at morning, the tower centred, slight upward angle, facade",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": ""
+  },
+  {
+    "name": "ai-glass-bend",
+    "file": "ep03/media/ai-glass-bend.jpg",
+    "provider": "ai",
+    "title": "A large sheet of glass being slowly bent over a steel mould in a glass factory, ",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": ""
+  },
+  {
+    "name": "ai-diagrid",
+    "file": "ep03/media/ai-diagrid.jpg",
+    "provider": "ai",
+    "title": "Extreme close-up looking up along the facade: dark steel diagonal members crossi",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": ""
+  },
+  {
+    "name": "ai-lens",
+    "file": "ep03/media/ai-lens.jpg",
+    "provider": "ai",
+    "title": "Close aerial view of the very top of the tower: the rounded dark glass lens cap ",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": ""
+  },
+  {
+    "name": "ai-lightwell",
+    "file": "ep03/media/ai-lightwell.jpg",
+    "provider": "ai",
+    "title": "Interior view looking up a spiralling atrium light well inside the tower, daylig",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": ""
+  },
+  {
+    "name": "ai-sunset-key",
+    "file": "ep03/media/ai-sunset-key.jpg",
+    "provider": "ai",
+    "title": "Golden-hour wide view of the tower among City towers, warm sunset light on the f",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": ""
+  },
+  {
+    "name": "ai-hook-clip",
+    "file": "ep03/media/ai-hook-clip.mp4",
+    "provider": "ai",
+    "title": "Slow, smooth drone push-in toward the tower; sunlight glints travel across the f",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini-omni:gemini-omni-1.2-flash)",
+    "source": ""
+  },
+  {
+    "name": "ai-climax-clip",
+    "file": "ep03/media/ai-climax-clip.mp4",
+    "provider": "ai",
+    "title": "Slow orbiting drone shot around the tower at golden hour, the faceted glass flic",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini-omni:gemini-omni-1.2-flash)",
+    "source": ""
+  }
+]

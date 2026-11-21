@@ -34,6 +34,9 @@ export type Insert = InsertTiming &
         side?: "left" | "right"; // card slides in from
         grade?: "warm" | "mono"; // colour treatment
         focus?: [number, number]; // ken-burns zoom origin, 0..1
+        /** full layout: camera move over the still (default "in") and an optional light sweep */
+        move?: "in" | "out" | "left" | "right" | "up" | "down";
+        sweep?: boolean;
       }
     | {
         kind: "video";
@@ -41,6 +44,8 @@ export type Insert = InsertTiming &
         src: string;
         grade?: "warm" | "mono";
         focus?: [number, number];
+        /** seconds to skip at the start of the clip (e.g. to cut an AI artefact) */
+        trimStart?: number;
       }
     | { kind: "person"; name: string; role: string; photo?: string }
     | { kind: "number"; value: number; prefix?: string; suffix?: string; label: string; sub?: string; accent?: boolean; format?: "full" | "plain" }
@@ -74,6 +79,16 @@ export type EpisodeScript = {
   inserts?: Insert[];
   /** Range of the running year bar. Omit to hide it. */
   years?: [number, number];
+  /** AI-generated media for this episode (npm run gen). Images are cheap; video is budgeted. */
+  generate?: {
+    /** style bible — appended to every prompt */
+    style?: string;
+    /** subject bibles — exact descriptions kept consistent across shots */
+    subjects?: Record<string, string>;
+    images?: { name: string; prompt: string; subject?: string; refs?: string[]; aspect?: string }[];
+    /** keep to 1–3 per episode; `from` = an image name used as the first frame (consistency) */
+    videos?: { name: string; prompt: string; subject?: string; from?: string; duration?: string }[];
+  };
 };
 
 export type Tag = {

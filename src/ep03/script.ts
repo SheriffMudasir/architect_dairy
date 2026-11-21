@@ -1,0 +1,181 @@
+// Episode 03 — "The Curve That Isn't" (30 St Mary Axe, the Gherkin)
+// Hybrid episode: 3D engine + stock photos + AI stills (cheap) + only TWO AI video clips.
+// Node-safe data file: read by Remotion AND by scripts/voice.mjs, music.mjs, gen.mjs.
+import type { Beat, EpisodeScript } from "../shared/types";
+
+const beats: Beat[] = [
+  {
+    id: "hook",
+    act: "look",
+    label: "LONDON · 30 ST MARY AXE",
+    year: 2004,
+    em: ["smooth", "none"],
+    text: "This London tower looks perfectly smooth and round. But almost none of its glass is curved.",
+  },
+  {
+    id: "name",
+    act: "look",
+    label: "2004 · FOSTER + PARTNERS",
+    year: 2004,
+    em: ["Gherkin", "hundred and eighty"],
+    text: "It's 30 St Mary Axe. London calls it the Gherkin. A hundred and eighty metres of glass, opened in 2004.",
+  },
+  {
+    id: "problem",
+    act: "look",
+    label: "THE PROBLEM · CURVED GLASS",
+    year: 2004,
+    em: ["slow", "expensive"],
+    text: "Curved glass is slow and expensive to make.",
+  },
+  {
+    id: "question",
+    act: "look",
+    label: "THE QUESTION",
+    year: 2004,
+    em: ["without bending"],
+    text: "So how do you wrap a round tower in glass, without bending the glass?",
+  },
+  {
+    id: "diagrid",
+    act: "trick",
+    label: "STRUCTURE · THE DIAGRID",
+    year: 2004,
+    em: ["diagrid", "diamonds"],
+    text: "It starts with the steel. A diagrid: a net of diagonal steel, crossing in diamonds.",
+  },
+  {
+    id: "flat",
+    act: "trick",
+    label: "FAÇADE · FLAT PANES",
+    year: 2004,
+    em: ["straight", "flat"],
+    text: "Because the steel runs in straight lines, every panel between them can be flat.",
+  },
+  {
+    id: "angle",
+    act: "trick",
+    label: "THE TRICK",
+    year: 2004,
+    em: ["tilts", "curve"],
+    text: "Each pane tilts just slightly from its neighbour. Thousands of tiny angles add up to a curve.",
+  },
+  {
+    id: "glass",
+    act: "trick",
+    label: "≈24,000 M² OF GLASS",
+    year: 2004,
+    em: ["twenty-four thousand", "flat"],
+    text: "About twenty-four thousand square metres of glass. All of it flat,",
+  },
+  {
+    id: "lens",
+    act: "trick",
+    label: "THE ONE EXCEPTION",
+    year: 2004,
+    em: ["one piece", "lens"],
+    text: "except for one piece: the lens-shaped cap at the very top.",
+  },
+  {
+    id: "spirals",
+    act: "more",
+    label: "SIX LIGHT WELLS",
+    year: 2004,
+    em: ["six", "fresh air"],
+    text: "Those dark spirals aren't decoration. They're six light wells, twisting up the tower to pull in daylight and fresh air.",
+  },
+  {
+    id: "energy",
+    act: "more",
+    label: "THE PROMISE",
+    year: 2004,
+    em: ["half", "over-ambitious"],
+    text: "Its designers promised half the energy of a typical office. The building's own property director later called that a bit over-ambitious.",
+  },
+  {
+    id: "site",
+    act: "more",
+    label: "SITE OF THE BALTIC EXCHANGE",
+    year: 1992,
+    em: ["Baltic Exchange", "1992"],
+    text: "It stands where the Baltic Exchange stood, until a bomb wrecked it in 1992.",
+  },
+  {
+    id: "climax",
+    act: "end",
+    label: "30 ST MARY AXE · LONDON",
+    year: 2004,
+    em: ["smoothest"],
+    text: "So what looks like the smoothest tower in London",
+  },
+  {
+    id: "outro",
+    act: "end",
+    label: "STRAIGHT LINES · ONE CURVE",
+    year: 2004,
+    em: ["straight lines", "curve"],
+    text: "is really thousands of straight lines, pretending to be a curve.",
+  },
+];
+
+export const SCRIPT: EpisodeScript = {
+  id: "ep03",
+  number: 3,
+  title: "The Curve That Isn't",
+  beats,
+  headlines: {
+    look: { lead: "London's roundest tower", accent: "has almost no curved glass." },
+    trick: { lead: "The trick:", accent: "flat panes, tiny angles." },
+    more: { lead: "And the spirals", accent: "aren't decoration." },
+    end: { lead: "A curve made of", accent: "straight lines." },
+  },
+  years: [1992, 2004],
+  generate: {
+    style:
+      "photorealistic architectural visualisation, soft natural daylight, gentle haze, cool blue-grey palette with warm highlights, subtle film grain, 35mm lens, calm cinematic composition",
+    subjects: {
+      gherkin:
+        "30 St Mary Axe ('the Gherkin') in the City of London: a 180 m bullet-shaped glass tower, widest about a third of the way up, tapering to a rounded tip capped by a dark glass lens dome; a dense diagonal steel diagrid of diamond-shaped flat glass panes; six dark-tinted glass bands spiralling up the facade; surrounded by older stone buildings and other City towers",
+    },
+    images: [
+      { name: "ai-hook-key", subject: "gherkin", prompt: "Low aerial drone view at morning, the tower centred, slight upward angle, facade glinting" },
+      { name: "ai-glass-bend", prompt: "A large sheet of glass being slowly bent over a steel mould in a glass factory, warm industrial light, shallow depth of field" },
+      { name: "ai-diagrid", subject: "gherkin", prompt: "Extreme close-up looking up along the facade: dark steel diagonal members crossing in diamonds, flat glass panes reflecting sky" },
+      { name: "ai-lens", subject: "gherkin", prompt: "Close aerial view of the very top of the tower: the rounded dark glass lens cap above the faceted facade, London below in haze" },
+      { name: "ai-lightwell", subject: "gherkin", prompt: "Interior view looking up a spiralling atrium light well inside the tower, daylight pouring down through angled glass, office floors at the edges" },
+      { name: "ai-sunset-key", subject: "gherkin", prompt: "Golden-hour wide view of the tower among City towers, warm sunset light on the faceted glass, long shadows" },
+    ],
+    videos: [
+      { name: "ai-hook-clip", subject: "gherkin", from: "ai-hook-key", duration: "6s", prompt: "Slow, smooth drone push-in toward the tower; sunlight glints travel across the faceted glass" },
+      { name: "ai-climax-clip", subject: "gherkin", from: "ai-sunset-key", duration: "6s", prompt: "Slow orbiting drone shot around the tower at golden hour, the faceted glass flickering with light" },
+    ],
+  },
+  inserts: [
+    { kind: "video", beat: "hook", from: 0, to: 1, src: "ai-hook-clip" },
+    { kind: "photo", beat: "name", from: 0, to: 0.55, src: "gherkin-street", layout: "full", move: "up", focus: [0.5, 0.35] },
+    { kind: "person", beat: "name", from: 0.55, to: 1, name: "Foster + Partners", role: "Architects · with Arup (engineers)" },
+    { kind: "photo", beat: "problem", from: 0, to: 1, src: "ai-glass-bend", layout: "full", move: "in", sweep: true },
+    { kind: "photo", beat: "diagrid", from: 0, to: 0.38, src: "ai-diagrid", layout: "full", move: "up" },
+    { kind: "number", beat: "diagrid", from: 0.66, to: 1, value: 2500, suffix: " t", label: "Steel in the diagrid", sub: "of 10,000 t in the whole building" },
+    { kind: "photo", beat: "flat", from: 0.55, to: 1, src: "gherkin-dokkum", layout: "card", caption: "The real thing: flat diamonds", side: "right", focus: [0.5, 0.45] },
+    { kind: "number", beat: "glass", from: 0.1, to: 1, value: 24000, suffix: " m²", label: "Glass on the façade", sub: "Flat panes", accent: false },
+    { kind: "photo", beat: "lens", from: 0.15, to: 1, src: "ai-lens", layout: "full", move: "down", sweep: true },
+    { kind: "photo", beat: "spirals", from: 0.55, to: 1, src: "ai-lightwell", layout: "full", move: "up" },
+    { kind: "number", beat: "energy", from: 0, to: 0.48, value: 50, suffix: "%", label: "Energy saving promised", format: "plain", accent: true },
+    { kind: "quote", beat: "energy", from: 0.52, to: 1, text: "A bit over-ambitious.", by: "The building's property services director" },
+    { kind: "video", beat: "climax", from: 0, to: 1, src: "ai-climax-clip", trimStart: 3.0 },
+  ],
+  music: {
+    style:
+      "Instruments: glassy electric piano, airy synth pads, soft plucked arpeggios, light glitch percussion, a deep warm sub. Modern, curious, sleek. Key: F# minor. Tempo around 92 BPM.",
+    sections: [
+      { from: "hook", to: "question", mood: "curious and sleek, sparse arpeggio, building intrigue" },
+      { from: "diagrid", to: "lens", mood: "the reveal: rhythmic, clever, crystalline, steady momentum" },
+      { from: "spirals", to: "energy", mood: "flowing and airy, then a wry pause" },
+      { from: "site", mood: "darker, brief low drone" },
+      { from: "climax", mood: "lift and resolve: warm, wide, shimmering, fading out cleanly" },
+    ],
+    dips: ["site"],
+  },
+  sfx: [{ sfx: "swell", beat: "climax", offset: 0, volume: 0.3 }],
+};

@@ -69,6 +69,7 @@ export const FullBleed: React.FC<{ actives: Active[]; t: number; ep: string }> =
             <Sequence from={Math.round(a.start * fps)} layout="none">
               <Video
                 src={staticFile(`${ep}/media/${ins.src}.mp4`)}
+                trimBefore={Math.round((ins.trimStart ?? 0) * fps)}
                 muted
                 style={{
                   width: "100%",
@@ -86,7 +87,12 @@ export const FullBleed: React.FC<{ actives: Active[]; t: number; ep: string }> =
       if (a.ins.kind !== "photo" || a.ins.layout !== "full") return null;
       const ins = a.ins;
       const o = env(a, t);
-      const zoom = interpolate(a.local, [0, a.end - a.start + OUT], [1.06, 1.18], clamp);
+      const life = interpolate(a.local, [0, a.end - a.start + OUT], [0, 1], clamp);
+      const move = ins.move ?? "in";
+      const zoom = move === "out" ? 1.2 - 0.12 * life : move === "in" ? 1.06 + 0.14 * life : 1.16;
+      const pan = 70; // px of travel for directional moves
+      const tx = move === "left" ? pan / 2 - pan * life : move === "right" ? -pan / 2 + pan * life : 0;
+      const ty = move === "up" ? pan / 2 - pan * life : move === "down" ? -pan / 2 + pan * life : 0;
       const [fx, fy] = ins.focus ?? [0.5, 0.45];
       return (
         <AbsoluteFill key={i} style={{ opacity: o, overflow: "hidden" }}>
@@ -98,12 +104,22 @@ export const FullBleed: React.FC<{ actives: Active[]; t: number; ep: string }> =
               objectFit: "cover",
               objectPosition: `${fx * 100}% ${fy * 100}%`,
               scale: String(zoom),
+              translate: `${tx}px ${ty}px`,
               transformOrigin: `${fx * 100}% ${fy * 100}%`,
               filter: ins.grade === "mono" ? "grayscale(1) contrast(1.05) brightness(1.02)" : "sepia(0.18) saturate(0.88) contrast(1.04)",
             }}
           />
           {/* paper wash keeps the palette */}
           <AbsoluteFill style={{ background: C.paper, opacity: 0.12, mixBlendMode: "multiply" }} />
+          {ins.sweep ? (
+            <AbsoluteFill
+              style={{
+                background: `linear-gradient(115deg, transparent 30%, rgba(255,250,235,0.35) 48%, rgba(255,255,255,0.55) 50%, rgba(255,250,235,0.35) 52%, transparent 70%)`,
+                translate: `${interpolate(a.local, [0.3, 2.4], [-120, 120], clamp)}% 0`,
+                mixBlendMode: "screen",
+              }}
+            />
+          ) : null}
           {/* reveal wipe */}
           <AbsoluteFill
             style={{
@@ -122,7 +138,9 @@ export const FullBleed: React.FC<{ actives: Active[]; t: number; ep: string }> =
 export const veilAt = (actives: Active[], t: number) =>
   Math.max(0, ...actives.filter((a) => a.ins.kind === "number" || a.ins.kind === "quote" || (a.ins.kind === "photo" && a.ins.layout === "card")).map((a) => env(a, t) * (a.ins.kind === "photo" ? 0.45 : 0.82)));
 
-const creditLine = (c?: Credit) => (c ? `${/\.mp4$/.test((c as Credit & { file?: string }).file ?? "") ? "VIDEO" : "PHOTO"} · ${(c.creator ?? "UNKNOWN").toUpperCase()} · ${c.license.toUpperCase()}` : "");
+const isAI = (c?: Credit) => (c as Credit & { provider?: string })?.provider === "ai";
+const creditLine = (c?: Credit) =>
+  !c ? "" : isAI(c) ? "AI VISUALISATION" : `${/\.mp4$/.test((c as Credit & { file?: string }).file ?? "") ? "VIDEO" : "PHOTO"} · ${(c.creator ?? "UNKNOWN").toUpperCase()} · ${c.license.toUpperCase()}`;
 
 const fmtNumber = (v: number, format?: "full" | "plain") => (format === "plain" ? String(Math.round(v)) : Math.round(v).toLocaleString("en-US"));
 
@@ -330,7 +348,12 @@ export const CreditsCard: React.FC<{ credits: Credit[]; t: number; start: number
   return (
     <AbsoluteFill style={{ background: `${C.paper}F2`, opacity: o, padding: "0 90px", justifyContent: "center" }}>
       <div style={{ fontFamily: MONO, fontSize: 24, letterSpacing: 6, color: C.accent, marginBottom: 26 }}>MEDIA CREDITS</div>
-      {credits.map((c) => (
+      {credits.some(isAI) ? (
+        <div style={{ fontFamily: MONO, fontSize: 24, lineHeight: 1.4, color: C.ink, marginBottom: 8 }}>
+          AI visualisations — generated images/clips, illustrative only
+        </div>
+      ) : null}
+      {credits.filter((c) => !isAI(c)).map((c) => (
         <div key={c.name} style={{ fontFamily: MONO, fontSize: 24, lineHeight: 1.4, color: C.ink, marginBottom: 8 }}>
           {c.title.slice(0, 44)} — {c.creator ?? "unknown"} · {c.license}
         </div>

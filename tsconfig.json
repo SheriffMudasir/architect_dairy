@@ -16,8 +16,10 @@
     "resolveJsonModule": true
   },
   "exclude": [
+    "dist",
+    "node_modules",
+    "out",
     "remotion.config.ts",
-    "templates",
-    "node_modules"
+    "templates"
   ]
 }

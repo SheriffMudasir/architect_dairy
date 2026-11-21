@@ -48,7 +48,8 @@
     "setup": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/setup.mjs",
     "doctor": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/doctor.mjs",
     "voices": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/voices.mjs",
-    "fonts": "node scripts/fonts.mjs"
+    "fonts": "node scripts/fonts.mjs",
+    "gen": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/gen.mjs"
   },
   "allowScripts": {
     "esbuild": false
