@@ -35,6 +35,13 @@ export type Insert = InsertTiming &
         grade?: "warm" | "mono"; // colour treatment
         focus?: [number, number]; // ken-burns zoom origin, 0..1
       }
+    | {
+        kind: "video";
+        /** media name in public/<ep>/media (without .mp4) — stock footage via `npm run media … --video` */
+        src: string;
+        grade?: "warm" | "mono";
+        focus?: [number, number];
+      }
     | { kind: "person"; name: string; role: string; photo?: string }
     | { kind: "number"; value: number; prefix?: string; suffix?: string; label: string; sub?: string; accent?: boolean; format?: "full" | "plain" }
     | { kind: "stamp"; text: string; sub?: string }

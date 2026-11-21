@@ -1,107 +1,71 @@
 // Find and download licensed stock media for an episode, recording credits.
 //
-//   npm run media -- ep01 search "Japan National Stadium"     # Openverse photos (CC0 / BY / BY-SA only)
-//   npm run media -- ep01 get <openverse-id> <name>           # -> public/ep01/media/<name>.jpg
-//   npm run media -- ep01 pexels-video "tokyo night" [n]      # Pexels videos (needs Pexels network secret)
-//   npm run media -- ep01 pexels-get-video <id> <name>        # -> public/ep01/media/<name>.mp4
-//   npm run media -- ep01 credits                             # print credits text for the description
+//   npm run media -- ep01 search "Japan National Stadium" [20] [--provider pexels] [--video]
+//   npm run media -- ep01 get <provider:id> <name>       # -> public/ep01/media/<name>.jpg|.mp4
+//   npm run media -- ep01 credits                         # credits text for the video description
 //
-// Licences: only commercial-use + modification-allowed (we crop, tint and animate).
-// Every download is appended to public/<ep>/media/credits.json.
+// Providers: studio.config.json -> media.providers (openverse | pexels | pixabay | wikimedia).
+// Only licences that allow commercial use AND modification are accepted (we crop, tint, animate).
+// Every download is appended to public/<ep>/media/credits.json, which drives the in-video credits.
 import fs from "node:fs";
 import { execFileSync } from "node:child_process";
-import { parseArgs } from "./lib.mjs";
+import { http, loadConfig, parseArgs } from "./lib.mjs";
+import { getMedia, UA_HEADERS } from "./providers/media.mjs";
 
 const { ep, rest } = parseArgs();
-const [cmd, a, b] = rest;
+const cfg = loadConfig();
+const flag = (n) => {
+  const i = rest.indexOf(n);
+  return i >= 0 ? rest[i + 1] : undefined;
+};
+const positional = rest.filter((a, i) => !a.startsWith("--") && !(i > 0 && rest[i - 1] === "--provider"));
+const [cmd, a, b] = positional;
 const DIR = `public/${ep}/media`;
 const CREDITS = `${DIR}/credits.json`;
-const UA = { "user-agent": "ArchitectDiaryVideoTool/1.0 (documentary renderer)" };
 fs.mkdirSync(DIR, { recursive: true });
 
 const credits = () => (fs.existsSync(CREDITS) ? JSON.parse(fs.readFileSync(CREDITS, "utf8")) : []);
-const saveCredit = (c) => {
-  const all = credits().filter((x) => x.name !== c.name);
-  all.push(c);
-  fs.writeFileSync(CREDITS, JSON.stringify(all, null, 2));
-};
-const get = async (url, opts = {}) => {
-  for (let i = 1; i <= 4; i++) {
-    const r = await fetch(url, { ...opts, headers: { ...UA, ...(opts.headers ?? {}) } });
-    if (r.ok) return r;
-    if (i < 4 && (r.status === 429 || r.status >= 500)) {
-      await new Promise((res) => setTimeout(res, 3000 * i));
-      continue;
-    }
-    throw new Error(`${url} -> ${r.status} ${(await r.text()).slice(0, 200)}`);
-  }
-};
-
-const LICENSE_URL = (lic, v) =>
-  lic === "cc0" ? "https://creativecommons.org/publicdomain/zero/1.0/" : lic === "pdm" ? "https://creativecommons.org/publicdomain/mark/1.0/" : `https://creativecommons.org/licenses/${lic}/${v}/`;
+const saveCredit = (c) => fs.writeFileSync(CREDITS, JSON.stringify([...credits().filter((x) => x.name !== c.name), c], null, 2));
 
 if (cmd === "search") {
-  const u = new URL("https://api.openverse.org/v1/images/");
-  u.searchParams.set("q", a);
-  u.searchParams.set("page_size", b ?? "20");
-  u.searchParams.set("license_type", "commercial,modification");
-  const d = await (await get(u)).json();
-  for (const r of d.results) {
-    if (!["by", "by-sa", "cc0", "pdm"].includes(r.license)) continue;
-    console.log(
-      `${r.id}  ${String(r.width ?? "?").padStart(5)}x${String(r.height ?? "?").padEnd(5)} ${(r.license + r.license_version).padEnd(9)} ${r.source.padEnd(10)} ${r.title.slice(0, 60)}  — ${(r.creator ?? "").slice(0, 30)}`,
-    );
+  const providers = flag("--provider") ? [flag("--provider")] : cfg.media?.providers ?? ["openverse"];
+  const type = rest.includes("--video") ? "video" : "photo";
+  for (const name of providers) {
+    try {
+      const results = await getMedia(cfg, name).search(a, Number(b ?? 15), type);
+      if (!results.length) continue;
+      console.log(`── ${name} (${type}s)`);
+      for (const r of results)
+        console.log(`${r.id.padEnd(48)} ${String(r.w ?? "?").padStart(5)}x${String(r.h ?? "?").padEnd(5)}${r.dur ? ` ${r.dur}s` : ""} ${String(r.license).padEnd(22)} ${String(r.title ?? "").slice(0, 50)} — ${String(r.creator ?? "").slice(0, 28)}`);
+    } catch (e) {
+      console.log(`── ${name}: ${e.message.split("\n")[0]}`);
+    }
   }
 } else if (cmd === "get") {
-  const r = await (await get(`https://api.openverse.org/v1/images/${a}/`)).json();
-  if (!["by", "by-sa", "cc0", "pdm"].includes(r.license)) throw new Error(`licence ${r.license} not allowed`);
-  const out = `${DIR}/${b}.jpg`;
+  const [prov, ...idParts] = a.split(":");
+  const id = idParts.join(":");
+  const r = await getMedia(cfg, prov).resolve(id);
+  const isVideo = r.type === "video";
+  const out = `${DIR}/${b}.${isVideo ? "mp4" : "jpg"}`;
+  const tmp = `${out}.src`;
   let buf;
   try {
-    buf = Buffer.from(await (await get(r.url)).arrayBuffer());
+    buf = Buffer.from(await (await http(r.url, { raw: true, headers: UA_HEADERS(cfg) })).arrayBuffer());
   } catch (e) {
-    console.warn("  full image failed (" + e.message.slice(0, 80) + "), using Openverse thumbnail");
-    buf = Buffer.from(await (await get(r.thumbnail)).arrayBuffer());
+    if (!r.fallback) throw e;
+    console.warn("  full-size download failed, using the provider's thumbnail");
+    buf = Buffer.from(await (await http(r.fallback, { raw: true, headers: UA_HEADERS(cfg) })).arrayBuffer());
   }
-  const tmp = `${out}.src`;
   fs.writeFileSync(tmp, buf);
-  // normalise: max 2000px long side, strip metadata, sRGB jpeg
-  execFileSync("ffmpeg", ["-v", "error", "-y", "-i", tmp, "-vf", "scale='if(gt(iw,ih),min(2000,iw),-2)':'if(gt(iw,ih),-2,min(2000,ih))'", "-q:v", "3", out]);
-  fs.unlinkSync(tmp);
-  const dims = execFileSync("ffprobe", ["-v", "error", "-show_entries", "stream=width,height", "-of", "csv=p=0", out]).toString().trim();
-  saveCredit({
-    name: b,
-    file: `${ep}/media/${b}.jpg`,
-    title: r.title,
-    creator: r.creator,
-    license: `CC ${r.license.toUpperCase()} ${r.license_version ?? ""}`.trim(),
-    license_url: r.license_url ?? LICENSE_URL(r.license, r.license_version),
-    source: r.foreign_landing_url,
-    attribution: r.attribution,
-  });
-  console.log(`saved ${out} (${dims})`);
-} else if (cmd === "pexels-video") {
-  const u = new URL("https://api.pexels.com/videos/search");
-  u.searchParams.set("query", a);
-  u.searchParams.set("per_page", b ?? "15");
-  u.searchParams.set("orientation", "portrait");
-  const d = await (await get(u, { headers: { authorization: process.env.PEXELS_API_KEY ?? "injected-by-proxy" } })).json();
-  for (const v of d.videos) {
-    const best = v.video_files.filter((f) => f.height >= 1280).sort((x, y) => x.height - y.height)[0];
-    console.log(`${v.id}  ${v.width}x${v.height}  ${v.duration}s  ${best ? best.quality + " " + best.height + "p" : "low-res"}  ${v.url.replace("https://www.pexels.com/video/", "").slice(0, 60)}  — ${v.user.name}`);
-  }
-} else if (cmd === "pexels-get-video") {
-  const v = await (await get(`https://api.pexels.com/videos/videos/${a}`, { headers: { authorization: process.env.PEXELS_API_KEY ?? "injected-by-proxy" } })).json();
-  const file = v.video_files.filter((f) => f.height >= 1280 && f.file_type === "video/mp4").sort((x, y) => x.height - y.height)[0] ?? v.video_files[0];
-  const tmp = `${DIR}/${b}.src.mp4`;
-  fs.writeFileSync(tmp, Buffer.from(await (await get(file.link)).arrayBuffer()));
-  // 1080-wide, 30 fps, no audio, max 12 s, constant keyframes for smooth seeking
-  execFileSync("ffmpeg", ["-v", "error", "-y", "-i", tmp, "-t", "12", "-an", "-vf", "scale=1080:-2,fps=30", "-c:v", "libx264", "-crf", "20", "-g", "15", "-pix_fmt", "yuv420p", `${DIR}/${b}.mp4`]);
-  fs.unlinkSync(tmp);
-  saveCredit({ name: b, file: `${ep}/media/${b}.mp4`, title: v.url, creator: v.user.name, license: "Pexels License", license_url: "https://www.pexels.com/license/", source: v.url });
-  console.log(`saved ${DIR}/${b}.mp4`);
+  if (isVideo)
+    // 1080 wide, 30 fps, silent, ≤ 12 s, frequent keyframes for smooth seeking
+    execFileSync("ffmpeg", ["-v", "error", "-y", "-i", tmp, "-t", "12", "-an", "-vf", "scale=1080:-2,fps=30", "-c:v", "libx264", "-crf", "20", "-g", "15", "-pix_fmt", "yuv420p", out]);
+  else execFileSync("ffmpeg", ["-v", "error", "-y", "-i", tmp, "-vf", "scale='if(gt(iw,ih),min(2000,iw),-2)':'if(gt(iw,ih),-2,min(2000,ih))'", "-q:v", "3", out]);
+  fs.rmSync(tmp, { force: true });
+  saveCredit({ name: b, file: out.replace(/^public\//, ""), provider: prov, ...r.credit });
+  console.log(`saved ${out}`);
 } else if (cmd === "credits") {
   for (const c of credits()) console.log(`${c.title} — ${c.creator ?? "unknown"} (${c.license}) ${c.source}`);
 } else {
-  console.log("commands: search | get | pexels-video | pexels-get-video | credits");
+  console.log('usage: npm run media -- <ep> search "<query>" [n] [--provider name] [--video] | get <provider:id> <name> | credits');
 }

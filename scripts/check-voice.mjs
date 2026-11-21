@@ -1,18 +1,27 @@
-// Transcribe every generated clip with Gemini and compare it with the script,
-// so misreads, spoken stage directions or dropped words are caught before render.
+// Transcribe every generated clip and compare it with the script, so misreads,
+// spoken stage directions or dropped words are caught before render.
 //   npm run check-voice -- ep02
+// Uses studio.config.json -> transcribe.provider (gemini | elevenlabs | openai | none).
 import fs from "node:fs";
-import { API, gemini, loadScript, parseArgs } from "./lib.mjs";
+import { loadConfig, loadScript, parseArgs } from "./lib.mjs";
+import { getTranscriber } from "./providers/transcribe.mjs";
 
 const { ep } = parseArgs();
 const { beats } = await loadScript(ep);
+const stt = getTranscriber(loadConfig());
+if (stt.name === "none") {
+  console.log("No transcription provider configured — listen to public/" + ep + "/audio/*.wav yourself, or set transcribe.provider.");
+  process.exit(0);
+}
+const NUM = { zero: 0, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10 };
 const norm = (s) =>
   s
     .toLowerCase()
     .replace(/[^a-z0-9 ]/g, " ")
     .replace(/\s+/g, " ")
     .trim()
-    .split(" ");
+    .split(" ")
+    .filter((w) => !(w in NUM));
 
 let problems = 0;
 for (const b of beats) {
@@ -22,20 +31,10 @@ for (const b of beats) {
     problems++;
     continue;
   }
-  const res = await gemini(`${API}/models/${process.env.CHECK_MODEL ?? "gemini-3.8-flash"}:generateContent`, {
-    contents: [
-      {
-        parts: [
-          { inline_data: { mime_type: "audio/wav", data: fs.readFileSync(f).toString("base64") } },
-          { text: "Transcribe verbatim. Spell numbers out as words. Output only the transcript." },
-        ],
-      },
-    ],
-  });
-  const heard = res.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ?? "";
-  // crude word-overlap score; numbers may be written differently, so be lenient
+  const heard = await stt.transcribe(f);
   const a = norm(b.text);
   const h = new Set(norm(heard));
+  // numbers may be written differently ("2015" vs "twenty fifteen"), so be lenient
   const missing = a.filter((w) => !/^\d+$/.test(w) && !h.has(w));
   const extra = norm(heard).length - a.length;
   const ok = missing.length <= 1 && extra < 6;
@@ -43,5 +42,5 @@ for (const b of beats) {
   console.log(`${ok ? "✓" : "✗"} ${b.id.padEnd(14)} ${heard}`);
   if (!ok) console.log(`    expected: ${b.text}\n    missing: ${missing.join(", ") || "-"}  extra words: ${extra}`);
 }
-console.log(problems ? `\n${problems} beat(s) need attention (re-run: npm run voice -- ${ep} <beat ids>)` : "\nAll beats match the script.");
+console.log(problems ? `\n${problems} beat(s) need attention (re-run: npm run voice -- ${ep} <beat ids>)` : `\nAll beats match the script (${stt.name}).`);
 process.exit(problems ? 1 : 0);

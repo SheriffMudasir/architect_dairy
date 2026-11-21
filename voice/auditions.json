@@ -10,5 +10,10 @@
     "name": "punchy",
     "prompt": "A confident woman in her thirties with a rich, resonant, medium-pitched voice and strong presence. Energetic and assured documentary storyteller: punchy delivery, clear projection, tight pacing that keeps viewers hooked, emphasising numbers and names, a touch of wry irony on twists. Neutral international English with a light British polish. Warm, articulate, never shouty or salesy.",
     "created": "2026-11-20T20:21:38.785Z"
+  },
+  "current": {
+    "provider": "gemini",
+    "voice": "voice_u8950yt7chgw",
+    "created": "2026-11-21T01:55:32.675Z"
   }
 }

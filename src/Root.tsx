@@ -11,7 +11,7 @@ const calculateMetadata: CalculateMetadataFunction<EpisodeProps> = async ({ prop
     .then((r) => (r.ok ? r.json() : []))
     .catch(() => []);
   // only credit media the episode actually uses
-  const used = new Set((ep.inserts ?? []).flatMap((i) => (i.kind === "photo" ? [i.src] : i.kind === "person" && i.photo ? [i.photo] : [])));
+  const used = new Set((ep.inserts ?? []).flatMap((i) => (i.kind === "photo" || i.kind === "video" ? [i.src] : i.kind === "person" && i.photo ? [i.photo] : [])));
   return {
     durationInFrames: Math.ceil(timeline.total * FPS),
     props: { ...props, timeline, credits: (credits as { name: string }[]).filter((c) => used.has(c.name)) as EpisodeProps["credits"] },

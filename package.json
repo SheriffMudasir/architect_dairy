@@ -36,15 +36,18 @@
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
-    "voice": "NODE_USE_ENV_PROXY=1 node --experimental-strip-types --no-warnings scripts/voice.mjs",
-    "render": "NODE_USE_ENV_PROXY=1 node --experimental-strip-types --no-warnings scripts/render.mjs",
-    "stills": "NODE_USE_ENV_PROXY=1 node scripts/stills.mjs",
-    "music": "NODE_USE_ENV_PROXY=1 node --experimental-strip-types --no-warnings scripts/music.mjs",
+    "voice": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/voice.mjs",
+    "render": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/render.mjs",
+    "stills": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env scripts/stills.mjs",
+    "music": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/music.mjs",
     "sfx": "bash scripts/sfx.sh",
-    "check-voice": "NODE_USE_ENV_PROXY=1 node --experimental-strip-types --no-warnings scripts/check-voice.mjs",
-    "new-episode": "NODE_USE_ENV_PROXY=1 node scripts/new-episode.mjs",
-    "media": "NODE_USE_ENV_PROXY=1 node --experimental-strip-types --no-warnings scripts/media.mjs",
-    "voice-audition": "NODE_USE_ENV_PROXY=1 node --experimental-strip-types --no-warnings scripts/voice-audition.mjs"
+    "check-voice": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/check-voice.mjs",
+    "new-episode": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env scripts/new-episode.mjs",
+    "media": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/media.mjs",
+    "voice-audition": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/voice-audition.mjs",
+    "setup": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/setup.mjs",
+    "doctor": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/doctor.mjs",
+    "voices": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/voices.mjs"
   },
   "allowScripts": {
     "esbuild": false

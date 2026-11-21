@@ -1,0 +1,54 @@
+{
+  "$schema_note": "Studio configuration. No secrets here \u2014 API keys live in environment variables (see .env.example).",
+  "channel": {
+    "name": "ARCHITECT DIARY"
+  },
+  "voice": {
+    "provider": "gemini",
+    "gemini": {
+      "model": "gemini-3.8-flash-tts",
+      "voice": "voice_u8950yt7chgw",
+      "design": {
+        "display_name": "Architect Diary Narrator",
+        "gender": "female",
+        "language_code": "en-GB",
+        "accent": "Neutral British, softly international",
+        "persona": "Documentary narrator",
+        "context": "Short-form architecture documentary",
+        "prompt": "A woman in her mid-thirties with a warm, low-mid, slightly husky voice. Intelligent and quietly confident, like an architecture critic telling a friend a story she finds fascinating. Clear, softly British, internationally neutral diction. Calm, unhurried pace with natural pauses; a hint of dry wit on ironic lines; never theatrical, never salesy, no announcer tone."
+      }
+    },
+    "elevenlabs": {
+      "voiceId": "",
+      "model": "eleven_multilingual_v2",
+      "stability": 0.45,
+      "similarity": 0.8,
+      "style": 0.2,
+      "speed": 1.0
+    },
+    "openai": {
+      "model": "gpt-4o-mini-tts",
+      "voice": "sage",
+      "instructions": "Warm, intelligent documentary narrator. Measured pace, clear diction, a hint of dry wit."
+    }
+  },
+  "music": {
+    "provider": "lyria",
+    "lyria": {
+      "model": "lyria-3.5"
+    },
+    "elevenlabs": {}
+  },
+  "transcribe": {
+    "provider": "gemini",
+    "gemini": {
+      "model": "gemini-3.8-flash"
+    }
+  },
+  "media": {
+    "providers": [
+      "openverse"
+    ],
+    "wikimediaContact": ""
+  }
+}

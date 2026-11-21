@@ -1,7 +1,8 @@
 // Motion-graphic inserts layered over the 3D world: photos, name cards,
 // big numbers, stamps, quotes. All timing is relative to beats.
 import React from "react";
-import { AbsoluteFill, Easing, Img, interpolate, staticFile } from "remotion";
+import { AbsoluteFill, Easing, Img, interpolate, Sequence, staticFile, useVideoConfig } from "remotion";
+import { Video } from "@remotion/media";
 import { MONO, SANS } from "../fonts";
 import { C } from "../theme";
 import { Timeline } from "./timeline";
@@ -55,9 +56,33 @@ export const shakeAt = (actives: Active[]) => {
 };
 
 /** Full-bleed photos sit UNDER the paper gradient so they blend into the page. */
-export const FullBleed: React.FC<{ actives: Active[]; t: number; ep: string }> = ({ actives, t, ep }) => (
+export const FullBleed: React.FC<{ actives: Active[]; t: number; ep: string }> = ({ actives, t, ep }) => {
+  const { fps } = useVideoConfig();
+  return (
   <>
     {actives.map((a, i) => {
+      if (a.ins.kind === "video") {
+        const ins = a.ins;
+        const [fx, fy] = ins.focus ?? [0.5, 0.5];
+        return (
+          <AbsoluteFill key={i} style={{ opacity: env(a, t), overflow: "hidden" }}>
+            <Sequence from={Math.round(a.start * fps)} layout="none">
+              <Video
+                src={staticFile(`${ep}/media/${ins.src}.mp4`)}
+                muted
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: `${fx * 100}% ${fy * 100}%`,
+                  filter: ins.grade === "mono" ? "grayscale(1) contrast(1.05)" : "sepia(0.18) saturate(0.88) contrast(1.04)",
+                }}
+              />
+            </Sequence>
+            <AbsoluteFill style={{ background: C.paper, opacity: 0.12, mixBlendMode: "multiply" }} />
+          </AbsoluteFill>
+        );
+      }
       if (a.ins.kind !== "photo" || a.ins.layout !== "full") return null;
       const ins = a.ins;
       const o = env(a, t);
@@ -90,13 +115,14 @@ export const FullBleed: React.FC<{ actives: Active[]; t: number; ep: string }> =
       );
     })}
   </>
-);
+  );
+};
 
 /** Veil that dims the world while a card / number is up. */
 export const veilAt = (actives: Active[], t: number) =>
   Math.max(0, ...actives.filter((a) => a.ins.kind === "number" || a.ins.kind === "quote" || (a.ins.kind === "photo" && a.ins.layout === "card")).map((a) => env(a, t) * (a.ins.kind === "photo" ? 0.45 : 0.82)));
 
-const creditLine = (c?: Credit) => (c ? `PHOTO · ${(c.creator ?? "UNKNOWN").toUpperCase()} · ${c.license.toUpperCase()}` : "");
+const creditLine = (c?: Credit) => (c ? `${/\.mp4$/.test((c as Credit & { file?: string }).file ?? "") ? "VIDEO" : "PHOTO"} · ${(c.creator ?? "UNKNOWN").toUpperCase()} · ${c.license.toUpperCase()}` : "");
 
 const fmtNumber = (v: number, format?: "full" | "plain") => (format === "plain" ? String(Math.round(v)) : Math.round(v).toLocaleString("en-US"));
 
@@ -151,7 +177,7 @@ export const Overlays: React.FC<{ actives: Active[]; t: number; ep: string; cred
         );
       }
 
-      if (ins.kind === "photo") {
+      if (ins.kind === "photo" || ins.kind === "video") {
         const credit = credits.find((c) => c.name === ins.src);
         return (
           <div key={i} style={{ position: "absolute", right: 70, top: 1395, opacity: o * 0.9, fontFamily: MONO, fontSize: 16, letterSpacing: 1, color: C.ink, textAlign: "right" }}>
@@ -303,7 +329,7 @@ export const CreditsCard: React.FC<{ credits: Credit[]; t: number; start: number
   const o = interpolate(t, [start, start + 0.5], [0, 1], clamp);
   return (
     <AbsoluteFill style={{ background: `${C.paper}F2`, opacity: o, padding: "0 90px", justifyContent: "center" }}>
-      <div style={{ fontFamily: MONO, fontSize: 24, letterSpacing: 6, color: C.accent, marginBottom: 26 }}>PHOTO CREDITS</div>
+      <div style={{ fontFamily: MONO, fontSize: 24, letterSpacing: 6, color: C.accent, marginBottom: 26 }}>MEDIA CREDITS</div>
       {credits.map((c) => (
         <div key={c.name} style={{ fontFamily: MONO, fontSize: 24, lineHeight: 1.4, color: C.ink, marginBottom: 8 }}>
           {c.title.slice(0, 44)} — {c.creator ?? "unknown"} · {c.license}
