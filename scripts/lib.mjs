@@ -34,9 +34,19 @@ export const requireKey = (provider, purpose) => {
 };
 
 // ---------------------------------------------------------------- http
-export const http = async (url, { method = "GET", headers = {}, body, json = true, raw = false, tries = 4 } = {}) => {
+export const http = async (url, { method = "GET", headers = {}, body, json = true, raw = false, tries = 4, timeoutMs = 300_000 } = {}) => {
   for (let attempt = 1; attempt <= tries; attempt++) {
-    const res = await fetch(url, { method, headers, body });
+    let res;
+    try {
+      // a stalled connection must not hang the pipeline forever
+      res = await fetch(url, { method, headers, body, signal: AbortSignal.timeout(timeoutMs) });
+    } catch (e) {
+      if (attempt < tries && (e.name === "TimeoutError" || e.name === "AbortError" || e.cause?.code === "ECONNRESET")) {
+        console.warn(`  request ${e.name === "TimeoutError" ? "timed out" : "failed"}, retrying…`);
+        continue;
+      }
+      throw e;
+    }
     if (res.ok) {
       if (raw) return res;
       return json ? res.json() : res.text();
