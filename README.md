@@ -18,6 +18,17 @@ Zaha Hadid's New National Stadium (2012–2015) and Kengo Kuma's replacement.
 - Models (Zaha, Kuma, seating bowl, city, park): `src/iso/models.ts`
 - Research notes and sources: `docs/ep01-research.md`
 
+## Providers
+
+Voice, music, stock media and transcription are pluggable (`studio.config.json`, `scripts/providers/`):
+ElevenLabs · Gemini · OpenAI · own audio; Lyria · ElevenLabs Music · own track; Openverse · Pexels ·
+Pixabay · Wikimedia. `npm run setup -- …` writes the config, `npm run doctor` checks tools and keys.
+Keys live only in `.env`.
+
+## Sellable version
+
+`node tools/build-product.mjs` → `dist/isometric-explainer-studio-v1.0.0.zip` (see `product-src/LISTING.md`).
+
 ## Workflow
 
 The full playbook is a project skill: `.claude/skills/architect-diary-episode/SKILL.md`

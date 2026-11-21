@@ -89,6 +89,8 @@ const example = [
   "",
 ].join("\n");
 fs.writeFileSync(".env.example", example);
+// create an empty .env for the user to fill in (never overwrite an existing one)
+if (!fs.existsSync(".env")) fs.writeFileSync(".env", example.replace(/^# Copy to \.env and fill in\./, "# Fill in your keys here."));
 console.log(`Saved ${CONFIG_FILE}.`);
-console.log(need.size ? `Keys needed in .env: ${[...need].map((p) => KEY_VARS[p][0]).join(", ")} (template: .env.example)` : "No API keys needed for this configuration.");
+console.log(need.size ? `Keys needed in .env: ${[...need].map((p) => KEY_VARS[p][0]).join(", ")} — open .env and paste them after the = sign (keep them out of chat)` : "No API keys needed for this configuration.");
 console.log("Next: npm run doctor");

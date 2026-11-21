@@ -26,6 +26,12 @@ voice/narrator.json      the channel's designed voice id (reuse; never recreate 
 
 ## 0. Environment check (cloud sandbox)
 
+Providers (voice, music, stock media, transcription) are chosen in `studio.config.json` —
+this channel uses Gemini voice (designed voice id) + Lyria + Openverse. Change with
+`npm run setup -- --voice … --music … --media …`; verify with `npm run doctor` (prints only
+set/missing for keys). `.env` holds `STUDIO_KEYS_VIA_PROXY=gemini` because the Gemini key is a
+network secret injected by the sandbox proxy. Provider code: `scripts/providers/*.mjs`.
+
 Run once per session before generating anything:
 
 ```bash
@@ -249,6 +255,13 @@ face centroids). Consequences:
 - Frame the subject big: stadium-scale models want `scale` ≈ 1.5–2.4; the scene area
   is between the headline (~y 360) and the caption (~y 1500).
 - One idea per beat: the viewer should know where to look within half a second.
+
+## Selling this as a product
+
+`node tools/build-product.mjs` builds the generic, sellable skill (`dist/isometric-explainer-studio/`
++ zip) from this repo's code: `product-src/` holds its SKILL.md, references, licence and listing copy;
+the template is copied from `src/` and `scripts/` with personal material stripped (the build fails
+if channel name, voice ids or keys leak). Rebuild after improving the pipeline.
 
 ## Pitfalls already hit
 
