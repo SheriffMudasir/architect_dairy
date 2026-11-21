@@ -9,6 +9,7 @@
 //   npm run setup -- --show      # print current config
 import fs from "node:fs";
 import { CONFIG_FILE, KEY_VARS } from "./lib.mjs";
+import { ensureFonts } from "./fonts.mjs";
 
 const argv = process.argv.slice(2);
 const opt = (n) => {
@@ -93,4 +94,6 @@ fs.writeFileSync(".env.example", example);
 if (!fs.existsSync(".env")) fs.writeFileSync(".env", example.replace(/^# Copy to \.env and fill in\./, "# Fill in your keys here."));
 console.log(`Saved ${CONFIG_FILE}.`);
 console.log(need.size ? `Keys needed in .env: ${[...need].map((p) => KEY_VARS[p][0]).join(", ")} — open .env and paste them after the = sign (keep them out of chat)` : "No API keys needed for this configuration.");
+const missingFonts = ensureFonts();
+if (missingFonts.length) console.log(`Fonts: run npm install, then npm run fonts (missing ${missingFonts.length})`);
 console.log("Next: npm run doctor");

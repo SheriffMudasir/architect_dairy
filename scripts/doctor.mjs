@@ -21,10 +21,12 @@ for (const bin of ["ffmpeg", "ffprobe"]) {
     execFileSync(bin, ["-version"], { stdio: "ignore" });
     ok(bin);
   } catch {
-    no(`${bin} not found`, "install FFmpeg (brew install ffmpeg / apt-get install ffmpeg / winget install ffmpeg)");
+    no(`${bin} not found`, "ask the user to install FFmpeg (ffmpeg.org/download) — do not install system software yourself");
   }
 }
-fs.existsSync("node_modules/remotion") ? ok("npm packages installed") : no("npm packages missing", "npm install");
+fs.existsSync("node_modules/remotion") ? ok("npm packages installed") : no("npm packages missing", "npm install (inside the project folder)");
+const fontsOk = ["instrument-sans-latin-500-normal.woff2", "instrument-sans-latin-600-normal.woff2", "instrument-sans-latin-700-normal.woff2", "jetbrains-mono-latin-500-normal.woff2"].every((f) => fs.existsSync(`public/fonts/${f}`));
+fontsOk ? ok("fonts in public/fonts") : no("fonts missing", "npm run fonts");
 if (process.env.REMOTION_BROWSER) fs.existsSync(process.env.REMOTION_BROWSER) ? ok("REMOTION_BROWSER found") : no("REMOTION_BROWSER path does not exist");
 else warn("Remotion downloads its own headless Chrome on first render (needs internet), or set REMOTION_BROWSER");
 

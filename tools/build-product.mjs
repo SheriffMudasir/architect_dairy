@@ -7,7 +7,7 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 
 const NAME = "isometric-explainer-studio";
-const VERSION = "1.0.0";
+const VERSION = "1.1.0";
 const OUT = path.join("dist", NAME);
 const T = path.join(OUT, "template");
 
@@ -20,21 +20,18 @@ const write = (to, s) => {
 };
 
 // ---------------- skill files
-for (const f of ["SKILL.md", "README.md", "LICENSE.md", "THIRD_PARTY.md"]) cp(`product-src/${f}`, path.join(OUT, f));
+for (const f of ["SKILL.md", "README.md", "INSTALL.md", "LICENSE.md", "THIRD_PARTY.md"]) cp(`product-src/${f}`, path.join(OUT, f));
 cp("product-src/scripts", path.join(OUT, "scripts"));
 fs.mkdirSync(path.join(OUT, "reference"), { recursive: true });
 for (const f of fs.readdirSync("product-src/reference")) if (!f.endsWith(".head.md")) cp(`product-src/reference/${f}`, path.join(OUT, "reference", f));
-const fence = (title, file) => `\n## ${title}\n\n\`\`\`ts\n${fs.readFileSync(file, "utf8").trim()}\n\`\`\`\n`;
-write(
-  path.join(OUT, "reference", "example-episode.md"),
-  fs.readFileSync("product-src/reference/example-episode.head.md", "utf8") +
-    fence("src/ep02/script.ts", "src/ep02/script.ts") +
-    fence("src/ep02/world.ts", "src/ep02/world.ts") +
-    fence("src/ep02/models.ts", "src/ep02/models.ts"),
-);
+const fence = (file) => `\n\n\`\`\`ts\n${fs.readFileSync(file, "utf8").trim()}\n\`\`\`\n`;
+write(path.join(OUT, "reference", "example-episode.md"), fs.readFileSync("product-src/reference/example-episode.head.md", "utf8") + "\nFiles: `example-script.md` (data, inserts, music plan), `example-world.md` (storyboard), `example-models.md` (year-driven church model).\n");
+write(path.join(OUT, "reference", "example-script.md"), "# Example — src/ep02/script.ts" + fence("src/ep02/script.ts"));
+write(path.join(OUT, "reference", "example-world.md"), "# Example — src/ep02/world.ts" + fence("src/ep02/world.ts"));
+write(path.join(OUT, "reference", "example-models.md"), "# Example — src/ep02/models.ts" + fence("src/ep02/models.ts"));
 
 // ---------------- template project
-for (const p of ["src/iso", "src/shared", "src/theme.ts", "src/fonts.ts", "src/channel.ts", "src/Root.tsx", "src/index.ts", "scripts", "templates", "public/fonts", "tsconfig.json", "remotion.config.ts", "eslint.config.mjs"])
+for (const p of ["src/iso", "src/shared", "src/theme.ts", "src/fonts.ts", "src/channel.ts", "src/Root.tsx", "src/index.ts", "scripts", "templates", "tsconfig.json", "remotion.config.ts", "eslint.config.mjs"])
   cp(p, path.join(T, p));
 cp(".prettierrc", path.join(T, "_prettierrc"));
 write(
@@ -75,6 +72,7 @@ write(
 write(path.join(T, ".env.example"), "# Run `npm run setup -- …` to generate the exact list for your providers.\n");
 write(path.join(T, "docs", ".keep"), "");
 write(path.join(T, "public", "sfx", ".keep"), "");
+write(path.join(T, "public", "fonts", ".keep"), "# fonts are copied here from npm by `npm run fonts` (run by setup)\n");
 
 // package.json: only what the code imports
 const pkg = JSON.parse(fs.readFileSync("package.json", "utf8"));
@@ -96,7 +94,7 @@ write(
         "@remotion/bundler": remotionVer,
         "@remotion/renderer": remotionVer,
       },
-      devDependencies: keep(pkg.devDependencies, ["@remotion/eslint-config-flat", "@types/react", "@types/web", "eslint", "prettier", "typescript"]),
+      devDependencies: keep(pkg.devDependencies, ["@fontsource/instrument-sans", "@fontsource/jetbrains-mono", "@remotion/eslint-config-flat", "@types/react", "@types/web", "eslint", "prettier", "typescript"]),
     },
     null,
     2,
@@ -123,6 +121,22 @@ API keys go in \`.env\` only.
 `,
 );
 
+// ---------------- template manifest (for agents that receive the skill as streamed text files)
+{
+  const walkT = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walkT(path.join(d, e.name)) : [path.join(d, e.name)]));
+  const rows = walkT(T)
+    .map((f) => path.relative(T, f).split(path.sep).join("/"))
+    .sort()
+    .map((rel) => {
+      const dest = rel.replace(/^_gitignore$/, ".gitignore").replace(/^_prettierrc$/, ".prettierrc");
+      return `| \`template/${rel}\` | \`${dest}\` |`;
+    });
+  write(
+    path.join(OUT, "reference", "template-manifest.md"),
+    `# Template manifest\n\nEvery file of the project template and where it goes in the buyer's project folder.\nUsed when the skill is delivered as text (no skill folder on disk): write each file's exact\ncontent to its destination path, then run \`npm install\`. Fonts are not files here — \`npm run fonts\`\n(called by \`npm run setup\`) copies them from npm.\n\n| Source in skill | Destination in project |\n|---|---|\n${rows.join("\n")}\n\nTotal: ${rows.length} files.\n`,
+  );
+}
+
 // ---------------- safety checks: no personal traces, no secrets
 const BANNED = [/voice_[a-z0-9]{12}/, /ARCHITECT DIARY/i, /architect_dairy/i, /SheriffMudasir/i, /@gmail\.com/i, /AIza[0-9A-Za-z_-]{20,}/, /sk-[A-Za-z0-9]{20,}/, /xi-api-key"\s*:\s*"[a-z0-9]{20,}/i];
 const ALLOW_IN = []; // none
@@ -136,6 +150,28 @@ for (const f of walk(OUT)) {
 if (problems.length) {
   console.error("Personal/secret traces found — fix before shipping:\n" + problems.join("\n"));
   process.exit(1);
+}
+
+// ---------------- marketplace packaging rules (text-only delivery, sizes, no junk)
+{
+  const all = walk(OUT);
+  const errs = [];
+  const BIN = /\.(woff2?|ttf|otf|png|jpe?g|gif|webp|mp3|wav|m4a|mp4|mov|pdf|zip)$/i;
+  let chars = 0;
+  for (const f of all) {
+    if (BIN.test(f)) errs.push(`binary file (would be stripped): ${f}`);
+    if (/(^|\/)(node_modules|\.git|\.DS_Store)(\/|$)/.test(f)) errs.push(`junk: ${f}`);
+    const size = fs.statSync(f).size;
+    if (size > 20 * 1024) errs.push(`over 20 KB: ${f} (${(size / 1024).toFixed(1)} KB)`);
+    chars += fs.readFileSync(f, "utf8").length;
+  }
+  if (all.length > 200) errs.push(`too many files: ${all.length} > 200`);
+  if (chars > 6_000_000) errs.push(`too many characters: ${chars} > 6,000,000`);
+  if (errs.length) {
+    console.error("Packaging rules failed:\n" + errs.join("\n"));
+    process.exit(1);
+  }
+  console.log(`Packaging rules OK: ${all.length} text files, ${chars.toLocaleString()} characters, none over 20 KB, no binaries`);
 }
 
 // ---------------- zip

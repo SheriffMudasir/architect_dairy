@@ -47,7 +47,8 @@
     "voice-audition": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/voice-audition.mjs",
     "setup": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/setup.mjs",
     "doctor": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/doctor.mjs",
-    "voices": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/voices.mjs"
+    "voices": "NODE_USE_ENV_PROXY=1 node --env-file-if-exists=.env --experimental-strip-types --no-warnings scripts/voices.mjs",
+    "fonts": "node scripts/fonts.mjs"
   },
   "allowScripts": {
     "esbuild": false

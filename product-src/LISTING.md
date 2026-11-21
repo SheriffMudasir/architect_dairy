@@ -6,7 +6,7 @@ Isometric Explainer Studio — Architecture & History Shorts
 
 ## One-liner (card)
 Your agent researches, scripts, animates and voices 60–120 s vertical explainers with isometric 3D,
-word-timed captions, music and licensed stock media — using ElevenLabs, Gemini, OpenAI or your own voice.
+word-timed captions, music and licensed stock media — with Agensi tools (no keys), ElevenLabs, Gemini, OpenAI or your own voice.
 
 ## Description
 Turn any building, landmark or story into a polished Reel/Short/TikTok — directed end-to-end by your AI agent.
@@ -48,13 +48,8 @@ gemini, tts, captions, motion graphics, 3d, isometric, content creation, youtube
 - 30–60 s screen recording: "make a video about X" → agent onboarding → doctor → render
 - Credits for stock photos in those demos are in each episode's `public/<ep>/media/credits.json`
 
-## Notes before submitting (for the seller)
-- The skill writes a project template into the buyer's folder (`scripts/init-project.mjs` copies
-  `template/`). Agensi says skills are "loaded on use and never downloaded" — confirm in their creator
-  guide that skills may scaffold files into the buyer's project. If not, publish the template as a
-  public repo or npm package and point `init-project` at it, keeping the playbook paid.
-- Agensi tools: buyers can run voice/music through marketplace tools with no keys — the skill
-  supports this via `voice.provider: file` / `music.provider: file` ("agent-tool mode").
-- Tested end-to-end here with Gemini voice, Openverse photos, local video, Lyria and file music.
-  ElevenLabs, OpenAI, Pexels and Pixabay paths follow their public APIs but were not run with real
-  keys in this environment — run `npm run doctor` + one episode with each before listing claims.
+## Notes for the seller
+See `SELLING-GUIDE.md` for step-by-step Gumroad and Agensi instructions. Package rules are enforced by
+`tools/build-product.mjs` (text-only, ≤ 20 KB per file, ≤ 200 files, no personal data).
+Gemini, Lyria, Openverse, own-audio and video inserts were tested end to end; test ElevenLabs, OpenAI,
+Pexels and Pixabay with real keys before advertising them.

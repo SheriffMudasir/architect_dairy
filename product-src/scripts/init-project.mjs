@@ -8,7 +8,8 @@ import { fileURLToPath } from "node:url";
 
 const target = path.resolve(process.argv[2] ?? "explainer-studio");
 const template = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "template");
-if (!fs.existsSync(template)) throw new Error(`template not found at ${template}`);
+if (!fs.existsSync(template))
+  throw new Error(`template not found at ${template} — if this skill was delivered as text (marketplace/MCP), write the files listed in reference/template-manifest.md instead`);
 if (fs.existsSync(target) && fs.readdirSync(target).filter((f) => !f.startsWith(".")).length && !process.argv.includes("--force"))
   throw new Error(`${target} is not empty (use --force to copy into it anyway)`);
 fs.cpSync(template, target, { recursive: true, force: false, errorOnExist: false });
@@ -20,7 +21,7 @@ for (const f of ["gitignore", "prettierrc"]) {
 console.log(`Project created at ${target}
 Next:
   cd ${path.relative(process.cwd(), target) || "."}
-  npm install
+  npm install          (local install; fonts are copied by setup)
   npm run setup -- --channel "My Channel" --voice <elevenlabs|gemini|openai|file> --music <lyria|elevenlabs|file|none> --media openverse
   (put the API keys it lists into .env)
   npm run doctor
