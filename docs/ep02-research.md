@@ -1,8 +1,26 @@
-# ep02 research — Untitled
+# ep02 research — The Church That Took 144 Years (Sagrada Família)
 
-Every claim in the script needs a row. Mark anything not confirmed by a primary
-or reputable source with ⚠ and flag it to the user before publishing.
+Every claim in the script has a row. ⚠ = not confirmed by a primary/reputable source;
+flag to the user before publishing.
 
 | Claim in script | Source |
 |---|---|
-| | |
+| Construction began in 1882 under Francisco de Paula del Villar | [Basílica — history](https://sagradafamilia.org/en/history-of-the-temple), [EBSCO](https://www.ebsco.com/research-starters/construction-and-building/gaudi-begins-barcelonas-sagrada-familia) |
+| Nov 1883: after a dispute Villar was replaced by Antoni Gaudí (born June 1852 → aged 31) | [EBSCO](https://www.ebsco.com/research-starters/construction-and-building/gaudi-begins-barcelonas-sagrada-familia), [Basílica — history](https://sagradafamilia.org/en/history-of-the-temple) |
+| He turned a neo-Gothic plan into his own design; 18 towers (12 apostles, 4 evangelists, Mary, Jesus) | [Basílica — history](https://sagradafamilia.org/en/history-of-the-temple), [Ara](https://en.ara.cat/culture/33-things-you-might-not-have-known-about-the-sagrada-familia_130_5760812.html) |
+| Devoted his last years (≈ last 15) solely to the Sagrada Família | [EBSCO](https://www.ebsco.com/research-starters/construction-and-building/gaudi-begins-barcelonas-sagrada-familia) |
+| ⚠ "My client is not in a hurry" — attributed to Gaudí (widely quoted, no primary source found). Script says "he's said to have replied". | Widely repeated; unverified |
+| 7 June 1926 hit by a tram (Gran Via / Bailèn); taken for a beggar; died 10 June 1926 | [Casa Batlló](https://www.casabatllo.es/en/figure/was-knocked-down-by-tram/), [Mental Floss](https://www.mentalfloss.com/culture/architecture/gaudis-accidental-death-why-great-architect-was-mistaken-beggar), [Ara](https://en.ara.cat/culture/how-was-gaudi-s-funeral_1_5661658.html) |
+| At his death the church was about 25% built | [Mental Floss](https://www.mentalfloss.com/culture/architecture/gaudis-accidental-death-why-great-architect-was-mistaken-beggar) (sources vary 15–25% → script says "about a quarter") |
+| July 1936 (Civil War): workshop set on fire; plans and photographs burnt; plaster models smashed | [Basílica booklet (2026)](https://sagradafamilia.org/documents/20142/1693659/SF_Booklet_02_20260227_digital_AF.pdf/0d058812-40b3-3329-445e-6a8c9edd3315), [BD Online](https://bdonline.co.uk/briefing/resurrecting-gaudis-vision-how-generations-of-architects-worked-to-realise-la-sagrada-familia/5130377.article) |
+| Successors reassembled model fragments and kept building from what survived | [BD Online](https://bdonline.co.uk/briefing/resurrecting-gaudis-vision-how-generations-of-architects-worked-to-realise-la-sagrada-familia/5130377.article), [Basílica — history](https://sagradafamilia.org/en/history-of-the-temple) |
+| Never received government funding; financed by donations | [Ara — finances](https://en.ara.cat/economy/the-sagrada-familia-s-finances-135m-turnover-and-1-600-jobs_1_5759214.html) |
+| 4,877,567 visitors in 2025 ("nearly five million a year") | [Catalan News](https://www.catalannews.com/society-science/item/sagrada-familia-unveils-new-image-as-2025-marked-year-of-consolidation), [Basílica report 2025](https://sagradafamilia.org/documents/20142/1693094/SF26_Memoria25_ENG_DIGITAL%2B%281%29.pdf/9a2fcd96-0546-d6b7-b08c-94fe570b20ae) |
+| First building permit granted June 2019, 137 years after work began | [NPR](https://www.npr.org/2019/06/09/731115388/not-too-little-too-late-unfinished-gaud-basilica-gets-permit-137-years-later), [Dezeen](https://www.dezeen.com/2019/06/10/sagrada-familia-antoni-gaudi-building-permit-barcelona/) |
+| 20 Feb 2026: cross completes the Tower of Jesus Christ, 172.5 m; world's tallest church | [CP24](https://www.cp24.com/news/world/2026/02/20/barcelonas-sagrada-familia-reaches-its-peak-with-the-completion-of-its-soaring-central-tower/), [Vatican News](https://www.vaticannews.va/en/church/news/2026-02/basilica-sagrada-familia-cross-completed-tower-of-jesus-christ.print.html), [Domus](https://www.domusweb.it/en/news/gallery/2026/03/02/sagrada-familia-completed-world-tallest-church.amp.html) |
+| Kept just below Montjuïc (≈177 m; sources give 173–177 m) — Gaudí's belief that his work shouldn't surpass God's | [Idealista](https://www.idealista.com/en/news/lifestyle-in-spain/2025/08/27/857703-sagrada-familia-now-barcelona-s-tallest-building), [National Geographic](https://www.nationalgeographic.com/culture/article/sagrada-familia-barcelona-tower-complete) |
+| 10 June 2026 — 100 years after Gaudí's death — tower blessed (Pope Leo XIV) | [The Art Newspaper](https://www.theartnewspaper.com/2026/06/04/gaudis-sagrada-familia-finally-shakes-off-its-incompletable-tag-as-pope-prepares-to-inaugurate-tallest-and-final-tower), [CP24 (June 2026)](https://www.cp24.com/news/world/2026/06/08/sagrada-familias-144-year-journey-nears-its-end-with-the-tower-of-jesus-christ/) |
+| Main entrance (Glory façade) not built; forecasts ~2034–35; depends on agreement with neighbours (demolitions) | [Domus (Jul 2026)](https://www.domusweb.it/en/news/2026/07/15/sagrada-familia-completion-demolitions-barcelona.html), [Ara](https://en.ara.cat/culture/these-will-be-the-great-milestones-of-the-sagrada-familia-until-2035_1_5760542.html), [Time Out](https://www.timeout.com/news/is-the-sagrada-familia-finally-complete-heres-what-visitors-can-expect-in-2026-061126) |
+
+3D model: a simplified reconstruction for illustration (tower heights other than the
+172.5 m Tower of Jesus Christ are approximate; construction phases are schematic).

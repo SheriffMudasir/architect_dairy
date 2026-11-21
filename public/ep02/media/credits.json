@@ -1,0 +1,92 @@
+[
+  {
+    "name": "cranes-a",
+    "file": "ep02/media/cranes-a.jpg",
+    "title": "Sagrada Familia",
+    "creator": "illustir",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/12505664@N00/14496041698",
+    "attribution": "\"Sagrada Familia\" by illustir is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+  },
+  {
+    "name": "cranes-c",
+    "file": "ep02/media/cranes-c.jpg",
+    "title": "Sagrada Familia",
+    "creator": "Serge Melki",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/67958110@N00/3402536411",
+    "attribution": "\"Sagrada Familia\" by Serge Melki is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+  },
+  {
+    "name": "nativity-a",
+    "file": "ep02/media/nativity-a.jpg",
+    "title": "Barcelona, La Sagrada Familia, nativity facade",
+    "creator": "Arian Zwegers",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/67769030@N07/6661281487",
+    "attribution": "\"Barcelona, La Sagrada Familia, nativity facade\" by Arian Zwegers is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+  },
+  {
+    "name": "passion-a",
+    "file": "ep02/media/passion-a.jpg",
+    "title": "Sagrada Familia Passion Facade",
+    "creator": "Barbara Eckstein",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/12368786@N06/6978818947",
+    "attribution": "\"Sagrada Familia Passion Facade\" by Barbara Eckstein is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+  },
+  {
+    "name": "interior-nave",
+    "file": "ep02/media/interior-nave.jpg",
+    "title": "Central nave - Sagrada Familia",
+    "creator": "Jorge Lascar",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/8721758@N06/4469808854",
+    "attribution": "\"Central nave - Sagrada Familia\" by Jorge Lascar is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+  },
+  {
+    "name": "interior-forest",
+    "file": "ep02/media/interior-forest.jpg",
+    "title": "Un bosc de palmeres / A palmtree forest",
+    "creator": "SBA73",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "source": "https://www.flickr.com/photos/7455207@N05/5489610842",
+    "attribution": "\"Un bosc de palmeres / A palmtree forest\" by SBA73 is licensed under CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/."
+  },
+  {
+    "name": "gaudi-serge",
+    "file": "ep02/media/gaudi-serge.jpg",
+    "title": "Antoni Gaudi",
+    "creator": "Serge Melki",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/67958110@N00/3409527296",
+    "attribution": "\"Antoni Gaudi\" by Serge Melki is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+  },
+  {
+    "name": "towers-a",
+    "file": "ep02/media/towers-a.jpg",
+    "title": "Towers - Sagrada Familia",
+    "creator": "Jorge Lascar",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/8721758@N06/4469149949",
+    "attribution": "\"Towers - Sagrada Familia\" by Jorge Lascar is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+  },
+  {
+    "name": "sf-a",
+    "file": "ep02/media/sf-a.jpg",
+    "title": "Sagrada Familia",
+    "creator": "Cannoy",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "http://www.flickr.com/photos/93037422@N03/16620772297",
+    "attribution": "\"Sagrada Familia\" by Cannoy is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/."
+  }
+]

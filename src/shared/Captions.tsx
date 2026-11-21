@@ -86,7 +86,7 @@ export const Captions: React.FC<{ words: Word[]; t: number; font: string; tl: Ti
             style={{
               position: "relative",
               display: "inline-block",
-              color: w.em ? (spoken ? "#FFFFFF" : C.accent) : spoken ? C.ink : "#B9B2A6",
+              color: w.em ? (spoken && wp > 0.7 ? "#FFFFFF" : C.accent) : spoken ? C.ink : "#B9B2A6",
               scale: String(active ? 1 + 0.07 * (1 - Math.abs(wp - 0.6)) : 1),
               padding: w.em ? "0 14px" : 0,
               textShadow: w.em ? "none" : `0 0 18px ${C.paper}, 0 0 6px ${C.paper}`,

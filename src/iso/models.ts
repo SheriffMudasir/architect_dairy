@@ -345,3 +345,154 @@ export const entries = (t: number, chosen: number, fadeOthers: number): Poly[] =
 /** A cost bar (box) whose height is proportional to value. */
 export const bar = (x: number, y: number, height: number, color: string, opacity = 1): Poly[] =>
   box(x, y, 0, 26, 26, Math.max(0.1, height), { fill: color, stroke: mix(color, C.ink, 0.45), sw: 1, opacity });
+
+// ---------------------------------------------------------------- Towers, grids, cranes (ep02+)
+export type SpireOpts = {
+  r: number; // base radius (m)
+  h: number; // full height (m)
+  rise?: number; // 0..1 growth
+  sides?: number;
+  taper?: number; // 0..1 how much it narrows before the tip
+  color?: string;
+  ghost?: number;
+  opacity?: number;
+  rings?: number; // horizontal contour rings
+  finial?: "cross" | "star" | "ball" | "none";
+  base?: number; // z of the base
+};
+
+/** Polygonal tapering tower with a pointed tip — bell towers, spires. */
+export const spire = (x: number, y: number, o: SpireOpts): Item[] => {
+  const { r, h, rise = 1, sides = 8, taper = 0.78, color = C.stone, ghost = 0, opacity = 1, rings = 4, finial = "ball", base = 0 } = o;
+  const items: Item[] = [];
+  if (rise <= 0.001 || opacity <= 0.003) return items;
+  const H = h * rise;
+  const L = 7;
+  const tipStart = 0.86;
+  const ringAt = (k: number): V3[] => {
+    const t = (k / L) * tipStart;
+    const rr = r * (1 - taper * Math.pow(t / tipStart, 1.8));
+    return ellipse(rr, rr, base + H * t, sides, x, y, Math.PI / sides);
+  };
+  const stroke = ghost > 0.02 ? mix("#D9D2C6", C.accent, Math.min(1, ghost * 1.4)) : mix(color, C.ink, 0.18);
+  const style = { stroke, sw: ghost > 0.5 ? 1.3 : 0.6, opacity, fillOpacity: 1 - ghost, dash: ghost > 0.5 ? "4 4" : undefined };
+  for (let k = 0; k < L; k++) band(ringAt(k), ringAt(k + 1), { fill: color, ...style }).forEach((p) => items.push(p));
+  // pointed tip
+  const top = ringAt(L);
+  const apex: V3 = [x, y, base + H];
+  top.forEach((a, i) => items.push({ kind: "poly", pts: [a, top[(i + 1) % top.length], apex], fill: color, ...style }));
+  // contour rings (ink) give the stacked-stone read
+  if (ghost < 1) {
+    for (let k = 1; k <= rings; k++) {
+      const ring = ringAt(Math.round((k / (rings + 1)) * L));
+      items.push({ kind: "line", pts: close(ring), stroke: mix(color, C.ink, 0.55), sw: 0.9, opacity: opacity * (1 - ghost), bias: 4 });
+    }
+  }
+  const fc = ghost > 0.5 ? C.accent : C.accent;
+  if (rise > 0.98 && finial !== "none") {
+    if (finial === "cross") {
+      const z = base + H;
+      const s = Math.max(3, r * 0.6);
+      items.push({ kind: "line", pts: [[x, y, z], [x, y, z + s * 2.2]], stroke: fc, sw: 3, opacity, bias: 50 });
+      items.push({ kind: "line", pts: [[x - s, y, z + s * 1.4], [x + s, y, z + s * 1.4]], stroke: fc, sw: 3, opacity, bias: 50 });
+      items.push({ kind: "line", pts: [[x, y - s, z + s * 1.4], [x, y + s, z + s * 1.4]], stroke: fc, sw: 3, opacity, bias: 50 });
+    } else {
+      items.push({ kind: "dot", p: [x, y, base + H + r * 0.25], r: Math.max(1.2, r * (finial === "star" ? 0.45 : 0.3)), fill: finial === "star" ? "#F4D27A" : fc, stroke: C.ink, sw: 0.6, opacity, bias: 50 });
+    }
+  }
+  return items;
+};
+
+/** Barcelona Eixample block: square with chamfered corners and a courtyard. */
+export const eixampleBlock = (cx: number, cy: number, o: { size?: number; chamfer?: number; depth?: number; h?: number; opacity?: number; color?: string } = {}): Item[] => {
+  const { size = 113, chamfer = 20, depth = 24, h = 22, opacity = 1, color = mix(C.city, C.paper, 0.35) } = o;
+  if (opacity <= 0.003) return [];
+  const oct = (s: number, c: number, z: number): V3[] => {
+    const a = s / 2;
+    return [
+      [cx - a + c, cy - a, z],
+      [cx + a - c, cy - a, z],
+      [cx + a, cy - a + c, z],
+      [cx + a, cy + a - c, z],
+      [cx + a - c, cy + a, z],
+      [cx - a + c, cy + a, z],
+      [cx - a, cy + a - c, z],
+      [cx - a, cy - a + c, z],
+    ];
+  };
+  const style = { fill: color, stroke: mix(color, C.ink, 0.18), sw: 0.6, opacity };
+  const items: Item[] = [];
+  const inner = size - depth * 2;
+  const ic = Math.max(4, chamfer - depth * 0.4);
+  band(oct(size, chamfer, 0), oct(size, chamfer, h), style).forEach((p) => items.push(p));
+  band(oct(inner, ic, 0), oct(inner, ic, h), { ...style, bias: -20 }).forEach((p) => items.push(p));
+  band(oct(size, chamfer, h), oct(inner, ic, h), { ...style, fill: mix(color, "#ffffff", 0.35) }).forEach((p) => items.push(p));
+  return items;
+};
+
+/** A grid of Eixample blocks around the origin. skip(ix, iy) leaves a block empty. */
+export const eixample = (o: { radius?: number; pitch?: number; opacity?: number; skip?: (ix: number, iy: number) => boolean; seed?: number } = {}): Item[] => {
+  const { radius = 3, pitch = 133, opacity = 1, skip = () => false, seed = 4 } = o;
+  const r = rng(seed);
+  const items: Item[] = [];
+  for (let ix = -radius; ix <= radius; ix++) {
+    for (let iy = -radius; iy <= radius; iy++) {
+      const h = 18 + r() * 10;
+      if (skip(ix, iy)) continue;
+      const d = Math.hypot(ix, iy) * pitch;
+      const fade = Math.max(0, Math.min(1, 1.45 - d / (pitch * radius)));
+      if (fade < 0.03) continue;
+      items.push(...eixampleBlock(ix * pitch, iy * pitch, { h, opacity: opacity * fade }));
+    }
+  }
+  return items;
+};
+
+/** Lattice tower crane (lines). jib angle in radians. */
+export const crane = (x: number, y: number, o: { h?: number; jib?: number; angle?: number; opacity?: number; color?: string } = {}): Item[] => {
+  const { h = 120, jib = 55, angle = 0, opacity = 1, color = C.crane } = o;
+  if (opacity <= 0.003) return [];
+  const items: Item[] = [];
+  const s = 1.6;
+  const corners: [number, number][] = [
+    [-s, -s],
+    [s, -s],
+    [s, s],
+    [-s, s],
+  ];
+  const st = { stroke: color, sw: 1.1, opacity, bias: 30 };
+  corners.forEach(([dx, dy]) => items.push({ kind: "line", pts: [[x + dx, y + dy, 0], [x + dx, y + dy, h]], ...st }));
+  for (let z = 0; z < h; z += 8) {
+    items.push({ kind: "line", pts: [[x - s, y - s, z], [x + s, y + s, z + 8]], ...st, sw: 0.6 });
+    items.push({ kind: "line", pts: [[x + s, y - s, z], [x - s, y + s, z + 8]], ...st, sw: 0.6 });
+  }
+  const c = Math.cos(angle);
+  const sn = Math.sin(angle);
+  const tip: V3 = [x + c * jib, y + sn * jib, h + 2];
+  const back: V3 = [x - c * jib * 0.3, y - sn * jib * 0.3, h + 2];
+  items.push({ kind: "line", pts: [back, tip], ...st, sw: 2 });
+  items.push({ kind: "line", pts: [[x, y, h + 9], tip], ...st, sw: 0.8 });
+  items.push({ kind: "line", pts: [[x, y, h + 9], back], ...st, sw: 0.8 });
+  items.push({ kind: "line", pts: [[x, y, h], [x, y, h + 9]], ...st, sw: 1.6 });
+  // hook cable
+  const hk: V3 = [x + c * jib * 0.7, y + sn * jib * 0.7, h + 2];
+  items.push({ kind: "line", pts: [hk, [hk[0], hk[1], h - 30]], stroke: C.ink, sw: 0.6, opacity: opacity * 0.7, bias: 30 });
+  items.push(...box(back[0] - 2, back[1] - 2, h - 1, 4, 4, 4, { fill: mix(color, C.ink, 0.3), stroke: C.ink, sw: 0.5, opacity, bias: 31 }));
+  return items;
+};
+
+/** A smooth hill (stacked rings). */
+export const hill = (cx: number, cy: number, o: { rx: number; ry: number; h: number; opacity?: number; color?: string; ghost?: number }): Item[] => {
+  const { rx, ry, h, opacity = 1, color = "#C9CFB4", ghost = 0 } = o;
+  const items: Item[] = [];
+  const L = 6;
+  const ring = (k: number) => {
+    const t = k / L;
+    const s = Math.sqrt(1 - t * t * 0.96);
+    return ellipse(rx * s, ry * s, h * t, 28, cx, cy);
+  };
+  for (let k = 0; k < L; k++)
+    band(ring(k), ring(k + 1), { fill: color, stroke: ghost ? C.accent : mix(color, C.ink, 0.2), sw: 0.6, opacity, fillOpacity: 1 - ghost, dash: ghost ? "4 4" : undefined }).forEach((p) => items.push(p));
+  items.push({ kind: "poly", pts: ring(L), fill: color, stroke: mix(color, C.ink, 0.2), sw: 0.6, opacity, fillOpacity: 1 - ghost });
+  return items;
+};

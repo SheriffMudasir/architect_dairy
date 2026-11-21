@@ -20,6 +20,10 @@ export const C = {
   treeDark: "#71875F",
   ginkgo: "#E0B84A",
   crowd: "#3A6FD8",
+  stone: "#DCCDB2", // sandstone (Sagrada Família)
+  stoneDark: "#B79F7E",
+  crane: "#E2AE34",
+  fire: "#F08A24",
 };
 
 export const W = 1080;

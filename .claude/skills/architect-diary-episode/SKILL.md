@@ -204,7 +204,7 @@ You can't listen: verify by measuring. Duration should be ≈ episode length, an
 loudness curve should follow the plan:
 
 ```bash
-ffmpeg -v error -i public/epNN/music.wav -af "asetnsamples=n=144000,astats=metadata=1:reset=1,ametadata=print:key=lavfi.astats.Overall.RMS_level:file=-" -f null - | grep RMS | awk -F= '{printf "%d:%.0f ", (NR-1)*3, $2}'
+ffmpeg -v error -i public/epNN/music.wav -af "asetnsamples=n=144000,astats=metadata=1:reset=1,ametadata=print:key=lavfi.astats.Overall.RMS_level:file=-" -f null - | grep RMS | awk -F= '{printf "%d:%.0f ", (NR-1)*3, $NF}'
 ```
 
 Mix lives in `src/shared/Soundtrack.tsx`: voice at full level, music 0.2 under speech /

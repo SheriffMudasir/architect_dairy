@@ -1,0 +1,1427 @@
+{
+ "beats": [
+  {
+   "id": "hook",
+   "start": 0.5,
+   "end": 10.266,
+   "audio": "ep02/audio/hook.wav"
+  },
+  {
+   "id": "gaudi",
+   "start": 10.766,
+   "end": 18.033,
+   "audio": "ep02/audio/gaudi.wav"
+  },
+  {
+   "id": "vision",
+   "start": 18.533,
+   "end": 28.367,
+   "audio": "ep02/audio/vision.wav"
+  },
+  {
+   "id": "lifetime",
+   "start": 28.867,
+   "end": 38.808,
+   "audio": "ep02/audio/lifetime.wav"
+  },
+  {
+   "id": "tram",
+   "start": 39.308,
+   "end": 48.395,
+   "audio": "ep02/audio/tram.wav"
+  },
+  {
+   "id": "quarter",
+   "start": 48.895,
+   "end": 51.36,
+   "audio": "ep02/audio/quarter.wav"
+  },
+  {
+   "id": "fire",
+   "start": 51.86,
+   "end": 61.32,
+   "audio": "ep02/audio/fire.wav"
+  },
+  {
+   "id": "puzzle",
+   "start": 61.82,
+   "end": 68.899,
+   "audio": "ep02/audio/puzzle.wav"
+  },
+  {
+   "id": "money",
+   "start": 69.399,
+   "end": 76.681,
+   "audio": "ep02/audio/money.wav"
+  },
+  {
+   "id": "permit",
+   "start": 77.181,
+   "end": 83.468,
+   "audio": "ep02/audio/permit.wav"
+  },
+  {
+   "id": "tower",
+   "start": 83.968,
+   "end": 93.363,
+   "audio": "ep02/audio/tower.wav"
+  },
+  {
+   "id": "montjuic",
+   "start": 93.863,
+   "end": 101.283,
+   "audio": "ep02/audio/montjuic.wav"
+  },
+  {
+   "id": "centenary",
+   "start": 101.783,
+   "end": 109.872,
+   "audio": "ep02/audio/centenary.wav"
+  },
+  {
+   "id": "outro",
+   "start": 110.372,
+   "end": 116.588,
+   "audio": "ep02/audio/outro.wav"
+  }
+ ],
+ "words": [
+  {
+   "text": "In",
+   "startMs": 500,
+   "endMs": 797
+  },
+  {
+   "text": " 1882,",
+   "startMs": 797,
+   "endMs": 2208
+  },
+  {
+   "text": " Barcelona",
+   "startMs": 2730,
+   "endMs": 3627
+  },
+  {
+   "text": " started",
+   "startMs": 3627,
+   "endMs": 4111
+  },
+  {
+   "text": " building",
+   "startMs": 4111,
+   "endMs": 4596
+  },
+  {
+   "text": " a",
+   "startMs": 4596,
+   "endMs": 4874
+  },
+  {
+   "text": " church.",
+   "startMs": 4874,
+   "endMs": 5152
+  },
+  {
+   "text": " A",
+   "startMs": 5562,
+   "endMs": 5837
+  },
+  {
+   "text": " hundred",
+   "startMs": 5837,
+   "endMs": 6318
+  },
+  {
+   "text": " and",
+   "startMs": 6318,
+   "endMs": 6594
+  },
+  {
+   "text": " forty-four",
+   "startMs": 6594,
+   "endMs": 7279
+  },
+  {
+   "text": " years",
+   "startMs": 7279,
+   "endMs": 7555
+  },
+  {
+   "text": " later,",
+   "startMs": 7555,
+   "endMs": 8035
+  },
+  {
+   "text": " it",
+   "startMs": 8643,
+   "endMs": 8939
+  },
+  {
+   "text": " still",
+   "startMs": 8939,
+   "endMs": 9235
+  },
+  {
+   "text": " isn't",
+   "startMs": 9235,
+   "endMs": 9531
+  },
+  {
+   "text": " finished.",
+   "startMs": 9531,
+   "endMs": 10266
+  },
+  {
+   "text": " A",
+   "startMs": 10766,
+   "endMs": 11043
+  },
+  {
+   "text": " year",
+   "startMs": 11043,
+   "endMs": 11320
+  },
+  {
+   "text": " in,",
+   "startMs": 11320,
+   "endMs": 11597
+  },
+  {
+   "text": " the",
+   "startMs": 11845,
+   "endMs": 12114
+  },
+  {
+   "text": " first",
+   "startMs": 12114,
+   "endMs": 12383
+  },
+  {
+   "text": " architect",
+   "startMs": 12383,
+   "endMs": 13049
+  },
+  {
+   "text": " was",
+   "startMs": 13049,
+   "endMs": 13318
+  },
+  {
+   "text": " replaced.",
+   "startMs": 13318,
+   "endMs": 13985
+  },
+  {
+   "text": " The",
+   "startMs": 14539,
+   "endMs": 14776
+  },
+  {
+   "text": " job",
+   "startMs": 14776,
+   "endMs": 15013
+  },
+  {
+   "text": " went",
+   "startMs": 15013,
+   "endMs": 15250
+  },
+  {
+   "text": " to",
+   "startMs": 15250,
+   "endMs": 15487
+  },
+  {
+   "text": " a",
+   "startMs": 15487,
+   "endMs": 15724
+  },
+  {
+   "text": " thirty-one-year-old:",
+   "startMs": 15724,
+   "endMs": 16488
+  },
+  {
+   "text": " Antoni",
+   "startMs": 16918,
+   "endMs": 17713
+  },
+  {
+   "text": " Gaudí.",
+   "startMs": 17713,
+   "endMs": 18033
+  },
+  {
+   "text": " He",
+   "startMs": 18533,
+   "endMs": 18949
+  },
+  {
+   "text": " turned",
+   "startMs": 18949,
+   "endMs": 19673
+  },
+  {
+   "text": " a",
+   "startMs": 19673,
+   "endMs": 20088
+  },
+  {
+   "text": " modest",
+   "startMs": 20088,
+   "endMs": 20812
+  },
+  {
+   "text": " church",
+   "startMs": 20812,
+   "endMs": 21228
+  },
+  {
+   "text": " into",
+   "startMs": 21228,
+   "endMs": 21951
+  },
+  {
+   "text": " a",
+   "startMs": 21951,
+   "endMs": 22367
+  },
+  {
+   "text": " forest",
+   "startMs": 22367,
+   "endMs": 23091
+  },
+  {
+   "text": " of",
+   "startMs": 23091,
+   "endMs": 23506
+  },
+  {
+   "text": " stone,",
+   "startMs": 23506,
+   "endMs": 24045
+  },
+  {
+   "text": " with",
+   "startMs": 24318,
+   "endMs": 24512
+  },
+  {
+   "text": " eighteen",
+   "startMs": 24512,
+   "endMs": 24849
+  },
+  {
+   "text": " towers:",
+   "startMs": 24849,
+   "endMs": 25187
+  },
+  {
+   "text": " twelve",
+   "startMs": 25373,
+   "endMs": 25761
+  },
+  {
+   "text": " apostles,",
+   "startMs": 25761,
+   "endMs": 26503
+  },
+  {
+   "text": " four",
+   "startMs": 26792,
+   "endMs": 26973
+  },
+  {
+   "text": " evangelists,",
+   "startMs": 26973,
+   "endMs": 27556
+  },
+  {
+   "text": " Mary,",
+   "startMs": 27556,
+   "endMs": 27871
+  },
+  {
+   "text": " and",
+   "startMs": 27871,
+   "endMs": 28052
+  },
+  {
+   "text": " Jesus.",
+   "startMs": 28052,
+   "endMs": 28367
+  },
+  {
+   "text": " In",
+   "startMs": 28867,
+   "endMs": 29163
+  },
+  {
+   "text": " his",
+   "startMs": 29163,
+   "endMs": 29459
+  },
+  {
+   "text": " last",
+   "startMs": 29459,
+   "endMs": 29755
+  },
+  {
+   "text": " years",
+   "startMs": 29755,
+   "endMs": 30051
+  },
+  {
+   "text": " he",
+   "startMs": 30051,
+   "endMs": 30347
+  },
+  {
+   "text": " worked",
+   "startMs": 30347,
+   "endMs": 30862
+  },
+  {
+   "text": " on",
+   "startMs": 30862,
+   "endMs": 31158
+  },
+  {
+   "text": " nothing",
+   "startMs": 31158,
+   "endMs": 31673
+  },
+  {
+   "text": " else.",
+   "startMs": 31673,
+   "endMs": 32057
+  },
+  {
+   "text": " Asked",
+   "startMs": 32646,
+   "endMs": 33128
+  },
+  {
+   "text": " why",
+   "startMs": 33128,
+   "endMs": 33405
+  },
+  {
+   "text": " it",
+   "startMs": 33405,
+   "endMs": 33682
+  },
+  {
+   "text": " was",
+   "startMs": 33682,
+   "endMs": 33959
+  },
+  {
+   "text": " taking",
+   "startMs": 33959,
+   "endMs": 34441
+  },
+  {
+   "text": " so",
+   "startMs": 34441,
+   "endMs": 34717
+  },
+  {
+   "text": " long,",
+   "startMs": 34717,
+   "endMs": 34994
+  },
+  {
+   "text": " he's",
+   "startMs": 34994,
+   "endMs": 35218
+  },
+  {
+   "text": " said",
+   "startMs": 35218,
+   "endMs": 35441
+  },
+  {
+   "text": " to",
+   "startMs": 35441,
+   "endMs": 35665
+  },
+  {
+   "text": " have",
+   "startMs": 35665,
+   "endMs": 35954
+  },
+  {
+   "text": " replied:",
+   "startMs": 35954,
+   "endMs": 36344
+  },
+  {
+   "text": " my",
+   "startMs": 36525,
+   "endMs": 36820
+  },
+  {
+   "text": " client",
+   "startMs": 36820,
+   "endMs": 37115
+  },
+  {
+   "text": " is",
+   "startMs": 37115,
+   "endMs": 37410
+  },
+  {
+   "text": " not",
+   "startMs": 37410,
+   "endMs": 37705
+  },
+  {
+   "text": " in",
+   "startMs": 37705,
+   "endMs": 38000
+  },
+  {
+   "text": " a",
+   "startMs": 38000,
+   "endMs": 38295
+  },
+  {
+   "text": " hurry.",
+   "startMs": 38295,
+   "endMs": 38808
+  },
+  {
+   "text": " In",
+   "startMs": 39308,
+   "endMs": 39597
+  },
+  {
+   "text": " June",
+   "startMs": 39597,
+   "endMs": 39971
+  },
+  {
+   "text": " 1926,",
+   "startMs": 39971,
+   "endMs": 41339
+  },
+  {
+   "text": " Gaudí",
+   "startMs": 41339,
+   "endMs": 41674
+  },
+  {
+   "text": " was",
+   "startMs": 41674,
+   "endMs": 42008
+  },
+  {
+   "text": " hit",
+   "startMs": 42008,
+   "endMs": 42343
+  },
+  {
+   "text": " by",
+   "startMs": 42343,
+   "endMs": 42678
+  },
+  {
+   "text": " a",
+   "startMs": 42678,
+   "endMs": 43012
+  },
+  {
+   "text": " tram.",
+   "startMs": 43012,
+   "endMs": 43347
+  },
+  {
+   "text": " Dressed",
+   "startMs": 43546,
+   "endMs": 44003
+  },
+  {
+   "text": " so",
+   "startMs": 44003,
+   "endMs": 44266
+  },
+  {
+   "text": " plainly,",
+   "startMs": 44266,
+   "endMs": 44724
+  },
+  {
+   "text": " passers-by",
+   "startMs": 44724,
+   "endMs": 45345
+  },
+  {
+   "text": " took",
+   "startMs": 45345,
+   "endMs": 45595
+  },
+  {
+   "text": " him",
+   "startMs": 45595,
+   "endMs": 45846
+  },
+  {
+   "text": " for",
+   "startMs": 45846,
+   "endMs": 46096
+  },
+  {
+   "text": " a",
+   "startMs": 46096,
+   "endMs": 46346
+  },
+  {
+   "text": " beggar.",
+   "startMs": 46346,
+   "endMs": 46782
+  },
+  {
+   "text": " He",
+   "startMs": 47012,
+   "endMs": 47253
+  },
+  {
+   "text": " died",
+   "startMs": 47253,
+   "endMs": 47494
+  },
+  {
+   "text": " three",
+   "startMs": 47494,
+   "endMs": 47735
+  },
+  {
+   "text": " days",
+   "startMs": 47735,
+   "endMs": 47975
+  },
+  {
+   "text": " later.",
+   "startMs": 47975,
+   "endMs": 48395
+  },
+  {
+   "text": " His",
+   "startMs": 48895,
+   "endMs": 49136
+  },
+  {
+   "text": " church",
+   "startMs": 49136,
+   "endMs": 49377
+  },
+  {
+   "text": " was",
+   "startMs": 49377,
+   "endMs": 49618
+  },
+  {
+   "text": " only",
+   "startMs": 49618,
+   "endMs": 50038
+  },
+  {
+   "text": " about",
+   "startMs": 50038,
+   "endMs": 50458
+  },
+  {
+   "text": " a",
+   "startMs": 50458,
+   "endMs": 50699
+  },
+  {
+   "text": " quarter",
+   "startMs": 50699,
+   "endMs": 51118
+  },
+  {
+   "text": " built.",
+   "startMs": 51118,
+   "endMs": 51360
+  },
+  {
+   "text": " Ten",
+   "startMs": 51860,
+   "endMs": 52145
+  },
+  {
+   "text": " years",
+   "startMs": 52145,
+   "endMs": 52430
+  },
+  {
+   "text": " later,",
+   "startMs": 52430,
+   "endMs": 52927
+  },
+  {
+   "text": " during",
+   "startMs": 53190,
+   "endMs": 53627
+  },
+  {
+   "text": " the",
+   "startMs": 53627,
+   "endMs": 53878
+  },
+  {
+   "text": " Spanish",
+   "startMs": 53878,
+   "endMs": 54314
+  },
+  {
+   "text": " Civil",
+   "startMs": 54314,
+   "endMs": 54751
+  },
+  {
+   "text": " War,",
+   "startMs": 54751,
+   "endMs": 55002
+  },
+  {
+   "text": " his",
+   "startMs": 55206,
+   "endMs": 55438
+  },
+  {
+   "text": " workshop",
+   "startMs": 55438,
+   "endMs": 55842
+  },
+  {
+   "text": " was",
+   "startMs": 55842,
+   "endMs": 56075
+  },
+  {
+   "text": " set",
+   "startMs": 56075,
+   "endMs": 56307
+  },
+  {
+   "text": " on",
+   "startMs": 56307,
+   "endMs": 56540
+  },
+  {
+   "text": " fire.",
+   "startMs": 56540,
+   "endMs": 56841
+  },
+  {
+   "text": " His",
+   "startMs": 57446,
+   "endMs": 57790
+  },
+  {
+   "text": " plans",
+   "startMs": 57790,
+   "endMs": 58134
+  },
+  {
+   "text": " burned.",
+   "startMs": 58134,
+   "endMs": 58733
+  },
+  {
+   "text": " His",
+   "startMs": 58733,
+   "endMs": 59077
+  },
+  {
+   "text": " plaster",
+   "startMs": 59077,
+   "endMs": 59676
+  },
+  {
+   "text": " models",
+   "startMs": 59676,
+   "endMs": 60275
+  },
+  {
+   "text": " were",
+   "startMs": 60275,
+   "endMs": 60721
+  },
+  {
+   "text": " smashed.",
+   "startMs": 60721,
+   "endMs": 61320
+  },
+  {
+   "text": " So",
+   "startMs": 61820,
+   "endMs": 62101
+  },
+  {
+   "text": " his",
+   "startMs": 62101,
+   "endMs": 62383
+  },
+  {
+   "text": " successors",
+   "startMs": 62383,
+   "endMs": 63081
+  },
+  {
+   "text": " pieced",
+   "startMs": 63081,
+   "endMs": 63571
+  },
+  {
+   "text": " the",
+   "startMs": 63571,
+   "endMs": 63853
+  },
+  {
+   "text": " models",
+   "startMs": 63853,
+   "endMs": 64343
+  },
+  {
+   "text": " back",
+   "startMs": 64343,
+   "endMs": 64624
+  },
+  {
+   "text": " together,",
+   "startMs": 64624,
+   "endMs": 65323
+  },
+  {
+   "text": " fragment",
+   "startMs": 65323,
+   "endMs": 65813
+  },
+  {
+   "text": " by",
+   "startMs": 65813,
+   "endMs": 66094
+  },
+  {
+   "text": " fragment,",
+   "startMs": 66094,
+   "endMs": 66584
+  },
+  {
+   "text": " and",
+   "startMs": 66584,
+   "endMs": 66866
+  },
+  {
+   "text": " kept",
+   "startMs": 66866,
+   "endMs": 67147
+  },
+  {
+   "text": " building",
+   "startMs": 67147,
+   "endMs": 67637
+  },
+  {
+   "text": " from",
+   "startMs": 67637,
+   "endMs": 67919
+  },
+  {
+   "text": " what",
+   "startMs": 67919,
+   "endMs": 68201
+  },
+  {
+   "text": " survived.",
+   "startMs": 68201,
+   "endMs": 68899
+  },
+  {
+   "text": " It",
+   "startMs": 69399,
+   "endMs": 69618
+  },
+  {
+   "text": " has",
+   "startMs": 69618,
+   "endMs": 69836
+  },
+  {
+   "text": " never",
+   "startMs": 69836,
+   "endMs": 70217
+  },
+  {
+   "text": " received",
+   "startMs": 70217,
+   "endMs": 70759
+  },
+  {
+   "text": " government",
+   "startMs": 70759,
+   "endMs": 71301
+  },
+  {
+   "text": " money.",
+   "startMs": 71301,
+   "endMs": 71681
+  },
+  {
+   "text": " It's",
+   "startMs": 71893,
+   "endMs": 72163
+  },
+  {
+   "text": " paid",
+   "startMs": 72163,
+   "endMs": 72432
+  },
+  {
+   "text": " for",
+   "startMs": 72432,
+   "endMs": 72702
+  },
+  {
+   "text": " by",
+   "startMs": 72702,
+   "endMs": 72972
+  },
+  {
+   "text": " donations,",
+   "startMs": 72972,
+   "endMs": 73642
+  },
+  {
+   "text": " and",
+   "startMs": 73642,
+   "endMs": 73912
+  },
+  {
+   "text": " by",
+   "startMs": 73912,
+   "endMs": 74182
+  },
+  {
+   "text": " nearly",
+   "startMs": 74182,
+   "endMs": 74652
+  },
+  {
+   "text": " five",
+   "startMs": 74652,
+   "endMs": 75002
+  },
+  {
+   "text": " million",
+   "startMs": 75002,
+   "endMs": 75472
+  },
+  {
+   "text": " visitors",
+   "startMs": 75472,
+   "endMs": 76141
+  },
+  {
+   "text": " a",
+   "startMs": 76141,
+   "endMs": 76411
+  },
+  {
+   "text": " year.",
+   "startMs": 76411,
+   "endMs": 76681
+  },
+  {
+   "text": " It",
+   "startMs": 77181,
+   "endMs": 77419
+  },
+  {
+   "text": " only",
+   "startMs": 77419,
+   "endMs": 77834
+  },
+  {
+   "text": " got",
+   "startMs": 77834,
+   "endMs": 78072
+  },
+  {
+   "text": " a",
+   "startMs": 78072,
+   "endMs": 78310
+  },
+  {
+   "text": " building",
+   "startMs": 78310,
+   "endMs": 78724
+  },
+  {
+   "text": " permit",
+   "startMs": 78724,
+   "endMs": 79139
+  },
+  {
+   "text": " in",
+   "startMs": 79139,
+   "endMs": 79377
+  },
+  {
+   "text": " 2019.",
+   "startMs": 79377,
+   "endMs": 80505
+  },
+  {
+   "text": " A",
+   "startMs": 80505,
+   "endMs": 80743
+  },
+  {
+   "text": " hundred",
+   "startMs": 80743,
+   "endMs": 81158
+  },
+  {
+   "text": " and",
+   "startMs": 81158,
+   "endMs": 81396
+  },
+  {
+   "text": " thirty-seven",
+   "startMs": 81396,
+   "endMs": 82163
+  },
+  {
+   "text": " years",
+   "startMs": 82163,
+   "endMs": 82401
+  },
+  {
+   "text": " after",
+   "startMs": 82401,
+   "endMs": 82815
+  },
+  {
+   "text": " work",
+   "startMs": 82815,
+   "endMs": 83053
+  },
+  {
+   "text": " began.",
+   "startMs": 83053,
+   "endMs": 83468
+  },
+  {
+   "text": " In",
+   "startMs": 83968,
+   "endMs": 84217
+  },
+  {
+   "text": " February",
+   "startMs": 84217,
+   "endMs": 84836
+  },
+  {
+   "text": " 2026,",
+   "startMs": 84836,
+   "endMs": 86018
+  },
+  {
+   "text": " a",
+   "startMs": 86018,
+   "endMs": 86268
+  },
+  {
+   "text": " cross",
+   "startMs": 86268,
+   "endMs": 86517
+  },
+  {
+   "text": " was",
+   "startMs": 86517,
+   "endMs": 86767
+  },
+  {
+   "text": " lifted",
+   "startMs": 86767,
+   "endMs": 87201
+  },
+  {
+   "text": " onto",
+   "startMs": 87201,
+   "endMs": 87635
+  },
+  {
+   "text": " the",
+   "startMs": 87635,
+   "endMs": 87885
+  },
+  {
+   "text": " tallest",
+   "startMs": 87885,
+   "endMs": 88319
+  },
+  {
+   "text": " tower:",
+   "startMs": 88319,
+   "endMs": 88753
+  },
+  {
+   "text": " the",
+   "startMs": 88753,
+   "endMs": 89016
+  },
+  {
+   "text": " Tower",
+   "startMs": 89016,
+   "endMs": 89473
+  },
+  {
+   "text": " of",
+   "startMs": 89473,
+   "endMs": 89736
+  },
+  {
+   "text": " Jesus",
+   "startMs": 89736,
+   "endMs": 90193
+  },
+  {
+   "text": " Christ,",
+   "startMs": 90193,
+   "endMs": 90456
+  },
+  {
+   "text": " one",
+   "startMs": 90646,
+   "endMs": 90939
+  },
+  {
+   "text": " hundred",
+   "startMs": 90939,
+   "endMs": 91334
+  },
+  {
+   "text": " and",
+   "startMs": 91334,
+   "endMs": 91560
+  },
+  {
+   "text": " seventy-two",
+   "startMs": 91560,
+   "endMs": 92290
+  },
+  {
+   "text": " and",
+   "startMs": 92290,
+   "endMs": 92516
+  },
+  {
+   "text": " a",
+   "startMs": 92516,
+   "endMs": 92742
+  },
+  {
+   "text": " half",
+   "startMs": 92742,
+   "endMs": 92969
+  },
+  {
+   "text": " metres.",
+   "startMs": 92969,
+   "endMs": 93363
+  },
+  {
+   "text": " Kept",
+   "startMs": 93863,
+   "endMs": 94236
+  },
+  {
+   "text": " just",
+   "startMs": 94236,
+   "endMs": 94610
+  },
+  {
+   "text": " below",
+   "startMs": 94610,
+   "endMs": 95259
+  },
+  {
+   "text": " Montjuïc,",
+   "startMs": 95259,
+   "endMs": 95909
+  },
+  {
+   "text": " the",
+   "startMs": 96189,
+   "endMs": 96414
+  },
+  {
+   "text": " hill",
+   "startMs": 96414,
+   "endMs": 96640
+  },
+  {
+   "text": " beside",
+   "startMs": 96640,
+   "endMs": 97099
+  },
+  {
+   "text": " the",
+   "startMs": 97099,
+   "endMs": 97324
+  },
+  {
+   "text": " city.",
+   "startMs": 97324,
+   "endMs": 97717
+  },
+  {
+   "text": " Gaudí",
+   "startMs": 98359,
+   "endMs": 98607
+  },
+  {
+   "text": " believed",
+   "startMs": 98607,
+   "endMs": 99221
+  },
+  {
+   "text": " his",
+   "startMs": 99221,
+   "endMs": 99468
+  },
+  {
+   "text": " work",
+   "startMs": 99468,
+   "endMs": 99716
+  },
+  {
+   "text": " should",
+   "startMs": 99716,
+   "endMs": 99963
+  },
+  {
+   "text": " not",
+   "startMs": 99963,
+   "endMs": 100211
+  },
+  {
+   "text": " rise",
+   "startMs": 100211,
+   "endMs": 100531
+  },
+  {
+   "text": " above",
+   "startMs": 100531,
+   "endMs": 101035
+  },
+  {
+   "text": " God's.",
+   "startMs": 101035,
+   "endMs": 101283
+  },
+  {
+   "text": " On",
+   "startMs": 101783,
+   "endMs": 102050
+  },
+  {
+   "text": " the",
+   "startMs": 102050,
+   "endMs": 102317
+  },
+  {
+   "text": " tenth",
+   "startMs": 102317,
+   "endMs": 102585
+  },
+  {
+   "text": " of",
+   "startMs": 102585,
+   "endMs": 102852
+  },
+  {
+   "text": " June,",
+   "startMs": 102852,
+   "endMs": 103198
+  },
+  {
+   "text": " exactly",
+   "startMs": 103452,
+   "endMs": 104006
+  },
+  {
+   "text": " a",
+   "startMs": 104006,
+   "endMs": 104230
+  },
+  {
+   "text": " hundred",
+   "startMs": 104230,
+   "endMs": 104619
+  },
+  {
+   "text": " years",
+   "startMs": 104619,
+   "endMs": 104842
+  },
+  {
+   "text": " after",
+   "startMs": 104842,
+   "endMs": 105231
+  },
+  {
+   "text": " his",
+   "startMs": 105231,
+   "endMs": 105454
+  },
+  {
+   "text": " death,",
+   "startMs": 105454,
+   "endMs": 105678
+  },
+  {
+   "text": " the",
+   "startMs": 105977,
+   "endMs": 106292
+  },
+  {
+   "text": " tower",
+   "startMs": 106292,
+   "endMs": 106841
+  },
+  {
+   "text": " was",
+   "startMs": 106841,
+   "endMs": 107156
+  },
+  {
+   "text": " blessed.",
+   "startMs": 107156,
+   "endMs": 107705
+  },
+  {
+   "text": " The",
+   "startMs": 107968,
+   "endMs": 108250
+  },
+  {
+   "text": " tallest",
+   "startMs": 108250,
+   "endMs": 108742
+  },
+  {
+   "text": " church",
+   "startMs": 108742,
+   "endMs": 109024
+  },
+  {
+   "text": " in",
+   "startMs": 109024,
+   "endMs": 109307
+  },
+  {
+   "text": " the",
+   "startMs": 109307,
+   "endMs": 109589
+  },
+  {
+   "text": " world.",
+   "startMs": 109589,
+   "endMs": 109872
+  },
+  {
+   "text": " But",
+   "startMs": 110372,
+   "endMs": 110679
+  },
+  {
+   "text": " its",
+   "startMs": 110679,
+   "endMs": 110987
+  },
+  {
+   "text": " main",
+   "startMs": 110987,
+   "endMs": 111294
+  },
+  {
+   "text": " entrance",
+   "startMs": 111294,
+   "endMs": 111920
+  },
+  {
+   "text": " still",
+   "startMs": 111920,
+   "endMs": 112227
+  },
+  {
+   "text": " isn't",
+   "startMs": 112227,
+   "endMs": 112535
+  },
+  {
+   "text": " built.",
+   "startMs": 112535,
+   "endMs": 112842
+  },
+  {
+   "text": " Gaudí's",
+   "startMs": 113327,
+   "endMs": 113630
+  },
+  {
+   "text": " client,",
+   "startMs": 113630,
+   "endMs": 113934
+  },
+  {
+   "text": " it",
+   "startMs": 113934,
+   "endMs": 114237
+  },
+  {
+   "text": " seems,",
+   "startMs": 114237,
+   "endMs": 114541
+  },
+  {
+   "text": " is",
+   "startMs": 114541,
+   "endMs": 114845
+  },
+  {
+   "text": " still",
+   "startMs": 114845,
+   "endMs": 115148
+  },
+  {
+   "text": " not",
+   "startMs": 115148,
+   "endMs": 115452
+  },
+  {
+   "text": " in",
+   "startMs": 115452,
+   "endMs": 115756
+  },
+  {
+   "text": " a",
+   "startMs": 115756,
+   "endMs": 116059
+  },
+  {
+   "text": " hurry.",
+   "startMs": 116059,
+   "endMs": 116588
+  }
+ ],
+ "total": 122.088,
+ "music": "ep02/music.wav"
+}

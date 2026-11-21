@@ -285,9 +285,11 @@ export const YearBar: React.FC<{ years: [number, number]; year: number; t: numbe
     <div style={{ position: "absolute", left: 84, top: 392, width: W, height: 40 }}>
       <div style={{ position: "absolute", left: 0, right: 0, top: 18, height: 2, background: "#CFC8BB" }} />
       <div style={{ position: "absolute", left: 0, width: x * W, top: 17, height: 4, background: C.accent }} />
-      {Array.from({ length: b - a + 1 }, (_, i) => (
-        <div key={i} style={{ position: "absolute", left: (i / (b - a)) * W - 1, top: 13, width: 2, height: 12, background: a + i <= k ? C.accent : "#BDB5A7" }} />
-      ))}
+      {Array.from({ length: b - a + 1 }, (_, i) => i)
+        .filter((i) => b - a <= 30 || (a + i) % 10 === 0)
+        .map((i) => (
+          <div key={i} style={{ position: "absolute", left: (i / (b - a)) * W - 1, top: 13, width: 2, height: 12, background: a + i <= k ? C.accent : "#BDB5A7" }} />
+        ))}
       <div style={{ position: "absolute", left: x * W - 9, top: 10, width: 18, height: 18, borderRadius: 9, background: C.accent, boxShadow: `0 0 0 5px ${C.paper}` }} />
       <div style={{ position: "absolute", left: 0, top: 30, fontFamily: MONO, fontSize: 16, color: C.inkSoft }}>{a}</div>
       <div style={{ position: "absolute", right: 0, top: 30, fontFamily: MONO, fontSize: 16, color: C.inkSoft }}>{b}</div>

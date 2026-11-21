@@ -1,0 +1,21 @@
+Instrumental underscore for a 123-second short architecture documentary: "The Church That Took 144 Years". No vocals. It sits under a spoken voiceover, so keep it sparse, mid-low register, nothing busy in the speech frequencies.
+
+Instruments: warm Spanish nylon-string guitar, felt piano, soft church-organ pad, light choir 'ah' pad (no words), gentle pizzicato strings, a slow ticking clock-like pulse. Key: E minor moving to G major. Tempo around 80 BPM.
+
+Structure (timestamps):
+- 0s–11s: intrigue: a ticking pulse under a sparse guitar motif, a fast swell as the church builds itself.
+- 11s–39s: hopeful and devoted: guitar and piano, warm and Catalan.
+- 39s–51s: sudden stop, then a lonely piano line, sorrowful.
+- 52s–62s: dark: low drone and a soft rumble, tension.
+- 62s–83s: patient rebuilding: pulse returns, slowly building with strings, hopeful momentum.
+- 84s–110s: rising and luminous: organ pad and choir swell, the emotional peak, triumphant but tender.
+- 110s–122s: wry and warm: the guitar motif returns, resolving and fading out cleanly.
+
+--- model notes ---
+[[A0]]
+[[B1]]
+[[C2]]
+[[D3]]
+[[E4]]
+[[B5]]
+[[F6]]
