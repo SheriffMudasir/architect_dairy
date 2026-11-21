@@ -23,5 +23,9 @@ if (!rest.includes("--silent")) {
     fs.rmSync(`${out}.log`, { force: true });
   }
   const I = /I:\s+(-?[\d.]+) LUFS/.exec(log.slice(log.lastIndexOf("Summary")))?.[1];
-  console.log(`\n${out}  integrated loudness: ${I} LUFS (target ≈ -14 for social)`);
+  // master to -14 LUFS (social platforms' reference) without re-encoding video
+  const tmp = out.replace(/\.mp4$/, ".master.mp4");
+  execFileSync("ffmpeg", ["-v", "error", "-y", "-i", out, "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=9", "-c:a", "aac", "-b:a", "192k", tmp]);
+  fs.renameSync(tmp, out);
+  console.log(`\n${out}  loudness before mastering: ${I} LUFS -> mastered to -14 LUFS`);
 }
