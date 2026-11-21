@@ -13,14 +13,18 @@ if (stt.name === "none") {
   console.log("No transcription provider configured — listen to public/" + ep + "/audio/*.wav yourself, or set transcribe.provider.");
   process.exit(0);
 }
-const NUM = { zero: 0, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10 };
+const NUM = { zero: 0, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, a: 1, an: 1 };
+// written abbreviations are spoken in full
+const ABBR = { st: "saint", mt: "mount", mr: "mister", mrs: "missus", dr: "doctor", no: "number", vs: "versus" };
 const norm = (s) =>
   s
     .toLowerCase()
+    .replace(/&/g, " and ")
     .replace(/[^a-z0-9 ]/g, " ")
     .replace(/\s+/g, " ")
     .trim()
     .split(" ")
+    .map((w) => ABBR[w] ?? w)
     .filter((w) => !(w in NUM));
 
 let problems = 0;
@@ -33,9 +37,14 @@ for (const b of beats) {
   }
   const heard = await stt.transcribe(f);
   const a = norm(b.text);
-  const h = new Set(norm(heard));
+  const hw = norm(heard);
+  // accept hyphenated words written either way ("over-ambitious" vs "overambitious")
+  const h = new Set([...hw, ...hw.slice(1).map((w, i) => hw[i] + w)]);
+  const joined = new Set(
+    (b.text.toLowerCase().match(/[a-z]+(?:-[a-z]+)+/g) ?? []).flatMap((x) => (h.has(x.replace(/-/g, "")) ? x.split("-") : [])),
+  );
   // numbers may be written differently ("2015" vs "twenty fifteen"), so be lenient
-  const missing = a.filter((w) => !/^\d+$/.test(w) && !h.has(w));
+  const missing = a.filter((w) => !/^\d+$/.test(w) && !h.has(w) && !joined.has(w));
   const extra = norm(heard).length - a.length;
   const ok = missing.length <= 1 && extra < 6;
   if (!ok) problems++;

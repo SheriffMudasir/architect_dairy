@@ -149,6 +149,24 @@ review; otherwise proceed — they can request changes after the animatic.
     default ink for facts. Use `align: "left" | "right"` when two tags sit close.
 - Context: `city()`, `park()`, `sitePlate()`, `people()` give scale and place.
 
+## 4a. AI-generated media (hybrid episodes) — images cheap, video rare
+
+Declare in `script.ts` → `generate: { style, subjects, images[], videos[] }` (see `src/ep03`).
+- **Images** (`gemini-3.1-flash-image`, ~10 s, ~1.5k tokens each): use freely as `photo` inserts
+  (`layout: "full"`, `move: in|out|left|right|up|down`, `sweep: true`) or cards.
+- **Video** (`gemini-omni-1.2-flash` via the Interactions API, 6 s ≈ 35k tokens): **max 2–3 per
+  episode** (`generate.video.maxPerEpisode`), only for the hook and the climax. Always animate a
+  generated keyframe (`from: "<image name>"`) so the subject stays consistent.
+- `subjects` = an exact description of the building reused in every prompt (consistency);
+  `style` = the look bible. Prompts must say no text/logos (AI text is garbage).
+- `npm run gen -- epNN` previews counts + rough tokens and generates nothing; get the user's OK,
+  then `--yes`. Cached by prompt hash; `--only a,b` to redo; `--force` to ignore cache.
+- Inspect every output (contact sheet + frame strips for clips). AI clips often contain a
+  cross-dissolve/morph — cut it with `trimStart` on the video insert instead of paying for a redo.
+- AI media is credited automatically as "AI visualisation"; keep a small on-screen note in the outro.
+  Never generate depictions of real tragedies/violence; use the 3D engine for those beats.
+- Everything else (explanations) = 3D engine + stock photos + motion graphics.
+
 ## 4b. Inserts — the motion-graphics layer (`inserts` in script.ts)
 
 The 3D world alone gets repetitive. **Rule: something new on screen every 2–3 s.**
