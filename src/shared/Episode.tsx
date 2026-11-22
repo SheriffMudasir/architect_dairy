@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import { MONO, SANS } from "../fonts";
 import { compile, ease, project } from "../iso/engine";
 import { C } from "../theme";
@@ -9,13 +9,14 @@ import { beatIndexAt, Timeline } from "./timeline";
 import { Captions } from "./Captions";
 import { activeInserts, Credit, CreditsCard, FullBleed, Overlays, shakeAt, veilAt, YearBar } from "./Inserts";
 import { Soundtrack } from "./Soundtrack";
+import { CoverTitle, CtaPill, HookTitle } from "./Hook";
 
-export type EpisodeProps = { episodeId: string; timeline: Timeline | null; credits?: Credit[] };
+export type EpisodeProps = { episodeId: string; timeline: Timeline | null; credits?: Credit[]; cover?: boolean };
 
 const SCENE_CX = 540;
 const SCENE_CY = 1010;
 
-export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits = [] }) => {
+export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits = [], cover = false }) => {
   const ep = EPISODES.find((e) => e.id === episodeId)!;
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
@@ -40,6 +41,9 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits =
   const headIn = ease((t - actStart + 0.2) / 0.6);
   const prevYear = ep.beats[Math.max(0, bi - 1)].year ?? beat.year ?? 0;
   const lastEnd = tl.beats[tl.beats.length - 1].end;
+  const hookUntil = ep.hook ? (ep.hook.until ?? 2.6) : 0;
+  // the top headline waits until the big hook title is gone (and is hidden on covers)
+  const chrome = cover ? 0 : ep.hook ? interpolate(t, [hookUntil, hookUntil + 0.5], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) : 1;
 
   return (
     <AbsoluteFill style={{ backgroundColor: C.paper, fontFamily: SANS }}>
@@ -136,7 +140,7 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits =
       </AbsoluteFill>
 
       {/* headline + label */}
-      <div style={{ position: "absolute", left: 84, right: 84, top: 150 }}>
+      <div style={{ position: "absolute", left: 84, right: 84, top: 150, opacity: chrome }}>
         <div
           style={{
             fontSize: 70,
@@ -163,12 +167,16 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits =
         </div>
       </div>
 
-      {ep.years && beat.year ? <YearBar years={ep.years} year={beat.year} prevYear={prevYear} t={t} beatStart={tl.beats[bi].start} /> : null}
+      {ep.years && beat.year && chrome > 0.01 ? <YearBar years={ep.years} year={beat.year} prevYear={prevYear} t={t} beatStart={tl.beats[bi].start} /> : null}
 
-      <Captions words={tl.words} t={t} font={SANS} tl={tl} beats={ep.beats} />
+      {cover ? null : <Captions words={tl.words} t={t} font={SANS} tl={tl} beats={ep.beats} />}
+      {ep.hook && !cover ? <HookTitle lines={ep.hook.lines} t={t} until={hookUntil} /> : null}
+      {ep.cta && !cover ? <CtaPill text={ep.cta} t={t} start={tl.beats[tl.beats.length - 1].start + 0.3} /> : null}
+      {cover && ep.cover ? <CoverTitle lines={ep.cover.lines} sub={ep.cover.sub} channel={`${CHANNEL_NAME} · EP ${String(ep.number).padStart(2, "0")}`} /> : null}
 
       {/* channel mark */}
       <div
+        hidden={cover}
         style={{
           position: "absolute",
           bottom: 92,
@@ -183,7 +191,7 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits =
         {CHANNEL_NAME} · EP {String(ep.number).padStart(2, "0")}
       </div>
 
-      <CreditsCard credits={credits} t={t} start={lastEnd + 1.2} />
+      {ep.endCard === false || cover ? null : <CreditsCard credits={credits} t={t} start={lastEnd + 1.2} />}
 
       <Soundtrack tl={tl} ep={ep} />
     </AbsoluteFill>

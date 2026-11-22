@@ -25,6 +25,8 @@ export const Soundtrack: React.FC<{ tl: Timeline; ep: EpisodeScript }> = ({ tl, 
   };
 
   const cues = [
+    // an audible hit on frame 0 so the first second is never silent
+    ...(ep.hook ? [{ src: "sfx/whoosh.wav", at: 0, volume: 0.4 }, { src: "sfx/thud.wav", at: 0.05, volume: 0.35 }] : []),
     // a soft whoosh into every new beat (camera move)
     ...tl.beats.slice(1).map((b) => ({ src: "sfx/whoosh.wav", at: b.start - 0.45, volume: 0.16 })),
     // inserts bring their own sounds: thud on stamps, a soft tick on cards and numbers

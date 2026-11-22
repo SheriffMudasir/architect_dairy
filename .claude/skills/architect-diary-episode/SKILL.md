@@ -105,6 +105,28 @@ npm run media -- epNN get <openverse-id> <short-name>       # -> public/epNN/med
   CC BY attribution is automatic; also paste `npm run media -- epNN credits` into the
   video description.
 
+## 2c. Retention rules (learned from our own Instagram analytics — non-negotiable)
+
+Ep01 (1:42): 1,559 views, avg watch 31 s. Ep02 (2:02): 548 views, **skip rate 68%**, retention
+fell from 100% to ~25% in the first 5 s, then stayed flat (~15%) to the end. Ep02 opened on blank
+paper + small headline (0.5 s silent lead, photo wiping in). Lesson: **content holds people; the
+first 2 seconds lose them.** Audience: ~86% men, 18–34, India 27–30% then US/Australia.
+
+- **Length 45–60 s**: 9–11 beats, ~130–160 words. Longer only for an exceptional story.
+- **Frame 0 = the most striking moving shot** (AI clip or dramatic 3D) — never blank paper, never a
+  fade-in. The first beat's opening insert automatically covers frame 0 and skips its fade/wipe.
+- **`hook: { lines: [2 short lines], until: ~2.8 }`** — big on-screen hook text from frame 0 (many watch
+  muted). Narration starts at 0.1 s (LEAD) with a whoosh+thud hit at frame 0 (automatic with `hook`).
+- First spoken line states the twist; re-hook every ~10 s ("But…", "Here's the catch…").
+- **Loop ending**: the last line should flow back into the first; `endCard: false` (photo credit lines
+  stay on screen; full credits go in the description).
+- **`cta`**: a comment question over the last beat ("Which building should we break down next?").
+- **Cover**: `cover: { lines, sub, beat, offset }` → `npm run cover -- epNN` → `out/epNN-cover.png`;
+  tell the user to upload it as the Reel cover (a real photo + 2-line title works best).
+- Topics that fit this audience: money, scandals, rivalries, "never built", record-breakers, Asia.
+- After posting, ask the user for Reel insights (skip rate, watch-time graph, avg watch time) and
+  compare against the table above before planning the next episode.
+
 ## 3. Script (`src/epNN/script.ts`)
 
 Story shape that works (ep01): **hook with the twist** → competition/commission →
@@ -113,7 +135,7 @@ the design (model rises) → the friction (site, critics) → the hard number (c
 → an emotional beat → an ironic coda → outro line that mirrors the hook.
 
 Rules:
-- 12–16 beats, ~190–230 words total, 75–100 s. Each beat = 1–2 short sentences.
+- 9–11 beats, ~130–160 words, 45–60 s (see 2c). Each beat = 1–2 short sentences.
 - `text` is spoken **verbatim**. Never put stage directions, brackets or "say this
   warmly" in it — Gemini TTS reads them aloud (ep01 lost a whole voice pass to this).
   Delivery style belongs to the voice design in `src/channel.ts`.

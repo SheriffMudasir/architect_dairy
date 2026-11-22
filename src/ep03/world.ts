@@ -68,7 +68,7 @@ export const worldAt = (tl: Timeline, t: number): World => {
     tags.push({ key: "p1", text: "FLAT", at: [18, 20, 70], opacity: fr("angle", 0.1, 0.25), tone: "paper", align: "right" });
     tags.push({ key: "p2", text: "TILTED A TOUCH", at: [26, 9, 64], opacity: fr("angle", 0.35, 0.5), tone: "accent", align: "left" });
   }
-  if (since("lens") && !since("spirals")) {
+  if (since("lens") && !since("climax")) {
     lens = ease(fr("lens", 0.0, 0.15));
     tags.push({ key: "ln", text: "THE ONLY CURVED GLASS", at: [0, 0, 182], opacity: fr("lens", 0.03, 0.12) * (1 - fr("lens", 0.14, 0.18)), tone: "accent" });
   }

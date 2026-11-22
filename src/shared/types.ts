@@ -79,6 +79,15 @@ export type EpisodeScript = {
   inserts?: Insert[];
   /** Range of the running year bar. Omit to hide it. */
   years?: [number, number];
+  /** Big on-screen hook text shown from frame 0 (works without sound). 2 short lines, ≤ 22 chars each. */
+  hook?: { lines: string[]; until?: number };
+  /** Comment prompt shown over the last beat, e.g. "Which building should we break down next?" */
+  cta?: string;
+  /** Cover image (npm run cover): big title over the frame at `beat` (+offset seconds). */
+  cover?: { lines: string[]; sub?: string; beat: string; offset?: number };
+  /** End card with media credits (default true). Set false for loop-friendly shorts — each photo
+   *  still shows its own credit line, and credits go in the description. */
+  endCard?: boolean;
   /** AI-generated media for this episode (npm run gen). Images are cheap; video is budgeted. */
   generate?: {
     /** style bible — appended to every prompt */

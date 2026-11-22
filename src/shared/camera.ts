@@ -42,13 +42,15 @@ export const beatClock = (tl: Timeline, t: number) => {
   const T: Record<string, { s: number; e: number; d: number }> = {};
   for (const b of tl.beats) T[b.id] = { s: b.start, e: b.end, d: b.end - b.start };
   const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
+  const has = (id: string) => id in T;
   return {
     T,
-    /** 0..1 between (beat start + a) and (beat start + b), in seconds */
-    at: (id: string, a: number, b: number) => clamp01((t - (T[id].s + a)) / (b - a)),
-    /** 0..1 between fractions a and b of the beat's duration */
-    fr: (id: string, a: number, b: number) => clamp01((t - (T[id].s + a * T[id].d)) / ((b - a) * T[id].d)),
-    /** true from just before the beat starts, onwards */
-    since: (id: string) => t >= T[id].s - 0.2,
+    /** 0..1 between (beat start + a) and (beat start + b), in seconds (0 if the beat was cut) */
+    at: (id: string, a: number, b: number) => (has(id) ? clamp01((t - (T[id].s + a)) / (b - a)) : 0),
+    /** 0..1 between fractions a and b of the beat's duration (0 if the beat was cut) */
+    fr: (id: string, a: number, b: number) => (has(id) ? clamp01((t - (T[id].s + a * T[id].d)) / ((b - a) * T[id].d)) : 0),
+    /** true from just before the beat starts, onwards; always false for a beat that was cut —
+     *  so a range `since(a) && !since(b)` with a cut `b` runs to the end: re-point it to a kept beat. */
+    since: (id: string) => (has(id) ? t >= T[id].s - 0.2 : false),
   };
 };

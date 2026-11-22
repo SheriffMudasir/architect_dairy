@@ -23,7 +23,8 @@ export const activeInserts = (inserts: Insert[] | undefined, tl: Timeline, t: nu
     const b = tl.beats.find((x) => x.id === ins.beat);
     if (!b) continue;
     const d = b.end - b.start;
-    const start = b.start + (ins.from ?? 0) * d;
+    // an insert opening the first beat covers frame 0 too (narration starts a fraction later)
+    const start = b === tl.beats[0] && !ins.from ? 0 : b.start + (ins.from ?? 0) * d;
     let end = b.start + (ins.to ?? 1) * d;
     if (ins.untilBeat) {
       const ub = tl.beats.find((x) => x.id === ins.untilBeat);
@@ -38,7 +39,11 @@ export const activeInserts = (inserts: Insert[] | undefined, tl: Timeline, t: nu
 
 /** 0..1 visibility envelope */
 const env = (a: Active, t: number) =>
-  Math.min(interpolate(t, [a.start, a.start + IN], [0, 1], clamp), interpolate(t, [a.end, a.end + OUT], [1, 0], clamp));
+  Math.min(
+    // the opening shot must be fully visible on frame 0 (no fade-in from blank paper)
+    a.start < 0.3 ? 1 : interpolate(t, [a.start, a.start + IN], [0, 1], clamp),
+    interpolate(t, [a.end, a.end + OUT], [1, 0], clamp),
+  );
 
 /** Camera shake (px) from stamps, decaying after impact. */
 export const shakeAt = (actives: Active[]) => {
@@ -124,7 +129,7 @@ export const FullBleed: React.FC<{ actives: Active[]; t: number; ep: string }> =
           <AbsoluteFill
             style={{
               background: C.paper,
-              clipPath: `inset(0 0 ${interpolate(a.local, [0, 0.55], [0, 100], { ...clamp, easing: Easing.bezier(0.7, 0, 0.2, 1) })}% 0)`,
+              clipPath: `inset(0 0 ${a.start < 0.3 ? 100 : interpolate(a.local, [0, 0.55], [0, 100], { ...clamp, easing: Easing.bezier(0.7, 0, 0.2, 1) })}% 0)`,
             }}
           />
         </AbsoluteFill>

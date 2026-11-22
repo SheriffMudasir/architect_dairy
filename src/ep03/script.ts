@@ -29,14 +29,6 @@ const beats: Beat[] = [
     text: "Curved glass is slow and expensive to make.",
   },
   {
-    id: "question",
-    act: "look",
-    label: "THE QUESTION",
-    year: 2004,
-    em: ["without bending"],
-    text: "So how do you wrap a round tower in glass, without bending the glass?",
-  },
-  {
     id: "diagrid",
     act: "trick",
     label: "STRUCTURE · THE DIAGRID",
@@ -77,30 +69,6 @@ const beats: Beat[] = [
     text: "except for one piece: the lens-shaped cap at the very top.",
   },
   {
-    id: "spirals",
-    act: "more",
-    label: "SIX LIGHT WELLS",
-    year: 2004,
-    em: ["six", "fresh air"],
-    text: "Those dark spirals aren't decoration. They're six light wells, twisting up the tower to pull in daylight and fresh air.",
-  },
-  {
-    id: "energy",
-    act: "more",
-    label: "THE PROMISE",
-    year: 2004,
-    em: ["half", "over-ambitious"],
-    text: "Its designers promised half the energy of a typical office. The building's own property director later called that a bit over-ambitious.",
-  },
-  {
-    id: "site",
-    act: "more",
-    label: "SITE OF THE BALTIC EXCHANGE",
-    year: 1992,
-    em: ["Baltic Exchange", "1992"],
-    text: "It stands where the Baltic Exchange stood, until a bomb wrecked it in 1992.",
-  },
-  {
     id: "climax",
     act: "end",
     label: "30 ST MARY AXE · LONDON",
@@ -130,6 +98,11 @@ export const SCRIPT: EpisodeScript = {
     end: { lead: "A curve made of", accent: "straight lines." },
   },
   years: [1992, 2004],
+  // retention: big hook text from frame 0, loop-friendly ending, comment prompt, custom cover
+  hook: { lines: ["THIS TOWER HAS", "NO CURVED GLASS"], until: 2.8 },
+  cta: "Which building should we break down next?",
+  cover: { lines: ["NO CURVED", "GLASS?"], sub: "THE GHERKIN'S SECRET", beat: "name", offset: 1.2 },
+  endCard: false,
   generate: {
     style:
       "photorealistic architectural visualisation, soft natural daylight, gentle haze, cool blue-grey palette with warm highlights, subtle film grain, 35mm lens, calm cinematic composition",
@@ -160,22 +133,17 @@ export const SCRIPT: EpisodeScript = {
     { kind: "photo", beat: "flat", from: 0.55, to: 1, src: "gherkin-dokkum", layout: "card", caption: "The real thing: flat diamonds", side: "right", focus: [0.5, 0.45] },
     { kind: "number", beat: "glass", from: 0.1, to: 1, value: 24000, suffix: " m²", label: "Glass on the façade", sub: "Flat panes", accent: false },
     { kind: "photo", beat: "lens", from: 0.15, to: 1, src: "ai-lens", layout: "full", move: "down", sweep: true },
-    { kind: "photo", beat: "spirals", from: 0.55, to: 1, src: "ai-lightwell", layout: "full", move: "up" },
-    { kind: "number", beat: "energy", from: 0, to: 0.48, value: 50, suffix: "%", label: "Energy saving promised", format: "plain", accent: true },
-    { kind: "quote", beat: "energy", from: 0.52, to: 1, text: "A bit over-ambitious.", by: "The building's property services director" },
     { kind: "video", beat: "climax", from: 0, to: 1, src: "ai-climax-clip", trimStart: 3.0 },
   ],
   music: {
     style:
       "Instruments: glassy electric piano, airy synth pads, soft plucked arpeggios, light glitch percussion, a deep warm sub. Modern, curious, sleek. Key: F# minor. Tempo around 92 BPM.",
     sections: [
-      { from: "hook", to: "question", mood: "curious and sleek, sparse arpeggio, building intrigue" },
+      { from: "hook", to: "problem", mood: "curious and sleek, sparse arpeggio, building intrigue" },
       { from: "diagrid", to: "lens", mood: "the reveal: rhythmic, clever, crystalline, steady momentum" },
-      { from: "spirals", to: "energy", mood: "flowing and airy, then a wry pause" },
-      { from: "site", mood: "darker, brief low drone" },
-      { from: "climax", mood: "lift and resolve: warm, wide, shimmering, fading out cleanly" },
+        { from: "climax", mood: "lift and resolve: warm, wide, shimmering, fading out cleanly" },
     ],
-    dips: ["site"],
+    dips: [],
   },
   sfx: [{ sfx: "swell", beat: "climax", offset: 0, volume: 0.3 }],
 };

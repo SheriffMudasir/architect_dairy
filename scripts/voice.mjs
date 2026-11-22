@@ -15,12 +15,13 @@ import { duration, loadConfig, loadScript, parseArgs, readTimeline, silences, ti
 import { getTTS } from "./providers/tts.mjs";
 
 const { ep, rest: args } = parseArgs();
-const { beats: BEATS } = await loadScript(ep);
+const SCRIPT = await loadScript(ep);
+const BEATS = SCRIPT.beats;
 const cfg = loadConfig();
 const OUT = `public/${ep}/audio`;
-const LEAD = 0.5;
+const LEAD = 0.1; // narration starts almost immediately — the first second decides the swipe
 const GAP = 0.5;
-const TAIL = 5.5; // room for the credits card
+const TAIL = SCRIPT.endCard === false ? 1.0 : 5.5; // end card needs room; loop-friendly shorts end fast
 
 // ---------------------------------------------------------------- alignment
 const syllables = (w) => {

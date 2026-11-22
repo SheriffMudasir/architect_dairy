@@ -2,1096 +2,727 @@
  "beats": [
   {
    "id": "hook",
-   "start": 0.5,
-   "end": 6.919,
+   "start": 0.1,
+   "end": 6.519,
    "audio": "ep03/audio/hook.wav"
   },
   {
    "id": "name",
-   "start": 7.419,
-   "end": 15.636,
+   "start": 7.019,
+   "end": 15.236,
    "audio": "ep03/audio/name.wav"
   },
   {
    "id": "problem",
-   "start": 16.136,
-   "end": 19.531,
+   "start": 15.736,
+   "end": 19.131,
    "audio": "ep03/audio/problem.wav"
   },
   {
-   "id": "question",
-   "start": 20.031,
-   "end": 25.455,
-   "audio": "ep03/audio/question.wav"
-  },
-  {
    "id": "diagrid",
-   "start": 25.955,
-   "end": 32.96,
+   "start": 19.631,
+   "end": 26.636,
    "audio": "ep03/audio/diagrid.wav"
   },
   {
    "id": "flat",
-   "start": 33.46,
-   "end": 38.086,
+   "start": 27.136,
+   "end": 31.762,
    "audio": "ep03/audio/flat.wav"
   },
   {
    "id": "angle",
-   "start": 38.586,
-   "end": 45.372,
+   "start": 32.262,
+   "end": 39.049,
    "audio": "ep03/audio/angle.wav"
   },
   {
    "id": "glass",
-   "start": 45.872,
-   "end": 50.171,
+   "start": 39.549,
+   "end": 43.848,
    "audio": "ep03/audio/glass.wav"
   },
   {
    "id": "lens",
-   "start": 50.671,
-   "end": 54.86,
+   "start": 44.348,
+   "end": 48.537,
    "audio": "ep03/audio/lens.wav"
   },
   {
-   "id": "spirals",
-   "start": 55.36,
-   "end": 63.218,
-   "audio": "ep03/audio/spirals.wav"
-  },
-  {
-   "id": "energy",
-   "start": 63.718,
-   "end": 72.061,
-   "audio": "ep03/audio/energy.wav"
-  },
-  {
-   "id": "site",
-   "start": 72.561,
-   "end": 77.914,
-   "audio": "ep03/audio/site.wav"
-  },
-  {
    "id": "climax",
-   "start": 78.414,
-   "end": 82.349,
+   "start": 49.037,
+   "end": 52.972,
    "audio": "ep03/audio/climax.wav"
   },
   {
    "id": "outro",
-   "start": 82.849,
-   "end": 87.185,
+   "start": 53.472,
+   "end": 57.807,
    "audio": "ep03/audio/outro.wav"
   }
  ],
  "words": [
   {
    "text": "This",
-   "startMs": 500,
-   "endMs": 810
+   "startMs": 100,
+   "endMs": 410
   },
   {
    "text": " London",
-   "startMs": 810,
-   "endMs": 1348
+   "startMs": 410,
+   "endMs": 948
   },
   {
    "text": " tower",
-   "startMs": 1348,
-   "endMs": 1887
+   "startMs": 948,
+   "endMs": 1487
   },
   {
    "text": " looks",
-   "startMs": 1887,
-   "endMs": 2197
+   "startMs": 1487,
+   "endMs": 1797
   },
   {
    "text": " perfectly",
-   "startMs": 2197,
-   "endMs": 2965
+   "startMs": 1797,
+   "endMs": 2565
   },
   {
    "text": " smooth",
-   "startMs": 2965,
-   "endMs": 3274
+   "startMs": 2565,
+   "endMs": 2874
   },
   {
    "text": " and",
-   "startMs": 3274,
-   "endMs": 3584
+   "startMs": 2874,
+   "endMs": 3184
   },
   {
    "text": " round.",
-   "startMs": 3584,
-   "endMs": 3893
+   "startMs": 3184,
+   "endMs": 3493
   },
   {
    "text": " But",
-   "startMs": 3893,
-   "endMs": 4203
+   "startMs": 3493,
+   "endMs": 3803
   },
   {
    "text": " almost",
-   "startMs": 4203,
-   "endMs": 4741
+   "startMs": 3803,
+   "endMs": 4341
   },
   {
    "text": " none",
-   "startMs": 4741,
-   "endMs": 5143
+   "startMs": 4341,
+   "endMs": 4743
   },
   {
    "text": " of",
-   "startMs": 5143,
-   "endMs": 5452
+   "startMs": 4743,
+   "endMs": 5052
   },
   {
    "text": " its",
-   "startMs": 5452,
-   "endMs": 5762
+   "startMs": 5052,
+   "endMs": 5362
   },
   {
    "text": " glass",
-   "startMs": 5762,
-   "endMs": 6071
+   "startMs": 5362,
+   "endMs": 5671
   },
   {
    "text": " is",
-   "startMs": 6071,
-   "endMs": 6381
+   "startMs": 5671,
+   "endMs": 5981
   },
   {
    "text": " curved.",
-   "startMs": 6381,
-   "endMs": 6919
+   "startMs": 5981,
+   "endMs": 6519
   },
   {
    "text": " It's",
-   "startMs": 7419,
-   "endMs": 7628
+   "startMs": 7019,
+   "endMs": 7228
   },
   {
    "text": " 30",
-   "startMs": 7628,
-   "endMs": 8123
+   "startMs": 7228,
+   "endMs": 7723
   },
   {
    "text": " St",
-   "startMs": 8123,
-   "endMs": 8332
+   "startMs": 7723,
+   "endMs": 7932
   },
   {
    "text": " Mary",
-   "startMs": 8332,
-   "endMs": 8695
+   "startMs": 7932,
+   "endMs": 8295
   },
   {
    "text": " Axe.",
-   "startMs": 8695,
-   "endMs": 8965
+   "startMs": 8295,
+   "endMs": 8565
   },
   {
    "text": " London",
-   "startMs": 9653,
-   "endMs": 10117
+   "startMs": 9253,
+   "endMs": 9717
   },
   {
    "text": " calls",
-   "startMs": 10117,
-   "endMs": 10383
+   "startMs": 9717,
+   "endMs": 9983
   },
   {
    "text": " it",
-   "startMs": 10383,
-   "endMs": 10650
+   "startMs": 9983,
+   "endMs": 10250
   },
   {
    "text": " the",
-   "startMs": 10650,
-   "endMs": 10916
+   "startMs": 10250,
+   "endMs": 10516
   },
   {
    "text": " Gherkin.",
-   "startMs": 10916,
-   "endMs": 11380
+   "startMs": 10516,
+   "endMs": 10980
   },
   {
    "text": " A",
-   "startMs": 11834,
-   "endMs": 12059
+   "startMs": 11434,
+   "endMs": 11659
   },
   {
    "text": " hundred",
-   "startMs": 12059,
-   "endMs": 12450
+   "startMs": 11659,
+   "endMs": 12050
   },
   {
    "text": " and",
-   "startMs": 12450,
-   "endMs": 12676
+   "startMs": 12050,
+   "endMs": 12276
   },
   {
    "text": " eighty",
-   "startMs": 12676,
-   "endMs": 13067
+   "startMs": 12276,
+   "endMs": 12667
   },
   {
    "text": " metres",
-   "startMs": 13067,
-   "endMs": 13459
+   "startMs": 12667,
+   "endMs": 13059
   },
   {
    "text": " of",
-   "startMs": 13459,
-   "endMs": 13684
+   "startMs": 13059,
+   "endMs": 13284
   },
   {
    "text": " glass,",
-   "startMs": 13684,
-   "endMs": 13909
+   "startMs": 13284,
+   "endMs": 13509
   },
   {
    "text": " opened",
-   "startMs": 14296,
-   "endMs": 14700
+   "startMs": 13896,
+   "endMs": 14300
   },
   {
    "text": " in",
-   "startMs": 14700,
-   "endMs": 14863
+   "startMs": 14300,
+   "endMs": 14463
   },
   {
    "text": " 2004.",
-   "startMs": 14863,
-   "endMs": 15636
+   "startMs": 14463,
+   "endMs": 15237
   },
   {
    "text": " Curved",
-   "startMs": 16136,
-   "endMs": 16683
+   "startMs": 15737,
+   "endMs": 16283
   },
   {
    "text": " glass",
-   "startMs": 16683,
-   "endMs": 16997
+   "startMs": 16283,
+   "endMs": 16597
   },
   {
    "text": " is",
-   "startMs": 16997,
-   "endMs": 17311
+   "startMs": 16597,
+   "endMs": 16911
   },
   {
    "text": " slow",
-   "startMs": 17311,
-   "endMs": 17625
+   "startMs": 16911,
+   "endMs": 17225
   },
   {
    "text": " and",
-   "startMs": 17625,
-   "endMs": 17939
+   "startMs": 17225,
+   "endMs": 17539
   },
   {
    "text": " expensive",
-   "startMs": 17939,
-   "endMs": 18811
+   "startMs": 17539,
+   "endMs": 18411
   },
   {
    "text": " to",
-   "startMs": 18811,
-   "endMs": 19125
+   "startMs": 18411,
+   "endMs": 18725
   },
   {
    "text": " make.",
-   "startMs": 19125,
-   "endMs": 19531
-  },
-  {
-   "text": " So",
-   "startMs": 20031,
-   "endMs": 20366
-  },
-  {
-   "text": " how",
-   "startMs": 20366,
-   "endMs": 20700
-  },
-  {
-   "text": " do",
-   "startMs": 20700,
-   "endMs": 21034
-  },
-  {
-   "text": " you",
-   "startMs": 21034,
-   "endMs": 21369
-  },
-  {
-   "text": " wrap",
-   "startMs": 21369,
-   "endMs": 21703
-  },
-  {
-   "text": " a",
-   "startMs": 21703,
-   "endMs": 22037
-  },
-  {
-   "text": " round",
-   "startMs": 22037,
-   "endMs": 22372
-  },
-  {
-   "text": " tower",
-   "startMs": 22372,
-   "endMs": 22954
-  },
-  {
-   "text": " in",
-   "startMs": 22954,
-   "endMs": 23288
-  },
-  {
-   "text": " glass,",
-   "startMs": 23288,
-   "endMs": 23622
-  },
-  {
-   "text": " without",
-   "startMs": 23622,
-   "endMs": 24204
-  },
-  {
-   "text": " bending",
-   "startMs": 24204,
-   "endMs": 24786
-  },
-  {
-   "text": " the",
-   "startMs": 24786,
-   "endMs": 25121
-  },
-  {
-   "text": " glass?",
-   "startMs": 25121,
-   "endMs": 25455
+   "startMs": 18725,
+   "endMs": 19131
   },
   {
    "text": " It",
-   "startMs": 25955,
-   "endMs": 26286
+   "startMs": 19631,
+   "endMs": 19963
   },
   {
    "text": " starts",
-   "startMs": 26286,
-   "endMs": 26617
+   "startMs": 19963,
+   "endMs": 20294
   },
   {
    "text": " with",
-   "startMs": 26617,
-   "endMs": 26948
+   "startMs": 20294,
+   "endMs": 20625
   },
   {
    "text": " the",
-   "startMs": 26948,
-   "endMs": 27279
+   "startMs": 20625,
+   "endMs": 20956
   },
   {
    "text": " steel.",
-   "startMs": 27279,
-   "endMs": 27610
+   "startMs": 20956,
+   "endMs": 21287
   },
   {
    "text": " A",
-   "startMs": 28444,
-   "endMs": 28764
+   "startMs": 22121,
+   "endMs": 22441
   },
   {
    "text": " diagrid:",
-   "startMs": 28764,
-   "endMs": 29321
+   "startMs": 22441,
+   "endMs": 22997
   },
   {
    "text": " a",
-   "startMs": 29719,
-   "endMs": 30006
+   "startMs": 23396,
+   "endMs": 23682
   },
   {
    "text": " net",
-   "startMs": 30006,
-   "endMs": 30292
+   "startMs": 23682,
+   "endMs": 23969
   },
   {
    "text": " of",
-   "startMs": 30292,
-   "endMs": 30579
+   "startMs": 23969,
+   "endMs": 24255
   },
   {
    "text": " diagonal",
-   "startMs": 30579,
-   "endMs": 31289
+   "startMs": 24255,
+   "endMs": 24966
   },
   {
    "text": " steel,",
-   "startMs": 31289,
-   "endMs": 31576
+   "startMs": 24966,
+   "endMs": 25252
   },
   {
    "text": " crossing",
-   "startMs": 31781,
-   "endMs": 32239
+   "startMs": 25458,
+   "endMs": 25915
   },
   {
    "text": " in",
-   "startMs": 32239,
-   "endMs": 32502
+   "startMs": 25915,
+   "endMs": 26178
   },
   {
    "text": " diamonds.",
-   "startMs": 32502,
-   "endMs": 32960
+   "startMs": 26178,
+   "endMs": 26636
   },
   {
    "text": " Because",
-   "startMs": 33460,
-   "endMs": 34036
+   "startMs": 27136,
+   "endMs": 27712
   },
   {
    "text": " the",
-   "startMs": 34036,
-   "endMs": 34319
+   "startMs": 27712,
+   "endMs": 27995
   },
   {
    "text": " steel",
-   "startMs": 34319,
-   "endMs": 34602
+   "startMs": 27995,
+   "endMs": 28278
   },
   {
    "text": " runs",
-   "startMs": 34602,
-   "endMs": 34884
+   "startMs": 28278,
+   "endMs": 28561
   },
   {
    "text": " in",
-   "startMs": 34884,
-   "endMs": 35167
+   "startMs": 28561,
+   "endMs": 28844
   },
   {
    "text": " straight",
-   "startMs": 35167,
-   "endMs": 35450
+   "startMs": 28844,
+   "endMs": 29127
   },
   {
    "text": " lines,",
-   "startMs": 35450,
-   "endMs": 35943
+   "startMs": 29127,
+   "endMs": 29619
   },
   {
    "text": " every",
-   "startMs": 36226,
-   "endMs": 36689
+   "startMs": 29903,
+   "endMs": 30366
   },
   {
    "text": " panel",
-   "startMs": 36689,
-   "endMs": 37014
+   "startMs": 30366,
+   "endMs": 30691
   },
   {
    "text": " between",
-   "startMs": 37014,
-   "endMs": 37339
+   "startMs": 30691,
+   "endMs": 31016
   },
   {
    "text": " them",
-   "startMs": 37339,
-   "endMs": 37526
+   "startMs": 31016,
+   "endMs": 31202
   },
   {
    "text": " can",
-   "startMs": 37526,
-   "endMs": 37712
+   "startMs": 31202,
+   "endMs": 31389
   },
   {
    "text": " be",
-   "startMs": 37712,
-   "endMs": 37899
+   "startMs": 31389,
+   "endMs": 31576
   },
   {
    "text": " flat.",
-   "startMs": 37899,
-   "endMs": 38086
+   "startMs": 31576,
+   "endMs": 31762
   },
   {
    "text": " Each",
-   "startMs": 38586,
-   "endMs": 38919
+   "startMs": 32262,
+   "endMs": 32595
   },
   {
    "text": " pane",
-   "startMs": 38919,
-   "endMs": 39350
+   "startMs": 32595,
+   "endMs": 33027
   },
   {
    "text": " tilts",
-   "startMs": 39350,
-   "endMs": 39683
+   "startMs": 33027,
+   "endMs": 33360
   },
   {
    "text": " just",
-   "startMs": 39683,
-   "endMs": 40016
+   "startMs": 33360,
+   "endMs": 33693
   },
   {
    "text": " slightly",
-   "startMs": 40016,
-   "endMs": 40596
+   "startMs": 33693,
+   "endMs": 34272
   },
   {
    "text": " from",
-   "startMs": 40596,
-   "endMs": 40929
+   "startMs": 34272,
+   "endMs": 34605
   },
   {
    "text": " its",
-   "startMs": 40929,
-   "endMs": 41262
+   "startMs": 34605,
+   "endMs": 34938
   },
   {
    "text": " neighbour.",
-   "startMs": 41262,
-   "endMs": 41841
+   "startMs": 34938,
+   "endMs": 35518
   },
   {
    "text": " Thousands",
-   "startMs": 42435,
-   "endMs": 42879
+   "startMs": 36112,
+   "endMs": 36555
   },
   {
    "text": " of",
-   "startMs": 42879,
-   "endMs": 43134
+   "startMs": 36555,
+   "endMs": 36810
   },
   {
    "text": " tiny",
-   "startMs": 43134,
-   "endMs": 43578
+   "startMs": 36810,
+   "endMs": 37254
   },
   {
    "text": " angles",
-   "startMs": 43578,
-   "endMs": 44022
+   "startMs": 37254,
+   "endMs": 37698
   },
   {
    "text": " add",
-   "startMs": 44022,
-   "endMs": 44277
+   "startMs": 37698,
+   "endMs": 37953
   },
   {
    "text": " up",
-   "startMs": 44277,
-   "endMs": 44532
+   "startMs": 37953,
+   "endMs": 38208
   },
   {
    "text": " to",
-   "startMs": 44532,
-   "endMs": 44787
+   "startMs": 38208,
+   "endMs": 38463
   },
   {
    "text": " a",
-   "startMs": 44787,
-   "endMs": 45042
+   "startMs": 38463,
+   "endMs": 38718
   },
   {
    "text": " curve.",
-   "startMs": 45042,
-   "endMs": 45372
+   "startMs": 38718,
+   "endMs": 39049
   },
   {
    "text": " About",
-   "startMs": 45872,
-   "endMs": 46371
+   "startMs": 39549,
+   "endMs": 40048
   },
   {
    "text": " twenty-four",
-   "startMs": 46371,
-   "endMs": 47082
+   "startMs": 40048,
+   "endMs": 40759
   },
   {
    "text": " thousand",
-   "startMs": 47082,
-   "endMs": 47581
+   "startMs": 40759,
+   "endMs": 41258
   },
   {
    "text": " square",
-   "startMs": 47581,
-   "endMs": 47953
+   "startMs": 41258,
+   "endMs": 41629
   },
   {
    "text": " metres",
-   "startMs": 47953,
-   "endMs": 48452
+   "startMs": 41629,
+   "endMs": 42128
   },
   {
    "text": " of",
-   "startMs": 48452,
-   "endMs": 48738
+   "startMs": 42128,
+   "endMs": 42415
   },
   {
    "text": " glass.",
-   "startMs": 48738,
-   "endMs": 49025
+   "startMs": 42415,
+   "endMs": 42701
   },
   {
    "text": " All",
-   "startMs": 49025,
-   "endMs": 49312
+   "startMs": 42701,
+   "endMs": 42988
   },
   {
    "text": " of",
-   "startMs": 49312,
-   "endMs": 49598
+   "startMs": 42988,
+   "endMs": 43275
   },
   {
    "text": " it",
-   "startMs": 49598,
-   "endMs": 49885
+   "startMs": 43275,
+   "endMs": 43561
   },
   {
    "text": " flat,",
-   "startMs": 49885,
-   "endMs": 50171
+   "startMs": 43561,
+   "endMs": 43848
   },
   {
    "text": " except",
-   "startMs": 50671,
-   "endMs": 51200
+   "startMs": 44348,
+   "endMs": 44876
   },
   {
    "text": " for",
-   "startMs": 51200,
-   "endMs": 51504
+   "startMs": 44876,
+   "endMs": 45180
   },
   {
    "text": " one",
-   "startMs": 51504,
-   "endMs": 51897
+   "startMs": 45180,
+   "endMs": 45574
   },
   {
    "text": " piece:",
-   "startMs": 51897,
-   "endMs": 52291
+   "startMs": 45574,
+   "endMs": 45967
   },
   {
    "text": " the",
-   "startMs": 52578,
-   "endMs": 52825
+   "startMs": 46254,
+   "endMs": 46502
   },
   {
    "text": " lens-shaped",
-   "startMs": 52825,
-   "endMs": 53439
+   "startMs": 46502,
+   "endMs": 47116
   },
   {
    "text": " cap",
-   "startMs": 53439,
-   "endMs": 53687
+   "startMs": 47116,
+   "endMs": 47363
   },
   {
    "text": " at",
-   "startMs": 53687,
-   "endMs": 53934
+   "startMs": 47363,
+   "endMs": 47611
   },
   {
    "text": " the",
-   "startMs": 53934,
-   "endMs": 54182
+   "startMs": 47611,
+   "endMs": 47858
   },
   {
    "text": " very",
-   "startMs": 54182,
-   "endMs": 54613
+   "startMs": 47858,
+   "endMs": 48289
   },
   {
    "text": " top.",
-   "startMs": 54613,
-   "endMs": 54860
-  },
-  {
-   "text": " Those",
-   "startMs": 55360,
-   "endMs": 55744
-  },
-  {
-   "text": " dark",
-   "startMs": 55744,
-   "endMs": 56041
-  },
-  {
-   "text": " spirals",
-   "startMs": 56041,
-   "endMs": 56556
-  },
-  {
-   "text": " aren't",
-   "startMs": 56556,
-   "endMs": 57072
-  },
-  {
-   "text": " decoration.",
-   "startMs": 57072,
-   "endMs": 58027
-  },
-  {
-   "text": " They're",
-   "startMs": 58027,
-   "endMs": 58411
-  },
-  {
-   "text": " six",
-   "startMs": 58411,
-   "endMs": 58708
-  },
-  {
-   "text": " light",
-   "startMs": 58708,
-   "endMs": 59004
-  },
-  {
-   "text": " wells,",
-   "startMs": 59004,
-   "endMs": 59300
-  },
-  {
-   "text": " twisting",
-   "startMs": 59300,
-   "endMs": 59816
-  },
-  {
-   "text": " up",
-   "startMs": 59816,
-   "endMs": 60112
-  },
-  {
-   "text": " the",
-   "startMs": 60112,
-   "endMs": 60409
-  },
-  {
-   "text": " tower",
-   "startMs": 60409,
-   "endMs": 60925
-  },
-  {
-   "text": " to",
-   "startMs": 60925,
-   "endMs": 61221
-  },
-  {
-   "text": " pull",
-   "startMs": 61221,
-   "endMs": 61517
-  },
-  {
-   "text": " in",
-   "startMs": 61517,
-   "endMs": 61814
-  },
-  {
-   "text": " daylight",
-   "startMs": 61814,
-   "endMs": 62329
-  },
-  {
-   "text": " and",
-   "startMs": 62329,
-   "endMs": 62626
-  },
-  {
-   "text": " fresh",
-   "startMs": 62626,
-   "endMs": 62922
-  },
-  {
-   "text": " air.",
-   "startMs": 62922,
-   "endMs": 63218
-  },
-  {
-   "text": " Its",
-   "startMs": 63718,
-   "endMs": 63948
-  },
-  {
-   "text": " designers",
-   "startMs": 63948,
-   "endMs": 64516
-  },
-  {
-   "text": " promised",
-   "startMs": 64516,
-   "endMs": 65085
-  },
-  {
-   "text": " half",
-   "startMs": 65085,
-   "endMs": 65314
-  },
-  {
-   "text": " the",
-   "startMs": 65314,
-   "endMs": 65543
-  },
-  {
-   "text": " energy",
-   "startMs": 65543,
-   "endMs": 66112
-  },
-  {
-   "text": " of",
-   "startMs": 66112,
-   "endMs": 66341
-  },
-  {
-   "text": " a",
-   "startMs": 66341,
-   "endMs": 66571
-  },
-  {
-   "text": " typical",
-   "startMs": 66571,
-   "endMs": 67139
-  },
-  {
-   "text": " office.",
-   "startMs": 67139,
-   "endMs": 67606
-  },
-  {
-   "text": " The",
-   "startMs": 67886,
-   "endMs": 68104
-  },
-  {
-   "text": " building's",
-   "startMs": 68104,
-   "endMs": 68484
-  },
-  {
-   "text": " own",
-   "startMs": 68484,
-   "endMs": 68702
-  },
-  {
-   "text": " property",
-   "startMs": 68702,
-   "endMs": 69243
-  },
-  {
-   "text": " director",
-   "startMs": 69243,
-   "endMs": 69784
-  },
-  {
-   "text": " later",
-   "startMs": 69784,
-   "endMs": 70163
-  },
-  {
-   "text": " called",
-   "startMs": 70163,
-   "endMs": 70543
-  },
-  {
-   "text": " that",
-   "startMs": 70543,
-   "endMs": 70761
-  },
-  {
-   "text": " a",
-   "startMs": 70761,
-   "endMs": 70979
-  },
-  {
-   "text": " bit",
-   "startMs": 70979,
-   "endMs": 71197
-  },
-  {
-   "text": " over-ambitious.",
-   "startMs": 71197,
-   "endMs": 72061
-  },
-  {
-   "text": " It",
-   "startMs": 72561,
-   "endMs": 72812
-  },
-  {
-   "text": " stands",
-   "startMs": 72812,
-   "endMs": 73064
-  },
-  {
-   "text": " where",
-   "startMs": 73064,
-   "endMs": 73389
-  },
-  {
-   "text": " the",
-   "startMs": 73389,
-   "endMs": 73641
-  },
-  {
-   "text": " Baltic",
-   "startMs": 73641,
-   "endMs": 74078
-  },
-  {
-   "text": " Exchange",
-   "startMs": 74078,
-   "endMs": 74590
-  },
-  {
-   "text": " stood,",
-   "startMs": 74590,
-   "endMs": 74842
-  },
-  {
-   "text": " until",
-   "startMs": 74842,
-   "endMs": 75279
-  },
-  {
-   "text": " a",
-   "startMs": 75279,
-   "endMs": 75531
-  },
-  {
-   "text": " bomb",
-   "startMs": 75531,
-   "endMs": 75782
-  },
-  {
-   "text": " wrecked",
-   "startMs": 75782,
-   "endMs": 76219
-  },
-  {
-   "text": " it",
-   "startMs": 76219,
-   "endMs": 76471
-  },
-  {
-   "text": " in",
-   "startMs": 76471,
-   "endMs": 76722
-  },
-  {
-   "text": " 1992.",
-   "startMs": 76722,
-   "endMs": 77914
+   "startMs": 48289,
+   "endMs": 48537
   },
   {
    "text": " So",
-   "startMs": 78414,
-   "endMs": 78755
+   "startMs": 49037,
+   "endMs": 49378
   },
   {
    "text": " what",
-   "startMs": 78755,
-   "endMs": 79097
+   "startMs": 49378,
+   "endMs": 49720
   },
   {
    "text": " looks",
-   "startMs": 79097,
-   "endMs": 79439
+   "startMs": 49720,
+   "endMs": 50062
   },
   {
    "text": " like",
-   "startMs": 79439,
-   "endMs": 79882
+   "startMs": 50062,
+   "endMs": 50505
   },
   {
    "text": " the",
-   "startMs": 79882,
-   "endMs": 80223
+   "startMs": 50505,
+   "endMs": 50846
   },
   {
    "text": " smoothest",
-   "startMs": 80223,
-   "endMs": 80818
+   "startMs": 50846,
+   "endMs": 51441
   },
   {
    "text": " tower",
-   "startMs": 80818,
-   "endMs": 81413
+   "startMs": 51441,
+   "endMs": 52036
   },
   {
    "text": " in",
-   "startMs": 81413,
-   "endMs": 81754
+   "startMs": 52036,
+   "endMs": 52377
   },
   {
    "text": " London",
-   "startMs": 81754,
-   "endMs": 82349
+   "startMs": 52377,
+   "endMs": 52972
   },
   {
    "text": " is",
-   "startMs": 82849,
-   "endMs": 83152
+   "startMs": 53472,
+   "endMs": 53775
   },
   {
    "text": " really",
-   "startMs": 83152,
-   "endMs": 83679
+   "startMs": 53775,
+   "endMs": 54302
   },
   {
    "text": " thousands",
-   "startMs": 83679,
-   "endMs": 84207
+   "startMs": 54302,
+   "endMs": 54829
   },
   {
    "text": " of",
-   "startMs": 84207,
-   "endMs": 84509
+   "startMs": 54829,
+   "endMs": 55132
   },
   {
    "text": " straight",
-   "startMs": 84509,
-   "endMs": 84812
+   "startMs": 55132,
+   "endMs": 55435
   },
   {
    "text": " lines,",
-   "startMs": 84812,
-   "endMs": 85340
+   "startMs": 55435,
+   "endMs": 55962
   },
   {
    "text": " pretending",
-   "startMs": 85724,
-   "endMs": 86259
+   "startMs": 56347,
+   "endMs": 56882
   },
   {
    "text": " to",
-   "startMs": 86259,
-   "endMs": 86474
+   "startMs": 56882,
+   "endMs": 57097
   },
   {
    "text": " be",
-   "startMs": 86474,
-   "endMs": 86690
+   "startMs": 57097,
+   "endMs": 57313
   },
   {
    "text": " a",
-   "startMs": 86690,
-   "endMs": 86905
+   "startMs": 57313,
+   "endMs": 57528
   },
   {
    "text": " curve.",
-   "startMs": 86905,
-   "endMs": 87185
+   "startMs": 57528,
+   "endMs": 57807
   }
  ],
- "total": 92.685,
+ "total": 58.807,
  "music": "ep03/music.wav"
 }

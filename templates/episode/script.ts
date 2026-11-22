@@ -5,7 +5,7 @@
 import type { Beat, EpisodeScript } from "../shared/types";
 
 const beats: Beat[] = [
-  // TODO: replace with the researched script (aim for 12–16 beats, ~190–230 words, 75–100 s).
+  // TODO: replace with the researched script (aim for 9–11 beats, ~130–160 words, 45–60 s).
   { id: "hook", act: "a", label: "YEAR · PLACE", year: 2000, em: ["twist"], text: "One-sentence hook that states the twist up front." },
   { id: "context", act: "a", label: "YEAR · PLACE", text: "Who, where, and what was promised." },
   { id: "conflict", act: "a", label: "YEAR · PLACE", text: "What went wrong, with one hard number." },
@@ -24,6 +24,11 @@ export const SCRIPT: EpisodeScript = {
     end: { lead: "TODO closing headline.", accent: "Accent phrase." },
   },
   years: [2000, 2010],
+  // retention (see skill §2c): hook text from frame 0, comment prompt, cover, loop-friendly ending
+  hook: { lines: ["TWIST IN", "FIVE WORDS"], until: 2.8 },
+  cta: "Which building should we break down next?",
+  cover: { lines: ["TWO-LINE", "TITLE"], sub: "SUBTITLE", beat: "context", offset: 1 },
+  endCard: false,
   // Motion-graphics layer: photos (npm run media), name cards, numbers, stamps, quotes.
   // Aim for something new on screen every 2–3 s (see the skill, section 4b).
   inserts: [
