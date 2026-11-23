@@ -1,0 +1,88 @@
+[
+  {
+    "name": "portrait-hadid",
+    "file": "ep04/media/portrait-hadid.jpg",
+    "provider": "wikipedia",
+    "title": "Zaha Hadid",
+    "creator": "via Wikipedia",
+    "license": "Wikimedia Commons (verify licence)",
+    "source": "https://en.wikipedia.org/"
+  },
+  {
+    "name": "portrait-clarke",
+    "file": "ep04/media/portrait-clarke.jpg",
+    "provider": "wikipedia",
+    "title": "Brian Clarke",
+    "creator": "via Wikipedia",
+    "license": "Wikimedia Commons (verify licence)",
+    "source": "https://en.wikipedia.org/"
+  },
+  {
+    "name": "portrait-palumbo",
+    "file": "ep04/media/portrait-palumbo.jpg",
+    "provider": "wikipedia",
+    "title": "Peter Palumbo",
+    "creator": "via Wikipedia",
+    "license": "Wikimedia Commons (verify licence)",
+    "source": "https://en.wikipedia.org/"
+  },
+  {
+    "name": "portrait-schumacher",
+    "file": "ep04/media/portrait-schumacher.jpg",
+    "provider": "wikipedia",
+    "title": "Patrik Schumacher",
+    "creator": "via Wikipedia",
+    "license": "Wikimedia Commons (verify licence)",
+    "source": "https://en.wikipedia.org/"
+  },
+  {
+    "name": "courts",
+    "file": "ep04/media/courts.jpg",
+    "provider": "openverse",
+    "title": "Royal Courts of Justice, London",
+    "creator": "markhillary",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/56087830@N00/407906488"
+  },
+  {
+    "name": "maxxi",
+    "file": "ep04/media/maxxi.jpg",
+    "provider": "openverse",
+    "title": "Le MAXXI (Rome)",
+    "creator": "dalbera",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/72746018@N00/34196059542"
+  },
+  {
+    "name": "heydar",
+    "file": "ep04/media/heydar.jpg",
+    "provider": "openverse",
+    "title": "Heydar Aliyev Center",
+    "creator": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/7138083@N04/54508799837"
+  },
+  {
+    "name": "galaxy",
+    "file": "ep04/media/galaxy.jpg",
+    "provider": "openverse",
+    "title": "Zaha Hadid: Galaxy Soho, Beijing",
+    "creator": "Ningbo Ningbo",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/75816597@N07/8306171209"
+  },
+  {
+    "name": "aquatics",
+    "file": "ep04/media/aquatics.jpg",
+    "provider": "openverse",
+    "title": "London Aquatics Centre / 2014 V",
+    "creator": "Images George Rex",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "source": "https://www.flickr.com/photos/36692623@N06/14242666792"
+  }
+]

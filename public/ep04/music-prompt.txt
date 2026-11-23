@@ -1,0 +1,19 @@
+provider: lyria
+
+Instrumental underscore for a 121-second short architecture documentary: "Who Owns Zaha Hadid?". No vocals. It sits under a spoken voiceover, so keep it sparse, mid-low register, nothing busy in the speech frequencies.
+
+Instruments: low string ostinato, ticking clock-like percussion, muted piano, soft synth drones, occasional deep timpani hits. Tense legal-thriller documentary, restrained. Key: D minor. Tempo around 96 BPM.
+
+Structure (timestamps):
+- 0s–12s: intrigue: a single piano note pattern over a ticking pulse.
+- 12s–33s: elegiac and respectful, warm strings.
+- 33s–67s: tension rises: ostinato strings, ticking, low hits on each turn.
+- 67s–101s: relentless momentum, building to a climax with a hit on the refusal.
+- 102s–120s: quiet aftermath, a reflective piano line that resolves and fades.
+
+--- model notes ---
+[[A0]]
+[[B1]]
+[[C2]]
+[[D3]]
+[[E4]]

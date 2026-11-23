@@ -141,7 +141,7 @@ export const FullBleed: React.FC<{ actives: Active[]; t: number; ep: string }> =
 
 /** Veil that dims the world while a card / number is up. */
 export const veilAt = (actives: Active[], t: number) =>
-  Math.max(0, ...actives.filter((a) => a.ins.kind === "number" || a.ins.kind === "quote" || (a.ins.kind === "photo" && a.ins.layout === "card")).map((a) => env(a, t) * (a.ins.kind === "photo" ? 0.45 : 0.82)));
+  Math.max(0, ...actives.filter((a) => a.ins.kind === "number" || a.ins.kind === "quote" || a.ins.kind === "letters" || (a.ins.kind === "photo" && a.ins.layout === "card")).map((a) => env(a, t) * (a.ins.kind === "photo" ? 0.45 : 0.82)));
 
 const isAI = (c?: Credit) => (c as Credit & { provider?: string })?.provider === "ai";
 const creditLine = (c?: Credit) =>
@@ -305,6 +305,65 @@ export const Overlays: React.FC<{ actives: Active[]; t: number; ep: string; cred
               {ins.text}
               {ins.sub ? <div style={{ fontFamily: MONO, fontSize: 30, letterSpacing: 6, marginTop: 6, fontWeight: 500 }}>{ins.sub}</div> : null}
             </div>
+          </AbsoluteFill>
+        );
+      }
+
+      if (ins.kind === "letters") {
+        const chars = [...ins.text];
+        const fall = ins.fallAt ?? 0.35; // fraction of the insert's duration
+        const dur = a.end - a.start;
+        const kFall = interpolate(a.local, [fall * dur, fall * dur + 0.9], [0, 1], { ...clamp, easing: Easing.in(Easing.quad) });
+        const kSlide = interpolate(a.local, [fall * dur + 0.6, fall * dur + 1.4], [0, 1], { ...clamp, easing: Easing.bezier(0.6, 0, 0.2, 1) });
+        const W = 64; // px per letter slot
+        // words wrap onto lines like a real sign
+        const lines: number[][] = [[]];
+        chars.forEach((c, i) => (c === " " ? lines.push([]) : lines[lines.length - 1].push(i)));
+        const keptOrder = ins.keep;
+        return (
+          <AbsoluteFill key={i} style={{ opacity: o }}>
+            {lines.map((ln, li) =>
+              ln.map((ci, pos) => {
+                const kept = keptOrder.indexOf(ci);
+                const x0 = (pos - (ln.length - 1) / 2) * W;
+                const y0 = (li - (lines.length - 1) / 2) * 96;
+                const x1 = (kept - (keptOrder.length - 1) / 2) * 130;
+                const seed = Math.sin(ci * 12.9898) * 43758.5453;
+                const rnd = seed - Math.floor(seed);
+                const x = kept >= 0 ? x0 + (x1 - x0) * kSlide : x0 + (rnd - 0.5) * 120 * kFall;
+                const y = kept >= 0 ? y0 * (1 - kSlide) : y0 + kFall * kFall * 1400;
+                const size = kept >= 0 ? 84 + 66 * kSlide : 84;
+                return (
+                  <div
+                    key={ci}
+                    style={{
+                      position: "absolute",
+                      left: 540 + x - size * 0.36,
+                      top: 820 + y - size * 0.6,
+                      width: size * 0.72,
+                      height: size * 1.1,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: kept >= 0 && kSlide > 0.5 ? C.ink : C.massTop,
+                      color: kept >= 0 && kSlide > 0.5 ? C.paper : C.ink,
+                      border: `3px solid ${C.ink}`,
+                      fontFamily: SANS,
+                      fontWeight: 700,
+                      fontSize: size * 0.72,
+                      rotate: `${kept >= 0 ? 0 : (rnd - 0.5) * 140 * kFall}deg`,
+                      boxShadow: "0 8px 18px rgba(0,0,0,0.18)",
+                      opacity: kept >= 0 ? 1 : 1 - kFall * 0.4,
+                    }}
+                  >
+                    {chars[ci]}
+                  </div>
+                );
+              }),
+            )}
+            {ins.sub ? (
+              <div style={{ position: "absolute", top: 1010, width: "100%", textAlign: "center", fontFamily: MONO, fontSize: 28, letterSpacing: 6, color: C.ink, opacity: kSlide }}>{ins.sub}</div>
+            ) : null}
           </AbsoluteFill>
         );
       }

@@ -50,6 +50,8 @@ export type Insert = InsertTiming &
     | { kind: "person"; name: string; role: string; photo?: string }
     | { kind: "number"; value: number; prefix?: string; suffix?: string; label: string; sub?: string; accent?: boolean; format?: "full" | "plain" }
     | { kind: "stamp"; text: string; sub?: string }
+    /** a sign whose letters fall away, leaving `keep` (indices into text) which slide together */
+    | { kind: "letters"; text: string; keep: number[]; fallAt?: number; sub?: string }
     | { kind: "quote"; text: string; by: string }
   );
 

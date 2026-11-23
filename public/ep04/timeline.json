@@ -1,0 +1,1506 @@
+{
+ "beats": [
+  {
+   "id": "hook",
+   "start": 0.1,
+   "end": 4.942,
+   "audio": "ep04/audio/hook.wav"
+  },
+  {
+   "id": "stakes",
+   "start": 5.442,
+   "end": 11.632,
+   "audio": "ep04/audio/stakes.wav"
+  },
+  {
+   "id": "death",
+   "start": 12.132,
+   "end": 19.614,
+   "audio": "ep04/audio/death.wav"
+  },
+  {
+   "id": "will",
+   "start": 20.114,
+   "end": 23.153,
+   "audio": "ep04/audio/will.wav"
+  },
+  {
+   "id": "four",
+   "start": 23.653,
+   "end": 32.916,
+   "audio": "ep04/audio/four.wav"
+  },
+  {
+   "id": "court",
+   "start": 33.416,
+   "end": 35.942,
+   "audio": "ep04/audio/court.wav"
+  },
+  {
+   "id": "split",
+   "start": 36.442,
+   "end": 43.163,
+   "audio": "ep04/audio/split.wav"
+  },
+  {
+   "id": "claims",
+   "start": 43.663,
+   "end": 54.107,
+   "audio": "ep04/audio/claims.wav"
+  },
+  {
+   "id": "settled",
+   "start": 54.607,
+   "end": 62.28,
+   "audio": "ep04/audio/settled.wav"
+  },
+  {
+   "id": "tragedy",
+   "start": 62.78,
+   "end": 66.663,
+   "audio": "ep04/audio/tragedy.wav"
+  },
+  {
+   "id": "royalty",
+   "start": 67.163,
+   "end": 75.034,
+   "audio": "ep04/audio/royalty.wav"
+  },
+  {
+   "id": "total",
+   "start": 75.534,
+   "end": 80.598,
+   "audio": "ep04/audio/total.wav"
+  },
+  {
+   "id": "hc2024",
+   "start": 81.098,
+   "end": 87.427,
+   "audio": "ep04/audio/hc2024.wav"
+  },
+  {
+   "id": "appeal",
+   "start": 87.927,
+   "end": 96.301,
+   "audio": "ep04/audio/appeal.wav"
+  },
+  {
+   "id": "supreme",
+   "start": 96.801,
+   "end": 101.083,
+   "audio": "ep04/audio/supreme.wav"
+  },
+  {
+   "id": "rename",
+   "start": 101.583,
+   "end": 107.282,
+   "audio": "ep04/audio/rename.wav"
+  },
+  {
+   "id": "irony",
+   "start": 107.782,
+   "end": 113.218,
+   "audio": "ep04/audio/irony.wav"
+  },
+  {
+   "id": "question",
+   "start": 113.718,
+   "end": 119.045,
+   "audio": "ep04/audio/question.wav"
+  }
+ ],
+ "words": [
+  {
+   "text": "Zaha",
+   "startMs": 100,
+   "endMs": 643
+  },
+  {
+   "text": " Hadid",
+   "startMs": 643,
+   "endMs": 1186
+  },
+  {
+   "text": " had",
+   "startMs": 1186,
+   "endMs": 1498
+  },
+  {
+   "text": " no",
+   "startMs": 1498,
+   "endMs": 1810
+  },
+  {
+   "text": " children.",
+   "startMs": 1810,
+   "endMs": 2354
+  },
+  {
+   "text": " So",
+   "startMs": 2354,
+   "endMs": 2666
+  },
+  {
+   "text": " when",
+   "startMs": 2666,
+   "endMs": 2978
+  },
+  {
+   "text": " she",
+   "startMs": 2978,
+   "endMs": 3290
+  },
+  {
+   "text": " died,",
+   "startMs": 3290,
+   "endMs": 3602
+  },
+  {
+   "text": " who",
+   "startMs": 3602,
+   "endMs": 3914
+  },
+  {
+   "text": " got",
+   "startMs": 3914,
+   "endMs": 4226
+  },
+  {
+   "text": " her",
+   "startMs": 4226,
+   "endMs": 4538
+  },
+  {
+   "text": " name?",
+   "startMs": 4538,
+   "endMs": 4942
+  },
+  {
+   "text": " The",
+   "startMs": 5442,
+   "endMs": 5909
+  },
+  {
+   "text": " answer",
+   "startMs": 5909,
+   "endMs": 6721
+  },
+  {
+   "text": " took",
+   "startMs": 6721,
+   "endMs": 7187
+  },
+  {
+   "text": " ten",
+   "startMs": 7187,
+   "endMs": 7653
+  },
+  {
+   "text": " years,",
+   "startMs": 7653,
+   "endMs": 8120
+  },
+  {
+   "text": " three",
+   "startMs": 8515,
+   "endMs": 8741
+  },
+  {
+   "text": " courts,",
+   "startMs": 8741,
+   "endMs": 8967
+  },
+  {
+   "text": " and",
+   "startMs": 8967,
+   "endMs": 9193
+  },
+  {
+   "text": " ended",
+   "startMs": 9193,
+   "endMs": 9587
+  },
+  {
+   "text": " with",
+   "startMs": 9587,
+   "endMs": 9814
+  },
+  {
+   "text": " her",
+   "startMs": 9814,
+   "endMs": 10040
+  },
+  {
+   "text": " name",
+   "startMs": 10040,
+   "endMs": 10333
+  },
+  {
+   "text": " taken",
+   "startMs": 10333,
+   "endMs": 10727
+  },
+  {
+   "text": " off",
+   "startMs": 10727,
+   "endMs": 10953
+  },
+  {
+   "text": " her",
+   "startMs": 10953,
+   "endMs": 11180
+  },
+  {
+   "text": " own",
+   "startMs": 11180,
+   "endMs": 11406
+  },
+  {
+   "text": " firm.",
+   "startMs": 11406,
+   "endMs": 11632
+  },
+  {
+   "text": " March",
+   "startMs": 12132,
+   "endMs": 12405
+  },
+  {
+   "text": " 2016.",
+   "startMs": 12405,
+   "endMs": 13698
+  },
+  {
+   "text": " The",
+   "startMs": 14499,
+   "endMs": 14733
+  },
+  {
+   "text": " first",
+   "startMs": 14733,
+   "endMs": 14967
+  },
+  {
+   "text": " woman",
+   "startMs": 14967,
+   "endMs": 15374
+  },
+  {
+   "text": " to",
+   "startMs": 15374,
+   "endMs": 15607
+  },
+  {
+   "text": " win",
+   "startMs": 15607,
+   "endMs": 15841
+  },
+  {
+   "text": " the",
+   "startMs": 15841,
+   "endMs": 16075
+  },
+  {
+   "text": " Pritzker",
+   "startMs": 16075,
+   "endMs": 16481
+  },
+  {
+   "text": " Prize",
+   "startMs": 16481,
+   "endMs": 16784
+  },
+  {
+   "text": " dies",
+   "startMs": 16784,
+   "endMs": 17018
+  },
+  {
+   "text": " suddenly",
+   "startMs": 17018,
+   "endMs": 17598
+  },
+  {
+   "text": " in",
+   "startMs": 17598,
+   "endMs": 17832
+  },
+  {
+   "text": " Miami,",
+   "startMs": 17832,
+   "endMs": 18239
+  },
+  {
+   "text": " at",
+   "startMs": 18679,
+   "endMs": 18927
+  },
+  {
+   "text": " sixty-five.",
+   "startMs": 18927,
+   "endMs": 19614
+  },
+  {
+   "text": " Her",
+   "startMs": 20114,
+   "endMs": 20362
+  },
+  {
+   "text": " will",
+   "startMs": 20362,
+   "endMs": 20610
+  },
+  {
+   "text": " names",
+   "startMs": 20610,
+   "endMs": 21041
+  },
+  {
+   "text": " four",
+   "startMs": 21041,
+   "endMs": 21289
+  },
+  {
+   "text": " people",
+   "startMs": 21289,
+   "endMs": 21610
+  },
+  {
+   "text": " to",
+   "startMs": 21610,
+   "endMs": 21858
+  },
+  {
+   "text": " protect",
+   "startMs": 21858,
+   "endMs": 22290
+  },
+  {
+   "text": " her",
+   "startMs": 22290,
+   "endMs": 22538
+  },
+  {
+   "text": " legacy.",
+   "startMs": 22538,
+   "endMs": 23153
+  },
+  {
+   "text": " Her",
+   "startMs": 23653,
+   "endMs": 23959
+  },
+  {
+   "text": " partner,",
+   "startMs": 23959,
+   "endMs": 24493
+  },
+  {
+   "text": " Patrik",
+   "startMs": 24493,
+   "endMs": 25497
+  },
+  {
+   "text": " Schumacher,",
+   "startMs": 25497,
+   "endMs": 26928
+  },
+  {
+   "text": " who",
+   "startMs": 27171,
+   "endMs": 27590
+  },
+  {
+   "text": " runs",
+   "startMs": 27590,
+   "endMs": 28008
+  },
+  {
+   "text": " her",
+   "startMs": 28008,
+   "endMs": 28427
+  },
+  {
+   "text": " firm.",
+   "startMs": 28427,
+   "endMs": 28846
+  },
+  {
+   "text": " Her",
+   "startMs": 29326,
+   "endMs": 29513
+  },
+  {
+   "text": " niece,",
+   "startMs": 29513,
+   "endMs": 29754
+  },
+  {
+   "text": " Rana",
+   "startMs": 29754,
+   "endMs": 30079
+  },
+  {
+   "text": " Hadid.",
+   "startMs": 30079,
+   "endMs": 30403
+  },
+  {
+   "text": " Developer",
+   "startMs": 30403,
+   "endMs": 31004
+  },
+  {
+   "text": " Lord",
+   "startMs": 31004,
+   "endMs": 31190
+  },
+  {
+   "text": " Peter",
+   "startMs": 31190,
+   "endMs": 31515
+  },
+  {
+   "text": " Palumbo.",
+   "startMs": 31515,
+   "endMs": 31977
+  },
+  {
+   "text": " And",
+   "startMs": 31977,
+   "endMs": 32164
+  },
+  {
+   "text": " artist",
+   "startMs": 32164,
+   "endMs": 32488
+  },
+  {
+   "text": " Brian",
+   "startMs": 32488,
+   "endMs": 32674
+  },
+  {
+   "text": " Clarke.",
+   "startMs": 32674,
+   "endMs": 32916
+  },
+  {
+   "text": " Within",
+   "startMs": 33416,
+   "endMs": 34038
+  },
+  {
+   "text": " two",
+   "startMs": 34038,
+   "endMs": 34395
+  },
+  {
+   "text": " years,",
+   "startMs": 34395,
+   "endMs": 34752
+  },
+  {
+   "text": " they're",
+   "startMs": 34969,
+   "endMs": 35352
+  },
+  {
+   "text": " in",
+   "startMs": 35352,
+   "endMs": 35647
+  },
+  {
+   "text": " court.",
+   "startMs": 35647,
+   "endMs": 35942
+  },
+  {
+   "text": " Schumacher",
+   "startMs": 36442,
+   "endMs": 37089
+  },
+  {
+   "text": " asks",
+   "startMs": 37089,
+   "endMs": 37349
+  },
+  {
+   "text": " the",
+   "startMs": 37349,
+   "endMs": 37610
+  },
+  {
+   "text": " High",
+   "startMs": 37610,
+   "endMs": 37870
+  },
+  {
+   "text": " Court",
+   "startMs": 37870,
+   "endMs": 38131
+  },
+  {
+   "text": " to",
+   "startMs": 38131,
+   "endMs": 38391
+  },
+  {
+   "text": " remove",
+   "startMs": 38391,
+   "endMs": 38922
+  },
+  {
+   "text": " the",
+   "startMs": 38922,
+   "endMs": 39182
+  },
+  {
+   "text": " other",
+   "startMs": 39182,
+   "endMs": 39636
+  },
+  {
+   "text": " three.",
+   "startMs": 39636,
+   "endMs": 39896
+  },
+  {
+   "text": " They",
+   "startMs": 40183,
+   "endMs": 40384
+  },
+  {
+   "text": " say",
+   "startMs": 40384,
+   "endMs": 40585
+  },
+  {
+   "text": " he's",
+   "startMs": 40585,
+   "endMs": 40786
+  },
+  {
+   "text": " the",
+   "startMs": 40786,
+   "endMs": 40987
+  },
+  {
+   "text": " only",
+   "startMs": 40987,
+   "endMs": 41337
+  },
+  {
+   "text": " one",
+   "startMs": 41337,
+   "endMs": 41598
+  },
+  {
+   "text": " trying",
+   "startMs": 41598,
+   "endMs": 41799
+  },
+  {
+   "text": " to",
+   "startMs": 41799,
+   "endMs": 42001
+  },
+  {
+   "text": " profit",
+   "startMs": 42001,
+   "endMs": 42351
+  },
+  {
+   "text": " from",
+   "startMs": 42351,
+   "endMs": 42552
+  },
+  {
+   "text": " the",
+   "startMs": 42552,
+   "endMs": 42753
+  },
+  {
+   "text": " estate.",
+   "startMs": 42753,
+   "endMs": 43163
+  },
+  {
+   "text": " He",
+   "startMs": 43663,
+   "endMs": 44039
+  },
+  {
+   "text": " claims",
+   "startMs": 44039,
+   "endMs": 44415
+  },
+  {
+   "text": " they",
+   "startMs": 44415,
+   "endMs": 44792
+  },
+  {
+   "text": " demanded",
+   "startMs": 44792,
+   "endMs": 45725
+  },
+  {
+   "text": " seven",
+   "startMs": 45725,
+   "endMs": 46380
+  },
+  {
+   "text": " point",
+   "startMs": 46380,
+   "endMs": 46757
+  },
+  {
+   "text": " seven",
+   "startMs": 46757,
+   "endMs": 47411
+  },
+  {
+   "text": " five",
+   "startMs": 47411,
+   "endMs": 47899
+  },
+  {
+   "text": " million",
+   "startMs": 47899,
+   "endMs": 48554
+  },
+  {
+   "text": " pounds",
+   "startMs": 48554,
+   "endMs": 48930
+  },
+  {
+   "text": " from",
+   "startMs": 48930,
+   "endMs": 49307
+  },
+  {
+   "text": " the",
+   "startMs": 49307,
+   "endMs": 49683
+  },
+  {
+   "text": " firm,",
+   "startMs": 49683,
+   "endMs": 50059
+  },
+  {
+   "text": " threatened",
+   "startMs": 50327,
+   "endMs": 50802
+  },
+  {
+   "text": " to",
+   "startMs": 50802,
+   "endMs": 50993
+  },
+  {
+   "text": " push",
+   "startMs": 50993,
+   "endMs": 51185
+  },
+  {
+   "text": " him",
+   "startMs": 51185,
+   "endMs": 51376
+  },
+  {
+   "text": " out,",
+   "startMs": 51376,
+   "endMs": 51568
+  },
+  {
+   "text": " and",
+   "startMs": 51568,
+   "endMs": 51703
+  },
+  {
+   "text": " pressured",
+   "startMs": 51703,
+   "endMs": 52037
+  },
+  {
+   "text": " him",
+   "startMs": 52037,
+   "endMs": 52172
+  },
+  {
+   "text": " to",
+   "startMs": 52172,
+   "endMs": 52307
+  },
+  {
+   "text": " drop",
+   "startMs": 52307,
+   "endMs": 52442
+  },
+  {
+   "text": " Zaha's",
+   "startMs": 52442,
+   "endMs": 52676
+  },
+  {
+   "text": " name.",
+   "startMs": 52676,
+   "endMs": 52851
+  },
+  {
+   "text": " They",
+   "startMs": 53180,
+   "endMs": 53428
+  },
+  {
+   "text": " deny",
+   "startMs": 53428,
+   "endMs": 53860
+  },
+  {
+   "text": " it.",
+   "startMs": 53860,
+   "endMs": 54107
+  },
+  {
+   "text": " In",
+   "startMs": 54607,
+   "endMs": 54868
+  },
+  {
+   "text": " 2020,",
+   "startMs": 54868,
+   "endMs": 56103
+  },
+  {
+   "text": " it's",
+   "startMs": 56103,
+   "endMs": 56364
+  },
+  {
+   "text": " settled.",
+   "startMs": 56364,
+   "endMs": 56818
+  },
+  {
+   "text": " Most",
+   "startMs": 56818,
+   "endMs": 57045
+  },
+  {
+   "text": " of",
+   "startMs": 57045,
+   "endMs": 57273
+  },
+  {
+   "text": " the",
+   "startMs": 57273,
+   "endMs": 57501
+  },
+  {
+   "text": " fortune",
+   "startMs": 57501,
+   "endMs": 57965
+  },
+  {
+   "text": " goes",
+   "startMs": 57965,
+   "endMs": 58193
+  },
+  {
+   "text": " to",
+   "startMs": 58193,
+   "endMs": 58420
+  },
+  {
+   "text": " the",
+   "startMs": 58420,
+   "endMs": 58648
+  },
+  {
+   "text": " Zaha",
+   "startMs": 58648,
+   "endMs": 59045
+  },
+  {
+   "text": " Hadid",
+   "startMs": 59045,
+   "endMs": 59441
+  },
+  {
+   "text": " Foundation.",
+   "startMs": 59441,
+   "endMs": 60006
+  },
+  {
+   "text": " Schumacher",
+   "startMs": 60522,
+   "endMs": 61149
+  },
+  {
+   "text": " loses",
+   "startMs": 61149,
+   "endMs": 61588
+  },
+  {
+   "text": " his",
+   "startMs": 61588,
+   "endMs": 61841
+  },
+  {
+   "text": " veto.",
+   "startMs": 61841,
+   "endMs": 62280
+  },
+  {
+   "text": " The",
+   "startMs": 62780,
+   "endMs": 63012
+  },
+  {
+   "text": " judge",
+   "startMs": 63012,
+   "endMs": 63312
+  },
+  {
+   "text": " reportedly",
+   "startMs": 63312,
+   "endMs": 64057
+  },
+  {
+   "text": " said",
+   "startMs": 64057,
+   "endMs": 64289
+  },
+  {
+   "text": " the",
+   "startMs": 64289,
+   "endMs": 64520
+  },
+  {
+   "text": " dispute",
+   "startMs": 64520,
+   "endMs": 64992
+  },
+  {
+   "text": " itself",
+   "startMs": 64992,
+   "endMs": 65394
+  },
+  {
+   "text": " was",
+   "startMs": 65394,
+   "endMs": 65626
+  },
+  {
+   "text": " the",
+   "startMs": 65626,
+   "endMs": 65857
+  },
+  {
+   "text": " real",
+   "startMs": 65857,
+   "endMs": 66089
+  },
+  {
+   "text": " tragedy.",
+   "startMs": 66089,
+   "endMs": 66663
+  },
+  {
+   "text": " But",
+   "startMs": 67163,
+   "endMs": 67392
+  },
+  {
+   "text": " a",
+   "startMs": 67392,
+   "endMs": 67621
+  },
+  {
+   "text": " second",
+   "startMs": 67621,
+   "endMs": 68020
+  },
+  {
+   "text": " fight",
+   "startMs": 68020,
+   "endMs": 68249
+  },
+  {
+   "text": " was",
+   "startMs": 68249,
+   "endMs": 68478
+  },
+  {
+   "text": " hiding",
+   "startMs": 68478,
+   "endMs": 68877
+  },
+  {
+   "text": " in",
+   "startMs": 68877,
+   "endMs": 69106
+  },
+  {
+   "text": " the",
+   "startMs": 69106,
+   "endMs": 69335
+  },
+  {
+   "text": " paperwork.",
+   "startMs": 69335,
+   "endMs": 69904
+  },
+  {
+   "text": " Since",
+   "startMs": 70389,
+   "endMs": 70684
+  },
+  {
+   "text": " 2013,",
+   "startMs": 70684,
+   "endMs": 71766
+  },
+  {
+   "text": " her",
+   "startMs": 71766,
+   "endMs": 71994
+  },
+  {
+   "text": " firm",
+   "startMs": 71994,
+   "endMs": 72222
+  },
+  {
+   "text": " had",
+   "startMs": 72222,
+   "endMs": 72450
+  },
+  {
+   "text": " paid",
+   "startMs": 72450,
+   "endMs": 72678
+  },
+  {
+   "text": " six",
+   "startMs": 72678,
+   "endMs": 72906
+  },
+  {
+   "text": " per",
+   "startMs": 72906,
+   "endMs": 73134
+  },
+  {
+   "text": " cent",
+   "startMs": 73134,
+   "endMs": 73362
+  },
+  {
+   "text": " of",
+   "startMs": 73362,
+   "endMs": 73590
+  },
+  {
+   "text": " its",
+   "startMs": 73590,
+   "endMs": 73818
+  },
+  {
+   "text": " income",
+   "startMs": 73818,
+   "endMs": 74282
+  },
+  {
+   "text": " for",
+   "startMs": 74282,
+   "endMs": 74511
+  },
+  {
+   "text": " her",
+   "startMs": 74511,
+   "endMs": 74739
+  },
+  {
+   "text": " name.",
+   "startMs": 74739,
+   "endMs": 75034
+  },
+  {
+   "text": " From",
+   "startMs": 75534,
+   "endMs": 75801
+  },
+  {
+   "text": " 2018",
+   "startMs": 75801,
+   "endMs": 77064
+  },
+  {
+   "text": " to",
+   "startMs": 77064,
+   "endMs": 77331
+  },
+  {
+   "text": " 2024,",
+   "startMs": 77331,
+   "endMs": 78594
+  },
+  {
+   "text": " that's",
+   "startMs": 78594,
+   "endMs": 78860
+  },
+  {
+   "text": " over",
+   "startMs": 78860,
+   "endMs": 79324
+  },
+  {
+   "text": " twenty-one",
+   "startMs": 79324,
+   "endMs": 79867
+  },
+  {
+   "text": " million",
+   "startMs": 79867,
+   "endMs": 80331
+  },
+  {
+   "text": " pounds.",
+   "startMs": 80331,
+   "endMs": 80598
+  },
+  {
+   "text": " The",
+   "startMs": 81098,
+   "endMs": 81354
+  },
+  {
+   "text": " firm",
+   "startMs": 81354,
+   "endMs": 81611
+  },
+  {
+   "text": " tries",
+   "startMs": 81611,
+   "endMs": 81867
+  },
+  {
+   "text": " to",
+   "startMs": 81867,
+   "endMs": 82124
+  },
+  {
+   "text": " quit",
+   "startMs": 82124,
+   "endMs": 82381
+  },
+  {
+   "text": " the",
+   "startMs": 82381,
+   "endMs": 82637
+  },
+  {
+   "text": " deal.",
+   "startMs": 82637,
+   "endMs": 82894
+  },
+  {
+   "text": " In",
+   "startMs": 83521,
+   "endMs": 83828
+  },
+  {
+   "text": " 2024,",
+   "startMs": 83828,
+   "endMs": 85281
+  },
+  {
+   "text": " the",
+   "startMs": 85281,
+   "endMs": 85460
+  },
+  {
+   "text": " High",
+   "startMs": 85460,
+   "endMs": 85638
+  },
+  {
+   "text": " Court",
+   "startMs": 85638,
+   "endMs": 85817
+  },
+  {
+   "text": " says",
+   "startMs": 85817,
+   "endMs": 85996
+  },
+  {
+   "text": " no:",
+   "startMs": 85996,
+   "endMs": 86175
+  },
+  {
+   "text": " keep",
+   "startMs": 86737,
+   "endMs": 87082
+  },
+  {
+   "text": " paying.",
+   "startMs": 87082,
+   "endMs": 87427
+  },
+  {
+   "text": " Then,",
+   "startMs": 87927,
+   "endMs": 88193
+  },
+  {
+   "text": " in",
+   "startMs": 88193,
+   "endMs": 88460
+  },
+  {
+   "text": " 2026,",
+   "startMs": 88460,
+   "endMs": 89724
+  },
+  {
+   "text": " the",
+   "startMs": 89724,
+   "endMs": 89978
+  },
+  {
+   "text": " Court",
+   "startMs": 89978,
+   "endMs": 90232
+  },
+  {
+   "text": " of",
+   "startMs": 90232,
+   "endMs": 90486
+  },
+  {
+   "text": " Appeal",
+   "startMs": 90486,
+   "endMs": 90928
+  },
+  {
+   "text": " flips",
+   "startMs": 90928,
+   "endMs": 91181
+  },
+  {
+   "text": " it.",
+   "startMs": 91181,
+   "endMs": 91435
+  },
+  {
+   "text": " The",
+   "startMs": 91957,
+   "endMs": 92152
+  },
+  {
+   "text": " licence",
+   "startMs": 92152,
+   "endMs": 92551
+  },
+  {
+   "text": " said",
+   "startMs": 92551,
+   "endMs": 92747
+  },
+  {
+   "text": " indefinitely,",
+   "startMs": 92747,
+   "endMs": 93667
+  },
+  {
+   "text": " and",
+   "startMs": 93911,
+   "endMs": 94171
+  },
+  {
+   "text": " indefinitely",
+   "startMs": 94171,
+   "endMs": 95395
+  },
+  {
+   "text": " isn't",
+   "startMs": 95395,
+   "endMs": 95655
+  },
+  {
+   "text": " forever.",
+   "startMs": 95655,
+   "endMs": 96301
+  },
+  {
+   "text": " The",
+   "startMs": 96801,
+   "endMs": 97058
+  },
+  {
+   "text": " Foundation",
+   "startMs": 97058,
+   "endMs": 97697
+  },
+  {
+   "text": " asks",
+   "startMs": 97697,
+   "endMs": 97954
+  },
+  {
+   "text": " the",
+   "startMs": 97954,
+   "endMs": 98211
+  },
+  {
+   "text": " Supreme",
+   "startMs": 98211,
+   "endMs": 98735
+  },
+  {
+   "text": " Court",
+   "startMs": 98735,
+   "endMs": 98992
+  },
+  {
+   "text": " to",
+   "startMs": 98992,
+   "endMs": 99249
+  },
+  {
+   "text": " step",
+   "startMs": 99249,
+   "endMs": 99507
+  },
+  {
+   "text": " in.",
+   "startMs": 99507,
+   "endMs": 99764
+  },
+  {
+   "text": " Refused.",
+   "startMs": 100223,
+   "endMs": 101083
+  },
+  {
+   "text": " June",
+   "startMs": 101583,
+   "endMs": 101869
+  },
+  {
+   "text": " 2026:",
+   "startMs": 101869,
+   "endMs": 102912
+  },
+  {
+   "text": " Zaha",
+   "startMs": 103497,
+   "endMs": 103883
+  },
+  {
+   "text": " Hadid",
+   "startMs": 103883,
+   "endMs": 104269
+  },
+  {
+   "text": " Architects",
+   "startMs": 104269,
+   "endMs": 104819
+  },
+  {
+   "text": " becomes",
+   "startMs": 104819,
+   "endMs": 105369
+  },
+  {
+   "text": " three",
+   "startMs": 105369,
+   "endMs": 105591
+  },
+  {
+   "text": " letters.",
+   "startMs": 105591,
+   "endMs": 105977
+  },
+  {
+   "text": " Z.",
+   "startMs": 106330,
+   "endMs": 106647
+  },
+  {
+   "text": " H.",
+   "startMs": 106647,
+   "endMs": 106964
+  },
+  {
+   "text": " A.",
+   "startMs": 106964,
+   "endMs": 107282
+  },
+  {
+   "text": " Seven",
+   "startMs": 107782,
+   "endMs": 108204
+  },
+  {
+   "text": " years",
+   "startMs": 108204,
+   "endMs": 108446
+  },
+  {
+   "text": " after",
+   "startMs": 108446,
+   "endMs": 108868
+  },
+  {
+   "text": " claiming",
+   "startMs": 108868,
+   "endMs": 109290
+  },
+  {
+   "text": " he'd",
+   "startMs": 109290,
+   "endMs": 109533
+  },
+  {
+   "text": " been",
+   "startMs": 109533,
+   "endMs": 109775
+  },
+  {
+   "text": " pressured",
+   "startMs": 109775,
+   "endMs": 110377
+  },
+  {
+   "text": " to",
+   "startMs": 110377,
+   "endMs": 110619
+  },
+  {
+   "text": " drop",
+   "startMs": 110619,
+   "endMs": 110862
+  },
+  {
+   "text": " her",
+   "startMs": 110862,
+   "endMs": 111104
+  },
+  {
+   "text": " name,",
+   "startMs": 111104,
+   "endMs": 111418
+  },
+  {
+   "text": " Schumacher",
+   "startMs": 111589,
+   "endMs": 112169
+  },
+  {
+   "text": " dropped",
+   "startMs": 112169,
+   "endMs": 112577
+  },
+  {
+   "text": " it",
+   "startMs": 112577,
+   "endMs": 112811
+  },
+  {
+   "text": " himself.",
+   "startMs": 112811,
+   "endMs": 113218
+  },
+  {
+   "text": " So",
+   "startMs": 113718,
+   "endMs": 114003
+  },
+  {
+   "text": " who",
+   "startMs": 114003,
+   "endMs": 114287
+  },
+  {
+   "text": " should",
+   "startMs": 114287,
+   "endMs": 114572
+  },
+  {
+   "text": " own",
+   "startMs": 114572,
+   "endMs": 114857
+  },
+  {
+   "text": " a",
+   "startMs": 114857,
+   "endMs": 115141
+  },
+  {
+   "text": " name:",
+   "startMs": 115141,
+   "endMs": 115510
+  },
+  {
+   "text": " the",
+   "startMs": 115871,
+   "endMs": 116129
+  },
+  {
+   "text": " firm",
+   "startMs": 116129,
+   "endMs": 116387
+  },
+  {
+   "text": " she",
+   "startMs": 116387,
+   "endMs": 116644
+  },
+  {
+   "text": " built,",
+   "startMs": 116644,
+   "endMs": 116902
+  },
+  {
+   "text": " or",
+   "startMs": 117104,
+   "endMs": 117340
+  },
+  {
+   "text": " the",
+   "startMs": 117340,
+   "endMs": 117576
+  },
+  {
+   "text": " foundation",
+   "startMs": 117576,
+   "endMs": 118162
+  },
+  {
+   "text": " she",
+   "startMs": 118162,
+   "endMs": 118398
+  },
+  {
+   "text": " left",
+   "startMs": 118398,
+   "endMs": 118634
+  },
+  {
+   "text": " behind?",
+   "startMs": 118634,
+   "endMs": 119045
+  }
+ ],
+ "total": 120.045,
+ "music": "ep04/music.wav"
+}

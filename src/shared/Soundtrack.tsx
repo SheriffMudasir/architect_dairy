@@ -35,6 +35,7 @@ export const Soundtrack: React.FC<{ tl: Timeline; ep: EpisodeScript }> = ({ tl, 
       if (!b) return [];
       const at = b.start + (ins.from ?? 0) * (b.end - b.start);
       if (ins.kind === "stamp") return [{ src: "sfx/thud.wav", at: at + 0.12, volume: 0.8 }];
+      if (ins.kind === "letters") return [{ src: "sfx/thud.wav", at: at + (ins.fallAt ?? 0.35) * (b.end - b.start) + 0.8, volume: 0.5 }];
       if (ins.kind === "number" || ins.kind === "person" || ins.kind === "quote" || (ins.kind === "photo" && ins.layout === "card"))
         return [{ src: "sfx/tick.wav", at, volume: 0.35 }];
       if (ins.kind === "photo" || ins.kind === "video") return [{ src: "sfx/whoosh.wav", at: at - 0.1, volume: 0.12 }];
