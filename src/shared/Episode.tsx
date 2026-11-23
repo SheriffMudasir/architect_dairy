@@ -170,7 +170,7 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits =
       {ep.years && beat.year && chrome > 0.01 ? <YearBar years={ep.years} year={beat.year} prevYear={prevYear} t={t} beatStart={tl.beats[bi].start} /> : null}
 
       {cover ? null : <Captions words={tl.words} t={t} font={SANS} tl={tl} beats={ep.beats} />}
-      {ep.hook && !cover ? <HookTitle lines={ep.hook.lines} t={t} until={hookUntil} /> : null}
+      {ep.hook && !cover ? <HookTitle lines={ep.hook.lines} t={t} until={hookUntil} top={ep.hook.top} /> : null}
       {ep.cta && !cover ? <CtaPill text={ep.cta} t={t} start={tl.beats[tl.beats.length - 1].start + 0.3} /> : null}
       {cover && ep.cover ? <CoverTitle lines={ep.cover.lines} sub={ep.cover.sub} top={ep.cover.top} channel={`${CHANNEL_NAME} · EP ${String(ep.number).padStart(2, "0")}`} /> : null}
 

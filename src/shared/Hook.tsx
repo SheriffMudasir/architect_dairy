@@ -7,12 +7,12 @@ import { C } from "../theme";
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 /** Two big lines on paper slabs; fully visible on frame 0 (no fade-in), slight settle, then out. */
-export const HookTitle: React.FC<{ lines: string[]; t: number; until: number }> = ({ lines, t, until }) => {
+export const HookTitle: React.FC<{ lines: string[]; t: number; until: number; top?: number }> = ({ lines, t, until, top = 300 }) => {
   if (t > until + 0.4) return null;
   const settle = interpolate(t, [0, 0.35], [1.06, 1], { ...clamp, easing: Easing.bezier(0.2, 0.8, 0.2, 1) });
   const out = interpolate(t, [until, until + 0.4], [1, 0], clamp);
   return (
-    <div style={{ position: "absolute", left: 60, right: 60, top: 300, display: "flex", flexDirection: "column", alignItems: "center", gap: 14, opacity: out, scale: String(settle) }}>
+    <div style={{ position: "absolute", left: 60, right: 60, top, display: "flex", flexDirection: "column", alignItems: "center", gap: 14, opacity: out, scale: String(settle) }}>
       {lines.map((l, i) => (
         <div
           key={i}

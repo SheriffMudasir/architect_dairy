@@ -82,7 +82,7 @@ export type EpisodeScript = {
   /** Range of the running year bar. Omit to hide it. */
   years?: [number, number];
   /** Big on-screen hook text shown from frame 0 (works without sound). 2 short lines, ≤ 22 chars each. */
-  hook?: { lines: string[]; until?: number };
+  hook?: { lines: string[]; until?: number; /** px from the top (default 300) — move it off faces */ top?: number };
   /** Comment prompt shown over the last beat, e.g. "Which building should we break down next?" */
   cta?: string;
   /** Cover image (npm run cover): big title over the frame at `beat` (+offset seconds). */

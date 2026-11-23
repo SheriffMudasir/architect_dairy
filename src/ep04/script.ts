@@ -36,7 +36,7 @@ export const SCRIPT: EpisodeScript = {
     end: { lead: "Zaha Hadid Architects", accent: "is now ZHA." },
   },
   years: [2016, 2026],
-  hook: { lines: ["WHO OWNS", "ZAHA HADID?"], until: 3.0 },
+  hook: { lines: ["WHO OWNS", "ZAHA HADID?"], until: 3.0, top: 980 },
   cta: "Firm or foundation: who should own her name?",
   cover: { lines: ["HER NAME,", "REMOVED"], sub: "THE FIGHT OVER ZAHA HADID", beat: "hook", offset: 1.5, top: 930 },
   endCard: false,
