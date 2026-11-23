@@ -38,7 +38,7 @@ export const SCRIPT: EpisodeScript = {
   years: [2016, 2026],
   hook: { lines: ["WHO OWNS", "ZAHA HADID?"], until: 3.0 },
   cta: "Firm or foundation: who should own her name?",
-  cover: { lines: ["HER NAME,", "REMOVED"], sub: "THE FIGHT OVER ZAHA HADID", beat: "hook", offset: 1.5 },
+  cover: { lines: ["HER NAME,", "REMOVED"], sub: "THE FIGHT OVER ZAHA HADID", beat: "hook", offset: 1.5, top: 930 },
   endCard: false,
   inserts: [
     { kind: "photo", beat: "hook", from: 0, to: 1, src: "portrait-hadid", layout: "full", move: "in", grade: "mono", focus: [0.5, 0.3] },

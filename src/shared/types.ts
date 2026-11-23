@@ -86,7 +86,7 @@ export type EpisodeScript = {
   /** Comment prompt shown over the last beat, e.g. "Which building should we break down next?" */
   cta?: string;
   /** Cover image (npm run cover): big title over the frame at `beat` (+offset seconds). */
-  cover?: { lines: string[]; sub?: string; beat: string; offset?: number };
+  cover?: { lines: string[]; sub?: string; beat: string; offset?: number; /** px from the top of the title block (default 260) — move it off faces */ top?: number };
   /** End card with media credits (default true). Set false for loop-friendly shorts — each photo
    *  still shows its own credit line, and credits go in the description. */
   endCard?: boolean;

@@ -53,9 +53,9 @@ export const CtaPill: React.FC<{ text: string; t: number; start: number }> = ({ 
 };
 
 /** Cover title (npm run cover). */
-export const CoverTitle: React.FC<{ lines: string[]; sub?: string; channel: string }> = ({ lines, sub, channel }) => (
+export const CoverTitle: React.FC<{ lines: string[]; sub?: string; channel: string; top?: number }> = ({ lines, sub, channel, top = 260 }) => (
   <>
-    <div style={{ position: "absolute", left: 60, right: 60, top: 260, display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
+    <div style={{ position: "absolute", left: 60, right: 60, top, display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
       {lines.map((l, i) => (
         <div
           key={i}
