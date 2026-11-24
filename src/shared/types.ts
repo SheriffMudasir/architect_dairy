@@ -91,7 +91,7 @@ export type EpisodeScript = {
    *  (fraction of the beat) until the next beat starts, or until `untilBeat` starts. */
   prompts?: { beat: string; text: string; from?: number; untilBeat?: string }[];
   /** Cover image (npm run cover): big title over the frame at `beat` (+offset seconds). */
-  cover?: { lines: string[]; sub?: string; beat: string; offset?: number; /** px from the top of the title block (default 260) — move it off faces */ top?: number };
+  cover?: { lines: string[]; sub?: string; beat: string; offset?: number; /** "hook": reuse the opening hook title (same size/position) instead of the big cover title */ style?: "hook"; /** px from the top of the title block (default 260) — move it off faces */ top?: number };
   /** End card with media credits (default true). Set false for loop-friendly shorts — each photo
    *  still shows its own credit line, and credits go in the description. */
   endCard?: boolean;

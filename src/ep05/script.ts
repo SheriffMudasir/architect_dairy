@@ -39,7 +39,7 @@ export const SCRIPT: EpisodeScript = {
   hook: { lines: ["FIRST AFRICAN", "PRITZKER WINNER"], until: 3.2, top: 1000 },
   prompts: [{ beat: "guess", text: "Comment your guess before the reveal", from: 0.55, untilBeat: "walls" }],
   cta: "Mud or concrete? Comment one word",
-  cover: { lines: ["BUILT", "FROM MUD"], sub: "THE FIRST AFRICAN PRITZKER WINNER", beat: "hook", offset: 0.4, top: 1180 },
+  cover: { lines: ["FIRST AFRICAN", "PRITZKER WINNER"], beat: "hook", offset: 1.5, style: "hook" },
   endCard: false,
   inserts: [
     { kind: "photo", beat: "hook", from: 0, to: 1, src: "portrait-kere", layout: "full", move: "in", focus: [0.5, 0.3] },

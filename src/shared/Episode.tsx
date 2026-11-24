@@ -181,7 +181,8 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits =
           })
         : null}
       {ep.cta && !cover ? <CtaPill text={ep.cta} t={t} start={tl.beats[tl.beats.length - 1].start + 0.3} /> : null}
-      {cover && ep.cover ? <CoverTitle lines={ep.cover.lines} sub={ep.cover.sub} top={ep.cover.top} channel={`${CHANNEL_NAME} · EP ${String(ep.number).padStart(2, "0")}`} /> : null}
+      {cover && ep.cover?.style === "hook" && ep.hook ? <HookTitle lines={ep.hook.lines} t={1.5} until={hookUntil} top={ep.hook.top} /> : null}
+      {cover && ep.cover && ep.cover.style !== "hook" ? <CoverTitle lines={ep.cover.lines} sub={ep.cover.sub} top={ep.cover.top} channel={`${CHANNEL_NAME} · EP ${String(ep.number).padStart(2, "0")}`} /> : null}
 
       {/* channel mark */}
       <div
