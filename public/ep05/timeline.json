@@ -1,0 +1,1345 @@
+{
+ "beats": [
+  {
+   "id": "hook",
+   "start": 0.1,
+   "end": 6.304,
+   "audio": "ep05/audio/hook.wav"
+  },
+  {
+   "id": "stakes",
+   "start": 6.804,
+   "end": 11.913,
+   "audio": "ep05/audio/stakes.wav"
+  },
+  {
+   "id": "gando",
+   "start": 12.413,
+   "end": 20.821,
+   "audio": "ep05/audio/gando.wav"
+  },
+  {
+   "id": "classroom",
+   "start": 21.321,
+   "end": 28.718,
+   "audio": "ep05/audio/classroom.wav"
+  },
+  {
+   "id": "germany",
+   "start": 29.218,
+   "end": 34.609,
+   "audio": "ep05/audio/germany.wav"
+  },
+  {
+   "id": "money",
+   "start": 35.109,
+   "end": 40.141,
+   "audio": "ep05/audio/money.wav"
+  },
+  {
+   "id": "pushback",
+   "start": 40.641,
+   "end": 44.394,
+   "audio": "ep05/audio/pushback.wav"
+  },
+  {
+   "id": "heat",
+   "start": 44.894,
+   "end": 50.899,
+   "audio": "ep05/audio/heat.wav"
+  },
+  {
+   "id": "guess",
+   "start": 51.399,
+   "end": 56.796,
+   "audio": "ep05/audio/guess.wav"
+  },
+  {
+   "id": "walls",
+   "start": 59.496,
+   "end": 65.013,
+   "audio": "ep05/audio/walls.wav"
+  },
+  {
+   "id": "roof",
+   "start": 65.513,
+   "end": 69.247,
+   "audio": "ep05/audio/roof.wav"
+  },
+  {
+   "id": "air",
+   "start": 69.747,
+   "end": 76.412,
+   "audio": "ep05/audio/air.wav"
+  },
+  {
+   "id": "cooler",
+   "start": 76.912,
+   "end": 80.283,
+   "audio": "ep05/audio/cooler.wav"
+  },
+  {
+   "id": "opened",
+   "start": 80.783,
+   "end": 86.161,
+   "audio": "ep05/audio/opened.wav"
+  },
+  {
+   "id": "growth",
+   "start": 86.661,
+   "end": 92.754,
+   "audio": "ep05/audio/growth.wav"
+  },
+  {
+   "id": "prize",
+   "start": 93.254,
+   "end": 97.55,
+   "audio": "ep05/audio/prize.wav"
+  },
+  {
+   "id": "mud",
+   "start": 98.05,
+   "end": 101.88,
+   "audio": "ep05/audio/mud.wav"
+  },
+  {
+   "id": "question",
+   "start": 102.38,
+   "end": 106.103,
+   "audio": "ep05/audio/question.wav"
+  }
+ ],
+ "words": [
+  {
+   "text": "In",
+   "startMs": 100,
+   "endMs": 343
+  },
+  {
+   "text": " 2022,",
+   "startMs": 343,
+   "endMs": 1496
+  },
+  {
+   "text": " architecture's",
+   "startMs": 1496,
+   "endMs": 2459
+  },
+  {
+   "text": " highest",
+   "startMs": 2459,
+   "endMs": 2882
+  },
+  {
+   "text": " honour",
+   "startMs": 2882,
+   "endMs": 3306
+  },
+  {
+   "text": " went",
+   "startMs": 3306,
+   "endMs": 3549
+  },
+  {
+   "text": " to",
+   "startMs": 3549,
+   "endMs": 3792
+  },
+  {
+   "text": " a",
+   "startMs": 3792,
+   "endMs": 4035
+  },
+  {
+   "text": " man",
+   "startMs": 4035,
+   "endMs": 4278
+  },
+  {
+   "text": " whose",
+   "startMs": 4278,
+   "endMs": 4593
+  },
+  {
+   "text": " first",
+   "startMs": 4593,
+   "endMs": 4836
+  },
+  {
+   "text": " building",
+   "startMs": 4836,
+   "endMs": 5259
+  },
+  {
+   "text": " was",
+   "startMs": 5259,
+   "endMs": 5503
+  },
+  {
+   "text": " made",
+   "startMs": 5503,
+   "endMs": 5818
+  },
+  {
+   "text": " of",
+   "startMs": 5818,
+   "endMs": 6061
+  },
+  {
+   "text": " mud.",
+   "startMs": 6061,
+   "endMs": 6304
+  },
+  {
+   "text": " His",
+   "startMs": 6804,
+   "endMs": 7084
+  },
+  {
+   "text": " village",
+   "startMs": 7084,
+   "endMs": 7655
+  },
+  {
+   "text": " wanted",
+   "startMs": 7655,
+   "endMs": 8142
+  },
+  {
+   "text": " concrete.",
+   "startMs": 8142,
+   "endMs": 8713
+  },
+  {
+   "text": " He",
+   "startMs": 9200,
+   "endMs": 9423
+  },
+  {
+   "text": " gave",
+   "startMs": 9423,
+   "endMs": 9713
+  },
+  {
+   "text": " them",
+   "startMs": 9713,
+   "endMs": 9936
+  },
+  {
+   "text": " clay.",
+   "startMs": 9936,
+   "endMs": 10159
+  },
+  {
+   "text": " And",
+   "startMs": 10761,
+   "endMs": 11049
+  },
+  {
+   "text": " the",
+   "startMs": 11049,
+   "endMs": 11337
+  },
+  {
+   "text": " clay",
+   "startMs": 11337,
+   "endMs": 11625
+  },
+  {
+   "text": " won.",
+   "startMs": 11625,
+   "endMs": 11913
+  },
+  {
+   "text": " Gando,",
+   "startMs": 12413,
+   "endMs": 13070
+  },
+  {
+   "text": " Burkina",
+   "startMs": 13286,
+   "endMs": 13758
+  },
+  {
+   "text": " Faso.",
+   "startMs": 13758,
+   "endMs": 14089
+  },
+  {
+   "text": " There",
+   "startMs": 14701,
+   "endMs": 14955
+  },
+  {
+   "text": " was",
+   "startMs": 14955,
+   "endMs": 15150
+  },
+  {
+   "text": " no",
+   "startMs": 15150,
+   "endMs": 15345
+  },
+  {
+   "text": " school.",
+   "startMs": 15345,
+   "endMs": 15541
+  },
+  {
+   "text": " So",
+   "startMs": 15945,
+   "endMs": 16228
+  },
+  {
+   "text": " at",
+   "startMs": 16228,
+   "endMs": 16511
+  },
+  {
+   "text": " seven,",
+   "startMs": 16511,
+   "endMs": 17004
+  },
+  {
+   "text": " the",
+   "startMs": 17004,
+   "endMs": 17330
+  },
+  {
+   "text": " chief's",
+   "startMs": 17330,
+   "endMs": 17656
+  },
+  {
+   "text": " son,",
+   "startMs": 17656,
+   "endMs": 17982
+  },
+  {
+   "text": " Francis",
+   "startMs": 18181,
+   "endMs": 18619
+  },
+  {
+   "text": " Kéré,",
+   "startMs": 18619,
+   "endMs": 18871
+  },
+  {
+   "text": " was",
+   "startMs": 18871,
+   "endMs": 19123
+  },
+  {
+   "text": " sent",
+   "startMs": 19123,
+   "endMs": 19375
+  },
+  {
+   "text": " away",
+   "startMs": 19375,
+   "endMs": 19813
+  },
+  {
+   "text": " to",
+   "startMs": 19813,
+   "endMs": 20065
+  },
+  {
+   "text": " learn",
+   "startMs": 20065,
+   "endMs": 20317
+  },
+  {
+   "text": " to",
+   "startMs": 20317,
+   "endMs": 20569
+  },
+  {
+   "text": " read.",
+   "startMs": 20569,
+   "endMs": 20821
+  },
+  {
+   "text": " His",
+   "startMs": 21321,
+   "endMs": 21660
+  },
+  {
+   "text": " classroom",
+   "startMs": 21660,
+   "endMs": 22250
+  },
+  {
+   "text": " was",
+   "startMs": 22250,
+   "endMs": 22590
+  },
+  {
+   "text": " cement",
+   "startMs": 22590,
+   "endMs": 23180
+  },
+  {
+   "text": " blocks,",
+   "startMs": 23180,
+   "endMs": 23519
+  },
+  {
+   "text": " with",
+   "startMs": 23847,
+   "endMs": 24093
+  },
+  {
+   "text": " no",
+   "startMs": 24093,
+   "endMs": 24339
+  },
+  {
+   "text": " air,",
+   "startMs": 24339,
+   "endMs": 24586
+  },
+  {
+   "text": " barely",
+   "startMs": 24586,
+   "endMs": 25197
+  },
+  {
+   "text": " any",
+   "startMs": 25197,
+   "endMs": 25626
+  },
+  {
+   "text": " light,",
+   "startMs": 25626,
+   "endMs": 25872
+  },
+  {
+   "text": " and",
+   "startMs": 25872,
+   "endMs": 26118
+  },
+  {
+   "text": " more",
+   "startMs": 26118,
+   "endMs": 26437
+  },
+  {
+   "text": " than",
+   "startMs": 26437,
+   "endMs": 26684
+  },
+  {
+   "text": " a",
+   "startMs": 26684,
+   "endMs": 26930
+  },
+  {
+   "text": " hundred",
+   "startMs": 26930,
+   "endMs": 27359
+  },
+  {
+   "text": " children",
+   "startMs": 27359,
+   "endMs": 27788
+  },
+  {
+   "text": " packed",
+   "startMs": 27788,
+   "endMs": 28216
+  },
+  {
+   "text": " inside.",
+   "startMs": 28216,
+   "endMs": 28718
+  },
+  {
+   "text": " A",
+   "startMs": 29218,
+   "endMs": 29439
+  },
+  {
+   "text": " carpentry",
+   "startMs": 29439,
+   "endMs": 29986
+  },
+  {
+   "text": " scholarship",
+   "startMs": 29986,
+   "endMs": 30533
+  },
+  {
+   "text": " took",
+   "startMs": 30533,
+   "endMs": 30754
+  },
+  {
+   "text": " him",
+   "startMs": 30754,
+   "endMs": 30974
+  },
+  {
+   "text": " to",
+   "startMs": 30974,
+   "endMs": 31195
+  },
+  {
+   "text": " Germany,",
+   "startMs": 31195,
+   "endMs": 31742
+  },
+  {
+   "text": " and",
+   "startMs": 31742,
+   "endMs": 31963
+  },
+  {
+   "text": " he",
+   "startMs": 31963,
+   "endMs": 32183
+  },
+  {
+   "text": " went",
+   "startMs": 32183,
+   "endMs": 32404
+  },
+  {
+   "text": " on",
+   "startMs": 32404,
+   "endMs": 32625
+  },
+  {
+   "text": " to",
+   "startMs": 32625,
+   "endMs": 32845
+  },
+  {
+   "text": " study",
+   "startMs": 32845,
+   "endMs": 33229
+  },
+  {
+   "text": " architecture",
+   "startMs": 33229,
+   "endMs": 34005
+  },
+  {
+   "text": " in",
+   "startMs": 34005,
+   "endMs": 34226
+  },
+  {
+   "text": " Berlin.",
+   "startMs": 34226,
+   "endMs": 34609
+  },
+  {
+   "text": " While",
+   "startMs": 35109,
+   "endMs": 35491
+  },
+  {
+   "text": " still",
+   "startMs": 35491,
+   "endMs": 35785
+  },
+  {
+   "text": " a",
+   "startMs": 35785,
+   "endMs": 36079
+  },
+  {
+   "text": " student,",
+   "startMs": 36079,
+   "endMs": 36591
+  },
+  {
+   "text": " he",
+   "startMs": 36591,
+   "endMs": 36846
+  },
+  {
+   "text": " raised",
+   "startMs": 36846,
+   "endMs": 37290
+  },
+  {
+   "text": " money",
+   "startMs": 37290,
+   "endMs": 37734
+  },
+  {
+   "text": " for",
+   "startMs": 37734,
+   "endMs": 37990
+  },
+  {
+   "text": " one",
+   "startMs": 37990,
+   "endMs": 38321
+  },
+  {
+   "text": " thing:",
+   "startMs": 38321,
+   "endMs": 38576
+  },
+  {
+   "text": " a",
+   "startMs": 38937,
+   "endMs": 39217
+  },
+  {
+   "text": " school",
+   "startMs": 39217,
+   "endMs": 39497
+  },
+  {
+   "text": " back",
+   "startMs": 39497,
+   "endMs": 39777
+  },
+  {
+   "text": " home.",
+   "startMs": 39777,
+   "endMs": 40141
+  },
+  {
+   "text": " But",
+   "startMs": 40641,
+   "endMs": 40829
+  },
+  {
+   "text": " the",
+   "startMs": 40829,
+   "endMs": 41017
+  },
+  {
+   "text": " village",
+   "startMs": 41017,
+   "endMs": 41400
+  },
+  {
+   "text": " pushed",
+   "startMs": 41400,
+   "endMs": 41727
+  },
+  {
+   "text": " back.",
+   "startMs": 41727,
+   "endMs": 41915
+  },
+  {
+   "text": " They",
+   "startMs": 42216,
+   "endMs": 42431
+  },
+  {
+   "text": " wanted",
+   "startMs": 42431,
+   "endMs": 42806
+  },
+  {
+   "text": " concrete",
+   "startMs": 42806,
+   "endMs": 43245
+  },
+  {
+   "text": " and",
+   "startMs": 43245,
+   "endMs": 43461
+  },
+  {
+   "text": " glass,",
+   "startMs": 43461,
+   "endMs": 43676
+  },
+  {
+   "text": " like",
+   "startMs": 43676,
+   "endMs": 43955
+  },
+  {
+   "text": " Europe.",
+   "startMs": 43955,
+   "endMs": 44394
+  },
+  {
+   "text": " Concrete",
+   "startMs": 44894,
+   "endMs": 45655
+  },
+  {
+   "text": " traps",
+   "startMs": 45655,
+   "endMs": 46029
+  },
+  {
+   "text": " heat.",
+   "startMs": 46029,
+   "endMs": 46403
+  },
+  {
+   "text": " Cooling",
+   "startMs": 46627,
+   "endMs": 47027
+  },
+  {
+   "text": " it",
+   "startMs": 47027,
+   "endMs": 47257
+  },
+  {
+   "text": " needs",
+   "startMs": 47257,
+   "endMs": 47487
+  },
+  {
+   "text": " air",
+   "startMs": 47487,
+   "endMs": 47717
+  },
+  {
+   "text": " conditioning.",
+   "startMs": 47717,
+   "endMs": 48457
+  },
+  {
+   "text": " And",
+   "startMs": 48789,
+   "endMs": 49032
+  },
+  {
+   "text": " Gando",
+   "startMs": 49032,
+   "endMs": 49454
+  },
+  {
+   "text": " had",
+   "startMs": 49454,
+   "endMs": 49696
+  },
+  {
+   "text": " no",
+   "startMs": 49696,
+   "endMs": 49938
+  },
+  {
+   "text": " electricity.",
+   "startMs": 49938,
+   "endMs": 50899
+  },
+  {
+   "text": " So",
+   "startMs": 51399,
+   "endMs": 51643
+  },
+  {
+   "text": " how",
+   "startMs": 51643,
+   "endMs": 51887
+  },
+  {
+   "text": " do",
+   "startMs": 51887,
+   "endMs": 52131
+  },
+  {
+   "text": " you",
+   "startMs": 52131,
+   "endMs": 52375
+  },
+  {
+   "text": " cool",
+   "startMs": 52375,
+   "endMs": 52619
+  },
+  {
+   "text": " a",
+   "startMs": 52619,
+   "endMs": 52863
+  },
+  {
+   "text": " classroom",
+   "startMs": 52863,
+   "endMs": 53287
+  },
+  {
+   "text": " with",
+   "startMs": 53287,
+   "endMs": 53531
+  },
+  {
+   "text": " no",
+   "startMs": 53531,
+   "endMs": 53775
+  },
+  {
+   "text": " power?",
+   "startMs": 53775,
+   "endMs": 54200
+  },
+  {
+   "text": " Comment",
+   "startMs": 54752,
+   "endMs": 55228
+  },
+  {
+   "text": " your",
+   "startMs": 55228,
+   "endMs": 55501
+  },
+  {
+   "text": " guess,",
+   "startMs": 55501,
+   "endMs": 55774
+  },
+  {
+   "text": " then",
+   "startMs": 55774,
+   "endMs": 56047
+  },
+  {
+   "text": " keep",
+   "startMs": 56047,
+   "endMs": 56320
+  },
+  {
+   "text": " watching.",
+   "startMs": 56320,
+   "endMs": 56796
+  },
+  {
+   "text": " First,",
+   "startMs": 59496,
+   "endMs": 60177
+  },
+  {
+   "text": " the",
+   "startMs": 60433,
+   "endMs": 60835
+  },
+  {
+   "text": " walls:",
+   "startMs": 60835,
+   "endMs": 61237
+  },
+  {
+   "text": " clay",
+   "startMs": 61615,
+   "endMs": 61882
+  },
+  {
+   "text": " bricks,",
+   "startMs": 61882,
+   "endMs": 62150
+  },
+  {
+   "text": " pressed",
+   "startMs": 62150,
+   "endMs": 62616
+  },
+  {
+   "text": " by",
+   "startMs": 62616,
+   "endMs": 62883
+  },
+  {
+   "text": " hand",
+   "startMs": 62883,
+   "endMs": 63150
+  },
+  {
+   "text": " by",
+   "startMs": 63150,
+   "endMs": 63418
+  },
+  {
+   "text": " the",
+   "startMs": 63418,
+   "endMs": 63685
+  },
+  {
+   "text": " villagers",
+   "startMs": 63685,
+   "endMs": 64349
+  },
+  {
+   "text": " themselves.",
+   "startMs": 64349,
+   "endMs": 65013
+  },
+  {
+   "text": " Then",
+   "startMs": 65513,
+   "endMs": 65781
+  },
+  {
+   "text": " the",
+   "startMs": 65781,
+   "endMs": 66049
+  },
+  {
+   "text": " trick:",
+   "startMs": 66049,
+   "endMs": 66316
+  },
+  {
+   "text": " a",
+   "startMs": 66662,
+   "endMs": 66934
+  },
+  {
+   "text": " second",
+   "startMs": 66934,
+   "endMs": 67406
+  },
+  {
+   "text": " roof,",
+   "startMs": 67406,
+   "endMs": 67678
+  },
+  {
+   "text": " floating",
+   "startMs": 67678,
+   "endMs": 68150
+  },
+  {
+   "text": " above",
+   "startMs": 68150,
+   "endMs": 68704
+  },
+  {
+   "text": " the",
+   "startMs": 68704,
+   "endMs": 68975
+  },
+  {
+   "text": " first.",
+   "startMs": 68975,
+   "endMs": 69247
+  },
+  {
+   "text": " Hot",
+   "startMs": 69747,
+   "endMs": 70044
+  },
+  {
+   "text": " air",
+   "startMs": 70044,
+   "endMs": 70342
+  },
+  {
+   "text": " rises",
+   "startMs": 70342,
+   "endMs": 70859
+  },
+  {
+   "text": " through",
+   "startMs": 70859,
+   "endMs": 71157
+  },
+  {
+   "text": " the",
+   "startMs": 71157,
+   "endMs": 71454
+  },
+  {
+   "text": " clay",
+   "startMs": 71454,
+   "endMs": 71752
+  },
+  {
+   "text": " ceiling,",
+   "startMs": 71752,
+   "endMs": 72270
+  },
+  {
+   "text": " and",
+   "startMs": 72452,
+   "endMs": 72630
+  },
+  {
+   "text": " the",
+   "startMs": 72630,
+   "endMs": 72808
+  },
+  {
+   "text": " breeze",
+   "startMs": 72808,
+   "endMs": 73039
+  },
+  {
+   "text": " carries",
+   "startMs": 73039,
+   "endMs": 73348
+  },
+  {
+   "text": " it",
+   "startMs": 73348,
+   "endMs": 73526
+  },
+  {
+   "text": " away.",
+   "startMs": 73526,
+   "endMs": 73836
+  },
+  {
+   "text": " The",
+   "startMs": 74478,
+   "endMs": 74713
+  },
+  {
+   "text": " sun",
+   "startMs": 74713,
+   "endMs": 74948
+  },
+  {
+   "text": " never",
+   "startMs": 74948,
+   "endMs": 75358
+  },
+  {
+   "text": " touches",
+   "startMs": 75358,
+   "endMs": 75767
+  },
+  {
+   "text": " the",
+   "startMs": 75767,
+   "endMs": 76002
+  },
+  {
+   "text": " classroom.",
+   "startMs": 76002,
+   "endMs": 76412
+  },
+  {
+   "text": " Up",
+   "startMs": 76912,
+   "endMs": 77152
+  },
+  {
+   "text": " to",
+   "startMs": 77152,
+   "endMs": 77392
+  },
+  {
+   "text": " six",
+   "startMs": 77392,
+   "endMs": 77631
+  },
+  {
+   "text": " degrees",
+   "startMs": 77631,
+   "endMs": 78049
+  },
+  {
+   "text": " cooler,",
+   "startMs": 78049,
+   "endMs": 78467
+  },
+  {
+   "text": " with",
+   "startMs": 78722,
+   "endMs": 78955
+  },
+  {
+   "text": " zero",
+   "startMs": 78955,
+   "endMs": 79360
+  },
+  {
+   "text": " electricity.",
+   "startMs": 79360,
+   "endMs": 80283
+  },
+  {
+   "text": " Built",
+   "startMs": 80783,
+   "endMs": 81022
+  },
+  {
+   "text": " by",
+   "startMs": 81022,
+   "endMs": 81260
+  },
+  {
+   "text": " the",
+   "startMs": 81260,
+   "endMs": 81499
+  },
+  {
+   "text": " village,",
+   "startMs": 81499,
+   "endMs": 81986
+  },
+  {
+   "text": " for",
+   "startMs": 81986,
+   "endMs": 82299
+  },
+  {
+   "text": " the",
+   "startMs": 82299,
+   "endMs": 82612
+  },
+  {
+   "text": " village,",
+   "startMs": 82612,
+   "endMs": 83249
+  },
+  {
+   "text": " Gando",
+   "startMs": 83428,
+   "endMs": 83782
+  },
+  {
+   "text": " Primary",
+   "startMs": 83782,
+   "endMs": 84287
+  },
+  {
+   "text": " School",
+   "startMs": 84287,
+   "endMs": 84490
+  },
+  {
+   "text": " opened",
+   "startMs": 84490,
+   "endMs": 84994
+  },
+  {
+   "text": " in",
+   "startMs": 84994,
+   "endMs": 85198
+  },
+  {
+   "text": " 2001.",
+   "startMs": 85198,
+   "endMs": 86161
+  },
+  {
+   "text": " Then",
+   "startMs": 86661,
+   "endMs": 86948
+  },
+  {
+   "text": " came",
+   "startMs": 86948,
+   "endMs": 87319
+  },
+  {
+   "text": " more",
+   "startMs": 87319,
+   "endMs": 87691
+  },
+  {
+   "text": " classrooms,",
+   "startMs": 87691,
+   "endMs": 88190
+  },
+  {
+   "text": " a",
+   "startMs": 88190,
+   "endMs": 88644
+  },
+  {
+   "text": " library,",
+   "startMs": 88644,
+   "endMs": 89771
+  },
+  {
+   "text": " a",
+   "startMs": 89942,
+   "endMs": 90129
+  },
+  {
+   "text": " secondary",
+   "startMs": 90129,
+   "endMs": 90731
+  },
+  {
+   "text": " school,",
+   "startMs": 90731,
+   "endMs": 90918
+  },
+  {
+   "text": " and",
+   "startMs": 91109,
+   "endMs": 91337
+  },
+  {
+   "text": " a",
+   "startMs": 91337,
+   "endMs": 91565
+  },
+  {
+   "text": " pavilion",
+   "startMs": 91565,
+   "endMs": 92130
+  },
+  {
+   "text": " in",
+   "startMs": 92130,
+   "endMs": 92358
+  },
+  {
+   "text": " London.",
+   "startMs": 92358,
+   "endMs": 92754
+  },
+  {
+   "text": " In",
+   "startMs": 93254,
+   "endMs": 93477
+  },
+  {
+   "text": " 2022,",
+   "startMs": 93477,
+   "endMs": 94532
+  },
+  {
+   "text": " he",
+   "startMs": 94532,
+   "endMs": 94755
+  },
+  {
+   "text": " became",
+   "startMs": 94755,
+   "endMs": 95209
+  },
+  {
+   "text": " the",
+   "startMs": 95209,
+   "endMs": 95431
+  },
+  {
+   "text": " first",
+   "startMs": 95431,
+   "endMs": 95654
+  },
+  {
+   "text": " African",
+   "startMs": 95654,
+   "endMs": 96206
+  },
+  {
+   "text": " to",
+   "startMs": 96206,
+   "endMs": 96429
+  },
+  {
+   "text": " win",
+   "startMs": 96429,
+   "endMs": 96651
+  },
+  {
+   "text": " the",
+   "startMs": 96651,
+   "endMs": 96874
+  },
+  {
+   "text": " Pritzker",
+   "startMs": 96874,
+   "endMs": 97262
+  },
+  {
+   "text": " Prize.",
+   "startMs": 97262,
+   "endMs": 97550
+  },
+  {
+   "text": " And",
+   "startMs": 98050,
+   "endMs": 98350
+  },
+  {
+   "text": " it",
+   "startMs": 98350,
+   "endMs": 98650
+  },
+  {
+   "text": " all",
+   "startMs": 98650,
+   "endMs": 98949
+  },
+  {
+   "text": " started",
+   "startMs": 98949,
+   "endMs": 99471
+  },
+  {
+   "text": " with",
+   "startMs": 99471,
+   "endMs": 99771
+  },
+  {
+   "text": " a",
+   "startMs": 99771,
+   "endMs": 100070
+  },
+  {
+   "text": " village",
+   "startMs": 100070,
+   "endMs": 100681
+  },
+  {
+   "text": " that",
+   "startMs": 100681,
+   "endMs": 100980
+  },
+  {
+   "text": " didn't",
+   "startMs": 100980,
+   "endMs": 101280
+  },
+  {
+   "text": " want",
+   "startMs": 101280,
+   "endMs": 101580
+  },
+  {
+   "text": " mud.",
+   "startMs": 101580,
+   "endMs": 101880
+  },
+  {
+   "text": " So,",
+   "startMs": 102380,
+   "endMs": 102757
+  },
+  {
+   "text": " mud",
+   "startMs": 103133,
+   "endMs": 103472
+  },
+  {
+   "text": " or",
+   "startMs": 103472,
+   "endMs": 103810
+  },
+  {
+   "text": " concrete?",
+   "startMs": 103810,
+   "endMs": 104500
+  },
+  {
+   "text": " Comment",
+   "startMs": 104904,
+   "endMs": 105421
+  },
+  {
+   "text": " one",
+   "startMs": 105421,
+   "endMs": 105806
+  },
+  {
+   "text": " word.",
+   "startMs": 105806,
+   "endMs": 106103
+  }
+ ],
+ "total": 107.103
+}

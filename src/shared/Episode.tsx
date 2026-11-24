@@ -171,6 +171,15 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits =
 
       {cover ? null : <Captions words={tl.words} t={t} font={SANS} tl={tl} beats={ep.beats} />}
       {ep.hook && !cover ? <HookTitle lines={ep.hook.lines} t={t} until={hookUntil} top={ep.hook.top} /> : null}
+      {!cover
+        ? (ep.prompts ?? []).map((p, i) => {
+            const bi2 = tl.beats.findIndex((b) => b.id === p.beat);
+            if (bi2 < 0) return null;
+            const b = tl.beats[bi2];
+            const until = p.untilBeat ? tl.beats.find((x) => x.id === p.untilBeat) : tl.beats[bi2 + 1];
+            return <CtaPill key={i} text={p.text} t={t} start={b.start + (p.from ?? 0) * (b.end - b.start)} end={until ? until.start + 0.2 : b.end + 1} />;
+          })
+        : null}
       {ep.cta && !cover ? <CtaPill text={ep.cta} t={t} start={tl.beats[tl.beats.length - 1].start + 0.3} /> : null}
       {cover && ep.cover ? <CoverTitle lines={ep.cover.lines} sub={ep.cover.sub} top={ep.cover.top} channel={`${CHANNEL_NAME} · EP ${String(ep.number).padStart(2, "0")}`} /> : null}
 

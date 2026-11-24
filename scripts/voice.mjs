@@ -102,7 +102,7 @@ const buildTimeline = () => {
       words.push({ text: words.length ? " " + w.text : w.text, startMs: Math.round((t + w.start) * 1000), endMs: Math.round((t + Math.min(w.end, dur)) * 1000) }),
     );
     beats.push({ id: b.id, start: +t.toFixed(3), end: +(t + dur).toFixed(3), audio: `${ep}/audio/${b.id}.wav` });
-    t += dur + GAP;
+    t += dur + GAP + (b.pause ?? 0);
   }
   const prev = fs.existsSync(timelinePath(ep)) ? readTimeline(ep) : {};
   const tl = { beats, words, total: +(t - GAP + TAIL).toFixed(3), ...(prev.music ? { music: prev.music } : {}) };

@@ -4,6 +4,7 @@ import { EP01 } from "./ep01";
 import { EP02 } from "./ep02";
 import { EP03 } from "./ep03";
 import { EP04 } from "./ep04";
+import { EP05 } from "./ep05";
 // @new-episode-import
 
 export const EPISODES: EpisodeDef[] = [
@@ -11,5 +12,6 @@ export const EPISODES: EpisodeDef[] = [
   EP02,
   EP03,
   EP04,
+  EP05,
   // @new-episode-entry
 ];

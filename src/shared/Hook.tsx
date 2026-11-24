@@ -39,9 +39,10 @@ export const HookTitle: React.FC<{ lines: string[]; t: number; until: number; to
 };
 
 /** Comment prompt over the last beat. */
-export const CtaPill: React.FC<{ text: string; t: number; start: number }> = ({ text, t, start }) => {
-  if (t < start) return null;
-  const k = interpolate(t, [start, start + 0.4], [0, 1], { ...clamp, easing: Easing.bezier(0.2, 1.3, 0.4, 1) });
+export const CtaPill: React.FC<{ text: string; t: number; start: number; end?: number }> = ({ text, t, start, end }) => {
+  if (t < start || (end !== undefined && t > end)) return null;
+  const out = end === undefined ? 1 : interpolate(t, [end - 0.3, end], [1, 0], clamp);
+  const k = interpolate(t, [start, start + 0.4], [0, 1], { ...clamp, easing: Easing.bezier(0.2, 1.3, 0.4, 1) }) * out;
   return (
     <div style={{ position: "absolute", left: 40, right: 40, top: 1290, display: "flex", justifyContent: "center", opacity: k, translate: `0 ${(1 - k) * 30}px` }}>
       <div style={{ background: C.paper, border: `3px solid ${C.ink}`, borderRadius: 999, padding: "14px 30px", display: "flex", gap: 16, alignItems: "center", boxShadow: "0 12px 30px rgba(0,0,0,0.18)" }}>

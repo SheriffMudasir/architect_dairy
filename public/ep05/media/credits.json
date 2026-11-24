@@ -1,0 +1,60 @@
+[
+  {
+    "name": "serpentine",
+    "file": "ep05/media/serpentine.jpg",
+    "provider": "openverse",
+    "title": "Serpentine Pavilion 2017 / VI",
+    "creator": "Images George Rex",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "source": "https://www.flickr.com/photos/36692623@N06/35240278604"
+  },
+  {
+    "name": "serpentine2",
+    "file": "ep05/media/serpentine2.jpg",
+    "provider": "openverse",
+    "title": "Serpentine Pavilion 2017 / I",
+    "creator": "Images George Rex",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "source": "https://www.flickr.com/photos/36692623@N06/35866153461"
+  },
+  {
+    "name": "portrait-kere",
+    "file": "ep05/media/portrait-kere.jpg",
+    "provider": "wikimedia",
+    "title": "Francis Kere, 2019",
+    "creator": "Astrid Eckert",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/w/index.php?curid=90959681"
+  },
+  {
+    "name": "gando-school",
+    "file": "ep05/media/gando-school.jpg",
+    "provider": "user",
+    "title": "Gando Primary School",
+    "creator": "Kéré Architecture",
+    "license": "used with credit",
+    "source": ""
+  },
+  {
+    "name": "gando-donkeys",
+    "file": "ep05/media/gando-donkeys.jpg",
+    "provider": "user",
+    "title": "Gando school grounds",
+    "creator": "Kéré Architecture",
+    "license": "used with credit",
+    "source": ""
+  },
+  {
+    "name": "kere-young",
+    "file": "ep05/media/kere-young.jpg",
+    "provider": "openverse",
+    "title": "Diebedo Francis Kere - architect portrait",
+    "creator": "準建築人手札網站 Forgemind ArchiMedia",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/44343967@N00/16134005081"
+  }
+]

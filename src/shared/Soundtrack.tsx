@@ -41,6 +41,11 @@ export const Soundtrack: React.FC<{ tl: Timeline; ep: EpisodeScript }> = ({ tl, 
       if (ins.kind === "photo" || ins.kind === "video") return [{ src: "sfx/whoosh.wav", at: at - 0.1, volume: 0.12 }];
       return [];
     }),
+    // a tick when each mid-video comment prompt appears
+    ...(ep.prompts ?? []).flatMap((p) => {
+      const b = beat(p.beat);
+      return b ? [{ src: "sfx/tick.wav", at: b.start + (p.from ?? 0) * (b.end - b.start), volume: 0.5 }] : [];
+    }),
     ...ep.sfx
       .filter((c) => beat(c.beat))
       .map((c) => ({ src: `sfx/${c.sfx}.wav`, at: beat(c.beat)!.start + (c.offset ?? 0), volume: c.volume ?? 0.3 })),

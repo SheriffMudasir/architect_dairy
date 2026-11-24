@@ -16,6 +16,8 @@ export type Beat = {
   year?: number;
   /** Caption words to highlight in the accent colour (case-insensitive, punctuation ignored). */
   em?: string[];
+  /** Extra silence after this beat, in seconds (e.g. to let viewers type a guess). */
+  pause?: number;
 };
 
 /** Timing of an insert inside a beat: fractions of the beat's duration. `untilBeat` lets it run into a later beat. */
@@ -85,6 +87,9 @@ export type EpisodeScript = {
   hook?: { lines: string[]; until?: number; /** px from the top (default 300) — move it off faces */ top?: number };
   /** Comment prompt shown over the last beat, e.g. "Which building should we break down next?" */
   cta?: string;
+  /** Mid-video comment prompts (e.g. "Comment your guess 👇" before a reveal). Shown from `from`
+   *  (fraction of the beat) until the next beat starts, or until `untilBeat` starts. */
+  prompts?: { beat: string; text: string; from?: number; untilBeat?: string }[];
   /** Cover image (npm run cover): big title over the frame at `beat` (+offset seconds). */
   cover?: { lines: string[]; sub?: string; beat: string; offset?: number; /** px from the top of the title block (default 260) — move it off faces */ top?: number };
   /** End card with media credits (default true). Set false for loop-friendly shorts — each photo
