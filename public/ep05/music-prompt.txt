@@ -1,0 +1,19 @@
+provider: lyria
+
+Instrumental underscore for a 108-second short architecture documentary: "First African Pritzker Winner". No vocals. It sits under a spoken voiceover, so keep it sparse, mid-low register, nothing busy in the speech frequencies.
+
+Instruments: balafon, kora, soft hand percussion, warm acoustic bass, light strings. Hopeful West African documentary score, gentle and warm, never busy. Key: G major. Tempo around 100 BPM.
+
+Structure (timestamps):
+- 0s–12s: bright, curious opening: a balafon motif over soft percussion.
+- 12s–35s: tender and nostalgic, sparse kora.
+- 35s–57s: tension builds: lower register, a ticking pulse, holding on the question.
+- 59s–80s: the reveal: rhythmic, inventive, building with each step.
+- 81s–107s: uplifting and proud, full warm ensemble, resolving softly at the end.
+
+--- model notes ---
+[[A0]]
+[[B1]]
+[[C2]]
+[[D3]]
+[[E4]]
