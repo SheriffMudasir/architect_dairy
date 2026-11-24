@@ -1,6 +1,6 @@
 ---
 name: architect-diary-episode
-description: Produce an Architect Diary episode end to end — a 75–100 s vertical (1080×1920) architecture documentary with isometric low-poly models, word-timed captions, a designed Gemini narrator voice, a Lyria score and SFX. Use when the user asks for a new episode, a video about a building/architect/unbuilt project, or to revise, re-voice, re-score or re-render an existing episode in this repo.
+description: Produce an Architect Diary episode end to end — a 90–120 s vertical (1080×1920) architecture documentary with isometric low-poly models, word-timed captions, a designed Gemini narrator voice, a Lyria score and SFX. Use when the user asks for a new episode, a video about a building/architect/unbuilt project, or to revise, re-voice, re-score or re-render an existing episode in this repo.
 ---
 
 # Architect Diary — episode workflow
@@ -107,35 +107,65 @@ npm run media -- epNN get <openverse-id> <short-name>       # -> public/epNN/med
 
 ## 2c. Retention rules (learned from our own Instagram analytics — non-negotiable)
 
-Ep01 (1:42): 1,559 views, avg watch 31 s. Ep02 (2:02): 548 views, **skip rate 68%**, retention
-fell from 100% to ~25% in the first 5 s, then stayed flat (~15%) to the end. Ep02 opened on blank
-paper + small headline (0.5 s silent lead, photo wiping in). Lesson: **content holds people; the
-first 2 seconds lose them.** Audience: ~86% men, 18–34, India 27–30% then US/Australia.
+| Ep | Length | Views | Avg watch | Notes |
+|---|---|---|---|---|
+| 01 | 1:42 | 1,559 | 31 s | explainer |
+| 02 | 2:02 | 548 | — | skip rate 68%; 100% → ~25% in 5 s (opened on blank paper) |
+| 04 | 2:00 | 3,626 | **1m 8s (~57%)** | story/legal fight; 36 shares, 27 saves, 3 reposts, **1 comment**; 12 profile visits → 6 follows; 88% from Reels tab |
 
-- **Length 45–60 s**: 9–11 beats, ~130–160 words. Longer only for an exceptional story.
-- **Frame 0 = the most striking moving shot** (AI clip or dramatic 3D) — never blank paper, never a
-  fade-in. The first beat's opening insert automatically covers frame 0 and skips its fade/wipe.
-- **`hook: { lines: [2 short lines], until: ~2.8 }`** — big on-screen hook text from frame 0 (many watch
-  muted). Narration starts at 0.1 s (LEAD) with a whoosh+thud hit at frame 0 (automatic with `hook`).
-- First spoken line states the twist; re-hook every ~10 s ("But…", "Here's the catch…").
-- **Loop ending**: the last line should flow back into the first; `endCard: false` (photo credit lines
-  stay on screen; full credits go in the description).
-- **`cta`**: a comment question over the last beat ("Which building should we break down next?").
-- **Cover**: `cover: { lines, sub, beat, offset }` → `npm run cover -- epNN` → `out/epNN-cover.png`;
-  tell the user to upload it as the Reel cover (a real photo + 2-line title works best).
-- Topics that fit this audience: money, scandals, rivalries, "never built", record-breakers, Asia.
-- After posting, ask the user for Reel insights (skip rate, watch-time graph, avg watch time) and
-  compare against the table above before planning the next episode.
+Ep04 retention: 100% → ~70% by 3 s → ~55% by 15 s, then **flat ~50% to 1:40**, 28% at 2:00.
+Lessons: **story format (people + conflict + money + twist) holds viewers; length is not the
+problem; the first 15 seconds are.** Audience (ep04): 80% men; ages 35–44 24%, 25–34 21%, 45–54 20%,
+55+ 28%, under 25 only 7%; US 13.5%, UK 12.6%, India 6.6%, UAE 6.5%, Nigeria 5% — older,
+professional, shares more than it comments.
+
+**Length**: 90–120 s for story episodes (16–18 beats, ~250–280 words); 45–60 s only for a single
+quick fact. Never pad — every beat must move the story.
+
+**The 15-second rule** (check every script against it before voicing):
+- Beat 1 (≤ 5 s) states the hook *and* the twist; beat 2 (≤ 5 s) states the stakes. By ~10 s the
+  viewer must know who, what, and why it matters.
+- Something new on screen every 2–3 s until 15 s (photo → card → stamp → 3D move). No slow
+  animation that holds one image for > 4 s in the first 15 s (ep04's 6.6 s letters sign = the drop).
+- Frame 0 = the most striking image, a **face** when the story has a person, never blank paper or a
+  fade-in. `hook: { lines, until: ~3, top }` — big on-screen text from frame 0; set `top` so it
+  sits **below the face** (≈ 980–1000 for a portrait). Narration starts at 0.1 s with a hit.
+- Re-hook every ~10–15 s ("But…", "Then…", a new date stamp).
+
+**Comments** (our weakest metric — plan them, don't hope for them):
+- `prompts`: one mid-video guess before a reveal ("Comment your guess before the reveal") with
+  `pause: ~2` seconds on that beat — people comment before they know the answer.
+- `cta`: an easy, one-word or binary question at the end ("Mud or concrete? Comment one word").
+  Avoid abstract questions; opinion/experience questions suit this older audience.
+- Sometimes a share prompt instead ("Send this to an architect who'd disagree") — sharing is
+  what this audience already does.
+- Give the user a pinned comment to post ("Did you guess the roof? 👀").
+
+**Loop + cover**:
+- Loop ending: the last beat returns to the opening image/face; `endCard: false`.
+- `cover: { lines, beat, offset, style: "hook" }` reuses the hook title exactly as it appears at
+  frame 0 (the user prefers this); otherwise `lines/sub/top`. Keep titles off faces.
+  Remind the user to upload `out/epNN-cover.png` as the Reel cover (Instagram otherwise picks a
+  mid-video frame).
+
+**Topics** that fit: people + conflict + money + a twist (estates, lawsuits, rivalries, underdogs,
+"never built", disasters). Lean into where the viewers are: UK, US, the Gulf, India, Africa.
+
+After posting, ask for Reel insights (retention graph, avg watch time, shares/saves/comments,
+audience) and add a row to the table above.
 
 ## 3. Script (`src/epNN/script.ts`)
 
-Story shape that works (ep01): **hook with the twist** → competition/commission →
+Story shape that works (ep04/ep05): **face + hook with the twist** → stakes in one line → origin
+→ the conflict (who wanted what) → [comment prompt before the reveal] → the reveal/turn → the
+outcome with a hard number → an ironic or emotional coda → loop back to the face + one-word question.
+Older shape (ep01): **hook with the twist** → competition/commission →
 the design (model rises) → the friction (site, critics) → the hard number (cost bar)
 → who's to blame → the break (scrapped/changed) → the aftermath → the replacement
 → an emotional beat → an ironic coda → outro line that mirrors the hook.
 
 Rules:
-- 9–11 beats, ~130–160 words, 45–60 s (see 2c). Each beat = 1–2 short sentences.
+- Story episodes: 16–18 beats, ~250–280 words, 90–120 s (see 2c, incl. the 15-second rule). Each beat = 1–2 short sentences.
 - `text` is spoken **verbatim**. Never put stage directions, brackets or "say this
   warmly" in it — Gemini TTS reads them aloud (ep01 lost a whole voice pass to this).
   Delivery style belongs to the voice design in `src/channel.ts`.
