@@ -1,0 +1,1425 @@
+{
+ "beats": [
+  {
+   "id": "hook",
+   "start": 0.1,
+   "end": 4.626,
+   "audio": "ep06/audio/hook.wav"
+  },
+  {
+   "id": "why",
+   "start": 5.126,
+   "end": 7.807,
+   "audio": "ep06/audio/why.wav"
+  },
+  {
+   "id": "stakes",
+   "start": 8.307,
+   "end": 14.241,
+   "audio": "ep06/audio/stakes.wav"
+  },
+  {
+   "id": "weimar",
+   "start": 14.741,
+   "end": 23.767,
+   "audio": "ep06/audio/weimar.wav"
+  },
+  {
+   "id": "idea",
+   "start": 24.267,
+   "end": 29.704,
+   "audio": "ep06/audio/idea.wav"
+  },
+  {
+   "id": "teachers",
+   "start": 30.204,
+   "end": 37.563,
+   "audio": "ep06/audio/teachers.wav"
+  },
+  {
+   "id": "test",
+   "start": 38.063,
+   "end": 43.849,
+   "audio": "ep06/audio/test.wav"
+  },
+  {
+   "id": "reveal",
+   "start": 46.549,
+   "end": 52.496,
+   "audio": "ep06/audio/reveal.wav"
+  },
+  {
+   "id": "pushback",
+   "start": 52.996,
+   "end": 60.234,
+   "audio": "ep06/audio/pushback.wav"
+  },
+  {
+   "id": "dessau",
+   "start": 60.734,
+   "end": 66.51,
+   "audio": "ep06/audio/dessau.wav"
+  },
+  {
+   "id": "chair",
+   "start": 67.01,
+   "end": 73.605,
+   "audio": "ep06/audio/chair.wav"
+  },
+  {
+   "id": "women",
+   "start": 74.105,
+   "end": 78.302,
+   "audio": "ep06/audio/women.wav"
+  },
+  {
+   "id": "nazis",
+   "start": 78.802,
+   "end": 86.902,
+   "audio": "ep06/audio/nazis.wav"
+  },
+  {
+   "id": "raid",
+   "start": 87.402,
+   "end": 94.193,
+   "audio": "ep06/audio/raid.wav"
+  },
+  {
+   "id": "twist",
+   "start": 94.693,
+   "end": 100.405,
+   "audio": "ep06/audio/twist.wav"
+  },
+  {
+   "id": "spread",
+   "start": 100.905,
+   "end": 108.114,
+   "audio": "ep06/audio/spread.wav"
+  },
+  {
+   "id": "payoff",
+   "start": 108.614,
+   "end": 117.026,
+   "audio": "ep06/audio/payoff.wav"
+  },
+  {
+   "id": "question",
+   "start": 117.526,
+   "end": 122.943,
+   "audio": "ep06/audio/question.wav"
+  }
+ ],
+ "words": [
+  {
+   "text": "In",
+   "startMs": 100,
+   "endMs": 392
+  },
+  {
+   "text": " 1933,",
+   "startMs": 392,
+   "endMs": 1775
+  },
+  {
+   "text": " the",
+   "startMs": 2044,
+   "endMs": 2338
+  },
+  {
+   "text": " Nazis",
+   "startMs": 2338,
+   "endMs": 2850
+  },
+  {
+   "text": " forced",
+   "startMs": 2850,
+   "endMs": 3362
+  },
+  {
+   "text": " this",
+   "startMs": 3362,
+   "endMs": 3656
+  },
+  {
+   "text": " school",
+   "startMs": 3656,
+   "endMs": 3951
+  },
+  {
+   "text": " to",
+   "startMs": 3951,
+   "endMs": 4245
+  },
+  {
+   "text": " close.",
+   "startMs": 4245,
+   "endMs": 4626
+  },
+  {
+   "text": " So",
+   "startMs": 5126,
+   "endMs": 5416
+  },
+  {
+   "text": " why",
+   "startMs": 5416,
+   "endMs": 5705
+  },
+  {
+   "text": " is",
+   "startMs": 5705,
+   "endMs": 5995
+  },
+  {
+   "text": " it",
+   "startMs": 5995,
+   "endMs": 6284
+  },
+  {
+   "text": " everywhere",
+   "startMs": 6284,
+   "endMs": 7303
+  },
+  {
+   "text": " today?",
+   "startMs": 7303,
+   "endMs": 7807
+  },
+  {
+   "text": " It",
+   "startMs": 8307,
+   "endMs": 8708
+  },
+  {
+   "text": " lasted",
+   "startMs": 8708,
+   "endMs": 9406
+  },
+  {
+   "text": " fourteen",
+   "startMs": 9406,
+   "endMs": 10104
+  },
+  {
+   "text": " years.",
+   "startMs": 10104,
+   "endMs": 10505
+  },
+  {
+   "text": " But",
+   "startMs": 10896,
+   "endMs": 11115
+  },
+  {
+   "text": " you've",
+   "startMs": 11115,
+   "endMs": 11399
+  },
+  {
+   "text": " sat",
+   "startMs": 11399,
+   "endMs": 11619
+  },
+  {
+   "text": " on",
+   "startMs": 11619,
+   "endMs": 11838
+  },
+  {
+   "text": " its",
+   "startMs": 11838,
+   "endMs": 12057
+  },
+  {
+   "text": " chairs",
+   "startMs": 12057,
+   "endMs": 12276
+  },
+  {
+   "text": " and",
+   "startMs": 12276,
+   "endMs": 12495
+  },
+  {
+   "text": " lived",
+   "startMs": 12495,
+   "endMs": 12877
+  },
+  {
+   "text": " in",
+   "startMs": 12877,
+   "endMs": 13096
+  },
+  {
+   "text": " buildings",
+   "startMs": 13096,
+   "endMs": 13478
+  },
+  {
+   "text": " it",
+   "startMs": 13478,
+   "endMs": 13697
+  },
+  {
+   "text": " inspired.",
+   "startMs": 13697,
+   "endMs": 14241
+  },
+  {
+   "text": " Weimar,",
+   "startMs": 14741,
+   "endMs": 15255
+  },
+  {
+   "text": " 1919.",
+   "startMs": 15693,
+   "endMs": 16705
+  },
+  {
+   "text": " Germany",
+   "startMs": 17485,
+   "endMs": 18194
+  },
+  {
+   "text": " has",
+   "startMs": 18194,
+   "endMs": 18479
+  },
+  {
+   "text": " just",
+   "startMs": 18479,
+   "endMs": 18765
+  },
+  {
+   "text": " lost",
+   "startMs": 18765,
+   "endMs": 19051
+  },
+  {
+   "text": " a",
+   "startMs": 19051,
+   "endMs": 19336
+  },
+  {
+   "text": " war.",
+   "startMs": 19336,
+   "endMs": 19622
+  },
+  {
+   "text": " Walter",
+   "startMs": 20050,
+   "endMs": 20509
+  },
+  {
+   "text": " Gropius",
+   "startMs": 20509,
+   "endMs": 20968
+  },
+  {
+   "text": " opens",
+   "startMs": 20968,
+   "endMs": 21428
+  },
+  {
+   "text": " a",
+   "startMs": 21428,
+   "endMs": 21692
+  },
+  {
+   "text": " new",
+   "startMs": 21692,
+   "endMs": 21955
+  },
+  {
+   "text": " school:",
+   "startMs": 21955,
+   "endMs": 22219
+  },
+  {
+   "text": " the",
+   "startMs": 22968,
+   "endMs": 23260
+  },
+  {
+   "text": " Bauhaus.",
+   "startMs": 23260,
+   "endMs": 23767
+  },
+  {
+   "text": " His",
+   "startMs": 24267,
+   "endMs": 24576
+  },
+  {
+   "text": " idea:",
+   "startMs": 24576,
+   "endMs": 25114
+  },
+  {
+   "text": " artists",
+   "startMs": 25406,
+   "endMs": 26050
+  },
+  {
+   "text": " and",
+   "startMs": 26050,
+   "endMs": 26420
+  },
+  {
+   "text": " craftsmen",
+   "startMs": 26420,
+   "endMs": 27063
+  },
+  {
+   "text": " are",
+   "startMs": 27063,
+   "endMs": 27543
+  },
+  {
+   "text": " equals,",
+   "startMs": 27543,
+   "endMs": 28186
+  },
+  {
+   "text": " all",
+   "startMs": 28463,
+   "endMs": 28710
+  },
+  {
+   "text": " under",
+   "startMs": 28710,
+   "endMs": 29138
+  },
+  {
+   "text": " one",
+   "startMs": 29138,
+   "endMs": 29458
+  },
+  {
+   "text": " roof.",
+   "startMs": 29458,
+   "endMs": 29704
+  },
+  {
+   "text": " His",
+   "startMs": 30204,
+   "endMs": 30578
+  },
+  {
+   "text": " teachers",
+   "startMs": 30578,
+   "endMs": 31228
+  },
+  {
+   "text": " were",
+   "startMs": 31228,
+   "endMs": 31713
+  },
+  {
+   "text": " wild:",
+   "startMs": 31713,
+   "endMs": 32087
+  },
+  {
+   "text": " Kandinsky,",
+   "startMs": 32354,
+   "endMs": 33075
+  },
+  {
+   "text": " Paul",
+   "startMs": 33075,
+   "endMs": 33365
+  },
+  {
+   "text": " Klee,",
+   "startMs": 33365,
+   "endMs": 33656
+  },
+  {
+   "text": " and",
+   "startMs": 33656,
+   "endMs": 33947
+  },
+  {
+   "text": " a",
+   "startMs": 33947,
+   "endMs": 34237
+  },
+  {
+   "text": " mystic",
+   "startMs": 34237,
+   "endMs": 34743
+  },
+  {
+   "text": " who",
+   "startMs": 34743,
+   "endMs": 35034
+  },
+  {
+   "text": " began",
+   "startMs": 35034,
+   "endMs": 35540
+  },
+  {
+   "text": " class",
+   "startMs": 35540,
+   "endMs": 35830
+  },
+  {
+   "text": " with",
+   "startMs": 35830,
+   "endMs": 36121
+  },
+  {
+   "text": " breathing",
+   "startMs": 36121,
+   "endMs": 36627
+  },
+  {
+   "text": " exercises.",
+   "startMs": 36627,
+   "endMs": 37563
+  },
+  {
+   "text": " Kandinsky",
+   "startMs": 38063,
+   "endMs": 38791
+  },
+  {
+   "text": " even",
+   "startMs": 38791,
+   "endMs": 39302
+  },
+  {
+   "text": " gave",
+   "startMs": 39302,
+   "endMs": 39682
+  },
+  {
+   "text": " a",
+   "startMs": 39682,
+   "endMs": 39976
+  },
+  {
+   "text": " test:",
+   "startMs": 39976,
+   "endMs": 40269
+  },
+  {
+   "text": " which",
+   "startMs": 40477,
+   "endMs": 40745
+  },
+  {
+   "text": " colour",
+   "startMs": 40745,
+   "endMs": 41211
+  },
+  {
+   "text": " goes",
+   "startMs": 41211,
+   "endMs": 41479
+  },
+  {
+   "text": " with",
+   "startMs": 41479,
+   "endMs": 41747
+  },
+  {
+   "text": " each",
+   "startMs": 41747,
+   "endMs": 42015
+  },
+  {
+   "text": " shape?",
+   "startMs": 42015,
+   "endMs": 42363
+  },
+  {
+   "text": " Comment",
+   "startMs": 42930,
+   "endMs": 43287
+  },
+  {
+   "text": " your",
+   "startMs": 43287,
+   "endMs": 43492
+  },
+  {
+   "text": " answer.",
+   "startMs": 43492,
+   "endMs": 43849
+  },
+  {
+   "text": " His",
+   "startMs": 46549,
+   "endMs": 46828
+  },
+  {
+   "text": " answer:",
+   "startMs": 46828,
+   "endMs": 47313
+  },
+  {
+   "text": " yellow",
+   "startMs": 47895,
+   "endMs": 48364
+  },
+  {
+   "text": " triangle,",
+   "startMs": 48364,
+   "endMs": 48714
+  },
+  {
+   "text": " red",
+   "startMs": 48908,
+   "endMs": 49219
+  },
+  {
+   "text": " square,",
+   "startMs": 49219,
+   "endMs": 49623
+  },
+  {
+   "text": " blue",
+   "startMs": 49938,
+   "endMs": 50216
+  },
+  {
+   "text": " circle.",
+   "startMs": 50216,
+   "endMs": 50576
+  },
+  {
+   "text": " It's",
+   "startMs": 51063,
+   "endMs": 51313
+  },
+  {
+   "text": " still",
+   "startMs": 51313,
+   "endMs": 51562
+  },
+  {
+   "text": " the",
+   "startMs": 51562,
+   "endMs": 51812
+  },
+  {
+   "text": " Bauhaus",
+   "startMs": 51812,
+   "endMs": 52246
+  },
+  {
+   "text": " look.",
+   "startMs": 52246,
+   "endMs": 52496
+  },
+  {
+   "text": " But",
+   "startMs": 52996,
+   "endMs": 53250
+  },
+  {
+   "text": " conservatives",
+   "startMs": 53250,
+   "endMs": 54260
+  },
+  {
+   "text": " hated",
+   "startMs": 54260,
+   "endMs": 54703
+  },
+  {
+   "text": " it.",
+   "startMs": 54703,
+   "endMs": 54958
+  },
+  {
+   "text": " In",
+   "startMs": 55294,
+   "endMs": 55526
+  },
+  {
+   "text": " 1924,",
+   "startMs": 55526,
+   "endMs": 56628
+  },
+  {
+   "text": " the",
+   "startMs": 56628,
+   "endMs": 56869
+  },
+  {
+   "text": " government",
+   "startMs": 56869,
+   "endMs": 57469
+  },
+  {
+   "text": " cut",
+   "startMs": 57469,
+   "endMs": 57711
+  },
+  {
+   "text": " its",
+   "startMs": 57711,
+   "endMs": 57952
+  },
+  {
+   "text": " budget",
+   "startMs": 57952,
+   "endMs": 58373
+  },
+  {
+   "text": " in",
+   "startMs": 58373,
+   "endMs": 58615
+  },
+  {
+   "text": " half,",
+   "startMs": 58615,
+   "endMs": 58856
+  },
+  {
+   "text": " and",
+   "startMs": 59041,
+   "endMs": 59231
+  },
+  {
+   "text": " the",
+   "startMs": 59231,
+   "endMs": 59420
+  },
+  {
+   "text": " school",
+   "startMs": 59420,
+   "endMs": 59609
+  },
+  {
+   "text": " had",
+   "startMs": 59609,
+   "endMs": 59799
+  },
+  {
+   "text": " to",
+   "startMs": 59799,
+   "endMs": 59988
+  },
+  {
+   "text": " move.",
+   "startMs": 59988,
+   "endMs": 60234
+  },
+  {
+   "text": " In",
+   "startMs": 60734,
+   "endMs": 61038
+  },
+  {
+   "text": " Dessau,",
+   "startMs": 61038,
+   "endMs": 61567
+  },
+  {
+   "text": " Gropius",
+   "startMs": 61567,
+   "endMs": 62096
+  },
+  {
+   "text": " built",
+   "startMs": 62096,
+   "endMs": 62400
+  },
+  {
+   "text": " it",
+   "startMs": 62400,
+   "endMs": 62704
+  },
+  {
+   "text": " a",
+   "startMs": 62704,
+   "endMs": 63009
+  },
+  {
+   "text": " new",
+   "startMs": 63009,
+   "endMs": 63313
+  },
+  {
+   "text": " home:",
+   "startMs": 63313,
+   "endMs": 63707
+  },
+  {
+   "text": " walls",
+   "startMs": 63707,
+   "endMs": 64011
+  },
+  {
+   "text": " of",
+   "startMs": 64011,
+   "endMs": 64315
+  },
+  {
+   "text": " glass,",
+   "startMs": 64315,
+   "endMs": 64619
+  },
+  {
+   "text": " a",
+   "startMs": 64619,
+   "endMs": 64923
+  },
+  {
+   "text": " factory",
+   "startMs": 64923,
+   "endMs": 65677
+  },
+  {
+   "text": " for",
+   "startMs": 65677,
+   "endMs": 65981
+  },
+  {
+   "text": " ideas.",
+   "startMs": 65981,
+   "endMs": 66510
+  },
+  {
+   "text": " There,",
+   "startMs": 67010,
+   "endMs": 67390
+  },
+  {
+   "text": " Marcel",
+   "startMs": 67390,
+   "endMs": 67900
+  },
+  {
+   "text": " Breuer",
+   "startMs": 67900,
+   "endMs": 68193
+  },
+  {
+   "text": " studied",
+   "startMs": 68193,
+   "endMs": 68702
+  },
+  {
+   "text": " his",
+   "startMs": 68702,
+   "endMs": 68995
+  },
+  {
+   "text": " bicycle's",
+   "startMs": 68995,
+   "endMs": 69722
+  },
+  {
+   "text": " steel",
+   "startMs": 69722,
+   "endMs": 70015
+  },
+  {
+   "text": " handlebars,",
+   "startMs": 70015,
+   "endMs": 70741
+  },
+  {
+   "text": " and",
+   "startMs": 70741,
+   "endMs": 71034
+  },
+  {
+   "text": " bent",
+   "startMs": 71034,
+   "endMs": 71327
+  },
+  {
+   "text": " the",
+   "startMs": 71327,
+   "endMs": 71620
+  },
+  {
+   "text": " same",
+   "startMs": 71620,
+   "endMs": 71999
+  },
+  {
+   "text": " tubes",
+   "startMs": 71999,
+   "endMs": 72509
+  },
+  {
+   "text": " into",
+   "startMs": 72509,
+   "endMs": 73019
+  },
+  {
+   "text": " a",
+   "startMs": 73019,
+   "endMs": 73312
+  },
+  {
+   "text": " chair.",
+   "startMs": 73312,
+   "endMs": 73605
+  },
+  {
+   "text": " Most",
+   "startMs": 74105,
+   "endMs": 74273
+  },
+  {
+   "text": " of",
+   "startMs": 74273,
+   "endMs": 74441
+  },
+  {
+   "text": " its",
+   "startMs": 74441,
+   "endMs": 74610
+  },
+  {
+   "text": " women",
+   "startMs": 74610,
+   "endMs": 74903
+  },
+  {
+   "text": " were",
+   "startMs": 74903,
+   "endMs": 75121
+  },
+  {
+   "text": " pushed",
+   "startMs": 75121,
+   "endMs": 75414
+  },
+  {
+   "text": " into",
+   "startMs": 75414,
+   "endMs": 75707
+  },
+  {
+   "text": " weaving,",
+   "startMs": 75707,
+   "endMs": 76000
+  },
+  {
+   "text": " and",
+   "startMs": 76199,
+   "endMs": 76396
+  },
+  {
+   "text": " turned",
+   "startMs": 76396,
+   "endMs": 76738
+  },
+  {
+   "text": " it",
+   "startMs": 76738,
+   "endMs": 76934
+  },
+  {
+   "text": " into",
+   "startMs": 76934,
+   "endMs": 77276
+  },
+  {
+   "text": " the",
+   "startMs": 77276,
+   "endMs": 77473
+  },
+  {
+   "text": " school's",
+   "startMs": 77473,
+   "endMs": 77669
+  },
+  {
+   "text": " moneymaker.",
+   "startMs": 77669,
+   "endMs": 78302
+  },
+  {
+   "text": " In",
+   "startMs": 78802,
+   "endMs": 79075
+  },
+  {
+   "text": " 1932,",
+   "startMs": 79075,
+   "endMs": 80370
+  },
+  {
+   "text": " the",
+   "startMs": 80370,
+   "endMs": 80652
+  },
+  {
+   "text": " Nazis",
+   "startMs": 80652,
+   "endMs": 81144
+  },
+  {
+   "text": " took",
+   "startMs": 81144,
+   "endMs": 81427
+  },
+  {
+   "text": " control",
+   "startMs": 81427,
+   "endMs": 81918
+  },
+  {
+   "text": " of",
+   "startMs": 81918,
+   "endMs": 82201
+  },
+  {
+   "text": " Dessau",
+   "startMs": 82201,
+   "endMs": 82693
+  },
+  {
+   "text": " and",
+   "startMs": 82693,
+   "endMs": 82975
+  },
+  {
+   "text": " closed",
+   "startMs": 82975,
+   "endMs": 83467
+  },
+  {
+   "text": " it.",
+   "startMs": 83467,
+   "endMs": 83750
+  },
+  {
+   "text": " The",
+   "startMs": 84041,
+   "endMs": 84280
+  },
+  {
+   "text": " school",
+   "startMs": 84280,
+   "endMs": 84520
+  },
+  {
+   "text": " fled",
+   "startMs": 84520,
+   "endMs": 84759
+  },
+  {
+   "text": " to",
+   "startMs": 84759,
+   "endMs": 84998
+  },
+  {
+   "text": " an",
+   "startMs": 84998,
+   "endMs": 85237
+  },
+  {
+   "text": " empty",
+   "startMs": 85237,
+   "endMs": 85653
+  },
+  {
+   "text": " factory",
+   "startMs": 85653,
+   "endMs": 86247
+  },
+  {
+   "text": " in",
+   "startMs": 86247,
+   "endMs": 86486
+  },
+  {
+   "text": " Berlin.",
+   "startMs": 86486,
+   "endMs": 86902
+  },
+  {
+   "text": " April",
+   "startMs": 87402,
+   "endMs": 87833
+  },
+  {
+   "text": " 1933:",
+   "startMs": 87833,
+   "endMs": 89008
+  },
+  {
+   "text": " police",
+   "startMs": 89514,
+   "endMs": 89897
+  },
+  {
+   "text": " raid",
+   "startMs": 89897,
+   "endMs": 90084
+  },
+  {
+   "text": " it.",
+   "startMs": 90084,
+   "endMs": 90272
+  },
+  {
+   "text": " In",
+   "startMs": 90953,
+   "endMs": 91206
+  },
+  {
+   "text": " July,",
+   "startMs": 91206,
+   "endMs": 91648
+  },
+  {
+   "text": " the",
+   "startMs": 91648,
+   "endMs": 91901
+  },
+  {
+   "text": " teachers",
+   "startMs": 91901,
+   "endMs": 92343
+  },
+  {
+   "text": " vote",
+   "startMs": 92343,
+   "endMs": 92671
+  },
+  {
+   "text": " to",
+   "startMs": 92671,
+   "endMs": 92925
+  },
+  {
+   "text": " shut",
+   "startMs": 92925,
+   "endMs": 93179
+  },
+  {
+   "text": " it",
+   "startMs": 93179,
+   "endMs": 93432
+  },
+  {
+   "text": " down",
+   "startMs": 93432,
+   "endMs": 93686
+  },
+  {
+   "text": " for",
+   "startMs": 93686,
+   "endMs": 93939
+  },
+  {
+   "text": " good.",
+   "startMs": 93939,
+   "endMs": 94193
+  },
+  {
+   "text": " But",
+   "startMs": 94693,
+   "endMs": 95010
+  },
+  {
+   "text": " you",
+   "startMs": 95010,
+   "endMs": 95328
+  },
+  {
+   "text": " can't",
+   "startMs": 95328,
+   "endMs": 95645
+  },
+  {
+   "text": " arrest",
+   "startMs": 95645,
+   "endMs": 96198
+  },
+  {
+   "text": " an",
+   "startMs": 96198,
+   "endMs": 96515
+  },
+  {
+   "text": " idea.",
+   "startMs": 96515,
+   "endMs": 97068
+  },
+  {
+   "text": " Its",
+   "startMs": 97381,
+   "endMs": 97706
+  },
+  {
+   "text": " teachers",
+   "startMs": 97706,
+   "endMs": 98271
+  },
+  {
+   "text": " fled,",
+   "startMs": 98271,
+   "endMs": 98596
+  },
+  {
+   "text": " and",
+   "startMs": 98826,
+   "endMs": 99060
+  },
+  {
+   "text": " took",
+   "startMs": 99060,
+   "endMs": 99294
+  },
+  {
+   "text": " the",
+   "startMs": 99294,
+   "endMs": 99528
+  },
+  {
+   "text": " Bauhaus",
+   "startMs": 99528,
+   "endMs": 99936
+  },
+  {
+   "text": " with",
+   "startMs": 99936,
+   "endMs": 100170
+  },
+  {
+   "text": " them.",
+   "startMs": 100170,
+   "endMs": 100405
+  },
+  {
+   "text": " Gropius",
+   "startMs": 100905,
+   "endMs": 101532
+  },
+  {
+   "text": " to",
+   "startMs": 101532,
+   "endMs": 101893
+  },
+  {
+   "text": " Harvard.",
+   "startMs": 101893,
+   "endMs": 102520
+  },
+  {
+   "text": " Mies",
+   "startMs": 102772,
+   "endMs": 103087
+  },
+  {
+   "text": " to",
+   "startMs": 103087,
+   "endMs": 103401
+  },
+  {
+   "text": " Chicago.",
+   "startMs": 103401,
+   "endMs": 104182
+  },
+  {
+   "text": " And",
+   "startMs": 104419,
+   "endMs": 104678
+  },
+  {
+   "text": " in",
+   "startMs": 104678,
+   "endMs": 104937
+  },
+  {
+   "text": " Tel",
+   "startMs": 104937,
+   "endMs": 105196
+  },
+  {
+   "text": " Aviv,",
+   "startMs": 105196,
+   "endMs": 105647
+  },
+  {
+   "text": " over",
+   "startMs": 105647,
+   "endMs": 106099
+  },
+  {
+   "text": " four",
+   "startMs": 106099,
+   "endMs": 106358
+  },
+  {
+   "text": " thousand",
+   "startMs": 106358,
+   "endMs": 106809
+  },
+  {
+   "text": " buildings",
+   "startMs": 106809,
+   "endMs": 107260
+  },
+  {
+   "text": " in",
+   "startMs": 107260,
+   "endMs": 107519
+  },
+  {
+   "text": " its",
+   "startMs": 107519,
+   "endMs": 107778
+  },
+  {
+   "text": " style.",
+   "startMs": 107778,
+   "endMs": 108114
+  },
+  {
+   "text": " Glass",
+   "startMs": 108614,
+   "endMs": 109003
+  },
+  {
+   "text": " towers.",
+   "startMs": 109003,
+   "endMs": 109680
+  },
+  {
+   "text": " Steel",
+   "startMs": 110061,
+   "endMs": 110739
+  },
+  {
+   "text": " chairs.",
+   "startMs": 110739,
+   "endMs": 111417
+  },
+  {
+   "text": " Clean",
+   "startMs": 111758,
+   "endMs": 112209
+  },
+  {
+   "text": " lines.",
+   "startMs": 112209,
+   "endMs": 112993
+  },
+  {
+   "text": " The",
+   "startMs": 113589,
+   "endMs": 113853
+  },
+  {
+   "text": " Nazis",
+   "startMs": 113853,
+   "endMs": 114313
+  },
+  {
+   "text": " closed",
+   "startMs": 114313,
+   "endMs": 114774
+  },
+  {
+   "text": " a",
+   "startMs": 114774,
+   "endMs": 115038
+  },
+  {
+   "text": " school,",
+   "startMs": 115038,
+   "endMs": 115302
+  },
+  {
+   "text": " and",
+   "startMs": 115302,
+   "endMs": 115567
+  },
+  {
+   "text": " spread",
+   "startMs": 115567,
+   "endMs": 115831
+  },
+  {
+   "text": " it",
+   "startMs": 115831,
+   "endMs": 116095
+  },
+  {
+   "text": " everywhere.",
+   "startMs": 116095,
+   "endMs": 117026
+  },
+  {
+   "text": " So:",
+   "startMs": 117526,
+   "endMs": 117891
+  },
+  {
+   "text": " genius,",
+   "startMs": 118263,
+   "endMs": 119015
+  },
+  {
+   "text": " or",
+   "startMs": 119253,
+   "endMs": 119443
+  },
+  {
+   "text": " the",
+   "startMs": 119443,
+   "endMs": 119633
+  },
+  {
+   "text": " reason",
+   "startMs": 119633,
+   "endMs": 119963
+  },
+  {
+   "text": " every",
+   "startMs": 119963,
+   "endMs": 120434
+  },
+  {
+   "text": " building",
+   "startMs": 120434,
+   "endMs": 120764
+  },
+  {
+   "text": " looks",
+   "startMs": 120764,
+   "endMs": 120954
+  },
+  {
+   "text": " the",
+   "startMs": 120954,
+   "endMs": 121144
+  },
+  {
+   "text": " same?",
+   "startMs": 121144,
+   "endMs": 121390
+  },
+  {
+   "text": " Comment",
+   "startMs": 121798,
+   "endMs": 122291
+  },
+  {
+   "text": " one",
+   "startMs": 122291,
+   "endMs": 122659
+  },
+  {
+   "text": " word.",
+   "startMs": 122659,
+   "endMs": 122943
+  }
+ ],
+ "total": 123.943
+}

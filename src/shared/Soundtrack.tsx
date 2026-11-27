@@ -3,6 +3,7 @@ import { interpolate, Sequence, staticFile, useVideoConfig } from "remotion";
 import { Audio } from "@remotion/media";
 import { Timeline } from "./timeline";
 import type { EpisodeScript } from "./types";
+import { insertWindow } from "./Inserts";
 
 // Shared, synthesised effects live in public/sfx (scripts/sfx.sh).
 export const Soundtrack: React.FC<{ tl: Timeline; ep: EpisodeScript }> = ({ tl, ep }) => {
@@ -32,13 +33,19 @@ export const Soundtrack: React.FC<{ tl: Timeline; ep: EpisodeScript }> = ({ tl, 
     // inserts bring their own sounds: thud on stamps, a soft tick on cards and numbers
     ...(ep.inserts ?? []).flatMap((ins) => {
       const b = beat(ins.beat);
-      if (!b) return [];
-      const at = b.start + (ins.from ?? 0) * (b.end - b.start);
+      const w = insertWindow(ins, tl);
+      if (!b || !w) return [];
+      const at = w.start;
+      if (ins.kind === "flash") return [{ src: "sfx/thud.wav", at, volume: 0.55 }];
+      if (ins.kind === "chapter") return [{ src: "sfx/whoosh.wav", at: at - 0.08, volume: 0.45 }, { src: "sfx/thud.wav", at: at + 0.12, volume: 0.5 }];
+      if (ins.kind === "poster") return [{ src: "sfx/whoosh.wav", at: at - 0.05, volume: 0.3 }];
+      if (ins.kind === "mark") return [{ src: "sfx/tick.wav", at: at + 0.05, volume: 0.3 }];
+      if (ins.kind === "shapes") return [{ src: "sfx/tick.wav", at: at + 0.1, volume: 0.35 }];
       if (ins.kind === "stamp") return [{ src: "sfx/thud.wav", at: at + 0.12, volume: 0.8 }];
       if (ins.kind === "letters") return [{ src: "sfx/thud.wav", at: at + (ins.fallAt ?? 0.35) * (b.end - b.start) + 0.8, volume: 0.5 }];
       if (ins.kind === "number" || ins.kind === "person" || ins.kind === "quote" || (ins.kind === "photo" && ins.layout === "card"))
         return [{ src: "sfx/tick.wav", at, volume: 0.35 }];
-      if (ins.kind === "photo" || ins.kind === "video") return [{ src: "sfx/whoosh.wav", at: at - 0.1, volume: 0.12 }];
+      if (ins.kind === "photo" || ins.kind === "video") return [{ src: "sfx/whoosh.wav", at: at - 0.1, volume: ep.look === "cinematic" ? 0.22 : 0.12 }];
       return [];
     }),
     // a tick when each mid-video comment prompt appears

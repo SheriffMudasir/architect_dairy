@@ -1,0 +1,252 @@
+[
+  {
+    "name": "seagram",
+    "file": "ep06/media/seagram.jpg",
+    "provider": "openverse",
+    "title": "Seagram Building",
+    "creator": "jphilipg",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/15708236@N07/4087425829"
+  },
+  {
+    "name": "crownhall",
+    "file": "ep06/media/crownhall.jpg",
+    "provider": "openverse",
+    "title": "SR Crown Hall, IIT, Mies van der Rohe, 1957",
+    "creator": "Tim Brown Architecture",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://www.flickr.com/photos/11381771@N04/14160275072"
+  },
+  {
+    "name": "ai-everywhere",
+    "file": "ep06/media/ai-everywhere.jpg",
+    "provider": "ai",
+    "title": "A paper-craft modern city at dusk: white flat-roofed cube houses and glass-and-s",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": "",
+    "label": "ILLUSTRATION · AI"
+  },
+  {
+    "name": "ai-white-city",
+    "file": "ep06/media/ai-white-city.jpg",
+    "provider": "ai",
+    "title": "Rows of white flat-roofed 1930s apartment buildings with rounded balconies and l",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": "",
+    "label": "ILLUSTRATION · AI"
+  },
+  {
+    "name": "ai-weimar-1919",
+    "file": "ep06/media/ai-weimar-1919.jpg",
+    "provider": "ai",
+    "title": "A small German town in 1919 just after the First World War: steep roofs, a churc",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": "",
+    "label": "ILLUSTRATION · AI"
+  },
+  {
+    "name": "ai-workshops",
+    "file": "ep06/media/ai-workshops.jpg",
+    "provider": "ai",
+    "title": "Cutaway paper-craft dollhouse of a school with four workshops stacked: a carpent",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": "",
+    "label": "ILLUSTRATION · AI"
+  },
+  {
+    "name": "ai-breathing",
+    "file": "ep06/media/ai-breathing.jpg",
+    "provider": "ai",
+    "title": "A paper-craft courtyard where a row of tiny students in loose smocks stand with ",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": "",
+    "label": "ILLUSTRATION · AI"
+  },
+  {
+    "name": "ai-angry-town",
+    "file": "ep06/media/ai-angry-town.jpg",
+    "provider": "ai",
+    "title": "Conservative townspeople in hats and coats glaring and pointing at a modern art ",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": "",
+    "label": "ILLUSTRATION · AI"
+  },
+  {
+    "name": "ai-bicycle",
+    "file": "ep06/media/ai-bicycle.jpg",
+    "provider": "ai",
+    "title": "A workshop table: a 1920s bicycle with shiny curved chrome steel handlebars besi",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": "",
+    "label": "ILLUSTRATION · AI"
+  },
+  {
+    "name": "ai-exodus",
+    "file": "ep06/media/ai-exodus.jpg",
+    "provider": "ai",
+    "title": "An ocean liner crossing a cut-paper sea toward a paper Manhattan skyline at dawn",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": "",
+    "label": "ILLUSTRATION · AI"
+  },
+  {
+    "name": "ai-glass-towers",
+    "file": "ep06/media/ai-glass-towers.jpg",
+    "provider": "ai",
+    "title": "A city of tall glass-and-steel office towers with strict grid facades around a s",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": "",
+    "label": "ILLUSTRATION · AI"
+  },
+  {
+    "name": "ai-berlin-factory",
+    "file": "ep06/media/ai-berlin-factory.jpg",
+    "provider": "ai",
+    "title": "An empty brick factory building in Berlin in 1932 at dusk, tall industrial windo",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": "",
+    "label": "ILLUSTRATION · AI"
+  },
+  {
+    "name": "ai-raid",
+    "file": "ep06/media/ai-raid.jpg",
+    "provider": "ai",
+    "title": "Night in 1933: two boxy black 1930s vintage police lorries with round headlamps,",
+    "creator": "AI visualisation",
+    "license": "Generated (gemini:gemini-3.1-flash-image)",
+    "source": "",
+    "label": "ILLUSTRATION · AI"
+  },
+  {
+    "name": "portrait-gropius",
+    "file": "ep06/media/portrait-gropius.jpg",
+    "provider": "wikipedia",
+    "title": "Walter Gropius",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "ARCHIVE · VIA WIKIMEDIA COMMONS"
+  },
+  {
+    "name": "portrait-kandinsky",
+    "file": "ep06/media/portrait-kandinsky.jpg",
+    "provider": "wikipedia",
+    "title": "Wassily Kandinsky",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "ARCHIVE · VIA WIKIMEDIA COMMONS"
+  },
+  {
+    "name": "portrait-klee",
+    "file": "ep06/media/portrait-klee.jpg",
+    "provider": "wikipedia",
+    "title": "Paul Klee",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "ARCHIVE · VIA WIKIMEDIA COMMONS"
+  },
+  {
+    "name": "portrait-breuer",
+    "file": "ep06/media/portrait-breuer.jpg",
+    "provider": "wikipedia",
+    "title": "Marcel Breuer",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "ARCHIVE · VIA WIKIMEDIA COMMONS"
+  },
+  {
+    "name": "portrait-stoelzl",
+    "file": "ep06/media/portrait-stoelzl.jpg",
+    "provider": "wikipedia",
+    "title": "Gunta Stölzl",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "ARCHIVE · VIA WIKIMEDIA COMMONS"
+  },
+  {
+    "name": "portrait-mies",
+    "file": "ep06/media/portrait-mies.jpg",
+    "provider": "wikipedia",
+    "title": "Ludwig Mies van der Rohe",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "ARCHIVE · VIA WIKIMEDIA COMMONS"
+  },
+  {
+    "name": "manifesto-woodcut",
+    "file": "ep06/media/manifesto-woodcut.jpg",
+    "provider": "wikipedia",
+    "title": "Bauhaus manifesto, Lyonel Feininger, 1919",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "ARCHIVE · VIA WIKIMEDIA COMMONS"
+  },
+  {
+    "name": "masters-roof-c",
+    "file": "ep06/media/masters-roof-c.jpg",
+    "provider": "wikipedia",
+    "title": "Bauhaus masters on the roof, Dessau, 1926",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "ARCHIVE · VIA WIKIMEDIA COMMONS"
+  },
+  {
+    "name": "questionnaire",
+    "file": "ep06/media/questionnaire.jpg",
+    "provider": "wikipedia",
+    "title": "Kandinsky questionnaire, 1923",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "ARCHIVE · VIA WIKIMEDIA COMMONS"
+  },
+  {
+    "name": "dessau-night",
+    "file": "ep06/media/dessau-night.jpg",
+    "provider": "wikipedia",
+    "title": "Bauhaus Dessau at night",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "ARCHIVE · VIA WIKIMEDIA COMMONS"
+  },
+  {
+    "name": "wassily-chair",
+    "file": "ep06/media/wassily-chair.jpg",
+    "provider": "wikipedia",
+    "title": "Wassily chair, Marcel Breuer",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "ARCHIVE · VIA WIKIMEDIA COMMONS"
+  },
+  {
+    "name": "weaving",
+    "file": "ep06/media/weaving.jpg",
+    "provider": "wikipedia",
+    "title": "Bauhaus weaving workshop",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "ARCHIVE · VIA WIKIMEDIA COMMONS"
+  }
+]

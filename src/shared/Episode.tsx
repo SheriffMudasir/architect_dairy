@@ -9,6 +9,7 @@ import { beatIndexAt, Timeline } from "./timeline";
 import { Captions } from "./Captions";
 import { activeInserts, Credit, CreditsCard, FullBleed, Overlays, shakeAt, veilAt, YearBar } from "./Inserts";
 import { Soundtrack } from "./Soundtrack";
+import { CineOverlays, Grain } from "./Cine";
 import { CoverTitle, CtaPill, HookTitle } from "./Hook";
 
 export type EpisodeProps = { episodeId: string; timeline: Timeline | null; credits?: Credit[]; cover?: boolean };
@@ -30,6 +31,10 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits =
   const actives = activeInserts(ep.inserts, tl, t);
   const shake = shakeAt(actives);
   const veil = veilAt(actives, t);
+  // in-world tags hide while a full-frame photo/poster/slate covers the 3D
+  const covered = actives.some(
+    (a) => ["poster", "flash", "chapter", "shapes", "video"].includes(a.ins.kind) || (a.ins.kind === "photo" && a.ins.layout !== "card"),
+  );
   const { items, tags } = useMemo(() => ep.worldAt(tl, t), [ep, tl, t]);
   const drawables = compile(items, cam);
 
@@ -43,15 +48,18 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits =
   const lastEnd = tl.beats[tl.beats.length - 1].end;
   const hookUntil = ep.hook ? (ep.hook.until ?? 2.6) : 0;
   // the top headline waits until the big hook title is gone (and is hidden on covers)
-  const chrome = cover ? 0 : ep.hook ? interpolate(t, [hookUntil, hookUntil + 0.5], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) : 1;
+  const dark = ep.look === "cinematic";
+  const chrome = cover || dark ? 0 : ep.hook ? interpolate(t, [hookUntil, hookUntil + 0.5], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) : 1;
 
   return (
-    <AbsoluteFill style={{ backgroundColor: C.paper, fontFamily: SANS }}>
+    <AbsoluteFill style={{ backgroundColor: dark ? "#141312" : C.paper, fontFamily: SANS }}>
       <AbsoluteFill style={{ translate: `${shake.x}px ${shake.y}px` }}>
       {/* soft vignette */}
       <AbsoluteFill
         style={{
-          background: `radial-gradient(ellipse 75% 55% at 50% 52%, ${C.paper} 55%, ${C.paperDeep} 100%)`,
+          background: dark
+            ? "radial-gradient(ellipse 80% 60% at 50% 50%, #2A2724 0%, #141312 75%)"
+            : `radial-gradient(ellipse 75% 55% at 50% 52%, ${C.paper} 55%, ${C.paperDeep} 100%)`,
         }}
       />
       <svg width={width} height={height} style={{ position: "absolute", inset: 0 }}>
@@ -84,21 +92,23 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits =
         )}
       </svg>
 
-      <FullBleed actives={actives} t={t} ep={ep.id} />
+      <FullBleed actives={actives} t={t} ep={ep.id} dark={dark} />
 
       {/* paper fade at top and bottom so text sits on calm ground */}
       <AbsoluteFill
         style={{
-          background: `linear-gradient(${C.paper} 0%, ${C.paper}F2 14%, ${C.paper}00 27%, ${C.paper}00 70%, ${C.paper}E6 82%, ${C.paper} 100%)`,
+          background: dark
+            ? "linear-gradient(rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 18%, rgba(0,0,0,0) 62%, rgba(0,0,0,0.7) 82%, rgba(0,0,0,0.85) 100%)"
+            : `linear-gradient(${C.paper} 0%, ${C.paper}F2 14%, ${C.paper}00 27%, ${C.paper}00 70%, ${C.paper}E6 82%, ${C.paper} 100%)`,
         }}
       />
 
       {/* veil under cards and numbers */}
-      <AbsoluteFill style={{ background: C.paper, opacity: veil }} />
+      <AbsoluteFill style={{ background: dark ? "#141312" : C.paper, opacity: veil }} />
 
       {/* in-world tags */}
       {tags.map((tag) => {
-        const op = Math.max(0, Math.min(1, tag.opacity)) * (1 - veil);
+        const op = covered ? 0 : Math.max(0, Math.min(1, tag.opacity)) * (1 - veil);
         if (op <= 0.01) return null;
         const [px, y] = project(tag.at, cam);
         // keep tags inside the frame
@@ -136,7 +146,9 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits =
         );
       })}
 
-      <Overlays actives={actives} t={t} ep={ep.id} credits={credits} />
+      <Overlays actives={actives} t={t} ep={ep.id} credits={credits} dark={dark} />
+      <CineOverlays actives={actives} t={t} ep={ep.id} credits={credits} />
+      {dark ? <Grain frame={frame} /> : null}
       </AbsoluteFill>
 
       {/* headline + label */}
@@ -167,9 +179,9 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits =
         </div>
       </div>
 
-      {ep.years && beat.year && chrome > 0.01 ? <YearBar years={ep.years} year={beat.year} prevYear={prevYear} t={t} beatStart={tl.beats[bi].start} /> : null}
+      {ep.years && beat.year && chrome > 0.01 && !dark ? <YearBar years={ep.years} year={beat.year} prevYear={prevYear} t={t} beatStart={tl.beats[bi].start} /> : null}
 
-      {cover ? null : <Captions words={tl.words} t={t} font={SANS} tl={tl} beats={ep.beats} />}
+      {cover ? null : <Captions words={tl.words} t={t} font={SANS} tl={tl} beats={ep.beats} dark={dark} />}
       {ep.hook && !cover ? <HookTitle lines={ep.hook.lines} t={t} until={hookUntil} top={ep.hook.top} /> : null}
       {!cover
         ? (ep.prompts ?? []).map((p, i) => {
@@ -195,7 +207,7 @@ export const Episode: React.FC<EpisodeProps> = ({ episodeId, timeline, credits =
           fontFamily: MONO,
           fontSize: 22,
           letterSpacing: 6,
-          color: C.inkSoft,
+          color: dark ? "rgba(255,255,255,0.55)" : C.inkSoft,
         }}
       >
         {CHANNEL_NAME} · EP {String(ep.number).padStart(2, "0")}

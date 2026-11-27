@@ -1,0 +1,90 @@
+{
+  "ai-everywhere": {
+    "hash": "7d6c74abcd0c",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "A paper-craft modern city at dusk: white flat-roofed cube houses and glass-and-steel towers, a chrome tubular steel armchair in the foreground, warm lit windows\n\nStyle: handmade paper-craft diorama photographed in a studio: layered cut paper and card, visible paper fibres and torn edges, miniature scale, soft warm studio light with gentle shadows, shallow depth of field, muted cream and ochre paper with accents of Bauhaus red, yellow and cobalt blue, cut-paper clouds, cinematic vertical 9:16 composition, no text, no lettering, no logos, no flags, no symbols\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1532,
+    "at": "2026-11-27T11:45:45.585Z"
+  },
+  "ai-white-city": {
+    "hash": "e5040424aef8",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "Rows of white flat-roofed 1930s apartment buildings with rounded balconies and long strip windows along a palm-lined street, bright Mediterranean sun\n\nStyle: handmade paper-craft diorama photographed in a studio: layered cut paper and card, visible paper fibres and torn edges, miniature scale, soft warm studio light with gentle shadows, shallow depth of field, muted cream and ochre paper with accents of Bauhaus red, yellow and cobalt blue, cut-paper clouds, cinematic vertical 9:16 composition, no text, no lettering, no logos, no flags, no symbols\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1537,
+    "at": "2026-11-27T11:45:55.568Z"
+  },
+  "ai-weimar-1919": {
+    "hash": "55707430b197",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "A small German town in 1919 just after the First World War: steep roofs, a church spire, grey overcast sky, a few people in long coats and caps walking past an art-nouveau school building with large studio windows glowing warm\n\nStyle: handmade paper-craft diorama photographed in a studio: layered cut paper and card, visible paper fibres and torn edges, miniature scale, soft warm studio light with gentle shadows, shallow depth of field, muted cream and ochre paper with accents of Bauhaus red, yellow and cobalt blue, cut-paper clouds, cinematic vertical 9:16 composition, no text, no lettering, no logos, no flags, no symbols\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1564,
+    "at": "2026-11-27T11:46:04.160Z"
+  },
+  "ai-workshops": {
+    "hash": "09827b9c73c5",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "Cutaway paper-craft dollhouse of a school with four workshops stacked: a carpentry bench with wood shavings, a large weaving loom with coloured threads, an easel with an abstract geometric painting, a metal workshop with a desk lamp; tiny paper students working\n\nStyle: handmade paper-craft diorama photographed in a studio: layered cut paper and card, visible paper fibres and torn edges, miniature scale, soft warm studio light with gentle shadows, shallow depth of field, muted cream and ochre paper with accents of Bauhaus red, yellow and cobalt blue, cut-paper clouds, cinematic vertical 9:16 composition, no text, no lettering, no logos, no flags, no symbols\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1509,
+    "at": "2026-11-27T11:46:12.731Z"
+  },
+  "ai-breathing": {
+    "hash": "d2203be9f047",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "A paper-craft courtyard where a row of tiny students in loose smocks stand with arms raised doing breathing exercises, led by a bald teacher in a long dark monk-like robe; soft morning light\n\nStyle: handmade paper-craft diorama photographed in a studio: layered cut paper and card, visible paper fibres and torn edges, miniature scale, soft warm studio light with gentle shadows, shallow depth of field, muted cream and ochre paper with accents of Bauhaus red, yellow and cobalt blue, cut-paper clouds, cinematic vertical 9:16 composition, no text, no lettering, no logos, no flags, no symbols\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1570,
+    "at": "2026-11-27T11:46:22.993Z"
+  },
+  "ai-angry-town": {
+    "hash": "0682dd9158d2",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "Conservative townspeople in hats and coats glaring and pointing at a modern art school building, newspapers fluttering in the wind, dark paper storm clouds gathering above\n\nStyle: handmade paper-craft diorama photographed in a studio: layered cut paper and card, visible paper fibres and torn edges, miniature scale, soft warm studio light with gentle shadows, shallow depth of field, muted cream and ochre paper with accents of Bauhaus red, yellow and cobalt blue, cut-paper clouds, cinematic vertical 9:16 composition, no text, no lettering, no logos, no flags, no symbols\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1515,
+    "at": "2026-11-27T11:46:31.791Z"
+  },
+  "ai-bicycle": {
+    "hash": "c0adfb40568e",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "A workshop table: a 1920s bicycle with shiny curved chrome steel handlebars beside a half-built tubular steel armchair frame made of the same chrome tubes, two hands bending a steel tube, warm lamp light\n\nStyle: handmade paper-craft diorama photographed in a studio: layered cut paper and card, visible paper fibres and torn edges, miniature scale, soft warm studio light with gentle shadows, shallow depth of field, muted cream and ochre paper with accents of Bauhaus red, yellow and cobalt blue, cut-paper clouds, cinematic vertical 9:16 composition, no text, no lettering, no logos, no flags, no symbols\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1586,
+    "at": "2026-11-27T11:46:41.622Z"
+  },
+  "ai-berlin-factory": {
+    "hash": "9068bdf1d1af",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "An empty brick factory building in Berlin in 1932 at dusk, tall industrial windows, a plain facade with no signs and no writing, a few students carrying boxes and drawing boards inside, cold blue evening light\n\nStyle: handmade paper-craft diorama photographed in a studio: layered cut paper and card, visible paper fibres and torn edges, miniature scale, soft warm studio light with gentle shadows, shallow depth of field, muted cream and ochre paper with accents of Bauhaus red, yellow and cobalt blue, cut-paper clouds, cinematic vertical 9:16 composition, no text, no lettering, no logos, no flags, no symbols\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1576,
+    "at": "2026-11-27T11:50:11.404Z"
+  },
+  "ai-raid": {
+    "hash": "20bc99d02f31",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "Night in 1933: two boxy black 1930s vintage police lorries with round headlamps, no light bars, no stripes, parked in front of a brick factory building; silhouettes of police officers in long 1930s greatcoats and peaked caps at the doorway, students in coats being led out, harsh headlight beams and long shadows\n\nStyle: handmade paper-craft diorama photographed in a studio: layered cut paper and card, visible paper fibres and torn edges, miniature scale, soft warm studio light with gentle shadows, shallow depth of field, muted cream and ochre paper with accents of Bauhaus red, yellow and cobalt blue, cut-paper clouds, cinematic vertical 9:16 composition, no text, no lettering, no logos, no flags, no symbols\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1493,
+    "at": "2026-11-27T11:50:20.716Z"
+  },
+  "ai-exodus": {
+    "hash": "d3591c80f3b3",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "An ocean liner crossing a cut-paper sea toward a paper Manhattan skyline at dawn, tiny figures with suitcases standing on deck looking ahead\n\nStyle: handmade paper-craft diorama photographed in a studio: layered cut paper and card, visible paper fibres and torn edges, miniature scale, soft warm studio light with gentle shadows, shallow depth of field, muted cream and ochre paper with accents of Bauhaus red, yellow and cobalt blue, cut-paper clouds, cinematic vertical 9:16 composition, no text, no lettering, no logos, no flags, no symbols\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1550,
+    "at": "2026-11-27T11:47:10.285Z"
+  },
+  "ai-glass-towers": {
+    "hash": "c5c82232f459",
+    "kind": "image",
+    "model": "gemini:gemini-3.1-flash-image",
+    "prompt": "A city of tall glass-and-steel office towers with strict grid facades around a stone plaza, dusk light, warm reflections in the glass\n\nStyle: handmade paper-craft diorama photographed in a studio: layered cut paper and card, visible paper fibres and torn edges, miniature scale, soft warm studio light with gentle shadows, shallow depth of field, muted cream and ochre paper with accents of Bauhaus red, yellow and cobalt blue, cut-paper clouds, cinematic vertical 9:16 composition, no text, no lettering, no logos, no flags, no symbols\nVertical 9:16 frame. No text, no captions, no logos, no watermarks.",
+    "tokens": 1526,
+    "at": "2026-11-27T11:47:19.838Z"
+  }
+}

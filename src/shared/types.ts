@@ -29,8 +29,9 @@ export type Insert = InsertTiming &
         kind: "photo";
         /** media name in public/<ep>/media (without .jpg); credit comes from credits.json */
         src: string;
-        /** card = tilted print over the scene; full = full-bleed, blended into the paper */
-        layout: "card" | "full";
+        /** card = tilted print over the scene; full = full-bleed, blended into the paper;
+         *  wide = full-width photo on a blurred copy of itself (for small/landscape archive photos) */
+        layout: "card" | "full" | "wide";
         caption?: string;
         tilt?: number; // degrees, card only
         side?: "left" | "right"; // card slides in from
@@ -55,6 +56,17 @@ export type Insert = InsertTiming &
     /** a sign whose letters fall away, leaving `keep` (indices into text) which slide together */
     | { kind: "letters"; text: string; keep: number[]; fallAt?: number; sub?: string }
     | { kind: "quote"; text: string; by: string }
+    // ---- cinematic look (look: "cinematic")
+    /** archival portrait cut-out on a Bauhaus colour block with a big geometric shape */
+    | { kind: "poster"; src: string; name: string; role?: string; color?: "red" | "yellow" | "blue"; shape?: "circle" | "square" | "triangle" }
+    /** one-word full-screen flash card, timed to a spoken word (atWord) or to `from` */
+    | { kind: "flash"; text: string; atWord?: string; dur?: number; tone?: "light" | "dark" | "red" | "yellow" | "blue" }
+    /** hand-drawn marker annotation over the frame (px in the 1080×1920 frame) */
+    | { kind: "mark"; shape: "circle" | "arrow" | "underline"; x: number; y: number; w: number; h: number; color?: string; label?: string }
+    /** Kandinsky's three shapes: outlines, then filled yellow/red/blue at `revealAt` (fraction of the insert) */
+    | { kind: "shapes"; revealAt?: number }
+    /** chapter slate: big number + title on a colour block */
+    | { kind: "chapter"; n: number; title: string; color?: "red" | "yellow" | "blue" }
   );
 
 export type Headline = { lead: string; accent: string };
@@ -81,6 +93,8 @@ export type EpisodeScript = {
   sfx: SfxCue[];
   /** Photos, name cards, numbers, stamps, quotes layered over the 3D world. */
   inserts?: Insert[];
+  /** "cinematic": dark full-bleed look — no headline/label/year bar, film grain, hard cuts. */
+  look?: "cinematic";
   /** Range of the running year bar. Omit to hide it. */
   years?: [number, number];
   /** Big on-screen hook text shown from frame 0 (works without sound). 2 short lines, ≤ 22 chars each. */

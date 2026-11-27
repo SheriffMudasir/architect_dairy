@@ -16,21 +16,44 @@ const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const IN = 0.45; // seconds to animate in
 const OUT = 0.35; // seconds to animate out
 
+/** When an insert starts and ends (seconds), or null if its beat was cut. */
+export const insertWindow = (ins: Insert, tl: Timeline): { start: number; end: number } | null => {
+  const b = tl.beats.find((x) => x.id === ins.beat);
+  if (!b) return null;
+  const d = b.end - b.start;
+  // an insert opening the first beat covers frame 0 too (narration starts a fraction later)
+  let start = b === tl.beats[0] && !ins.from ? 0 : b.start + (ins.from ?? 0) * d;
+  let end = b.start + (ins.to ?? 1) * d;
+  if (ins.untilBeat) {
+    const ub = tl.beats.find((x) => x.id === ins.untilBeat);
+    if (ub) end = ub.start + (ins.to ?? 1) * (ub.end - ub.start);
+  }
+  // flash cards land on a spoken word and last a fraction of a second
+  if (ins.kind === "flash") {
+    const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const w = ins.atWord
+      ? tl.words.find((x) => x.startMs / 1000 >= b.start - 0.05 && x.startMs / 1000 <= b.end && norm(x.text) === norm(ins.atWord!))
+      : undefined;
+    if (w) start = w.startMs / 1000;
+    end = start + (ins.dur ?? 0.55);
+  }
+  if (ins.kind === "chapter" && ins.to === undefined) end = start + 1.1;
+  // full-frame media that runs to the end of its beat holds through the pause to the next beat
+  const full = ins.kind === "poster" || ins.kind === "video" || (ins.kind === "photo" && ins.layout !== "card");
+  if (full && !ins.untilBeat && (ins.to ?? 1) === 1) {
+    const next = tl.beats[tl.beats.indexOf(b) + 1];
+    if (next) end = Math.max(end, next.start);
+  }
+  return { start, end };
+};
+
 /** Resolve which inserts are on screen at time t. */
 export const activeInserts = (inserts: Insert[] | undefined, tl: Timeline, t: number): Active[] => {
   const out: Active[] = [];
   for (const ins of inserts ?? []) {
-    const b = tl.beats.find((x) => x.id === ins.beat);
-    if (!b) continue;
-    const d = b.end - b.start;
-    // an insert opening the first beat covers frame 0 too (narration starts a fraction later)
-    const start = b === tl.beats[0] && !ins.from ? 0 : b.start + (ins.from ?? 0) * d;
-    let end = b.start + (ins.to ?? 1) * d;
-    if (ins.untilBeat) {
-      const ub = tl.beats.find((x) => x.id === ins.untilBeat);
-      if (ub) end = ub.start + (ins.to ?? 1) * (ub.end - ub.start);
-    }
-    // stamps and numbers hold through the gap to the next beat
+    const w = insertWindow(ins, tl);
+    if (!w) continue;
+    const { start, end } = w;
     if (t < start - 0.01 || t > end + OUT) continue;
     out.push({ ins, start, end, local: t - start, u: (t - start) / Math.max(0.01, end - start) });
   }
@@ -61,7 +84,8 @@ export const shakeAt = (actives: Active[]) => {
 };
 
 /** Full-bleed photos sit UNDER the paper gradient so they blend into the page. */
-export const FullBleed: React.FC<{ actives: Active[]; t: number; ep: string }> = ({ actives, t, ep }) => {
+export const FullBleed: React.FC<{ actives: Active[]; t: number; ep: string; dark?: boolean }> = ({ actives, t, ep, dark = false }) => {
+  const wash = dark ? "#0E0D0C" : C.paper;
   const { fps } = useVideoConfig();
   return (
   <>
@@ -85,7 +109,23 @@ export const FullBleed: React.FC<{ actives: Active[]; t: number; ep: string }> =
                 }}
               />
             </Sequence>
-            <AbsoluteFill style={{ background: C.paper, opacity: 0.12, mixBlendMode: "multiply" }} />
+            {dark ? null : <AbsoluteFill style={{ background: C.paper, opacity: 0.12, mixBlendMode: "multiply" }} />}
+          </AbsoluteFill>
+        );
+      }
+      if (a.ins.kind === "photo" && a.ins.layout === "wide") {
+        // small archive photo: full-width print over a blurred, darkened copy of itself
+        const ins = a.ins;
+        const life = interpolate(a.local, [0, a.end - a.start + OUT], [0, 1], clamp);
+        const z = ins.move === "out" ? 1.12 - 0.1 * life : 1.02 + 0.1 * life;
+        const src = staticFile(`${ep}/media/${ins.src}.jpg`);
+        const filter = ins.grade === "mono" ? "grayscale(1) contrast(1.1)" : "sepia(0.12) contrast(1.05)";
+        return (
+          <AbsoluteFill key={i} style={{ opacity: dark ? 1 : env(a, t), overflow: "hidden", background: wash }}>
+            <Img src={src} style={{ position: "absolute", inset: -80, width: "calc(100% + 160px)", height: "calc(100% + 160px)", objectFit: "cover", filter: `${filter} blur(38px) brightness(0.45)` }} />
+            <AbsoluteFill style={{ justifyContent: "center", alignItems: "center" }}>
+              <Img src={src} style={{ width: "100%", scale: String(z), filter, boxShadow: "0 30px 80px rgba(0,0,0,0.6)" }} />
+            </AbsoluteFill>
           </AbsoluteFill>
         );
       }
@@ -100,7 +140,7 @@ export const FullBleed: React.FC<{ actives: Active[]; t: number; ep: string }> =
       const ty = move === "up" ? pan / 2 - pan * life : move === "down" ? -pan / 2 + pan * life : 0;
       const [fx, fy] = ins.focus ?? [0.5, 0.45];
       return (
-        <AbsoluteFill key={i} style={{ opacity: o, overflow: "hidden" }}>
+        <AbsoluteFill key={i} style={{ opacity: dark ? 1 : o, overflow: "hidden", background: wash }}>
           <Img
             src={staticFile(`${ep}/media/${ins.src}.jpg`)}
             style={{
@@ -114,8 +154,8 @@ export const FullBleed: React.FC<{ actives: Active[]; t: number; ep: string }> =
               filter: ins.grade === "mono" ? "grayscale(1) contrast(1.05) brightness(1.02)" : "sepia(0.18) saturate(0.88) contrast(1.04)",
             }}
           />
-          {/* paper wash keeps the palette */}
-          <AbsoluteFill style={{ background: C.paper, opacity: 0.12, mixBlendMode: "multiply" }} />
+          {/* paper wash keeps the palette (paper look only) */}
+          {dark ? null : <AbsoluteFill style={{ background: C.paper, opacity: 0.12, mixBlendMode: "multiply" }} />}
           {ins.sweep ? (
             <AbsoluteFill
               style={{
@@ -125,13 +165,13 @@ export const FullBleed: React.FC<{ actives: Active[]; t: number; ep: string }> =
               }}
             />
           ) : null}
-          {/* reveal wipe */}
-          <AbsoluteFill
+          {/* reveal wipe (paper look only — the cinematic look hard-cuts) */}
+          {dark ? null : <AbsoluteFill
             style={{
               background: C.paper,
               clipPath: `inset(0 0 ${a.start < 0.3 ? 100 : interpolate(a.local, [0, 0.55], [0, 100], { ...clamp, easing: Easing.bezier(0.7, 0, 0.2, 1) })}% 0)`,
             }}
-          />
+          />}
         </AbsoluteFill>
       );
     })}
@@ -144,12 +184,14 @@ export const veilAt = (actives: Active[], t: number) =>
   Math.max(0, ...actives.filter((a) => a.ins.kind === "number" || a.ins.kind === "quote" || a.ins.kind === "letters" || (a.ins.kind === "photo" && a.ins.layout === "card")).map((a) => env(a, t) * (a.ins.kind === "photo" ? 0.45 : 0.82)));
 
 const isAI = (c?: Credit) => (c as Credit & { provider?: string })?.provider === "ai";
-const creditLine = (c?: Credit) =>
+/** credits.json may set `label` (e.g. "ILLUSTRATION · AI") to override the line */
+export const creditLine = (c?: Credit) => ((c as Credit & { label?: string })?.label ? (c as Credit & { label?: string }).label! : creditLineOld(c));
+const creditLineOld = (c?: Credit) =>
   !c ? "" : isAI(c) ? "AI VISUALISATION" : `${/\.mp4$/.test((c as Credit & { file?: string }).file ?? "") ? "VIDEO" : "PHOTO"} · ${(c.creator ?? "UNKNOWN").toUpperCase()} · ${c.license.toUpperCase()}`;
 
 const fmtNumber = (v: number, format?: "full" | "plain") => (format === "plain" ? String(Math.round(v)) : Math.round(v).toLocaleString("en-US"));
 
-export const Overlays: React.FC<{ actives: Active[]; t: number; ep: string; credits: Credit[] }> = ({ actives, t, ep, credits }) => {
+export const Overlays: React.FC<{ actives: Active[]; t: number; ep: string; credits: Credit[]; dark?: boolean }> = ({ actives, t, ep, credits, dark = false }) => {
   const people = actives.filter((a) => a.ins.kind === "person");
   return (
   <>
@@ -203,7 +245,7 @@ export const Overlays: React.FC<{ actives: Active[]; t: number; ep: string; cred
       if (ins.kind === "photo" || ins.kind === "video") {
         const credit = credits.find((c) => c.name === ins.src);
         return (
-          <div key={i} style={{ position: "absolute", right: 70, top: 1395, opacity: o * 0.9, fontFamily: MONO, fontSize: 16, letterSpacing: 1, color: C.ink, textAlign: "right" }}>
+          <div key={i} style={{ position: "absolute", right: 70, top: 1395, opacity: dark ? 0.75 : o * 0.9, fontFamily: MONO, fontSize: 16, letterSpacing: 1, color: dark ? "#FFFFFF" : C.ink, textShadow: dark ? "0 1px 4px rgba(0,0,0,0.8)" : "none", textAlign: "right" }}>
             {creditLine(credit)}
           </div>
         );

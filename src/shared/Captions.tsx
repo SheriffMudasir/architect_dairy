@@ -31,7 +31,7 @@ const paginate = (words: Word[], isEm: (w: Word) => boolean): Page[] => {
   return pages;
 };
 
-export const Captions: React.FC<{ words: Word[]; t: number; font: string; tl: Timeline; beats: Beat[] }> = ({ words, t, font, tl, beats }) => {
+export const Captions: React.FC<{ words: Word[]; t: number; font: string; tl: Timeline; beats: Beat[] ; dark?: boolean }> = ({ words, t, font, tl, beats , dark = false }) => {
   const pages = useMemo(() => {
     const beatAt = (ms: number) => {
       let idx = 0;
@@ -86,10 +86,10 @@ export const Captions: React.FC<{ words: Word[]; t: number; font: string; tl: Ti
             style={{
               position: "relative",
               display: "inline-block",
-              color: w.em ? (spoken && wp > 0.7 ? "#FFFFFF" : C.accent) : spoken ? C.ink : "#B9B2A6",
+              color: w.em ? (spoken && wp > 0.7 ? "#FFFFFF" : C.accent) : spoken ? (dark ? "#FFFFFF" : C.ink) : dark ? "rgba(255,255,255,0.45)" : "#B9B2A6",
               scale: String(active ? 1 + 0.07 * (1 - Math.abs(wp - 0.6)) : 1),
               padding: w.em ? "0 14px" : 0,
-              textShadow: w.em ? "none" : `0 0 18px ${C.paper}, 0 0 6px ${C.paper}`,
+              textShadow: w.em ? "none" : dark ? "0 4px 18px rgba(0,0,0,0.85), 0 0 4px rgba(0,0,0,0.6)" : `0 0 18px ${C.paper}, 0 0 6px ${C.paper}`,
               zIndex: 1,
             }}
           >
