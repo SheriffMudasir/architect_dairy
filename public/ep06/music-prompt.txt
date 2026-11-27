@@ -1,0 +1,19 @@
+provider: lyria
+
+Instrumental underscore for a 124-second short architecture documentary: "Bauhaus". No vocals. It sits under a spoken voiceover, so keep it sparse, mid-low register, nothing busy in the speech frequencies.
+
+Instruments: pulsing analogue synth arpeggio, marimba, deep sub bass hits, tight electronic percussion, a few piano notes. Modern cinematic explainer documentary, propulsive and curious. Key: E minor. Tempo around 110 BPM.
+
+Structure (timestamps):
+- 0s–14s: ominous opening: low drone and a ticking pulse, a bass hit on the first word.
+- 15s–52s: playful and inventive: marimba and synth arpeggios, building curiosity, holding still on the test.
+- 53s–78s: driving momentum: tighter percussion, rising synths.
+- 79s–100s: dark and tense: sparse, heavy bass hits, a near-silence on the raid.
+- 101s–124s: triumphant and expansive: full pulse returns, resolving on a final hit.
+
+--- model notes ---
+[[A0]]
+[[B1]]
+[[C2]]
+[[D3]]
+[[E4]]
