@@ -1,25 +1,5 @@
 [
   {
-    "name": "seagram",
-    "file": "ep06/media/seagram.jpg",
-    "provider": "openverse",
-    "title": "Seagram Building",
-    "creator": "jphilipg",
-    "license": "CC BY 2.0",
-    "license_url": "https://creativecommons.org/licenses/by/2.0/",
-    "source": "https://www.flickr.com/photos/15708236@N07/4087425829"
-  },
-  {
-    "name": "crownhall",
-    "file": "ep06/media/crownhall.jpg",
-    "provider": "openverse",
-    "title": "SR Crown Hall, IIT, Mies van der Rohe, 1957",
-    "creator": "Tim Brown Architecture",
-    "license": "CC BY 2.0",
-    "license_url": "https://creativecommons.org/licenses/by/2.0/",
-    "source": "https://www.flickr.com/photos/11381771@N04/14160275072"
-  },
-  {
     "name": "ai-everywhere",
     "file": "ep06/media/ai-everywhere.jpg",
     "provider": "ai",
@@ -248,5 +228,45 @@
     "license": "see file page",
     "source": "https://commons.wikimedia.org/",
     "label": "ARCHIVE · VIA WIKIMEDIA COMMONS"
+  },
+  {
+    "name": "seagram",
+    "file": "ep06/media/seagram.jpg",
+    "provider": "wikipedia",
+    "title": "Seagram Building, New York (Mies van der Rohe, 1958)",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "PHOTO · VIA WIKIMEDIA COMMONS"
+  },
+  {
+    "name": "telaviv",
+    "file": "ep06/media/telaviv.jpg",
+    "provider": "wikipedia",
+    "title": "Dizengoff Square, Tel Aviv, 1930s",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "PHOTO · VIA WIKIMEDIA COMMONS"
+  },
+  {
+    "name": "crownhall",
+    "file": "ep06/media/crownhall.jpg",
+    "provider": "wikipedia",
+    "title": "S.R. Crown Hall, IIT Chicago (Mies van der Rohe, 1956)",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "PHOTO · VIA WIKIMEDIA COMMONS"
+  },
+  {
+    "name": "dessau-day",
+    "file": "ep06/media/dessau-day.jpg",
+    "provider": "wikipedia",
+    "title": "Bauhaus Dessau",
+    "creator": "via Wikimedia Commons",
+    "license": "see file page",
+    "source": "https://commons.wikimedia.org/",
+    "label": "PHOTO · VIA WIKIMEDIA COMMONS"
   }
 ]
